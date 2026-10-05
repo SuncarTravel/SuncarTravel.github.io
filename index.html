@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suncar Tours & Travel | Especialistas en Cruceros</title>
+<meta name="description" content="Suncar Tours & Travel: especialistas en cruceros, vacaciones y experiencias de viaje. Cotiza por WhatsApp desde Santo Domingo.">
+<link rel="icon" href="assets/logo.svg">
+<style>
+:root{--navy:#07375c;--blue:#0c78aa;--orange:#f58220;--gold:#fdbb30;--ink:#173042;--muted:#617383;--line:#dbe6ed;--soft:#f6fafc;--green:#25d366;--shadow:0 18px 55px rgba(7,55,92,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink);background:white}.container{width:min(1160px,calc(100% - 32px));margin:auto}a{text-decoration:none;color:inherit}
+.top{background:#052f50;color:#d8e8f1;font-size:.88rem}.top .container{display:flex;justify-content:space-between;gap:20px;padding:9px 0;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(7,55,92,.08)}nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand img{height:70px;width:auto}.navlinks{display:flex;align-items:center;gap:26px;font-weight:750;color:#294456}.navlinks a:hover{color:var(--orange)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 20px;font-weight:850;border:1px solid transparent;transition:.2s}.btn:hover{transform:translateY(-1px)}.btn-orange{background:var(--orange);color:#fff;box-shadow:0 10px 24px rgba(245,130,32,.22)}.btn-light{background:white;color:var(--navy)}.btn-outline{border-color:#bfd0db;color:var(--navy);background:white}.menu{display:none;background:none;border:0;font-size:1.7rem}
+.hero{min-height:690px;display:grid;align-items:center;position:relative;overflow:hidden;background:
+linear-gradient(90deg,rgba(4,39,67,.93) 0%,rgba(4,39,67,.78) 40%,rgba(4,39,67,.22) 72%,rgba(4,39,67,.08) 100%),
+url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:110px;background:linear-gradient(transparent,rgba(4,39,67,.55))}
+.hero .container{position:relative;z-index:2}.hero-copy{max-width:690px;color:#fff;padding:82px 0 110px}.kicker{display:inline-flex;gap:8px;align-items:center;color:#ffd48f;font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}.hero h1{font-family:Georgia,serif;font-size:clamp(3rem,6vw,5.8rem);line-height:.97;margin:18px 0}.hero h1 span{color:var(--gold)}.hero p{font-size:1.15rem;line-height:1.75;max-width:610px;color:#e6f0f5}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-58px;position:relative;z-index:5}.proof .item{background:#fff;border:1px solid #e4edf2;border-radius:18px;padding:20px;box-shadow:var(--shadow)}.proof b{display:block;color:var(--navy);margin-bottom:4px}.proof span{color:var(--muted);font-size:.9rem}
+section{padding:86px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}.eyebrow{color:var(--orange);font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem}.section-head h2,.about h2,.cta h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(2.2rem,4vw,3.5rem);margin:9px 0 8px}.section-head p,.about p{color:var(--muted);line-height:1.7}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 38px rgba(7,55,92,.08)}.media{height:230px;background-size:cover;background-position:center;position:relative}.badge{position:absolute;top:16px;left:16px;background:var(--orange);color:#fff;padding:7px 11px;border-radius:999px;font-size:.75rem;font-weight:900}.card-body{padding:24px}.card h3{font-family:Georgia,serif;color:var(--navy);font-size:1.65rem;margin:0 0 8px}.meta{color:var(--muted);font-size:.94rem;line-height:1.65}.price{margin:18px 0 15px;padding-top:16px;border-top:1px solid var(--line);color:var(--navy);font-weight:900}.price span{color:var(--orange)}
+.soft{background:var(--soft)}.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.benefit{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center}.ico{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:#eaf5fa;font-size:1.5rem}.benefit h3{color:var(--navy);margin:0 0 8px}.benefit p{color:var(--muted);font-size:.92rem;line-height:1.6;margin:0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}.about-visual{min-height:440px;border-radius:28px;background:linear-gradient(145deg,rgba(5,47,80,.1),rgba(245,130,32,.08)),url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85') center/cover;box-shadow:var(--shadow)}
+.list{display:grid;gap:14px;margin:24px 0}.list div{display:flex;gap:12px}.tick{width:28px;height:28px;border-radius:50%;background:#fff0e2;color:var(--orange);display:grid;place-items:center;flex:none;font-weight:900}
+.faq{max-width:860px;margin:auto}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;border:0;background:none;text-align:left;padding:22px 0;display:flex;justify-content:space-between;font-weight:900;color:var(--navy);font-size:1rem;cursor:pointer}.faq-a{display:none;color:var(--muted);line-height:1.7;padding:0 0 20px}.faq-item.open .faq-a{display:block}
+.cta{background:linear-gradient(120deg,#07375c,#0c78aa);color:#fff}.cta .container{display:flex;justify-content:space-between;gap:40px;align-items:center}.cta h2{color:white;margin-top:0}.cta p{color:#dcebf3;max-width:690px;line-height:1.7}
+footer{background:#052f50;color:#c3d6e1;padding:54px 0 28px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}.footer-logo{height:86px;filter:brightness(0) invert(1);opacity:.95}.footer-grid h4{color:white;margin-top:0}.footer-grid p,.footer-grid a{color:#b8cddb;line-height:1.9}.copy{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;margin-top:34px;font-size:.86rem;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.wa{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-size:1.5rem;box-shadow:0 12px 30px rgba(0,0,0,.2);z-index:40}
+@media(max-width:900px){.navlinks{display:none;position:absolute;top:86px;left:16px;right:16px;background:#fff;border-radius:18px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.menu{display:block}.proof,.cards,.benefits{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.top{display:none}.brand img{height:58px}.hero{min-height:690px;background-position:62% center}.hero-copy{padding:90px 0 105px}.hero h1{font-size:3.55rem}.proof,.cards,.benefits,.footer-grid{grid-template-columns:1fr}.proof{margin-top:-35px}.section-head,.cta .container{align-items:flex-start;flex-direction:column}.media{height:210px}.about-visual{min-height:320px}.wa{right:15px;bottom:15px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="container"><span>📍 Calle Trinitaria No. 5, San Carlos, Santo Domingo</span><span>📞 809-316-1070 &nbsp; · &nbsp; ✉️ suncartravel@gmail.com</span></div></div>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#inicio"><img src="assets/logo.svg" alt="Suncar Tours & Travel"></a>
+      <div class="navlinks" id="navlinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#cruceros">Cruceros</a>
+        <a href="#por-que-suncar">Nosotros</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn-orange" href="https://wa.me/18093161070?text=Hola%20Suncar%20Tours%20%26%20Travel%2C%20quiero%20cotizar%20un%20viaje." target="_blank">Cotizar por WhatsApp</a>
+      </div>
+      <button class="menu" aria-label="Abrir menú" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <div class="kicker">⚓ Especialistas en cruceros</div>
+      <h1>Tu próximo <span>crucero</span> comienza aquí.</h1>
+      <p>Descubre vacaciones memorables con asesoría personalizada desde República Dominicana. Te ayudamos a encontrar el crucero, la cabina y la experiencia que mejor encajen contigo.</p>
+      <div class="actions">
+        <a class="btn btn-orange" href="#cruceros">Ver cruceros</a>
+        <a class="btn btn-light" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20una%20cotizaci%C3%B3n%20para%20mi%20pr%C3%B3ximo%20crucero.">Solicitar cotización</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container proof">
+  <div class="item"><b>⚓ Enfoque en cruceros</b><span>Opciones para Caribe, Europa y más destinos.</span></div>
+  <div class="item"><b>💬 Atención directa</b><span>Cotiza fácilmente por WhatsApp.</span></div>
+  <div class="item"><b>🧭 Asesoría personalizada</b><span>Te orientamos según fechas, presupuesto y estilo de viaje.</span></div>
+  <div class="item"><b>📍 Desde Santo Domingo</b><span>Atención local y acompañamiento cercano.</span></div>
+</div>
+
+<section id="cruceros">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Cruceros destacados</div><h2>Viajes para recordar</h2><p>Estas son algunas de las experiencias que podemos ayudarte a cotizar. Tarifas y disponibilidad se confirman al momento de solicitar.</p></div>
+      <a class="btn btn-outline" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20ver%20las%20ofertas%20de%20cruceros%20disponibles.">Ver ofertas actuales</a>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="media" style="background-image:url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=80')"><span class="badge">SALIDA DESDE LA ROMANA</span></div>
+        <div class="card-body"><h3>MSC Opera</h3><div class="meta">Caribe · 7 noches<br>Una excelente opción para quienes prefieren embarcar desde República Dominicana.</div><div class="price">Tarifa: <span>Solicitar cotización</span></div><a class="btn btn-orange" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20me%20interesa%20cotizar%20el%20MSC%20Opera%20desde%20La%20Romana.">Cotizar MSC Opera</a></div>
+      </article>
+      <article class="card">
+        <div class="media" style="background-image:url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=80')"><span class="badge">CARIBE</span></div>
+        <div class="card-body"><h3>Royal Caribbean</h3><div class="meta">Caribe y destinos privados<br>Opciones ideales para parejas, familias y grupos que buscan entretenimiento a bordo.</div><div class="price">Tarifa: <span>Solicitar cotización</span></div><a class="btn btn-orange" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20cotizar%20un%20crucero%20Royal%20Caribbean.">Cotizar Royal Caribbean</a></div>
+      </article>
+      <article class="card">
+        <div class="media" style="background-image:url('https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=900&q=80')"><span class="badge">EUROPA</span></div>
+        <div class="card-body"><h3>Mediterráneo</h3><div class="meta">Italia · Grecia · España y más<br>Una combinación de historia, gastronomía, ciudades costeras y navegación.</div><div class="price">Tarifa: <span>Solicitar cotización</span></div><a class="btn btn-orange" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20cotizar%20un%20crucero%20por%20el%20Mediterr%C3%A1neo.">Cotizar Mediterráneo</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="por-que-suncar">
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow">¿Por qué Suncar?</div><h2>Más que reservar: acompañarte.</h2><p>Queremos que entiendas tus opciones y viajes con mayor tranquilidad.</p></div></div>
+    <div class="benefits">
+      <div class="benefit"><div class="ico">🎧</div><h3>Asesoría personalizada</h3><p>Te ayudamos a comparar rutas, fechas, cabinas y opciones.</p></div>
+      <div class="benefit"><div class="ico">🛳️</div><h3>Especialidad en cruceros</h3><p>Enfoque en vacaciones en barco y experiencias marítimas.</p></div>
+      <div class="benefit"><div class="ico">💬</div><h3>Atención por WhatsApp</h3><p>Un canal simple y directo para comenzar tu cotización.</p></div>
+      <div class="benefit"><div class="ico">🧳</div><h3>Otros viajes</h3><p>También podemos orientarte con vacaciones, hoteles y paquetes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container about">
+    <div class="about-visual"></div>
+    <div>
+      <div class="eyebrow">Suncar Tours & Travel</div>
+      <h2>Tu agencia para navegar el mundo.</h2>
+      <p>Somos una agencia de viajes en Santo Domingo con un enfoque especial en cruceros. Nuestro objetivo es simplificar la planificación y ayudarte a elegir una experiencia adecuada para ti.</p>
+      <div class="list">
+        <div><span class="tick">✓</span><span><b>Recomendaciones según tu perfil:</b> pareja, familia, grupo o celebración.</span></div>
+        <div><span class="tick">✓</span><span><b>Orientación sobre cabinas:</b> interior, exterior, balcón o suite.</span></div>
+        <div><span class="tick">✓</span><span><b>Información clara:</b> condiciones, disponibilidad y requisitos se verifican antes de reservar.</span></div>
+      </div>
+      <a class="btn btn-orange" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20que%20me%20ayuden%20a%20planificar%20mi%20pr%C3%B3ximo%20viaje.">Hablar con Suncar</a>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="preguntas">
+  <div class="container faq">
+    <div class="section-head"><div><div class="eyebrow">Preguntas frecuentes</div><h2>Antes de reservar</h2></div></div>
+    <div class="faq-item"><button class="faq-q">¿Las tarifas de cruceros cambian?<span>＋</span></button><div class="faq-a">Sí. Las tarifas dependen de la fecha, ocupación, tipo de cabina, promociones y disponibilidad. Por eso confirmamos cada cotización antes de cualquier pago.</div></div>
+    <div class="faq-item"><button class="faq-q">¿Puedo cotizar por WhatsApp?<span>＋</span></button><div class="faq-a">Sí. Puedes escribirnos al 809-316-1070 y decirnos destino, fecha aproximada, cantidad de pasajeros y presupuesto.</div></div>
+    <div class="faq-item"><button class="faq-q">¿Trabajan viajes que no sean cruceros?<span>＋</span></button><div class="faq-a">Sí. Aunque nuestro enfoque principal son los cruceros, también podemos orientarte con vacaciones, hoteles y paquetes.</div></div>
+    <div class="faq-item"><button class="faq-q">¿Dónde están ubicados?<span>＋</span></button><div class="faq-a">Calle Trinitaria No. 5, San Carlos, Santo Domingo, República Dominicana.</div></div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="container">
+    <div><div class="eyebrow" style="color:#ffd08a">Planifica tu viaje</div><h2>Tu próximo crucero puede comenzar hoy.</h2><p>Cuéntanos qué tienes en mente y te ayudamos a organizar la cotización. No necesitas saber todos los detalles todavía.</p></div>
+    <a class="btn btn-orange" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%20Tours%20%26%20Travel%20%F0%9F%91%8B%0AQuiero%20cotizar%20mi%20pr%C3%B3ximo%20viaje.%0A%0ADestino%20o%20crucero%3A%20%0AFecha%20aproximada%3A%20%0AAdultos%3A%20%0ANi%C3%B1os%3A%20%0APresupuesto%20aproximado%3A%20">💬 Cotizar por WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><img class="footer-logo" src="assets/logo.svg" alt="Suncar Tours & Travel"><p>Especialistas en cruceros y vacaciones. Santo Domingo, República Dominicana.</p></div>
+      <div><h4>Contacto</h4><p>📞 <a href="tel:+18093161070">809-316-1070</a><br>✉️ <a href="mailto:suncartravel@gmail.com">suncartravel@gmail.com</a><br>📍 Calle Trinitaria No. 5, San Carlos</p></div>
+      <div><h4>Síguenos</h4><p>📷 <a target="_blank" href="https://www.instagram.com/suncartravel/">@suncartravel</a><br>💬 <a target="_blank" href="https://wa.me/18093161070">WhatsApp</a></p></div>
+    </div>
+    <div class="copy"><span>© 2026 Suncar Tours & Travel. Todos los derechos reservados.</span><span>Tarifas y disponibilidad sujetas a confirmación.</span></div>
+  </div>
+</footer>
+
+<a class="wa" target="_blank" aria-label="WhatsApp" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20cotizar%20un%20viaje.">💬</a>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
+document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
+</script>
+</body>
+</html>
