@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1024" role="img" aria-labelledby="title">
+<title>Suncar Tours & Travel</title>
+<rect width="1280" height="1024" fill="transparent"/>
+<g transform="translate(640 350)">
+  <circle cx="150" cy="-120" r="88" fill="#FDBB30"/>
+  <path d="M-270 60 C-110 -120 120 -150 330 -40 C165 -38 55 10 -20 95 C-95 180 -170 215 -315 205 C-230 160 -205 105 -270 60Z" fill="#F58220"/>
+  <path d="M-290 150 C-85 80 115 82 325 130 C155 135 10 170 -125 235 C-190 266 -255 282 -330 275 C-315 230 -305 188 -290 150Z" fill="#0E77A8"/>
+  <path d="M-190 -35 L-15 15 L95 -15 L130 20 L15 72 L-105 52 Z" fill="#062F54"/>
+  <path d="M-35 -15 L25 -130 L58 -130 L45 -5 Z" fill="#062F54"/>
+</g>
+<text x="640" y="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="190" font-weight="800" fill="#0A4E78">SUNCAR</text>
+<text x="640" y="820" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="10" fill="#F58220">TOURS &amp; TRAVEL</text>
+</svg>
