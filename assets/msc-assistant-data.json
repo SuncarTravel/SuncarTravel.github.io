@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -1270,107 +1270,252 @@
   "fleet": [
     {
       "name": "MSC Armonia",
-      "class": "Lirica Class"
+      "class": "Lirica Class",
+      "yachtClub": false
     },
     {
       "name": "MSC Bellissima",
-      "class": "Meraviglia Class"
+      "class": "Meraviglia Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Divina",
-      "class": "Fantasia Class"
+      "class": "Fantasia Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Euribia",
-      "class": "Meraviglia Class"
+      "class": "Meraviglia Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Fantasia",
-      "class": "Fantasia Class"
+      "class": "Fantasia Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Grandiosa",
-      "class": "Meraviglia Class"
+      "class": "Meraviglia Class",
+      "yachtClub": true,
+      "regions": [
+        "Caribe",
+        "Mediterráneo"
+      ],
+      "highlights": [
+        "Théâtre La Comédie",
+        "Atmosphere Pool",
+        "aprox. 700 m² de espacios para niños",
+        "experiencias LEGO y Chicco"
+      ],
+      "note": "Meraviglia Plus con fuerte oferta familiar, entretenimiento y grandes áreas comunes."
     },
     {
       "name": "MSC Lirica",
-      "class": "Lirica Class"
+      "class": "Lirica Class",
+      "yachtClub": false
     },
     {
       "name": "MSC Magnifica",
-      "class": "Musica Class"
+      "class": "Musica Class",
+      "yachtClub": true,
+      "regions": [
+        "Mediterráneo",
+        "Norte de Europa",
+        "Vuelta al Mundo"
+      ],
+      "highlights": [
+        "MSC Yacht Club renovado",
+        "MSC World Cruise 2027"
+      ],
+      "note": "En 2027 realiza la vuelta al mundo de MSC desde Génova."
     },
     {
       "name": "MSC Meraviglia",
-      "class": "Meraviglia Class"
+      "class": "Meraviglia Class",
+      "yachtClub": true,
+      "regions": [
+        "Bahamas",
+        "Caribe",
+        "Mediterráneo"
+      ],
+      "highlights": [
+        "Galleria Meraviglia de 96 m con techo LED",
+        "Horizon Pool",
+        "Broadway Theatre",
+        "Carousel Productions at Sea"
+      ],
+      "note": "Barco preparado para operar en distintas estaciones, con gran paseo interior y amplia oferta de entretenimiento."
     },
     {
       "name": "MSC Musica",
-      "class": "Musica Class"
+      "class": "Musica Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Opera",
-      "class": "Lirica Class"
+      "class": "Lirica Class",
+      "yachtClub": false,
+      "regions": [
+        "Caribe",
+        "Mediterráneo"
+      ],
+      "highlights": [
+        "Teatro dell’Opera",
+        "Med Pearl Casino",
+        "áreas infantiles LEGO/Chicco",
+        "doble zona de piscinas",
+        "MSC Aurea Spa"
+      ],
+      "note": "Barco de líneas clásicas y tamaño más contenido. Desde noviembre de 2026 MSC publica ocho itinerarios caribeños con salidas desde La Romana."
     },
     {
       "name": "MSC Orchestra",
-      "class": "Musica Class"
+      "class": "Musica Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Poesia",
-      "class": "Musica Class"
+      "class": "Musica Class",
+      "yachtClub": true,
+      "regions": [
+        "Alaska",
+        "Canal de Panamá",
+        "MSC Grand Voyages"
+      ],
+      "highlights": [
+        "MSC Yacht Club desde abril de 2026",
+        "3 piscinas",
+        "9 whirlpools",
+        "cine gigante junto a la piscina",
+        "Aurea Spa renovado"
+      ],
+      "note": "Opera la temporada de Alaska desde Seattle y también itinerarios que atraviesan el Canal de Panamá."
     },
     {
       "name": "MSC Preziosa",
-      "class": "Fantasia Class"
+      "class": "Fantasia Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Seascape",
-      "class": "Seaside Class"
+      "class": "Seaside Class",
+      "yachtClub": true,
+      "regions": [
+        "Caribe"
+      ],
+      "highlights": [
+        "ROBOTRON",
+        "Bridge of Sighs",
+        "Pirates Cove Aquapark",
+        "13,000 m² de espacios exteriores"
+      ],
+      "note": "Barco Seaside EVO enfocado en conectar al huésped con el mar y con amplia oferta de entretenimiento tecnológico."
     },
     {
       "name": "MSC Seashore",
-      "class": "Seaside Class"
+      "class": "Seaside Class",
+      "yachtClub": true,
+      "regions": [
+        "Bahamas",
+        "Caribe"
+      ],
+      "highlights": [
+        "Bridge of Sighs",
+        "Times Square con gran pantalla LED",
+        "amplios espacios exteriores",
+        "Ocean Cay en itinerarios seleccionados"
+      ],
+      "note": "Seaside EVO con diseño inspirado en Nueva York y fuerte conexión con áreas exteriores."
     },
     {
       "name": "MSC Seaside",
-      "class": "Seaside Class"
+      "class": "Seaside Class",
+      "yachtClub": true,
+      "regions": [
+        "Bahamas",
+        "Caribe"
+      ],
+      "highlights": [
+        "Waterfront Boardwalk",
+        "pasarelas con piso de cristal",
+        "Miami Beach Pool",
+        "elevadores panorámicos"
+      ],
+      "note": "Diseñado para unir espacios interiores y exteriores y mantener vistas cercanas al mar."
     },
     {
       "name": "MSC Seaview",
-      "class": "Seaside Class"
+      "class": "Seaside Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Sinfonia",
-      "class": "Lirica Class"
+      "class": "Lirica Class",
+      "yachtClub": false
     },
     {
       "name": "MSC Splendida",
-      "class": "Fantasia Class"
+      "class": "Fantasia Class",
+      "yachtClub": true
     },
     {
       "name": "MSC Virtuosa",
-      "class": "Meraviglia Class"
+      "class": "Meraviglia Class",
+      "yachtClub": true
     },
     {
       "name": "MSC World America",
       "class": "World Class",
-      "note": "Opera itinerarios del Caribe y Bahamas desde Miami."
+      "note": "World Class con itinerarios de Caribe Este y Oeste desde Miami, incluyendo Ocean Cay en salidas seleccionadas.",
+      "yachtClub": true,
+      "regions": [
+        "Caribe",
+        "Bahamas"
+      ],
+      "highlights": [
+        "Dirty Dancing in Concert",
+        "Luna Park Arena",
+        "World Theatre",
+        "Panorama Lounge",
+        "amplia oferta familiar"
+      ]
     },
     {
       "name": "MSC World Asia",
       "class": "World Class",
-      "note": "World Class. MSC anuncia su estreno en diciembre de 2026 con itinerarios por el Mediterráneo."
+      "note": "World Class que comienza a navegar en invierno de 2026 por el Mediterráneo, con Barcelona entre sus puertos de embarque.",
+      "yachtClub": true,
+      "regions": [
+        "Mediterráneo"
+      ],
+      "highlights": [
+        "40 bares y lounges",
+        "3 teatros",
+        "más de 10 piscinas y whirlpools",
+        "6 áreas infantiles",
+        "4 toboganes"
+      ]
     },
     {
       "name": "MSC World Atlantic",
       "class": "World Class",
-      "note": "Programado para debutar en 2027 con itinerarios del Caribe y Bahamas."
+      "note": "Programado para debutar en 2027 con itinerarios del Caribe y Bahamas.",
+      "yachtClub": true
     },
     {
       "name": "MSC World Europa",
       "class": "World Class",
-      "note": "World Class. MSC anuncia Mediterráneo en 2026-2028 y temporada de invierno 2026-2027 rumbo a las Antillas."
+      "note": "Primer barco de la clase World, en servicio desde 2022.",
+      "yachtClub": true,
+      "regions": [
+        "Mediterráneo",
+        "Emiratos / Oriente Medio"
+      ],
+      "highlights": [
+        "World Class",
+        "diseño de popa en Y",
+        "gran enfoque en entretenimiento y espacios de nueva generación"
+      ]
     }
   ],
   "regionAliases": {
