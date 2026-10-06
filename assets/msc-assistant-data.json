@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -1251,6 +1251,20 @@
       "route": "Génova → Mediterráneo → África → Sudamérica → Pacífico Sur → Nueva Zelanda → Australia → Hawái → Los Ángeles → México → Costa Rica → Canal de Panamá → Caribe → Canarias → Mediterráneo → Génova",
       "publicPriceNote": "MSC World Cruise 2027: tarifa y disponibilidad a confirmar con Suncar.",
       "inclusions": "MSC publica 25 países, 45 destinos, 7 pernoctaciones y 15 excursiones incluidas para la vuelta al mundo completa. Suncar confirma condiciones del segmento o viaje completo."
+    },
+    {
+      "id": "preziosa-2026-10-11-norway",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "Europe",
+      "region": "Norte de Europa",
+      "ship": "MSC Preziosa",
+      "port": "Hamburg",
+      "start": "2026-10-11",
+      "end": "2026-10-18",
+      "nights": 7,
+      "route": "Hamburgo → navegación → Bergen → Stavanger → Kristiansand → Oslo → navegación → Hamburgo",
+      "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
+      "inclusions": "La referencia pública muestra pensión completa en buffet y restaurante principal, gimnasio/piscinas, espectáculos y clubes infantiles entre lo incluido. Suncar confirma condiciones finales."
     }
   ],
   "fleet": [
