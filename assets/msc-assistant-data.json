@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -3149,28 +3149,29 @@
       "LATAM / México",
       "Suncar"
     ],
-    "rule": "No mezclar promociones o precios de mercados distintos. Toda tarifa pública es solo referencia y Suncar confirma el mercado aplicable, moneda, impuestos, beneficios y disponibilidad antes de reservar.",
-    "clientRouting": "Toda venta, cotización, reserva y pago termina con Suncar Tours & Travel."
+    "rule": "El índice automatizado usa el mercado público MSC USA como referencia. No se presenta como tarifa contractual de Suncar. Suncar confirma mercado aplicable, moneda, impuestos, beneficios, categoría y disponibilidad antes de reservar.",
+    "clientRouting": "Toda venta, cotización, reserva y pago termina con Suncar Tours & Travel.",
+    "publicIndex": "El buscador puede mostrar miles de salidas del índice público MSC USA y combinarlas con promociones verificadas por Suncar."
   },
   "lastVerificationSummary": {
     "date": "2026-10-06",
-    "scope": "MSC USA prioritario, LATAM/México y otras páginas oficiales cuando aportan cobertura adicional",
-    "rule": "Tarifas públicas solo como referencia; ventas, disponibilidad final y pagos con Suncar."
+    "scope": "Índice público MSC USA + datos verificados por Suncar, con cobertura de barcos, puertos, regiones, fechas, noches, itinerarios y referencias públicas de precio.",
+    "rule": "Las tarifas públicas son informativas; ventas, disponibilidad final, documentación crítica y pagos se confirman con Suncar."
   },
   "regionInfo": {
     "Emiratos / Oriente Medio": {
       "status": "not_currently_available",
-      "note": "MSC Global indica actualmente que no hay itinerarios disponibles para Dubai, Abu Dhabi y Qatar. Conservamos la zona en el buscador para activarla cuando MSC publique nuevas salidas.",
+      "note": "El índice público MSC consultado no muestra actualmente salidas disponibles para Dubai, Abu Dhabi y Qatar. Suncar puede revisarlo manualmente si buscas una fecha futura específica.",
       "verifiedAt": "2026-10-06"
     },
     "Canal de Panamá": {
-      "status": "special_itineraries",
-      "note": "MSC publica el Canal de Panamá principalmente dentro de Grand Voyages de MSC Poesia entre Miami y Seattle y dentro de World Cruises de MSC Magnifica. Las fechas futuras exactas se muestran cuando quedan verificadas en el índice.",
+      "status": "available",
+      "note": "El buscador incorpora las salidas del Canal de Panamá que aparecen en el índice público MSC. Son itinerarios especiales y Suncar confirma la tarifa y disponibilidad final.",
       "verifiedAt": "2026-10-06"
     },
     "Alaska": {
       "status": "available",
-      "note": "MSC Poesia opera itinerarios de 7 noches desde Seattle; MSC publica 20 fechas en la serie de Alaska 2027.",
+      "note": "El buscador incorpora las salidas de Alaska que aparecen en el índice público MSC, principalmente a bordo de MSC Poesia desde Seattle. Suncar confirma la opción final.",
       "verifiedAt": "2026-10-06"
     }
   },
