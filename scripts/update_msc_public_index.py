@@ -203,7 +203,7 @@ def main():
         hits_by_cruise = {}
         ship_stats = {}
         for code in ship_codes:
-            filters = BASE_FILTER + f" AND (shipCd.key:{code})"
+            filters = BASE_FILTER + f' AND (shipCd.key:"{code}")'
             first = query(filters, page_no=0, hits=1000)
             nb_hits = int(first.get("nbHits") or 0)
             nb_pages = int(first.get("nbPages") or 1)
