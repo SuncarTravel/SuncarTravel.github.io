@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -35,7 +35,7 @@
         "que trae",
         "qué trae"
       ],
-      "answer": "En términos generales, un crucero MSC incluye alojamiento en la cabina reservada, comidas en los espacios incluidos de la tarifa y entretenimiento/actividades incluidos. Bebidas, Wi‑Fi, restaurantes de especialidad, excursiones, spa y otros extras dependen de la tarifa o promoción. Suncar confirma exactamente qué incluye tu opción antes de reservar."
+      "answer": "En términos generales, los cruceros MSC incluyen alojamiento en la cabina reservada, desayuno, almuerzo y snacks en el buffet, además de cena en el restaurante principal y entretenimiento/actividades incluidos. Restaurantes de especialidad, bebidas, Wi‑Fi, excursiones, spa y otros extras dependen de la tarifa o promoción. Suncar confirma exactamente qué incluye tu opción antes de reservar."
     },
     {
       "id": "experiences",
@@ -390,6 +390,24 @@
         "medio oriente"
       ],
       "answer": "MSC comercializa itinerarios en Dubai, Abu Dhabi, Qatar y otros puertos de Oriente Medio en temporadas seleccionadas. La programación de esta región puede cambiar por condiciones operativas y de seguridad, por lo que el Asistente MSC no debe asumir una salida sin verificarla. Suncar confirma itinerario, fecha y disponibilidad antes de cotizar."
+    },
+    {
+      "id": "market_pricing",
+      "keywords": [
+        "mercado usa",
+        "mercado latam",
+        "mercado mexico",
+        "mercado méxico",
+        "precio usa",
+        "precio latam",
+        "precio mexico",
+        "precio méxico",
+        "promocion usa",
+        "promoción usa",
+        "promocion latam",
+        "promoción latam"
+      ],
+      "answer": "MSC puede publicar promociones y tarifas diferentes según el mercado de venta. El Asistente MSC de Suncar mantiene esas referencias separadas y no mezcla automáticamente beneficios de USA, LATAM o México. Suncar confirma qué mercado aplica a tu reserva y cuál es la tarifa final disponible."
     }
   ],
   "departures": [
@@ -1711,6 +1729,20 @@
       "route": "Barcelona → Palma de Mallorca → Alicante → Málaga → navegación → Las Palmas → travesía Atlántica → St. John's (Antigua) → Kingstown → Bridgetown → Fort-de-France → Pointe-à-Pitre → St. John's → Philipsburg → navegación → Basseterre → Roseau → Fort-de-France",
       "publicPriceNote": "Desde US$1,486 por persona como referencia pública observada para esta travesía; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
       "inclusions": "Grand Voyage de una vía desde Barcelona hasta Fort-de-France."
+    },
+    {
+      "id": "world-atlantic-2027-12-11-canaveral",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World Atlantic",
+      "port": "Port Canaveral (Orlando)",
+      "start": "2027-12-11",
+      "end": "2027-12-18",
+      "nights": 7,
+      "route": "Port Canaveral → Ocean Cay MSC Marine Reserve → navegación → Costa Maya → Cozumel → navegación → Nassau → Port Canaveral",
+      "publicPriceNote": "Desde US$910 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
     }
   ],
   "fleet": [
@@ -1945,8 +1977,18 @@
     {
       "name": "MSC World Atlantic",
       "class": "World Class",
-      "note": "Programado para debutar en 2027 con itinerarios del Caribe y Bahamas.",
-      "yachtClub": true
+      "note": "Debuta en noviembre de 2027 y navega desde Port Canaveral en su temporada inaugural del Caribe.",
+      "yachtClub": true,
+      "regions": [
+        "Caribe",
+        "Bahamas"
+      ],
+      "highlights": [
+        "The Clubhouse",
+        "Viva La Musica",
+        "promenade al aire libre",
+        "MSC Yacht Club"
+      ]
     },
     {
       "name": "MSC World Europa",
@@ -2343,6 +2385,32 @@
       ],
       "publicPriceNote": "Salida publicada desde US$1,262 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
       "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "poesia-alaska-spring-2027",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Alaska",
+      "ship": "MSC Poesia",
+      "port": "Seattle",
+      "nights": 7,
+      "route": "Seattle → Ketchikan → Icy Strait Point (Hoonah) → Tracy Arm → Juneau → Victoria → Seattle",
+      "dates": [
+        "2027-04-26",
+        "2027-05-03",
+        "2027-05-10"
+      ],
+      "publicPriceNote": "Serie publicada desde US$648 por persona como referencia; la tarifa cambia por fecha. Suncar confirma precio y disponibilidad exactos.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
     }
-  ]
+  ],
+  "marketPolicy": {
+    "preferredMarkets": [
+      "USA",
+      "LATAM / México",
+      "Suncar"
+    ],
+    "rule": "No mezclar promociones o precios de mercados distintos. Toda tarifa pública es solo referencia y Suncar confirma el mercado aplicable, moneda, impuestos, beneficios y disponibilidad antes de reservar.",
+    "clientRouting": "Toda venta, cotización, reserva y pago termina con Suncar Tours & Travel."
+  }
 }
