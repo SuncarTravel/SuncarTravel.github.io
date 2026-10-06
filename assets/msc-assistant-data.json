@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -488,6 +488,21 @@
         "msc méxico"
       ],
       "answer": "Suncar también toma en cuenta información y condiciones publicadas para el mercado de México, pero no mezcla automáticamente sus promociones con USA o LATAM. Descuentos, moneda, Voyagers Club, bebidas y otras condiciones pueden variar por mercado. Suncar confirma cuál aplica a tu reserva antes del pago."
+    },
+    {
+      "id": "world_america_details",
+      "keywords": [
+        "world america",
+        "msc world america",
+        "world promenade",
+        "eataly",
+        "paxos",
+        "the harbour",
+        "botanic garden pool",
+        "la plage",
+        "luna park arena"
+      ],
+      "answer": "MSC World America es un barco World Class que navega desde Miami por el Caribe Oriental y Occidental. Tiene una gran oferta de gastronomía, entretenimiento, áreas familiares, piscinas y MSC Yacht Club. En la base de Suncar también están cargadas salidas e itinerarios para que puedas buscar por mes, fecha o puerto."
     }
   ],
   "departures": [
@@ -1979,6 +1994,51 @@
       "publicPriceNote": "Desde US$370 por persona como referencia pública observada para esta salida de 3 noches; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
       "inclusions": "Cabina, escalas, beneficios y condiciones finales se confirman con Suncar.",
       "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "world-america-2027-08-14",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World America",
+      "port": "Miami",
+      "start": "2027-08-14",
+      "end": "2027-08-21",
+      "nights": 7,
+      "route": "Miami → navegación → Isla de Roatán → Costa Maya → Cozumel → navegación → Ocean Cay MSC Marine Reserve → Miami",
+      "publicPriceNote": "Desde US$1,028 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "world-america-2027-09-18-14n",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World America",
+      "port": "Miami",
+      "start": "2027-09-18",
+      "end": "2027-10-02",
+      "nights": 14,
+      "route": "Miami → navegación → Puerto Plata → San Juan → navegación → navegación → Ocean Cay MSC Marine Reserve → Miami → navegación → Isla de Roatán → Costa Maya → Cozumel → navegación → Ocean Cay MSC Marine Reserve → Miami",
+      "publicPriceNote": "Desde US$1,631 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Combinación de Caribe Oriental y Occidental. Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "world-america-2027-10-09",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World America",
+      "port": "Miami",
+      "start": "2027-10-09",
+      "end": "2027-10-16",
+      "nights": 7,
+      "route": "Miami → navegación → Isla de Roatán → Costa Maya → Cozumel → navegación → Ocean Cay MSC Marine Reserve → Miami",
+      "publicPriceNote": "Desde US$878 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     }
   ],
   "fleet": [
@@ -2230,19 +2290,54 @@
     {
       "name": "MSC World America",
       "class": "World Class",
-      "note": "World Class con itinerarios de Caribe Este y Oeste desde Miami, incluyendo Ocean Cay en salidas seleccionadas.",
+      "note": "Barco World Class de MSC con itinerarios de Caribe Oriental y Occidental desde Miami, incluyendo Ocean Cay en salidas seleccionadas.",
       "yachtClub": true,
       "regions": [
         "Caribe",
         "Bahamas"
       ],
       "highlights": [
-        "Dirty Dancing in Concert",
+        "World Promenade con vistas al mar y espectáculos LED",
         "Luna Park Arena",
         "World Theatre",
         "Panorama Lounge",
-        "amplia oferta familiar"
-      ]
+        "The Harbour y Family Aventura",
+        "Botanic Garden Pool",
+        "La Plage Pool",
+        "Zen Area para adultos"
+      ],
+      "dining": [
+        "19 restaurantes en total",
+        "4 restaurantes principales",
+        "2 buffets",
+        "Eataly at Sea",
+        "Paxos",
+        "Kaito Sushi Bar",
+        "Kaito Teppanyaki",
+        "Butcher's Cut Steakhouse",
+        "HOLA! Tacos & Cantina"
+      ],
+      "bars": [
+        "alrededor de 20 bares, lounges y cafés",
+        "Masters of the Sea Pub",
+        "Coffee Emporium"
+      ],
+      "yachtClubDetails": [
+        "152 suites",
+        "áreas privadas distribuidas en las cubiertas superiores de proa",
+        "mayordomo y concierge 24/7",
+        "restaurante y lounge exclusivos",
+        "sundeck y piscina privados",
+        "Premium Extra incluido dentro de la experiencia Yacht Club",
+        "Wi‑Fi de alta velocidad y acceso al área termal según condiciones de la experiencia"
+      ],
+      "family": [
+        "zona familiar dedicada",
+        "clubes infantiles por edades",
+        "coches de choque",
+        "actividades y entretenimiento familiar durante el día y la noche"
+      ],
+      "searchSummary": "Si preguntas por MSC World America, el Asistente Suncar debe mostrar información del barco y también las próximas salidas cargadas desde Miami."
     },
     {
       "name": "MSC World Asia",
