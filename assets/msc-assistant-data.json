@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -408,6 +408,73 @@
         "promoción latam"
       ],
       "answer": "MSC puede publicar promociones y tarifas diferentes según el mercado de venta. El Asistente MSC de Suncar mantiene esas referencias separadas y no mezcla automáticamente beneficios de USA, LATAM o México. Suncar confirma qué mercado aplica a tu reserva y cuál es la tarifa final disponible."
+    },
+    {
+      "id": "deposit_reservation",
+      "keywords": [
+        "deposito",
+        "depósito",
+        "separar crucero",
+        "separacion",
+        "separación",
+        "cuanto deposito",
+        "cuánto depósito",
+        "reservar con deposito",
+        "reservar con depósito"
+      ],
+      "answer": "Como referencia de trabajo de Suncar, cuando la salida está fuera de la ventana de pago final puede ser posible separar el crucero con depósito. En tarifas regulares se han manejado montos como US$99 p/p para 5 noches o menos, US$199 p/p para 6–14 noches y US$300 p/p para 15 noches o más. Yacht Club y algunas promociones pueden tener depósitos no reembolsables. El monto real y su condición se confirman siempre con Suncar antes de pagar."
+    },
+    {
+      "id": "payments_balance",
+      "keywords": [
+        "abono",
+        "abonos",
+        "pago parcial",
+        "pagar poco a poco",
+        "saldo",
+        "fecha saldo",
+        "pago final",
+        "final payment"
+      ],
+      "answer": "Una vez reservada una salida que todavía esté fuera de la ventana de pago final, normalmente puedes hacer abonos voluntarios. En la referencia de trabajo de Suncar, el saldo se programa a más tardar alrededor de 93 días antes de navegar, aunque la fecha exacta puede cambiar por tarifa, mercado, grupo o promoción. Suncar te entrega la fecha de saldo aplicable a tu reserva."
+    },
+    {
+      "id": "cancellation",
+      "keywords": [
+        "cancelar",
+        "cancelacion",
+        "cancelación",
+        "reembolso",
+        "penalidad",
+        "no reembolsable",
+        "nr",
+        "devolver dinero"
+      ],
+      "answer": "Las cancelaciones dependen de la tarifa, duración, temporada y mercado. Algunas promociones tienen depósito no reembolsable y las penalidades normalmente aumentan al acercarse la salida. No conviene asumir un porcentaje automático: Suncar revisa la regla exacta de tu tarifa y te la confirma antes del pago. Se recomienda seguro de viaje y cancelación cuando corresponda."
+    },
+    {
+      "id": "name_change",
+      "keywords": [
+        "cambio nombre",
+        "cambiar pasajero",
+        "sustituir pasajero",
+        "sustitucion pasajero",
+        "sustitución pasajero",
+        "name change"
+      ],
+      "answer": "En determinadas reservas MSC puede permitirse una sustitución o cambio de nombre, pero depende de la etapa de la reserva, tarifa y condiciones aplicables. Puede haber penalidad cuando el viaje está cerca. Suncar debe validar el caso concreto antes de prometer el cambio."
+    },
+    {
+      "id": "travel_insurance",
+      "keywords": [
+        "seguro viaje",
+        "seguro de viaje",
+        "seguro asistencia",
+        "seguro cancelacion",
+        "seguro cancelación",
+        "travel insurance"
+      ],
+      "answer": "Suncar recomienda considerar un seguro de asistencia en viaje y, cuando sea posible, cobertura de cancelación. La cobertura, exclusiones, condiciones preexistentes y plazo para reclamar dependen de la póliza; conviene revisarla antes de comprarla y no asumir que cualquier motivo de cancelación estará cubierto."
     }
   ],
   "departures": [
