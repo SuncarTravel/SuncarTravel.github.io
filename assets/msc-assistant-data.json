@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -194,6 +194,162 @@
         "msc world europa"
       ],
       "answer": "MSC cuenta con una amplia flota que incluye las clases Lirica, Musica, Fantasia, Meraviglia, Seaside y World. El Asistente MSC de Suncar ya reconoce por nombre los barcos cargados en su catálogo interno y puede orientarte sobre el barco solicitado. Para fechas, precios y disponibilidad, Suncar confirma la salida concreta antes de reservar."
+    },
+    {
+      "id": "webcheckin",
+      "keywords": [
+        "web check in",
+        "web check-in",
+        "check in online",
+        "check-in online",
+        "e-ticket",
+        "eticket",
+        "boarding pass",
+        "pase de abordar"
+      ],
+      "answer": "El Web Check-In de MSC está disponible desde que la reserva queda confirmada hasta 2 días antes de la salida. Todos los huéspedes deben completar sus datos según el pasaporte. Si reservaste mediante una agencia, los boletos pueden solicitarse a tu agente; con Suncar te ayudamos a revisar este proceso."
+    },
+    {
+      "id": "embarkation_slot",
+      "keywords": [
+        "hora embarque",
+        "hora de embarque",
+        "slot",
+        "llegar temprano",
+        "llegar tarde",
+        "cuando embarcar",
+        "cuándo embarcar"
+      ],
+      "answer": "MSC asigna una franja de check-in. Si llegas antes, pueden pedirte esperar; si llegas después de que cierre tu franja, podrían negarte el embarque. El check-in y el embarque cierran 2 horas antes de la salida del barco. Suncar te recomienda seguir siempre la hora indicada en tu documentación final."
+    },
+    {
+      "id": "luggage_limits",
+      "keywords": [
+        "peso maleta",
+        "peso equipaje",
+        "limite equipaje",
+        "límite equipaje",
+        "cuantas maletas",
+        "cuántas maletas",
+        "equipaje de mano"
+      ],
+      "answer": "Como referencia general de MSC, cada huésped puede facturar hasta 2 maletas de máximo 23 kg cada una y llevar hasta 2 piezas de mano dentro de las medidas indicadas por MSC. La cabina no debe superar 100 kg u 8 piezas en total. Si llegas al puerto en avión, la aerolínea puede tener límites diferentes; Suncar revisa ambos."
+    },
+    {
+      "id": "minors_policy",
+      "keywords": [
+        "bebe",
+        "bebé",
+        "infante",
+        "menor",
+        "menores",
+        "edad minima",
+        "edad mínima",
+        "niños solos",
+        "cabina menores"
+      ],
+      "answer": "MSC aplica reglas especiales para menores. Los bebés menores de 2 años pueden viajar en muchas salidas, pero en cruceros de 11 noches o más el menor debe tener al menos 2 años al embarcar. En itinerarios de EE. UU., la edad considerada adulta puede ser 21 años; en otros itinerarios suele ser 18. Hay excepciones y condiciones para cabinas ocupadas por menores, así que Suncar debe validar el caso concreto antes de reservar."
+    },
+    {
+      "id": "pregnancy",
+      "keywords": [
+        "embarazada",
+        "embarazo",
+        "pregnancy",
+        "gestacion",
+        "gestación",
+        "semanas embarazo"
+      ],
+      "answer": "MSC no acepta a una huésped que vaya a superar 23 semanas y 6 días de embarazo en ningún momento del crucero. Si estará por debajo de ese límite, se requiere documentación médica que confirme fecha probable de parto, embarazo de bajo riesgo y aptitud para viajar. Suncar te ayuda a revisar el requisito antes de confirmar."
+    },
+    {
+      "id": "accessibility",
+      "keywords": [
+        "silla de ruedas",
+        "movilidad reducida",
+        "accesibilidad",
+        "necesidad especial",
+        "alergia",
+        "dieta especial",
+        "perro servicio"
+      ],
+      "answer": "MSC dispone de asistencia para movilidad, necesidades médicas y dietas especiales, sujeta a disponibilidad y condiciones del barco. Conviene informar estas necesidades al reservar o al menos 30 días antes; embarazo al menos 2 semanas antes y animales de servicio con mayor anticipación. Suncar puede ayudarte a tramitar la solicitud."
+    },
+    {
+      "id": "onboard_payment",
+      "keywords": [
+        "pagar a bordo",
+        "pago a bordo",
+        "tarjeta a bordo",
+        "cruise card",
+        "cuenta a bordo",
+        "efectivo a bordo"
+      ],
+      "answer": "Las compras a bordo se cargan a la Cruise Card. Tras embarcar, puedes vincular una tarjeta de crédito/débito/prepago en los puntos de activación o dejar un depósito en efectivo en Guest Services. La cuenta final se liquida según el método registrado."
+    },
+    {
+      "id": "dining",
+      "keywords": [
+        "restaurante",
+        "restaurantes",
+        "buffet",
+        "cena",
+        "turno cena",
+        "comer a bordo",
+        "comida incluida",
+        "my choice"
+      ],
+      "answer": "Los restaurantes principales y el buffet forman parte de la experiencia incluida según la tarifa; los restaurantes de especialidad normalmente tienen cargo. Dependiendo del barco y la experiencia puedes tener turno temprano o tarde; los huéspedes Aurea disponen de mayor flexibilidad con My Choice dentro del horario del restaurante principal."
+    },
+    {
+      "id": "wifi_detail",
+      "keywords": [
+        "browse stream",
+        "browse and stream",
+        "streaming",
+        "netflix",
+        "youtube",
+        "videollamada",
+        "video llamada"
+      ],
+      "answer": "MSC ofrece al menos dos niveles de internet: Browse, pensado para mensajería, web y correo sin streaming de video o música; y Browse & Stream, que sí permite videollamadas y streaming. La cantidad de dispositivos depende del paquete comprado o de la promoción de tu reserva."
+    },
+    {
+      "id": "drinks_2026",
+      "keywords": [
+        "easy package",
+        "minors package",
+        "alcohol free",
+        "alcohol-free",
+        "paquete menores",
+        "paquete sin alcohol",
+        "premium extra 2026"
+      ],
+      "answer": "Para salidas de verano 2026 en adelante, MSC publica paquetes como Easy, Premium Extra, Alcohol-Free y Minors. Easy y Premium Extra permiten hasta 15 bebidas alcohólicas por día por huésped adulto; Premium Extra tiene cobertura más amplia, incluso restaurantes de especialidad y determinadas islas privadas. Las condiciones exactas cambian por itinerario y fecha, por eso Suncar confirma el paquete aplicable."
+    },
+    {
+      "id": "service_charge_usa",
+      "keywords": [
+        "hotel service charge",
+        "cargo servicio hotel",
+        "cargo de servicio usa",
+        "propinas usa",
+        "propinas caribe",
+        "propinas alaska"
+      ],
+      "answer": "Para reservas del mercado de EE. UU. realizadas desde el 11 de mayo de 2026, MSC publica para Caribe, Alaska y EE. UU. un Hotel Service Charge de US$17 por persona/noche desde 2 años, o US$23 en Yacht Club; menores de 2 años no pagan ese cargo. Otros mercados, destinos o fechas de reserva pueden tener importes distintos, así que Suncar confirma el cargo de tu reserva."
+    },
+    {
+      "id": "world_cruise_2027",
+      "keywords": [
+        "world cruise 2027",
+        "vuelta al mundo 2027",
+        "magnifica vuelta al mundo",
+        "121 noches",
+        "122 dias",
+        "122 días"
+      ],
+      "answer": "La MSC World Cruise 2027 está programada en MSC Magnifica desde Génova el 5 de enero hasta el 6 de mayo de 2027: 121 noches / 122 días, 25 países y 45 destinos. MSC también ofrece segmentos. Suncar puede cotizar disponibilidad y condiciones para el tramo que te interese."
     }
   ],
   "departures": [
@@ -997,6 +1153,104 @@
       "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$586 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
       "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "world-america-2027-01-02",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World America",
+      "port": "Miami",
+      "start": "2027-01-02",
+      "end": "2027-01-09",
+      "nights": 7,
+      "route": "Miami → navegación → Isla de Roatán → Costa Maya → Cozumel → navegación → Ocean Cay MSC Marine Reserve → Miami",
+      "publicPriceNote": "Desde US$787 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia sujeto a cambio; cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "poesia-alaska-2027-05-03",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Alaska",
+      "ship": "MSC Poesia",
+      "port": "Seattle",
+      "start": "2027-05-03",
+      "end": "2027-05-10",
+      "nights": 7,
+      "route": "Seattle → Ketchikan → Icy Strait Point (Hoonah) → Tracy Arm → Juneau → Victoria → Seattle",
+      "publicPriceNote": "Desde US$648 por persona como referencia pública observada para el 3 de mayo de 2027; la referencia indica tasas e impuestos incluidos.",
+      "inclusions": "MSC Poesia opera la temporada de Alaska desde Seattle. Suncar confirma cabina, tarifa, beneficios y disponibilidad."
+    },
+    {
+      "id": "musica-2026-11-16-santos",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "region": "Sudamérica",
+      "ship": "MSC Musica",
+      "port": "Santos (São Paulo)",
+      "start": "2026-11-16",
+      "end": "2026-11-20",
+      "nights": 4,
+      "route": "Santos → navegación → Ilha Grande → Ilhabela → Santos",
+      "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
+      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "musica-2026-11-26-santos",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "region": "Sudamérica",
+      "ship": "MSC Musica",
+      "port": "Santos (São Paulo)",
+      "start": "2026-11-26",
+      "end": "2026-11-30",
+      "nights": 4,
+      "route": "Santos → navegación → Búzios → Ilha Grande → Santos",
+      "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
+      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "preziosa-2026-12-29-rotterdam",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "Europe",
+      "region": "Norte de Europa",
+      "ship": "MSC Preziosa",
+      "port": "Rotterdam (Amsterdam)",
+      "start": "2026-12-29",
+      "end": "2027-01-06",
+      "nights": 8,
+      "route": "Rotterdam → Cherbourg → Le Havre (París) → Southampton → navegación → Hamburgo → navegación → Zeebrugge → Rotterdam",
+      "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
+      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "sinfonia-2026-12-01-genoa",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "Europe",
+      "region": "Mediterráneo",
+      "ship": "MSC Sinfonia",
+      "port": "Genoa (Portofino)",
+      "start": "2026-12-01",
+      "end": "2026-12-08",
+      "nights": 7,
+      "route": "Génova → Livorno (Florencia) → Civitavecchia (Roma) → navegación → Valencia → Barcelona → Marsella → Génova",
+      "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
+      "inclusions": "La referencia pública del itinerario muestra pensión completa en buffet y restaurante principal como parte de lo incluido; Suncar confirma la tarifa final."
+    },
+    {
+      "id": "magnifica-world-cruise-2027-01-05",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "Global",
+      "region": "Vuelta al Mundo",
+      "ship": "MSC Magnifica",
+      "port": "Genoa (Portofino)",
+      "start": "2027-01-05",
+      "end": "2027-05-06",
+      "nights": 121,
+      "route": "Génova → Mediterráneo → África → Sudamérica → Pacífico Sur → Nueva Zelanda → Australia → Hawái → Los Ángeles → México → Costa Rica → Canal de Panamá → Caribe → Canarias → Mediterráneo → Génova",
+      "publicPriceNote": "MSC World Cruise 2027: tarifa y disponibilidad a confirmar con Suncar.",
+      "inclusions": "MSC publica 25 países, 45 destinos, 7 pernoctaciones y 15 excursiones incluidas para la vuelta al mundo completa. Suncar confirma condiciones del segmento o viaje completo."
     }
   ],
   "fleet": [
@@ -1104,5 +1358,124 @@
       "class": "World Class",
       "note": "World Class. MSC anuncia Mediterráneo en 2026-2028 y temporada de invierno 2026-2027 rumbo a las Antillas."
     }
-  ]
+  ],
+  "regionAliases": {
+    "Caribe": [
+      "caribe",
+      "caribbean",
+      "antillas",
+      "puerto rico",
+      "republica dominicana",
+      "república dominicana",
+      "cozumel",
+      "roatan",
+      "roatán",
+      "san juan",
+      "puerto plata"
+    ],
+    "Bahamas": [
+      "bahamas",
+      "nassau",
+      "ocean cay",
+      "freeport"
+    ],
+    "Mediterráneo": [
+      "mediterraneo",
+      "mediterráneo",
+      "espana",
+      "españa",
+      "italia",
+      "francia",
+      "grecia",
+      "turquia",
+      "turquía",
+      "malta",
+      "croacia",
+      "barcelona",
+      "roma",
+      "genova",
+      "génova",
+      "venecia",
+      "atenas"
+    ],
+    "Norte de Europa": [
+      "norte de europa",
+      "northern europe",
+      "noruega",
+      "fiordos",
+      "fiordos noruegos",
+      "escandinavia",
+      "dinamarca",
+      "suecia",
+      "islandia",
+      "hamburgo",
+      "southampton",
+      "rotterdam",
+      "oslo",
+      "copenhague"
+    ],
+    "Alaska": [
+      "alaska",
+      "seattle",
+      "juneau",
+      "ketchikan",
+      "tracy arm",
+      "icy strait",
+      "victoria canada"
+    ],
+    "Sudamérica": [
+      "sudamerica",
+      "sudamérica",
+      "brasil",
+      "argentina",
+      "uruguay",
+      "santos",
+      "rio de janeiro",
+      "buenos aires"
+    ],
+    "Asia": [
+      "asia",
+      "japon",
+      "japón",
+      "china",
+      "corea"
+    ],
+    "Emiratos / Oriente Medio": [
+      "emiratos",
+      "dubai",
+      "abu dhabi",
+      "doha",
+      "oriente medio"
+    ],
+    "Canarias y Madeira": [
+      "canarias",
+      "islas canarias",
+      "madeira",
+      "funchal",
+      "tenerife"
+    ],
+    "Sudáfrica": [
+      "sudafrica",
+      "sudáfrica",
+      "cape town",
+      "ciudad del cabo",
+      "durban"
+    ],
+    "Canal de Panamá": [
+      "canal de panama",
+      "canal de panamá",
+      "panama canal"
+    ],
+    "MSC Grand Voyages": [
+      "grand voyage",
+      "grand voyages",
+      "reposicionamiento",
+      "reposicionamiento msc"
+    ],
+    "Vuelta al Mundo": [
+      "vuelta al mundo",
+      "world cruise",
+      "msc world cruise"
+    ]
+  }
 }
