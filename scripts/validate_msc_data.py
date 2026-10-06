@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "assets" / "msc-assistant-data.json"
+INDEX = ROOT / "index.html"
 
 errors = []
 
@@ -98,6 +99,25 @@ for k in knowledge:
 
 for s in fleet:
     need(bool(s.get("class")), f"{s.get('name','?')}: falta class")
+
+# Validación del front-end del Asistente MSC
+try:
+    index_html = INDEX.read_text(encoding="utf-8")
+    need("returnavailableDepartures" not in index_html, "index: typo returnavailableDepartures detectado")
+    start = index_html.find("const allDepartures=()=>")
+    end = index_html.find("const availableDepartures=()=>")
+    if start >= 0 and end > start:
+        all_departures_src = index_html[start:end]
+        need("availableDepartures()" not in all_departures_src, "index: recursión allDepartures -> availableDepartures")
+    else:
+        errors.append("index: funciones de expansión de salidas no encontradas")
+    for match in re.findall(r"https://wa\.me/(\d+)", index_html):
+        need(match == "18093161070", f"index: WhatsApp externo/no autorizado {match}")
+    need("msccruisesusa.com" not in index_html.lower(), "index: contiene enlace directo a MSC USA")
+    need("msccruceros.com" not in index_html.lower(), "index: contiene enlace directo a MSC LATAM/México")
+    need("bookingUrl" not in index_html, "index: contiene bookingUrl externo")
+except Exception as exc:
+    errors.append(f"index: no se pudo validar: {exc}")
 
 # Evita dos registros exactos del mismo barco y fecha entre departures explícitas.
 seen_ship_dates = set()
