@@ -6,6 +6,7 @@ on:
     paths:
       - "assets/msc-assistant-data.json"
       - "scripts/validate_msc_data.py"
+      - "scripts/test_msc_coverage.py"
       - ".github/workflows/validate-msc.yml"
   workflow_dispatch:
 
