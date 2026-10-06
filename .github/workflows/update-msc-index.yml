@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
@@ -54,7 +56,21 @@ jobs:
           git add assets/msc-public-index.json
           if git diff --cached --quiet; then
             echo "Sin cambios en el índice."
-          else
-            git commit -m "Refresh MSC public cruise index"
-            git push
+            exit 0
           fi
+
+          git commit -m "Refresh MSC public cruise index"
+
+          for intento in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              echo "Índice MSC publicado correctamente."
+              exit 0
+            fi
+            echo "El repositorio cambió durante la actualización. Reintentando..."
+            sleep 4
+          done
+
+          echo "No se pudo publicar el índice MSC después de 3 intentos."
+          exit 1
