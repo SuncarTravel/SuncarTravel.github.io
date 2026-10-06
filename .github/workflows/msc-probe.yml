@@ -1,0 +1,32 @@
+name: Probar índice público MSC
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/msc_probe.py"
+      - ".github/workflows/msc-probe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar dependencias
+        run: pip install requests beautifulsoup4
+      - name: Probar índice público de MSC
+        run: python scripts/msc_probe.py
+      - name: Guardar diagnóstico
+        uses: actions/upload-artifact@v4
+        with:
+          name: msc-probe
+          path: msc-probe.json
