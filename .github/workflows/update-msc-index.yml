@@ -2,6 +2,11 @@ name: Actualizar índice MSC público
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_msc_public_index.py"
+      - ".github/workflows/update-msc-index.yml"
   schedule:
     - cron: "15 12 * * 1"
 
