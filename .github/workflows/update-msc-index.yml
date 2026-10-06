@@ -8,7 +8,7 @@ on:
       - "scripts/update_msc_public_index.py"
       - ".github/workflows/update-msc-index.yml"
   schedule:
-    - cron: "15 12 * * 1"
+    - cron: "15 12 * * *"
 
 permissions:
   contents: write
