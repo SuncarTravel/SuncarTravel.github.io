@@ -132,8 +132,8 @@ footer{background:#052f50;color:#bdd0dc;padding:56px 0 28px}.footer-grid{display
 </div>
 
 <div class="opera-body">
-<div class="opera-card">
-<h3>Semana Santa 2027 · disponibilidad limitada</h3>
+<div class="opera-card limited-offer" id="semanaSantaOffer" data-expire="2026-12-11T00:00:00-04:00">
+<div class="promo-tag">OFERTA POR TIEMPO LIMITADO</div><h3>Semana Santa 2027 · disponibilidad limitada</h3>
 <p><strong>Salida de referencia: 22 de marzo de 2027 · 7 noches.</strong><br>La Romana · Isla Catalina · Oranjestad · Willemstad · Kralendijk · St. George · La Romana.</p>
 <div class="price-list">
 <div class="price-row"><span>Interior garantizada · máx. 2 pax</span><strong>US$1,820 / cabina</strong></div>
@@ -166,7 +166,7 @@ footer{background:#052f50;color:#bdd0dc;padding:56px 0 28px}.footer-grid{display
 <div class="container">
 <div class="section-head"><div><div class="eyebrow">También trabajamos</div><h2>Más navieras para comparar</h2><p>MSC es nuestra especialidad principal. Cuando otra naviera encaja mejor con tus fechas, presupuesto o estilo de viaje, también la cotizamos.</p></div></div>
 
-<div class="promo-strip" id="carnivalPromo">
+<div class="promo-strip limited-offer" id="carnivalPromo" data-expire="2026-10-06T00:00:00-04:00">
 <div>
 <div class="promo-tag">OFERTA CARNIVAL · HASTA 5 OCT</div>
 <strong>Hasta 40% de descuento + 50% de descuento en depósitos + mejora de camarote</strong>
@@ -268,17 +268,14 @@ footer{background:#052f50;color:#bdd0dc;padding:56px 0 28px}.footer-grid{display
 </a>
 </div></div>
 </div>
-<div class="copy"><span>© 2026 Suncar Tours & Travel.</span><span>Tarifas, promociones, itinerarios, requisitos y disponibilidad sujetos a confirmación al momento de reservar.</span></div>
+<div class="copy"><span>© 2026 Suncar Tours & Travel.</span><span>Tarifas, promociones, itinerarios, requisitos y disponibilidad sujetos a confirmación al momento de reservar. Las ofertas por tiempo limitado se retiran automáticamente al vencer.</span></div>
 </div></footer>
 <a class="wa" target="_blank" rel="noopener" aria-label="WhatsApp" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20cotizar%20un%20crucero.">Cotizar por WhatsApp</a>
 <script>
-const semanaSantaCard=document.querySelector('#opera-ofertas .opera-card');
-const semanaSantaDeadline=new Date('2026-12-11T00:00:00-04:00');
-if(semanaSantaCard && new Date()>=semanaSantaDeadline) semanaSantaCard.remove();
-
-const promo=document.getElementById('carnivalPromo');
-const promoDeadline=new Date('2026-10-06T00:00:00-04:00');
-if(promo && new Date()>=promoDeadline) promo.remove();
+document.querySelectorAll('.limited-offer[data-expire]').forEach(offer=>{
+  const expires=new Date(offer.dataset.expire);
+  if(!Number.isNaN(expires.getTime()) && new Date()>=expires) offer.remove();
+});
 
 const menuButton=document.getElementById('menuButton');
 const navlinks=document.getElementById('navlinks');
