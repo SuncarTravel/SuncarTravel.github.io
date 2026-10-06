@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -1762,5 +1762,267 @@
       "world cruise",
       "msc world cruise"
     ]
-  }
+  },
+  "series": [
+    {
+      "id": "world-america-west-2026-27",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World America",
+      "port": "Miami",
+      "nights": 7,
+      "route": "Miami → navegación → Isla de Roatán → Costa Maya → Cozumel → navegación → Ocean Cay MSC Marine Reserve → Miami",
+      "dates": [
+        "2026-09-12",
+        "2026-09-26",
+        "2026-10-10",
+        "2026-10-24",
+        "2026-11-07",
+        "2026-11-21",
+        "2026-12-05",
+        "2026-12-19",
+        "2027-01-02",
+        "2027-01-16",
+        "2027-01-30",
+        "2027-02-13",
+        "2027-02-27",
+        "2027-03-13",
+        "2027-03-27"
+      ],
+      "publicPriceNote": "Serie publicada desde US$443 por persona como referencia; la tarifa cambia por fecha. Suncar confirma precio y disponibilidad exactos.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "world-america-east-2026-27",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World America",
+      "port": "Miami",
+      "nights": 7,
+      "route": "Miami → navegación → Puerto Plata → San Juan → navegación → navegación → Ocean Cay MSC Marine Reserve → Miami",
+      "dates": [
+        "2026-09-19",
+        "2026-10-03",
+        "2026-10-17",
+        "2026-10-31",
+        "2026-11-14",
+        "2026-11-28",
+        "2026-12-12",
+        "2026-12-26",
+        "2027-01-09",
+        "2027-01-23",
+        "2027-02-06",
+        "2027-02-20",
+        "2027-03-06",
+        "2027-03-20"
+      ],
+      "publicPriceNote": "Serie publicada desde US$469 por persona como referencia; la tarifa cambia por fecha. Suncar confirma precio y disponibilidad exactos.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "lirica-eastern-med-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Lirica",
+      "port": "Venice - Marghera",
+      "nights": 7,
+      "route": "Venice - Marghera → Kotor → Mykonos → Mykonos → Syros → Ancona → Venice - Marghera",
+      "dates": [
+        "2026-09-12",
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10",
+        "2026-10-17"
+      ],
+      "publicPriceNote": "Serie publicada desde US$775 por persona como referencia; Suncar confirma la tarifa de cada salida.",
+      "inclusions": "Tasas, cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "meraviglia-med-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Meraviglia",
+      "port": "Naples (Pompeii)",
+      "nights": 7,
+      "route": "Naples → Livorno → Marseille → Barcelona → La Goulette → Palermo → Naples",
+      "dates": [
+        "2026-09-12",
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10"
+      ],
+      "publicPriceNote": "Serie publicada desde US$813 por persona como referencia; Suncar confirma la tarifa de cada salida.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "orchestra-west-med-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Orchestra",
+      "port": "Valencia",
+      "nights": 7,
+      "route": "Valencia → Livorno → Civitavecchia (Roma) → Genoa → Marseille → Tarragona → Valencia",
+      "dates": [
+        "2026-09-12",
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10",
+        "2026-10-17"
+      ],
+      "publicPriceNote": "Serie publicada desde US$776 por persona como referencia; Suncar confirma la tarifa de cada salida.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "sinfonia-east-med-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Sinfonia",
+      "port": "Bari",
+      "nights": 7,
+      "route": "Bari → Santorini → Piraeus (Atenas) → Katakolon (Olympia) → Kefalonia → Corfu → Bari",
+      "dates": [
+        "2026-09-12",
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10",
+        "2026-10-17"
+      ],
+      "publicPriceNote": "Serie publicada desde US$1,020 por persona como referencia; Suncar confirma la tarifa de cada salida.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "seaview-west-med-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Seaview",
+      "port": "Genoa (Portofino)",
+      "nights": 7,
+      "route": "Genoa → Civitavecchia (Roma) → Palermo → Ibiza → Barcelona → Marseille → Genoa",
+      "dates": [
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10",
+        "2026-10-17",
+        "2026-10-24",
+        "2026-10-31"
+      ],
+      "publicPriceNote": "Serie publicada desde US$902 por persona como referencia; Suncar confirma la tarifa de cada salida.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "grandiosa-barcelona-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Grandiosa",
+      "port": "Barcelona",
+      "nights": 7,
+      "route": "Barcelona → Cannes → Genoa → La Spezia → Civitavecchia (Roma) → Palma de Mallorca → Barcelona",
+      "dates": [
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10",
+        "2026-10-17"
+      ],
+      "publicPriceNote": "Serie publicada desde US$919 por persona como referencia; Suncar confirma la tarifa de cada salida.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "world-europa-med-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC World Europa",
+      "port": "Marseille (Provence)",
+      "nights": 7,
+      "route": "Marseille → Genoa → Naples → Messina → La Valletta → Barcelona → Marseille",
+      "dates": [
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10",
+        "2026-10-17",
+        "2026-10-24",
+        "2026-10-31"
+      ],
+      "publicPriceNote": "Serie publicada desde US$890 por persona como referencia; Suncar confirma la tarifa de cada salida.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "seashore-west-caribbean-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC Seashore",
+      "port": "Port Canaveral (Orlando)",
+      "nights": 7,
+      "route": "Port Canaveral → Nassau → Cozumel → Costa Maya → Ocean Cay MSC Marine Reserve → Port Canaveral",
+      "dates": [
+        "2026-09-20",
+        "2026-10-04",
+        "2026-10-18"
+      ],
+      "publicPriceNote": "Serie publicada desde US$349 por persona como referencia promocional; Suncar confirma la tarifa y disponibilidad de cada salida.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "bellissima-asia-4n-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Asia",
+      "ship": "MSC Bellissima",
+      "port": "Shanghai",
+      "nights": 4,
+      "route": "Shanghai → Jeju Island → Busan → Shanghai",
+      "dates": [
+        "2026-09-12",
+        "2026-09-16"
+      ],
+      "publicPriceNote": "Serie publicada desde US$479 por persona como referencia; Suncar confirma la tarifa de cada salida.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "bellissima-asia-5n-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Asia",
+      "ship": "MSC Bellissima",
+      "port": "Shanghai",
+      "nights": 5,
+      "route": "Shanghai → Jeju Island → Sasebo → Busan → Shanghai",
+      "dates": [
+        "2026-09-20"
+      ],
+      "publicPriceNote": "Salida publicada desde US$744 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "id": "magnifica-north-europe-2026",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Norte de Europa",
+      "ship": "MSC Magnifica",
+      "port": "Copenhagen",
+      "nights": 10,
+      "route": "Copenhagen → Warnemünde (Berlín) → Gdynia → Klaipeda → Riga → Tallinn → Helsinki → Stockholm → Stockholm → Copenhagen",
+      "dates": [
+        "2026-09-12"
+      ],
+      "publicPriceNote": "Salida publicada desde US$1,262 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    }
+  ]
 }
