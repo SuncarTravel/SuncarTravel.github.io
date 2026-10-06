@@ -75,8 +75,34 @@ if len(DATA.get("knowledge", [])) < 25:
 else:
     print(f"OK: knowledge {len(DATA.get('knowledge', []))} bloques")
 
+print(f"TOTAL salidas únicas cargadas/derivadas: {len(DEPS)}")
+print("Cobertura MSC crítica inicial: OK" if not failed else "Cobertura MSC crítica inicial: con fallos")
+
+
+# Regresión: cada barco de la flota debe tener al menos una salida futura
+TODAY = "2026-10-06"
+future = [d for d in DEPS if d.get("start", "") >= TODAY]
+future_ships = {d.get("ship") for d in future}
+missing_future = sorted({s.get("name") for s in fleet} - future_ships)
+if missing_future:
+    print("FAIL: barcos sin salida futura:", ", ".join(missing_future))
+    failed = True
+else:
+    print(f"OK: Todos los barcos con salida futura ({len(future_ships)}/{len(fleet)})")
+
+# Regresión comercial: no guardar enlaces de compra/proveedor ni desviar ventas.
+for item in DATA.get("departures", []) + DATA.get("series", []):
+    for key in ("bookingUrl", "externalUrl", "bookNowUrl", "sourceUrl"):
+        if key in item:
+            print(f"FAIL: {item.get('id')} contiene campo externo prohibido {key}")
+            failed = True
+
+policy = DATA.get("policy", {})
+if policy.get("externalBooking") is not False or DATA.get("whatsapp") != "18093161070":
+    print("FAIL: política comercial de Suncar alterada")
+    failed = True
+else:
+    print("OK: ventas y cotización permanecen con Suncar")
+
 if failed:
     raise SystemExit(1)
-
-print(f"TOTAL salidas únicas cargadas/derivadas: {len(DEPS)}")
-print("Cobertura MSC crítica: OK")
