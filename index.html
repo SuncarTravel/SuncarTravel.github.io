@@ -84,7 +84,7 @@ footer{background:#052f50;color:#bdd0dc;padding:56px 0 28px}.footer-grid{display
 
 <section class="offers-section" id="ofertas">
 <div class="container">
-<div class="section-head"><div><div class="eyebrow">Ofertas por tiempo limitado</div><h2>Escapadas y paquetes destacados</h2><p>Seleccionamos las ofertas que vale la pena mostrar. Cuando vencen, se retiran automáticamente.</p></div></div>
+<div class="section-head"><div><div class="eyebrow">Ofertas por tiempo limitado</div><h2>Escapadas y paquetes destacados</h2><p>Las organizamos por fecha: las próximas salidas aparecen primero. Cuando vencen, se retiran automáticamente.</p></div></div>
 
 <div class="offers-grid">
 
@@ -514,6 +514,13 @@ document.querySelectorAll('.limited-offer[data-expire]').forEach(offer=>{
   const expires=new Date(offer.dataset.expire);
   if(!Number.isNaN(expires.getTime()) && new Date()>=expires) offer.remove();
 });
+
+const offersGrid=document.querySelector('#ofertas .offers-grid');
+if(offersGrid){
+  [...offersGrid.querySelectorAll(':scope > .limited-offer[data-expire]')]
+    .sort((a,b)=>new Date(a.dataset.expire)-new Date(b.dataset.expire))
+    .forEach(offer=>offersGrid.appendChild(offer));
+}
 const cruiseQuoteForm=document.getElementById('cruiseQuoteForm');
 const quoteMonth=document.getElementById('qMonth');
 const quoteChildren=document.getElementById('qChildren');
