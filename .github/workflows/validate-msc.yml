@@ -24,3 +24,5 @@ jobs:
           python-version: "3.12"
       - name: Validar base MSC
         run: python scripts/validate_msc_data.py
+      - name: Probar cobertura del Asistente MSC
+        run: python scripts/test_msc_coverage.py
