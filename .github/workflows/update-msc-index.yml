@@ -1,0 +1,55 @@
+name: Actualizar índice MSC público
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 12 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: msc-public-index
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar navegador
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Actualizar índice público MSC
+        run: python scripts/update_msc_public_index.py
+      - name: Validar índice
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("assets/msc-public-index.json")
+          d=json.loads(p.read_text(encoding="utf-8"))
+          assert d["salesOwner"]=="Suncar Tours & Travel"
+          assert len(d["departures"])>=1000
+          assert d["stats"]["ships"]>=20
+          assert all(x.get("ship") and x.get("start") and x.get("region") for x in d["departures"])
+          assert all(not str(x.get("id","")).startswith(("http://","https://")) for x in d["departures"])
+          print("Índice MSC público: OK", d["stats"])
+          PY
+      - name: Guardar cambios
+        run: |
+          git config user.name "Suncar MSC Index"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/msc-public-index.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en el índice."
+          else
+            git commit -m "Refresh MSC public cruise index"
+            git push
+          fi
