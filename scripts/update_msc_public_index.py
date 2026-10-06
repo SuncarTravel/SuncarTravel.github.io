@@ -106,29 +106,18 @@ def transform(hit, refreshed):
 
     return {
         "id": hit.get("cruiseID"),
-        "cruiseID": hit.get("cruiseID"),
-        "sourceType": "OfficialPublicIndex",
-        "sourceMarket": "USA",
         "region": region_for(hit),
         "ship": ship,
-        "shipCode": (hit.get("shipCd") or {}).get("key"),
         "port": embark,
         "disembark": disembark,
         "start": start,
         "end": iso_end(start, nights),
         "nights": nights,
         "itineraryName": hit.get("itineraryName"),
-        "itineraryCode": hit.get("itinCd"),
         "route": " → ".join(route_parts),
-        "stops": visiting,
         "priceFrom": adult_price,
         "cabinPriceFrom": cabin_price,
-        "currency": "USD",
         "priceCategory": (hit.get("category") or {}).get("value"),
-        "publicPriceNote": price_note,
-        "priceIncludesFeesTaxes": True,
-        "sourceUpdatedAt": source_updated,
-        "refreshedAt": refreshed,
     }
 
 def main():
@@ -246,10 +235,11 @@ def main():
     price_count = sum(1 for d in departures if isinstance(d.get("priceFrom"), (int, float)) and d["priceFrom"] > 0)
 
     payload = {
-        "version": 1,
+        "version": 2,
         "refreshedAt": refreshed,
         "market": "USA",
         "currency": "USD",
+        "priceIncludesFeesTaxes": True,
         "salesOwner": "Suncar Tours & Travel",
         "disclaimer": (
             "Índice informativo construido con datos públicos de MSC. "
