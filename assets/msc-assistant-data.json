@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -1743,6 +1743,76 @@
       "route": "Port Canaveral → Ocean Cay MSC Marine Reserve → navegación → Costa Maya → Cozumel → navegación → Nassau → Port Canaveral",
       "publicPriceNote": "Desde US$910 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
       "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "euribia-2026-12-29-naples",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Euribia",
+      "port": "Naples (Pompeii)",
+      "start": "2026-12-29",
+      "end": "2027-01-05",
+      "nights": 7,
+      "route": "Naples (Pompeii) → Palermo (Monreale) → La Goulette → navegación → Barcelona → Marseille (Provence) → Genoa (Portofino) → Naples (Pompeii)",
+      "publicPriceNote": "Desde US$1,402 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "splendida-2027-07-17-istanbul",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Splendida",
+      "port": "Istanbul",
+      "start": "2027-07-17",
+      "end": "2027-07-26",
+      "nights": 9,
+      "route": "Istanbul → navegación → Corfu → Bari → Trieste (Venice) → navegación → Katakolon (Olympia) → Piraeus (Athens) → Kusadasi → Istanbul",
+      "publicPriceNote": "Desde US$1,918 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "splendida-2027-10-10-trieste",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Splendida",
+      "port": "Trieste (Venice)",
+      "start": "2027-10-10",
+      "end": "2027-10-19",
+      "nights": 9,
+      "route": "Trieste (Venice) → Split → navegación → Piraeus (Athens) → Kusadasi → Istanbul → navegación → Corfu → Bari → Trieste (Venice)",
+      "publicPriceNote": "Desde US$1,530 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "virtuosa-2027-06-27-livorno",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC Virtuosa",
+      "port": "Livorno (Florence)",
+      "start": "2027-06-27",
+      "end": "2027-07-04",
+      "nights": 7,
+      "route": "Livorno (Florence) → Marseille (Provence) → Barcelona → navegación → La Goulette → Palermo (Monreale) → Naples (Pompeii) → Livorno (Florence)",
+      "publicPriceNote": "Desde US$1,176 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "divina-2027-03-14-santos",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Sudamérica",
+      "ship": "MSC Divina",
+      "port": "Santos (São Paulo)",
+      "start": "2027-03-14",
+      "end": "2027-03-17",
+      "nights": 3,
+      "route": "Salida desde Santos (São Paulo), Brasil. Itinerario exacto de escalas a confirmar con Suncar para esta salida.",
+      "publicPriceNote": "Desde US$370 por persona como referencia pública observada para esta salida de 3 noches; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, escalas, beneficios y condiciones finales se confirman con Suncar."
     }
   ],
   "fleet": [
@@ -1759,12 +1829,37 @@
     {
       "name": "MSC Divina",
       "class": "Fantasia Class",
-      "yachtClub": true
+      "yachtClub": true,
+      "regions": [
+        "Mediterráneo",
+        "Sudamérica",
+        "MSC Grand Voyages"
+      ],
+      "highlights": [
+        "Pantheon Theater",
+        "Casino Veneziano",
+        "Infinity Pool",
+        "escaleras Swarovski",
+        "MSC Yacht Club"
+      ],
+      "note": "Fantasia Class inspirada en Sophia Loren; opera Mediterráneo y Sudamérica según temporada."
     },
     {
       "name": "MSC Euribia",
       "class": "Meraviglia Class",
-      "yachtClub": true
+      "yachtClub": true,
+      "regions": [
+        "Norte de Europa",
+        "Mediterráneo",
+        "MSC Grand Voyages"
+      ],
+      "highlights": [
+        "Galleria Euribia con gran cúpula LED",
+        "5 piscinas y parque acuático",
+        "MSC Aurea Spa",
+        "casco artístico #SaveTheSea"
+      ],
+      "note": "Navega Norte de Europa en verano y Mediterráneo en invierno 2026–2027, con Grand Voyages de reposicionamiento."
     },
     {
       "name": "MSC Fantasia",
@@ -1934,12 +2029,37 @@
     {
       "name": "MSC Splendida",
       "class": "Fantasia Class",
-      "yachtClub": true
+      "yachtClub": true,
+      "regions": [
+        "Mediterráneo",
+        "Sudamérica",
+        "MSC Grand Voyages"
+      ],
+      "highlights": [
+        "The Strand Theater",
+        "Royal Palm Casino",
+        "Club 33 Disco",
+        "4 piscinas",
+        "MSC Yacht Club"
+      ],
+      "note": "Fantasia Class con itinerarios de Mediterráneo en verano 2026–2027 y Sudamérica en invierno 2026–2027."
     },
     {
       "name": "MSC Virtuosa",
       "class": "Meraviglia Class",
-      "yachtClub": true
+      "yachtClub": true,
+      "regions": [
+        "Norte de Europa",
+        "Sudamérica",
+        "Mediterráneo"
+      ],
+      "highlights": [
+        "Meraviglia Class",
+        "amplia oferta de entretenimiento familiar",
+        "MSC Yacht Club",
+        "promenade interior"
+      ],
+      "note": "Opera Norte de Europa en verano 2026, Sudamérica en invierno 2026–2027 y Mediterráneo en verano 2027."
     },
     {
       "name": "MSC World America",
