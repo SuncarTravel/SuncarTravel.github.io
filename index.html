@@ -29,7 +29,7 @@ footer{background:#052f50;color:#bdd0dc;padding:52px 0 26px}.footer-grid{display
 <header><div class="container"><nav>
 <a class="brand" href="index.html" aria-label="Suncar Tours & Travel"><img src="assets/logo.svg?v=4" alt="Suncar Tours & Travel"></a>
 <div class="navlinks" id="navlinks">
-<a href="#inicio">Inicio</a><a href="#msc">MSC Cruises</a><a href="#otros">Otros cruceros</a><a href="#servicio">Cómo te ayudamos</a><a href="#contacto">Contacto</a>
+<a href="#inicio">Inicio</a><a href="#msc">MSC Cruises</a><a href="#otros">Otros cruceros</a><a href="#servicio">Cómo te ayudamos</a><a href="#preguntas">Preguntas</a><a href="#contacto">Contacto</a>
 <a class="btn btn-orange" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20cotizar%20un%20crucero.">Cotizar por WhatsApp</a>
 </div>
 <button class="menu" aria-label="Abrir menú" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
@@ -116,6 +116,56 @@ footer{background:#052f50;color:#bdd0dc;padding:52px 0 26px}.footer-grid{display
 </div>
 </section>
 
+<section id="preguntas">
+<div class="container faq">
+<div class="guide-head"><div class="eyebrow">Preguntas frecuentes</div><h2>Respuestas rápidas antes de cotizar</h2><p>Lo importante, explicado de forma sencilla.</p></div>
+
+<div class="faq-item">
+<button class="faq-q">¿Cómo sé cuál crucero MSC me conviene?<span>＋</span></button>
+<div class="faq-a">Depende de tus fechas, presupuesto, destino, tipo de cabina y estilo de viaje. Te ayudamos a comparar barcos e itinerarios para escoger una opción adecuada.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">¿Qué suele incluir un crucero MSC?<span>＋</span></button>
+<div class="faq-a">Normalmente incluye alojamiento, comidas en buffet y restaurantes principales, entretenimiento y actividades según el barco. Los detalles exactos dependen de la tarifa y la navegación.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">¿Bebidas e internet están incluidos?<span>＋</span></button>
+<div class="faq-a">Depende de la promoción contratada. Algunas tarifas pueden incluir paquetes de bebidas o internet y otras permiten agregarlos con costo adicional.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">¿Puedo reservar con un depósito y luego hacer abonos?<span>＋</span></button>
+<div class="faq-a">En muchas salidas sí, siempre sujeto a la fecha de navegación y condiciones de la tarifa. Te confirmamos el depósito, fecha límite de saldo y opciones de pago antes de reservar.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">¿Qué documentos necesito para viajar?<span>＋</span></button>
+<div class="faq-a">Los requisitos dependen del itinerario y de la documentación del pasajero. Te orientamos, pero la confirmación oficial corresponde a las autoridades migratorias y consulares.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">¿Qué diferencia hay entre Bella, Fantastica, Aurea y Yacht Club?<span>＋</span></button>
+<div class="faq-a">Son diferentes niveles de experiencia MSC. Bella prioriza precio, Fantastica ofrece más flexibilidad, Aurea añade beneficios y Yacht Club es la experiencia premium con servicios y áreas exclusivas.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">¿Cuándo hago el check-in del crucero?<span>＋</span></button>
+<div class="faq-a">MSC habilita el check-in antes de la salida. Te ayudamos a identificar el período aplicable a tu reserva y a completar los pasos necesarios con tiempo.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">¿Suncar también trabaja otras navieras?<span>＋</span></button>
+<div class="faq-a">Sí. MSC Cruises es nuestra especialidad principal, pero también podemos ayudarte con Royal Caribbean y otras opciones según destino, fecha y presupuesto.</div>
+</div>
+
+<div style="margin-top:28px">
+<a class="btn btn-orange" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20tengo%20una%20pregunta%20sobre%20un%20crucero.">Tengo otra pregunta</a>
+</div>
+</div>
+</section>
+
 <section class="cta" id="contacto"><div class="container">
 <div><div class="eyebrow" style="color:#ffd08a">Cotiza con Suncar</div><h2>Encuentra el crucero correcto para ti.</h2><p>Dinos cuántas personas viajan, tus fechas aproximadas, el destino que te interesa y tu presupuesto. Nosotros te ayudamos a comparar las mejores opciones disponibles.</p></div>
 <a class="btn btn-orange" target="_blank" href="https://wa.me/18093161070?text=Hola%20Suncar%20Tours%20%26%20Travel.%0AQuiero%20cotizar%20un%20crucero.%0A%0AFechas%3A%20%0AAdultos%3A%20%0ANi%C3%B1os%3A%20%0ADestino%20o%20naviera%3A%20%0APresupuesto%20aproximado%3A%20">Cotizar por WhatsApp</a>
@@ -132,6 +182,11 @@ footer{background:#052f50;color:#bdd0dc;padding:52px 0 26px}.footer-grid{display
 </div></footer>
 <a class="wa" target="_blank" aria-label="WhatsApp" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20cotizar%20un%20crucero.">WA</a>
 <script>
+document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{
+  const item=b.parentElement;
+  document.querySelectorAll('.faq-item.open').forEach(x=>{if(x!==item)x.classList.remove('open')});
+  item.classList.toggle('open');
+}));
 document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
 </script>
 </body>
