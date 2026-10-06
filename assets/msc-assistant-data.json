@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -16,7 +16,12 @@
     "Alaska",
     "Sudamérica",
     "Asia",
-    "Emiratos / Oriente Medio"
+    "Emiratos / Oriente Medio",
+    "Canarias y Madeira",
+    "Sudáfrica",
+    "Canal de Panamá",
+    "MSC Grand Voyages",
+    "Vuelta al Mundo"
   ],
   "knowledge": [
     {
@@ -173,6 +178,22 @@
         "comprar"
       ],
       "answer": "El Asistente MSC puede orientarte y mostrar datos cargados, pero la venta no se realiza con MSC. Toda tarifa, disponibilidad y reserva se confirma exclusivamente con Suncar Tours & Travel. Puedes usar “Buscar crucero” y al final enviar la solicitud por WhatsApp a Suncar."
+    },
+    {
+      "id": "fleet",
+      "keywords": [
+        "flota",
+        "barcos",
+        "barco",
+        "ships",
+        "qué barcos",
+        "que barcos",
+        "msc world america",
+        "msc world asia",
+        "msc world atlantic",
+        "msc world europa"
+      ],
+      "answer": "MSC cuenta con una amplia flota que incluye las clases Lirica, Musica, Fantasia, Meraviglia, Seaside y World. El Asistente MSC de Suncar ya reconoce por nombre los barcos cargados en su catálogo interno y puede orientarte sobre el barco solicitado. Para fechas, precios y disponibilidad, Suncar confirma la salida concreta antes de reservar."
     }
   ],
   "departures": [
@@ -374,6 +395,139 @@
       "suncarPrice": "Consultar con Suncar",
       "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
       "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "seaside-2026-10-12",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Bahamas",
+      "ship": "MSC Seaside",
+      "port": "Miami",
+      "start": "2026-10-12",
+      "end": "2026-10-16",
+      "nights": 4,
+      "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Ocean Cay MSC Marine Reserve → Miami",
+      "publicPriceNote": "Desde US$199 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "La referencia publicada indica tasas e impuestos incluidos. Beneficios, cabina y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "world-america-2026-10-31",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World America",
+      "port": "Miami",
+      "start": "2026-10-31",
+      "end": "2026-11-07",
+      "nights": 7,
+      "route": "Miami → navegación → Puerto Plata → San Juan → navegación → navegación → Ocean Cay MSC Marine Reserve → Miami",
+      "publicPriceNote": "Desde US$514 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "La referencia publicada indica tasas e impuestos incluidos. Beneficios, cabina y condiciones finales se confirman con Suncar."
+    }
+  ],
+  "fleet": [
+    {
+      "name": "MSC Armonia",
+      "class": "Lirica Class"
+    },
+    {
+      "name": "MSC Bellissima",
+      "class": "Meraviglia Class"
+    },
+    {
+      "name": "MSC Divina",
+      "class": "Fantasia Class"
+    },
+    {
+      "name": "MSC Euribia",
+      "class": "Meraviglia Class"
+    },
+    {
+      "name": "MSC Fantasia",
+      "class": "Fantasia Class"
+    },
+    {
+      "name": "MSC Grandiosa",
+      "class": "Meraviglia Class"
+    },
+    {
+      "name": "MSC Lirica",
+      "class": "Lirica Class"
+    },
+    {
+      "name": "MSC Magnifica",
+      "class": "Musica Class"
+    },
+    {
+      "name": "MSC Meraviglia",
+      "class": "Meraviglia Class"
+    },
+    {
+      "name": "MSC Musica",
+      "class": "Musica Class"
+    },
+    {
+      "name": "MSC Opera",
+      "class": "Lirica Class"
+    },
+    {
+      "name": "MSC Orchestra",
+      "class": "Musica Class"
+    },
+    {
+      "name": "MSC Poesia",
+      "class": "Musica Class"
+    },
+    {
+      "name": "MSC Preziosa",
+      "class": "Fantasia Class"
+    },
+    {
+      "name": "MSC Seascape",
+      "class": "Seaside Class"
+    },
+    {
+      "name": "MSC Seashore",
+      "class": "Seaside Class"
+    },
+    {
+      "name": "MSC Seaside",
+      "class": "Seaside Class"
+    },
+    {
+      "name": "MSC Seaview",
+      "class": "Seaside Class"
+    },
+    {
+      "name": "MSC Sinfonia",
+      "class": "Lirica Class"
+    },
+    {
+      "name": "MSC Splendida",
+      "class": "Fantasia Class"
+    },
+    {
+      "name": "MSC Virtuosa",
+      "class": "Meraviglia Class"
+    },
+    {
+      "name": "MSC World America",
+      "class": "World Class",
+      "note": "Opera itinerarios del Caribe y Bahamas desde Miami."
+    },
+    {
+      "name": "MSC World Asia",
+      "class": "World Class",
+      "note": "World Class incorporado en 2026; opera itinerarios del Mediterráneo."
+    },
+    {
+      "name": "MSC World Atlantic",
+      "class": "World Class",
+      "note": "Programado para debutar en 2027 con itinerarios del Caribe y Bahamas."
+    },
+    {
+      "name": "MSC World Europa",
+      "class": "World Class"
     }
   ]
 }
