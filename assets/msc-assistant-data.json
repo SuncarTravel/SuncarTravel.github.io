@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -364,6 +364,32 @@
         "puntos dobles"
       ],
       "answer": "MSC publica beneficios de reserva anticipada para miembros de Voyagers Club en salidas elegibles: con 12 meses o más de anticipación puede aplicar 5% + 5% de descuento y puntos dobles; ciertos niveles también pueden recibir crédito a bordo. Entre 9 y menos de 12 meses puede aplicar 5% + 5%. La elegibilidad, vigencia y combinación con otras promociones debe confirmarse con Suncar antes de reservar."
+    },
+    {
+      "id": "panama_canal",
+      "keywords": [
+        "canal de panama",
+        "canal de panamá",
+        "panama canal",
+        "cruzar panama",
+        "cruzar panamá",
+        "transito canal",
+        "tránsito canal"
+      ],
+      "answer": "MSC publica travesías del Canal de Panamá principalmente en MSC Poesia y en determinadas vueltas al mundo de MSC Magnifica. En MSC Poesia los Grand Voyages pueden unir Miami y Seattle pasando por Cartagena, Colón, Puntarenas, Huatulco, Cabo San Lucas, San Diego y Los Ángeles. Estas travesías suelen durar aproximadamente 18 a 25 noches; Suncar confirma la salida concreta, tarifa y disponibilidad."
+    },
+    {
+      "id": "middle_east",
+      "keywords": [
+        "dubai",
+        "abu dhabi",
+        "doha",
+        "qatar",
+        "emiratos",
+        "oriente medio",
+        "medio oriente"
+      ],
+      "answer": "MSC comercializa itinerarios en Dubai, Abu Dhabi, Qatar y otros puertos de Oriente Medio en temporadas seleccionadas. La programación de esta región puede cambiar por condiciones operativas y de seguridad, por lo que el Asistente MSC no debe asumir una salida sin verificarla. Suncar confirma itinerario, fecha y disponibilidad antes de cotizar."
     }
   ],
   "departures": [
@@ -1573,6 +1599,118 @@
       "route": "La Romana → Isla Catalina → navegación → Bridgetown → Fort-de-France → Pointe-à-Pitre → Road Town (Tortola) → La Romana",
       "publicPriceNote": "Desde US$665 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
       "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "bellissima-2027-08-02-shanghai",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Asia",
+      "ship": "MSC Bellissima",
+      "port": "Shanghai",
+      "start": "2027-08-02",
+      "end": "2027-08-06",
+      "nights": 4,
+      "route": "Shanghai → navegación → Naha (Okinawa) → navegación → Shanghai",
+      "publicPriceNote": "Desde US$649 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "bellissima-2027-09-12-shanghai",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Asia",
+      "ship": "MSC Bellissima",
+      "port": "Shanghai",
+      "start": "2027-09-12",
+      "end": "2027-09-21",
+      "nights": 9,
+      "route": "Shanghai → Jeju Island → Busan → navegación → Shanghai → navegación → Fukuoka → Busan → navegación → Shanghai",
+      "publicPriceNote": "Desde US$1,328 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "bellissima-2027-12-12-tokyo",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Asia",
+      "ship": "MSC Bellissima",
+      "port": "Tokyo",
+      "start": "2027-12-12",
+      "end": "2027-12-16",
+      "nights": 4,
+      "route": "Tokyo → navegación → navegación → Ishigaki → Keelung (Taipei)",
+      "publicPriceNote": "Desde US$505 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Itinerario de una vía de Tokyo a Keelung. Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "armonia-2026-12-26-durban",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Sudáfrica",
+      "ship": "MSC Armonia",
+      "port": "Durban",
+      "start": "2026-12-26",
+      "end": "2027-01-07",
+      "nights": 12,
+      "route": "Durban → navegación → navegación → navegación → Port Louis → Port Louis → Port Louis → La Possession (Réunion) → navegación → navegación → navegación → Portuguese Island (Inhaca) → Durban",
+      "publicPriceNote": "Desde US$2,117 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "sinfonia-2027-12-16-durban",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Sudáfrica",
+      "ship": "MSC Sinfonia",
+      "port": "Durban",
+      "start": "2027-12-16",
+      "end": "2027-12-21",
+      "nights": 5,
+      "route": "Durban → navegación → Pomene → Portuguese Island (Inhaca) → navegación → Durban",
+      "publicPriceNote": "Desde US$825 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "fantasia-2026-12-22-funchal",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Canarias y Madeira",
+      "ship": "MSC Fantasia",
+      "port": "Funchal (Madeira)",
+      "start": "2026-12-22",
+      "end": "2026-12-29",
+      "nights": 7,
+      "route": "Funchal → navegación → Arrecife de Lanzarote → Las Palmas de Gran Canaria → Santa Cruz de La Palma → Santa Cruz de Tenerife → Funchal → Funchal",
+      "publicPriceNote": "Desde US$1,001 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "id": "musica-grand-voyage-2027-04-02-rio",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "MSC Grand Voyages",
+      "ship": "MSC Musica",
+      "port": "Rio de Janeiro",
+      "start": "2027-04-02",
+      "end": "2027-04-15",
+      "nights": 13,
+      "route": "Rio de Janeiro → navegación → navegación → Maceió → navegación → travesía Atlántica → Las Palmas de Gran Canaria → travesía Atlántica → Tarragona",
+      "publicPriceNote": "Desde US$1,094 por persona como referencia pública observada para esta travesía; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Grand Voyage de una vía desde Rio de Janeiro hasta Tarragona. El itinerario completo se confirma con Suncar."
+    },
+    {
+      "id": "world-asia-grand-voyage-2027-11-05",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "MSC Grand Voyages",
+      "ship": "MSC World Asia",
+      "port": "Barcelona",
+      "start": "2027-11-05",
+      "end": "2027-11-27",
+      "nights": 22,
+      "route": "Barcelona → Palma de Mallorca → Alicante → Málaga → navegación → Las Palmas → travesía Atlántica → St. John's (Antigua) → Kingstown → Bridgetown → Fort-de-France → Pointe-à-Pitre → St. John's → Philipsburg → navegación → Basseterre → Roseau → Fort-de-France",
+      "publicPriceNote": "Desde US$1,486 por persona como referencia pública observada para esta travesía; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Grand Voyage de una vía desde Barcelona hasta Fort-de-France."
     }
   ],
   "fleet": [
