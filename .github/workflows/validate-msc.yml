@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "assets/msc-assistant-data.json"
+      - "index.html"
       - "scripts/validate_msc_data.py"
       - "scripts/test_msc_coverage.py"
       - ".github/workflows/validate-msc.yml"
