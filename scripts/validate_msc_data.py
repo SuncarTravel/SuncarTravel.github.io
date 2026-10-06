@@ -60,6 +60,12 @@ def check_common(item, label, require_start=False):
         need(not internal.startswith(("http://", "https://", "//")), f"{label}: internalUrl no puede salir de Suncar")
     for forbidden in ("bookingUrl", "externalUrl", "bookNowUrl", "sourceUrl"):
         need(forbidden not in item, f"{label}: campo externo prohibido {forbidden}")
+    if item.get("sourceType") == "OfficialPublic":
+        need(bool(item.get("sourceMarket")), f"{label}: OfficialPublic sin sourceMarket")
+        verified = item.get("verifiedAt")
+        need(bool(verified), f"{label}: OfficialPublic sin verifiedAt")
+        if verified:
+            need(bool(iso.match(verified)), f"{label}: verifiedAt no es YYYY-MM-DD")
 
 for d in departures:
     label = d.get("id", "?")
