@@ -1,0 +1,26 @@
+name: Validar Asistente MSC
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/msc-assistant-data.json"
+      - "scripts/validate_msc_data.py"
+      - ".github/workflows/validate-msc.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar base MSC
+        run: python scripts/validate_msc_data.py
