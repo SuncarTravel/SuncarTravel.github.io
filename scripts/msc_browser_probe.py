@@ -3,7 +3,7 @@ import json, re, sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-URL="https://www.msccruisesusa.com/msc-voyagers-club/exclusives-offer?departureDateFrom=06-10-2026&departureDateTo=31-12-2028&page=1&sort=date-soon"
+URL="https://www.msccruisesusa.com/deals/cruise-from-199-plus-onboard-credit/all-itineraries?sort=relevance"
 out={"responses":[]}
 with sync_playwright() as p:
     browser=p.chromium.launch(headless=True)
