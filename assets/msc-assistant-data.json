@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -363,7 +363,7 @@
         "5% + 5%",
         "puntos dobles"
       ],
-      "answer": "MSC publica beneficios de reserva anticipada para miembros de Voyagers Club en salidas elegibles: con 12 meses o más de anticipación puede aplicar 5% + 5% de descuento y puntos dobles; ciertos niveles también pueden recibir crédito a bordo. Entre 9 y menos de 12 meses puede aplicar 5% + 5%. La elegibilidad, vigencia y combinación con otras promociones debe confirmarse con Suncar antes de reservar."
+      "answer": "Los beneficios de MSC Voyagers Club dependen del mercado y de la salida. Como regla general, los socios elegibles pueden tener un descuento base y, en determinadas Voyagers Exclusives o reservas anticipadas, descuentos adicionales y/o crédito a bordo. Por ejemplo, materiales oficiales de México publican un 5% estándar para socios elegibles y selecciones con descuentos adicionales, sujetos a condiciones. Suncar confirma el beneficio vigente y combinable para tu mercado antes de reservar."
     },
     {
       "id": "panama_canal",
@@ -475,6 +475,19 @@
         "travel insurance"
       ],
       "answer": "Suncar recomienda considerar un seguro de asistencia en viaje y, cuando sea posible, cobertura de cancelación. La cobertura, exclusiones, condiciones preexistentes y plazo para reclamar dependen de la póliza; conviene revisarla antes de comprarla y no asumir que cualquier motivo de cancelación estará cubierto."
+    },
+    {
+      "id": "mexico_market",
+      "keywords": [
+        "mexico",
+        "méxico",
+        "mercado mexicano",
+        "tarifa mexico",
+        "tarifa méxico",
+        "msc mexico",
+        "msc méxico"
+      ],
+      "answer": "Suncar también toma en cuenta información y condiciones publicadas para el mercado de México, pero no mezcla automáticamente sus promociones con USA o LATAM. Descuentos, moneda, Voyagers Club, bebidas y otras condiciones pueden variar por mercado. Suncar confirma cuál aplica a tu reserva antes del pago."
     }
   ],
   "departures": [
@@ -689,7 +702,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$199 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia publicada indica tasas e impuestos incluidos. Beneficios, cabina y condiciones finales se confirman con Suncar."
+      "inclusions": "La referencia publicada indica tasas e impuestos incluidos. Beneficios, cabina y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-america-2026-10-31",
@@ -703,7 +717,8 @@
       "nights": 7,
       "route": "Miami → navegación → Puerto Plata → San Juan → navegación → navegación → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$514 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia publicada indica tasas e impuestos incluidos. Beneficios, cabina y condiciones finales se confirman con Suncar."
+      "inclusions": "La referencia publicada indica tasas e impuestos incluidos. Beneficios, cabina y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -717,7 +732,8 @@
       "nights": 7,
       "route": "Miami → Isla de Roatán → Costa Maya → Cozumel → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
-      "inclusions": "Impuestos y tasas se muestran incluidos en la referencia pública consultada; Suncar confirma la tarifa final."
+      "inclusions": "Impuestos y tasas se muestran incluidos en la referencia pública consultada; Suncar confirma la tarifa final.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -731,7 +747,8 @@
       "nights": 7,
       "route": "Miami → Isla de Roatán → Costa Maya → Cozumel → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
-      "inclusions": "Impuestos y tasas se muestran incluidos en la referencia pública consultada; Suncar confirma la tarifa final."
+      "inclusions": "Impuestos y tasas se muestran incluidos en la referencia pública consultada; Suncar confirma la tarifa final.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -745,7 +762,8 @@
       "nights": 7,
       "route": "Miami → navegación → Puerto Plata → San Juan → navegación → navegación → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$495 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -759,7 +777,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$195 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -773,7 +792,8 @@
       "nights": 3,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$269 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -787,7 +807,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$195 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -801,7 +822,8 @@
       "nights": 3,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -815,7 +837,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -829,7 +852,8 @@
       "nights": 3,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -843,7 +867,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$179 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -857,7 +882,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$195 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -871,7 +897,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$185 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -885,7 +912,8 @@
       "nights": 4,
       "route": "Miami → Ocean Cay MSC Marine Reserve → Freeport → Miami",
       "publicPriceNote": "Desde US$205 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -899,7 +927,8 @@
       "nights": 4,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → navegación → Port Canaveral",
       "publicPriceNote": "Desde US$241 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -913,7 +942,8 @@
       "nights": 3,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Port Canaveral",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -927,7 +957,8 @@
       "nights": 4,
       "route": "Port Canaveral → Ocean Cay MSC Marine Reserve → Ocean Cay MSC Marine Reserve → Nassau → Port Canaveral",
       "publicPriceNote": "Desde US$338 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -941,7 +972,8 @@
       "nights": 3,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Port Canaveral",
       "publicPriceNote": "Desde US$268 por persona como referencia pública observada para este bloque de salidas; Suncar confirma tarifa exacta.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -955,7 +987,8 @@
       "nights": 4,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → navegación → Port Canaveral",
       "publicPriceNote": "Desde US$195 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -969,7 +1002,8 @@
       "nights": 3,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Port Canaveral",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -983,7 +1017,8 @@
       "nights": 3,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Port Canaveral",
       "publicPriceNote": "Desde US$258 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -997,7 +1032,8 @@
       "nights": 7,
       "route": "Galveston → Costa Maya → Isla de Roatán → Cozumel → Galveston",
       "publicPriceNote": "Desde US$309 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1011,7 +1047,8 @@
       "nights": 7,
       "route": "Galveston → Costa Maya → Isla de Roatán → Cozumel → Galveston",
       "publicPriceNote": "Desde US$319 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1025,7 +1062,8 @@
       "nights": 7,
       "route": "Galveston → Costa Maya → Isla de Roatán → Cozumel → Galveston",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1039,7 +1077,8 @@
       "nights": 7,
       "route": "Galveston → Costa Maya → Isla de Roatán → Cozumel → Galveston",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1053,7 +1092,8 @@
       "nights": 7,
       "route": "Galveston → Costa Maya → Isla de Roatán → Cozumel → Galveston",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1067,7 +1107,8 @@
       "nights": 7,
       "route": "Galveston → navegación → navegación → Costa Maya → Isla de Roatán → Cozumel → navegación → Galveston",
       "publicPriceNote": "Desde US$759 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1081,7 +1122,8 @@
       "nights": 7,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Cozumel → Costa Maya → Port Canaveral",
       "publicPriceNote": "Desde US$338 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1095,7 +1137,8 @@
       "nights": 7,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Puerto Plata → Port Canaveral",
       "publicPriceNote": "Desde US$348 por persona como referencia de este itinerario; Suncar confirma tarifa para la fecha exacta.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1109,7 +1152,8 @@
       "nights": 7,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Cozumel → Costa Maya → Port Canaveral",
       "publicPriceNote": "Tarifa pública de referencia; Suncar confirma precio y disponibilidad para la fecha exacta.",
-      "inclusions": "Beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1123,7 +1167,8 @@
       "nights": 7,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Puerto Plata → Port Canaveral",
       "publicPriceNote": "Desde US$348 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1137,7 +1182,8 @@
       "nights": 7,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → navegación → Cozumel → Costa Maya → navegación → Port Canaveral",
       "publicPriceNote": "Desde US$369 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1151,7 +1197,8 @@
       "nights": 17,
       "route": "Civitavecchia → navegación → Palma de Mallorca → Barcelona → navegación → navegación → Funchal → navegación → navegación → navegación → navegación → navegación → navegación → San Juan → navegación → navegación → Miami → Port Canaveral",
       "publicPriceNote": "Desde US$1,424 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1165,7 +1212,8 @@
       "nights": 7,
       "route": "Norte de Europa desde Southampton; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$668 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1179,7 +1227,8 @@
       "nights": 7,
       "route": "Norte de Europa desde Southampton; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$728 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1193,7 +1242,8 @@
       "nights": 7,
       "route": "Norte de Europa desde Hamburgo; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$685 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1207,7 +1257,8 @@
       "nights": 7,
       "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$646 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1221,7 +1272,8 @@
       "nights": 7,
       "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$793 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1235,7 +1287,8 @@
       "nights": 7,
       "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$539 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1249,7 +1302,8 @@
       "nights": 7,
       "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$526 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1263,7 +1317,8 @@
       "nights": 7,
       "route": "Mediterráneo desde Valencia; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$579 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "sourceType": "OfficialPublic",
@@ -1277,7 +1332,8 @@
       "nights": 7,
       "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
       "publicPriceNote": "Desde US$586 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-america-2027-01-02",
@@ -1291,7 +1347,8 @@
       "nights": 7,
       "route": "Miami → navegación → Isla de Roatán → Costa Maya → Cozumel → navegación → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$787 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Precio de referencia sujeto a cambio; cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Precio de referencia sujeto a cambio; cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "poesia-alaska-2027-05-03",
@@ -1305,7 +1362,8 @@
       "nights": 7,
       "route": "Seattle → Ketchikan → Icy Strait Point (Hoonah) → Tracy Arm → Juneau → Victoria → Seattle",
       "publicPriceNote": "Desde US$648 por persona como referencia pública observada para el 3 de mayo de 2027; la referencia indica tasas e impuestos incluidos.",
-      "inclusions": "MSC Poesia opera la temporada de Alaska desde Seattle. Suncar confirma cabina, tarifa, beneficios y disponibilidad."
+      "inclusions": "MSC Poesia opera la temporada de Alaska desde Seattle. Suncar confirma cabina, tarifa, beneficios y disponibilidad.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "musica-2026-11-16-santos",
@@ -1319,7 +1377,8 @@
       "nights": 4,
       "route": "Santos → navegación → Ilha Grande → Ilhabela → Santos",
       "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
-      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar."
+      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "musica-2026-11-26-santos",
@@ -1333,7 +1392,8 @@
       "nights": 4,
       "route": "Santos → navegación → Búzios → Ilha Grande → Santos",
       "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
-      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar."
+      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "preziosa-2026-12-29-rotterdam",
@@ -1347,7 +1407,8 @@
       "nights": 8,
       "route": "Rotterdam → Cherbourg → Le Havre (París) → Southampton → navegación → Hamburgo → navegación → Zeebrugge → Rotterdam",
       "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
-      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar."
+      "inclusions": "Servicios incluidos y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "sinfonia-2026-12-01-genoa",
@@ -1361,7 +1422,8 @@
       "nights": 7,
       "route": "Génova → Livorno (Florencia) → Civitavecchia (Roma) → navegación → Valencia → Barcelona → Marsella → Génova",
       "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
-      "inclusions": "La referencia pública del itinerario muestra pensión completa en buffet y restaurante principal como parte de lo incluido; Suncar confirma la tarifa final."
+      "inclusions": "La referencia pública del itinerario muestra pensión completa en buffet y restaurante principal como parte de lo incluido; Suncar confirma la tarifa final.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "magnifica-world-cruise-2027-01-05",
@@ -1375,7 +1437,8 @@
       "nights": 121,
       "route": "Génova → Mediterráneo → África → Sudamérica → Pacífico Sur → Nueva Zelanda → Australia → Hawái → Los Ángeles → México → Costa Rica → Canal de Panamá → Caribe → Canarias → Mediterráneo → Génova",
       "publicPriceNote": "MSC World Cruise 2027: tarifa y disponibilidad a confirmar con Suncar.",
-      "inclusions": "MSC publica 25 países, 45 destinos, 7 pernoctaciones y 15 excursiones incluidas para la vuelta al mundo completa. Suncar confirma condiciones del segmento o viaje completo."
+      "inclusions": "MSC publica 25 países, 45 destinos, 7 pernoctaciones y 15 excursiones incluidas para la vuelta al mundo completa. Suncar confirma condiciones del segmento o viaje completo.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "preziosa-2026-10-11-norway",
@@ -1389,7 +1452,8 @@
       "nights": 7,
       "route": "Hamburgo → navegación → Bergen → Stavanger → Kristiansand → Oslo → navegación → Hamburgo",
       "publicPriceNote": "Itinerario público verificado; tarifa exacta a confirmar con Suncar.",
-      "inclusions": "La referencia pública muestra pensión completa en buffet y restaurante principal, gimnasio/piscinas, espectáculos y clubes infantiles entre lo incluido. Suncar confirma condiciones finales."
+      "inclusions": "La referencia pública muestra pensión completa en buffet y restaurante principal, gimnasio/piscinas, espectáculos y clubes infantiles entre lo incluido. Suncar confirma condiciones finales.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "meraviglia-2026-12-13-miami",
@@ -1403,7 +1467,8 @@
       "nights": 6,
       "route": "Miami → navegación → Grand Turk → navegación → Ocean Cay MSC Marine Reserve → Nassau → Miami",
       "publicPriceNote": "Desde US$339 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-america-2026-11-14",
@@ -1417,7 +1482,8 @@
       "nights": 7,
       "route": "Miami → navegación → Puerto Plata → San Juan → navegación → navegación → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Itinerario público verificado; tarifa exacta para esta fecha a confirmar con Suncar.",
-      "inclusions": "La referencia pública del itinerario muestra tasas e impuestos incluidos; Suncar confirma la tarifa final."
+      "inclusions": "La referencia pública del itinerario muestra tasas e impuestos incluidos; Suncar confirma la tarifa final.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "opera-2026-11-16-laromana",
@@ -1431,7 +1497,8 @@
       "nights": 3,
       "route": "La Romana → Isla Catalina → navegación → Bridgetown",
       "publicPriceNote": "Desde US$179 por persona como referencia pública observada para esta salida; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Viaje de 3 noches con embarque en La Romana y desembarque en Bridgetown. Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Viaje de 3 noches con embarque en La Romana y desembarque en Bridgetown. Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "orchestra-2027-01-06-istanbul",
@@ -1445,7 +1512,8 @@
       "nights": 3,
       "route": "Istanbul → navegación/itinerario → Corfu → Bari",
       "publicPriceNote": "Desde US$185 por persona como referencia pública observada para este itinerario; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Itinerario de 3 noches de Estambul a Bari con escala en Corfú. Condiciones finales se confirman con Suncar."
+      "inclusions": "Itinerario de 3 noches de Estambul a Bari con escala en Corfú. Condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "seaside-2027-01-04-miami",
@@ -1459,7 +1527,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$249 por persona como referencia pública observada para esta fecha; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "seaside-2027-01-11-miami",
@@ -1473,7 +1542,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$199 por persona como referencia pública observada para esta fecha; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "seaside-2027-01-25-miami",
@@ -1487,7 +1557,8 @@
       "nights": 4,
       "route": "Miami → Nassau → Ocean Cay MSC Marine Reserve → Miami",
       "publicPriceNote": "Desde US$219 por persona como referencia pública observada para esta fecha; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "seashore-2027-01-07-canaveral",
@@ -1501,7 +1572,8 @@
       "nights": 3,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Port Canaveral",
       "publicPriceNote": "Desde US$225 por persona como referencia pública observada para este bloque de salidas; Suncar confirma tarifa exacta de la fecha.",
-      "inclusions": "La referencia pública indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "seashore-2027-01-10-canaveral",
@@ -1515,7 +1587,8 @@
       "nights": 4,
       "route": "Port Canaveral → Nassau → Ocean Cay MSC Marine Reserve → Port Canaveral",
       "publicPriceNote": "Tarifa pública de referencia disponible para este itinerario; Suncar confirma precio y disponibilidad de la fecha exacta.",
-      "inclusions": "La referencia pública indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-asia-2027-05-12-valletta",
@@ -1529,7 +1602,8 @@
       "nights": 7,
       "route": "La Valletta → navegación → Barcelona → Marseille → Genoa → Naples → Messina → La Valletta",
       "publicPriceNote": "Desde US$1,315 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-asia-2027-07-03-marseille",
@@ -1543,7 +1617,8 @@
       "nights": 7,
       "route": "Marseille → Genoa → Naples → Messina → La Valletta → navegación → Barcelona → Marseille",
       "publicPriceNote": "Desde US$1,438 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-asia-2027-08-03-messina",
@@ -1557,7 +1632,8 @@
       "nights": 7,
       "route": "Messina → La Valletta → navegación → Barcelona → Marseille → Genoa → Naples → Messina",
       "publicPriceNote": "Desde US$1,668 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-asia-2027-09-29-valletta",
@@ -1571,7 +1647,8 @@
       "nights": 7,
       "route": "La Valletta → navegación → Barcelona → Marseille → Genoa → Naples → Messina → La Valletta",
       "publicPriceNote": "Desde US$1,387 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "preziosa-2027-01-06-rotterdam",
@@ -1585,7 +1662,8 @@
       "nights": 7,
       "route": "Rotterdam → Le Havre (París) → Southampton → navegación → Hamburg → navegación → Zeebrugge (Bruges) → Rotterdam",
       "publicPriceNote": "Desde US$668 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-europa-2027-06-16-rome",
@@ -1599,7 +1677,8 @@
       "nights": 7,
       "route": "Civitavecchia (Roma) → navegación → Palma de Mallorca → Barcelona → Marseille → Genoa → La Spezia → Civitavecchia (Roma)",
       "publicPriceNote": "Desde US$1,291 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "seascape-2027-04-11-galveston",
@@ -1613,7 +1692,8 @@
       "nights": 7,
       "route": "Galveston → navegación → navegación → Costa Maya → Isla de Roatán → Cozumel → navegación → Galveston",
       "publicPriceNote": "Desde US$534 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "meraviglia-2027-02-27-miami",
@@ -1627,7 +1707,8 @@
       "nights": 8,
       "route": "Miami → navegación → navegación → Philipsburg → St. John's (Antigua) → Charlotte Amalie (St. Thomas) → Amber Cove → navegación → Miami",
       "publicPriceNote": "Desde US$849 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "grandiosa-2027-12-30-canaveral",
@@ -1641,7 +1722,8 @@
       "nights": 7,
       "route": "Port Canaveral → Ocean Cay MSC Marine Reserve → navegación → Ocho Rios → George Town (Cayman Islands) → Cozumel → navegación → Port Canaveral",
       "publicPriceNote": "Desde US$1,226 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "poesia-2027-11-21-miami",
@@ -1655,7 +1737,8 @@
       "nights": 11,
       "route": "Miami → navegación → Ocho Rios → navegación → Cartagena → Colón → Puerto Limón → navegación → Isla de Roatán → Belize City → navegación → Miami",
       "publicPriceNote": "Desde US$1,129 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "opera-2027-08-30-laromana",
@@ -1669,7 +1752,8 @@
       "nights": 7,
       "route": "La Romana → Isla Catalina → navegación → Bridgetown → Fort-de-France → Pointe-à-Pitre → Road Town (Tortola) → La Romana",
       "publicPriceNote": "Desde US$643 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "opera-2027-09-13-laromana",
@@ -1683,7 +1767,8 @@
       "nights": 7,
       "route": "La Romana → Isla Catalina → navegación → Bridgetown → Fort-de-France → Pointe-à-Pitre → Road Town (Tortola) → La Romana",
       "publicPriceNote": "Desde US$665 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "bellissima-2027-08-02-shanghai",
@@ -1697,7 +1782,8 @@
       "nights": 4,
       "route": "Shanghai → navegación → Naha (Okinawa) → navegación → Shanghai",
       "publicPriceNote": "Desde US$649 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "bellissima-2027-09-12-shanghai",
@@ -1711,7 +1797,8 @@
       "nights": 9,
       "route": "Shanghai → Jeju Island → Busan → navegación → Shanghai → navegación → Fukuoka → Busan → navegación → Shanghai",
       "publicPriceNote": "Desde US$1,328 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "bellissima-2027-12-12-tokyo",
@@ -1725,7 +1812,8 @@
       "nights": 4,
       "route": "Tokyo → navegación → navegación → Ishigaki → Keelung (Taipei)",
       "publicPriceNote": "Desde US$505 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Itinerario de una vía de Tokyo a Keelung. Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Itinerario de una vía de Tokyo a Keelung. Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "armonia-2026-12-26-durban",
@@ -1739,7 +1827,8 @@
       "nights": 12,
       "route": "Durban → navegación → navegación → navegación → Port Louis → Port Louis → Port Louis → La Possession (Réunion) → navegación → navegación → navegación → Portuguese Island (Inhaca) → Durban",
       "publicPriceNote": "Desde US$2,117 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "sinfonia-2027-12-16-durban",
@@ -1753,7 +1842,8 @@
       "nights": 5,
       "route": "Durban → navegación → Pomene → Portuguese Island (Inhaca) → navegación → Durban",
       "publicPriceNote": "Desde US$825 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "fantasia-2026-12-22-funchal",
@@ -1767,7 +1857,8 @@
       "nights": 7,
       "route": "Funchal → navegación → Arrecife de Lanzarote → Las Palmas de Gran Canaria → Santa Cruz de La Palma → Santa Cruz de Tenerife → Funchal → Funchal",
       "publicPriceNote": "Desde US$1,001 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "musica-grand-voyage-2027-04-02-rio",
@@ -1781,7 +1872,8 @@
       "nights": 13,
       "route": "Rio de Janeiro → navegación → navegación → Maceió → navegación → travesía Atlántica → Las Palmas de Gran Canaria → travesía Atlántica → Tarragona",
       "publicPriceNote": "Desde US$1,094 por persona como referencia pública observada para esta travesía; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Grand Voyage de una vía desde Rio de Janeiro hasta Tarragona. El itinerario completo se confirma con Suncar."
+      "inclusions": "Grand Voyage de una vía desde Rio de Janeiro hasta Tarragona. El itinerario completo se confirma con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-asia-grand-voyage-2027-11-05",
@@ -1795,7 +1887,8 @@
       "nights": 22,
       "route": "Barcelona → Palma de Mallorca → Alicante → Málaga → navegación → Las Palmas → travesía Atlántica → St. John's (Antigua) → Kingstown → Bridgetown → Fort-de-France → Pointe-à-Pitre → St. John's → Philipsburg → navegación → Basseterre → Roseau → Fort-de-France",
       "publicPriceNote": "Desde US$1,486 por persona como referencia pública observada para esta travesía; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Grand Voyage de una vía desde Barcelona hasta Fort-de-France."
+      "inclusions": "Grand Voyage de una vía desde Barcelona hasta Fort-de-France.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-atlantic-2027-12-11-canaveral",
@@ -1809,7 +1902,8 @@
       "nights": 7,
       "route": "Port Canaveral → Ocean Cay MSC Marine Reserve → navegación → Costa Maya → Cozumel → navegación → Nassau → Port Canaveral",
       "publicPriceNote": "Desde US$910 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "euribia-2026-12-29-naples",
@@ -1823,7 +1917,8 @@
       "nights": 7,
       "route": "Naples (Pompeii) → Palermo (Monreale) → La Goulette → navegación → Barcelona → Marseille (Provence) → Genoa (Portofino) → Naples (Pompeii)",
       "publicPriceNote": "Desde US$1,402 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "splendida-2027-07-17-istanbul",
@@ -1837,7 +1932,8 @@
       "nights": 9,
       "route": "Istanbul → navegación → Corfu → Bari → Trieste (Venice) → navegación → Katakolon (Olympia) → Piraeus (Athens) → Kusadasi → Istanbul",
       "publicPriceNote": "Desde US$1,918 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "splendida-2027-10-10-trieste",
@@ -1851,7 +1947,8 @@
       "nights": 9,
       "route": "Trieste (Venice) → Split → navegación → Piraeus (Athens) → Kusadasi → Istanbul → navegación → Corfu → Bari → Trieste (Venice)",
       "publicPriceNote": "Desde US$1,530 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "virtuosa-2027-06-27-livorno",
@@ -1865,7 +1962,8 @@
       "nights": 7,
       "route": "Livorno (Florence) → Marseille (Provence) → Barcelona → navegación → La Goulette → Palermo (Monreale) → Naples (Pompeii) → Livorno (Florence)",
       "publicPriceNote": "Desde US$1,176 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "divina-2027-03-14-santos",
@@ -1879,7 +1977,8 @@
       "nights": 3,
       "route": "Salida desde Santos (São Paulo), Brasil. Itinerario exacto de escalas a confirmar con Suncar para esta salida.",
       "publicPriceNote": "Desde US$370 por persona como referencia pública observada para esta salida de 3 noches; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, escalas, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Cabina, escalas, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     }
   ],
   "fleet": [
@@ -2340,7 +2439,8 @@
         "2027-03-27"
       ],
       "publicPriceNote": "Serie publicada desde US$443 por persona como referencia; la tarifa cambia por fecha. Suncar confirma precio y disponibilidad exactos.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-america-east-2026-27",
@@ -2368,7 +2468,8 @@
         "2027-03-20"
       ],
       "publicPriceNote": "Serie publicada desde US$469 por persona como referencia; la tarifa cambia por fecha. Suncar confirma precio y disponibilidad exactos.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "lirica-eastern-med-2026",
@@ -2388,7 +2489,8 @@
         "2026-10-17"
       ],
       "publicPriceNote": "Serie publicada desde US$775 por persona como referencia; Suncar confirma la tarifa de cada salida.",
-      "inclusions": "Tasas, cabina, beneficios y condiciones finales se confirman con Suncar."
+      "inclusions": "Tasas, cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "meraviglia-med-2026",
@@ -2407,7 +2509,8 @@
         "2026-10-10"
       ],
       "publicPriceNote": "Serie publicada desde US$813 por persona como referencia; Suncar confirma la tarifa de cada salida.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "orchestra-west-med-2026",
@@ -2427,7 +2530,8 @@
         "2026-10-17"
       ],
       "publicPriceNote": "Serie publicada desde US$776 por persona como referencia; Suncar confirma la tarifa de cada salida.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "sinfonia-east-med-2026",
@@ -2447,7 +2551,8 @@
         "2026-10-17"
       ],
       "publicPriceNote": "Serie publicada desde US$1,020 por persona como referencia; Suncar confirma la tarifa de cada salida.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "seaview-west-med-2026",
@@ -2468,7 +2573,8 @@
         "2026-10-31"
       ],
       "publicPriceNote": "Serie publicada desde US$902 por persona como referencia; Suncar confirma la tarifa de cada salida.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "grandiosa-barcelona-2026",
@@ -2487,7 +2593,8 @@
         "2026-10-17"
       ],
       "publicPriceNote": "Serie publicada desde US$919 por persona como referencia; Suncar confirma la tarifa de cada salida.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "world-europa-med-2026",
@@ -2508,7 +2615,8 @@
         "2026-10-31"
       ],
       "publicPriceNote": "Serie publicada desde US$890 por persona como referencia; Suncar confirma la tarifa de cada salida.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "seashore-west-caribbean-2026",
@@ -2525,7 +2633,8 @@
         "2026-10-18"
       ],
       "publicPriceNote": "Serie publicada desde US$349 por persona como referencia promocional; Suncar confirma la tarifa y disponibilidad de cada salida.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "bellissima-asia-4n-2026",
@@ -2541,7 +2650,8 @@
         "2026-09-16"
       ],
       "publicPriceNote": "Serie publicada desde US$479 por persona como referencia; Suncar confirma la tarifa de cada salida.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "bellissima-asia-5n-2026",
@@ -2556,7 +2666,8 @@
         "2026-09-20"
       ],
       "publicPriceNote": "Salida publicada desde US$744 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "magnifica-north-europe-2026",
@@ -2571,7 +2682,8 @@
         "2026-09-12"
       ],
       "publicPriceNote": "Salida publicada desde US$1,262 por persona como referencia; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     },
     {
       "id": "poesia-alaska-spring-2027",
@@ -2588,7 +2700,8 @@
         "2027-05-10"
       ],
       "publicPriceNote": "Serie publicada desde US$648 por persona como referencia; la tarifa cambia por fecha. Suncar confirma precio y disponibilidad exactos.",
-      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+      "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos.",
+      "verifiedAt": "2026-10-06"
     }
   ],
   "marketPolicy": {
@@ -2599,5 +2712,10 @@
     ],
     "rule": "No mezclar promociones o precios de mercados distintos. Toda tarifa pública es solo referencia y Suncar confirma el mercado aplicable, moneda, impuestos, beneficios y disponibilidad antes de reservar.",
     "clientRouting": "Toda venta, cotización, reserva y pago termina con Suncar Tours & Travel."
+  },
+  "lastVerificationSummary": {
+    "date": "2026-10-06",
+    "scope": "MSC USA prioritario, LATAM/México y otras páginas oficiales cuando aportan cobertura adicional",
+    "rule": "Tarifas públicas solo como referencia; ventas, disponibilidad final y pagos con Suncar."
   }
 }
