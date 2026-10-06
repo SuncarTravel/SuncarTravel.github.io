@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -2324,6 +2324,51 @@
       "publicPriceNote": "Desde US$1,295 por persona como referencia pública observada para esta travesía; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
       "inclusions": "Grand Voyage de 22 noches. Suncar confirma la ruta completa y condiciones finales.",
       "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "magnifica-2027-08-14-copenhagen",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Norte de Europa",
+      "ship": "MSC Magnifica",
+      "port": "Copenhagen",
+      "start": "2027-08-14",
+      "end": "2027-08-21",
+      "nights": 7,
+      "route": "Copenhagen → Warnemunde (Berlin) → navegación → Haugesund → Bergen → Kristiansand → Oslo → Copenhagen",
+      "publicPriceNote": "Desde US$1,446 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "magnifica-2027-08-22-warnemunde",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Norte de Europa",
+      "ship": "MSC Magnifica",
+      "port": "Warnemunde (Berlin)",
+      "start": "2027-08-22",
+      "end": "2027-08-29",
+      "nights": 7,
+      "route": "Warnemunde (Berlin) → Gdynia → Klaipeda → Riga → Stockholm → navegación → Copenhagen → Warnemunde (Berlin)",
+      "publicPriceNote": "Desde US$1,357 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "musica-2026-12-10-santos",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Sudamérica",
+      "ship": "MSC Musica",
+      "port": "Santos (Sao Paulo)",
+      "start": "2026-12-10",
+      "end": "2026-12-13",
+      "nights": 3,
+      "route": "Santos → Buzios → navegación → Santos",
+      "publicPriceNote": "Desde US$439 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     }
   ],
   "fleet": [
@@ -3111,5 +3156,36 @@
     "date": "2026-10-06",
     "scope": "MSC USA prioritario, LATAM/México y otras páginas oficiales cuando aportan cobertura adicional",
     "rule": "Tarifas públicas solo como referencia; ventas, disponibilidad final y pagos con Suncar."
+  },
+  "regionInfo": {
+    "Emiratos / Oriente Medio": {
+      "status": "not_currently_available",
+      "note": "MSC Global indica actualmente que no hay itinerarios disponibles para Dubai, Abu Dhabi y Qatar. Conservamos la zona en el buscador para activarla cuando MSC publique nuevas salidas.",
+      "verifiedAt": "2026-10-06"
+    },
+    "Canal de Panamá": {
+      "status": "special_itineraries",
+      "note": "MSC publica el Canal de Panamá principalmente dentro de Grand Voyages de MSC Poesia entre Miami y Seattle y dentro de World Cruises de MSC Magnifica. Las fechas futuras exactas se muestran cuando quedan verificadas en el índice.",
+      "verifiedAt": "2026-10-06"
+    },
+    "Alaska": {
+      "status": "available",
+      "note": "MSC Poesia opera itinerarios de 7 noches desde Seattle; MSC publica 20 fechas en la serie de Alaska 2027.",
+      "verifiedAt": "2026-10-06"
+    }
+  },
+  "coverageNotes": {
+    "alaska2027": {
+      "ship": "MSC Poesia",
+      "region": "Alaska",
+      "publishedDateCount": 20,
+      "knownDates": [
+        "2027-04-26",
+        "2027-05-03",
+        "2027-05-10"
+      ],
+      "note": "MSC's public deals page reports 20 dates for the 7-night Alaska itinerary from Seattle; additional dates are added to the index only when individually verified.",
+      "verifiedAt": "2026-10-06"
+    }
   }
 }
