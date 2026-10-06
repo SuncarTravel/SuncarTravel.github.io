@@ -1,0 +1,379 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-06",
+  "salesOwner": "Suncar Tours & Travel",
+  "whatsapp": "18093161070",
+  "policy": {
+    "sales": "Toda cotización, disponibilidad, reserva y pago se gestiona exclusivamente con Suncar Tours & Travel.",
+    "externalBooking": false,
+    "publicPrices": "Las tarifas públicas de MSC son solo referencia cuando se carguen. Suncar confirma precio, disponibilidad, impuestos, beneficios y condiciones antes de reservar."
+  },
+  "regions": [
+    "Caribe",
+    "Bahamas",
+    "Mediterráneo",
+    "Norte de Europa",
+    "Alaska",
+    "Sudamérica",
+    "Asia",
+    "Emiratos / Oriente Medio"
+  ],
+  "knowledge": [
+    {
+      "id": "includes",
+      "keywords": [
+        "incluye",
+        "incluido",
+        "comida",
+        "comidas",
+        "entretenimiento",
+        "que trae",
+        "qué trae"
+      ],
+      "answer": "En términos generales, un crucero MSC incluye alojamiento en la cabina reservada, comidas en los espacios incluidos de la tarifa y entretenimiento/actividades incluidos. Bebidas, Wi‑Fi, restaurantes de especialidad, excursiones, spa y otros extras dependen de la tarifa o promoción. Suncar confirma exactamente qué incluye tu opción antes de reservar."
+    },
+    {
+      "id": "experiences",
+      "keywords": [
+        "bella",
+        "fantastica",
+        "fantástica",
+        "aurea",
+        "áurea",
+        "yacht club",
+        "experiencia",
+        "experiencias"
+      ],
+      "answer": "MSC comercializa distintas experiencias/tarifas. Bella suele enfocarse en el precio base; Fantastica añade beneficios y flexibilidad según la salida; Aurea incorpora beneficios adicionales; MSC Yacht Club es la experiencia premium disponible en barcos seleccionados. Los beneficios exactos cambian por barco, fecha y tarifa, por eso Suncar los confirma al cotizar."
+    },
+    {
+      "id": "drinks",
+      "keywords": [
+        "bebida",
+        "bebidas",
+        "open bar",
+        "premium extra",
+        "bar",
+        "alcohol"
+      ],
+      "answer": "Las bebidas no siempre vienen incluidas en la tarifa base. Pueden formar parte de una promoción o contratarse como paquete. En ofertas Suncar específicas puede incluirse Premium Extra. Los límites, marcas y condiciones se verifican para la salida concreta antes de reservar."
+    },
+    {
+      "id": "wifi",
+      "keywords": [
+        "wifi",
+        "wi-fi",
+        "internet",
+        "browse",
+        "stream"
+      ],
+      "answer": "MSC ofrece paquetes de internet y algunas promociones los incluyen. La cantidad de dispositivos y el nivel de servicio dependen del paquete. En las ofertas Suncar de MSC Opera actualmente cargadas, Wi‑Fi Browse es 1 dispositivo por persona para los 2 adultos indicados. Suncar confirma la condición exacta de cada reserva."
+    },
+    {
+      "id": "documents",
+      "keywords": [
+        "visa",
+        "visado",
+        "pasaporte",
+        "documento",
+        "documentación",
+        "requisito migratorio"
+      ],
+      "answer": "La documentación depende de nacionalidad, residencia, puertos del itinerario y escalas. Como regla de trabajo, Suncar revisa el itinerario contigo y te orienta, pero los requisitos oficiales los determinan las autoridades migratorias y consulares. Nunca reserves basándote solo en una respuesta automática sobre visados."
+    },
+    {
+      "id": "gratuities",
+      "keywords": [
+        "propina",
+        "propinas",
+        "cuota de servicio",
+        "service charge"
+      ],
+      "answer": "Las propinas o cuotas de servicio dependen de la tarifa, promoción y mercado. En las ofertas Suncar de MSC Opera que tenemos cargadas, las propinas se pagan aparte. Suncar confirma el tratamiento aplicable antes del pago."
+    },
+    {
+      "id": "cabins",
+      "keywords": [
+        "cabina",
+        "camarote",
+        "interior",
+        "vista al mar",
+        "balcon",
+        "balcón",
+        "suite"
+      ],
+      "answer": "MSC ofrece categorías como interior, vista al mar, balcón y suite, con subcategorías que varían por barco. La mejor opción depende de presupuesto, ubicación y beneficios. Suncar puede cotizar la categoría disponible y comparar el costo real entre opciones."
+    },
+    {
+      "id": "children",
+      "keywords": [
+        "niño",
+        "niños",
+        "nino",
+        "ninos",
+        "familia",
+        "familias",
+        "kids",
+        "teen"
+      ],
+      "answer": "MSC tiene programación familiar y áreas para niños/adolescentes que varían según el barco. Para cotizar, Suncar necesita la edad de cada menor porque tarifa, ocupación de cabina y condiciones pueden cambiar."
+    },
+    {
+      "id": "excursions",
+      "keywords": [
+        "excursion",
+        "excursión",
+        "excursiones",
+        "tour",
+        "tours",
+        "puerto"
+      ],
+      "answer": "Las excursiones en puerto normalmente se cotizan aparte, salvo que una promoción específica indique lo contrario. Suncar puede orientarte sobre el itinerario y confirmar opciones disponibles para cada escala."
+    },
+    {
+      "id": "checkin",
+      "keywords": [
+        "check in",
+        "check-in",
+        "embarque",
+        "hora de embarque",
+        "registro"
+      ],
+      "answer": "El check‑in y la hora de embarque dependen de la salida y del documento de viaje emitido. Suncar te ayuda a revisar los datos de la reserva y la documentación, pero debes seguir la hora y las instrucciones finales indicadas para tu crucero."
+    },
+    {
+      "id": "luggage",
+      "keywords": [
+        "equipaje",
+        "maleta",
+        "maletas",
+        "luggage"
+      ],
+      "answer": "Las reglas de equipaje pueden variar y conviene revisar las condiciones aplicables a la salida, además de las reglas de la aerolínea si el viaje incluye vuelos. Suncar puede ayudarte a revisar ambos componentes."
+    },
+    {
+      "id": "opera",
+      "keywords": [
+        "msc opera",
+        "opera",
+        "la romana"
+      ],
+      "answer": "Suncar trabaja salidas seleccionadas de MSC Opera desde La Romana. Tenemos ofertas y fechas cargadas para 2026–2027, y cualquier precio o disponibilidad se confirma directamente con Suncar antes de reservar."
+    },
+    {
+      "id": "price",
+      "keywords": [
+        "precio",
+        "precios",
+        "tarifa",
+        "tarifas",
+        "disponibilidad",
+        "reservar",
+        "reserva",
+        "comprar"
+      ],
+      "answer": "El Asistente MSC puede orientarte y mostrar datos cargados, pero la venta no se realiza con MSC. Toda tarifa, disponibilidad y reserva se confirma exclusivamente con Suncar Tours & Travel. Puedes usar “Buscar crucero” y al final enviar la solicitud por WhatsApp a Suncar."
+    }
+  ],
+  "departures": [
+    {
+      "id": "opera-2026-12-14",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2026-12-14",
+      "end": "2026-12-21",
+      "nights": 7,
+      "route": "La Romana → Isla Catalina → navegación → Bridgetown → Fort-de-France → Pointe-à-Pitre → Road Town (Tortola) → La Romana",
+      "suncarPrice": "Desde US$1,962 por cabina para 2 adultos",
+      "inclusions": "Impuestos incluidos, Open Bar Premium Extra, Wi‑Fi Browse 1 dispositivo por persona (2 en total) y crédito a bordo. Propinas aparte.",
+      "internalUrl": "msc-opera.html#opera-dic14"
+    },
+    {
+      "id": "opera-2027-03-22",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-03-22",
+      "end": "2027-03-29",
+      "nights": 7,
+      "route": "La Romana → Isla Catalina → Oranjestad → Willemstad → Kralendijk → St. George → La Romana",
+      "suncarPrice": "Desde US$1,820 por cabina para 2 adultos en interior garantizada",
+      "inclusions": "Oferta de grupo sujeta a inventario y vigencia. Algunas categorías incluyen bebidas y Wi‑Fi; Suncar confirma la opción disponible.",
+      "internalUrl": "msc-opera.html#semanaSantaOffer"
+    },
+    {
+      "id": "opera-2027-05-31",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-05-31",
+      "end": "2027-06-07",
+      "nights": 7,
+      "route": "La Romana → Isla Catalina → Virgin Gorda → Philipsburg → Fort-de-France → St. John's → navegación → La Romana",
+      "suncarPrice": "Desde US$2,322 por cabina para 2 adultos",
+      "inclusions": "Impuestos incluidos, Open Bar Premium Extra, Wi‑Fi Browse 1 dispositivo por persona (2 en total) y crédito a bordo. Propinas aparte.",
+      "internalUrl": "msc-opera.html#opera-may31-2027"
+    },
+    {
+      "id": "opera-date-1",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2026-12-21",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-2",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-01-04",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-3",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-01-25",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-4",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-02-08",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-5",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-04-05",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-6",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-06-28",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-7",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-07-05",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-8",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-07-26",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-9",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-08-09",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-10",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-08-16",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    },
+    {
+      "id": "opera-date-11",
+      "sourceType": "Suncar",
+      "sourceMarket": "Suncar",
+      "region": "Caribe",
+      "ship": "MSC Opera",
+      "port": "La Romana",
+      "start": "2027-09-20",
+      "nights": 7,
+      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
+      "suncarPrice": "Consultar con Suncar",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "internalUrl": "msc-opera.html"
+    }
+  ]
+}
