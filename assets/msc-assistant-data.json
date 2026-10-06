@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -871,6 +871,132 @@
       "route": "Civitavecchia → navegación → Palma de Mallorca → Barcelona → navegación → navegación → Funchal → navegación → navegación → navegación → navegación → navegación → navegación → San Juan → navegación → navegación → Miami → Port Canaveral",
       "publicPriceNote": "Desde US$1,424 por persona como referencia pública observada; Suncar confirma tarifa y disponibilidad.",
       "inclusions": "La referencia pública consultada indica tasas e impuestos incluidos."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "preziosa-2026-12-04-southampton",
+      "region": "Norte de Europa",
+      "ship": "MSC Preziosa",
+      "port": "Southampton",
+      "start": "2026-12-04",
+      "end": "2026-12-11",
+      "nights": 7,
+      "route": "Norte de Europa desde Southampton; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$668 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "preziosa-2026-12-11-southampton",
+      "region": "Norte de Europa",
+      "ship": "MSC Preziosa",
+      "port": "Southampton",
+      "start": "2026-12-11",
+      "end": "2026-12-18",
+      "nights": 7,
+      "route": "Norte de Europa desde Southampton; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$728 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "preziosa-2026-12-13-hamburg",
+      "region": "Norte de Europa",
+      "ship": "MSC Preziosa",
+      "port": "Hamburgo",
+      "start": "2026-12-13",
+      "end": "2026-12-20",
+      "nights": 7,
+      "route": "Norte de Europa desde Hamburgo; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$685 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "magnifica-2026-11-27-barcelona",
+      "region": "Mediterráneo",
+      "ship": "MSC Magnifica",
+      "port": "Barcelona",
+      "start": "2026-11-27",
+      "end": "2026-12-04",
+      "nights": 7,
+      "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$646 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "magnifica-2026-12-08-barcelona",
+      "region": "Mediterráneo",
+      "ship": "MSC Magnifica",
+      "port": "Barcelona",
+      "start": "2026-12-08",
+      "end": "2026-12-15",
+      "nights": 7,
+      "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$793 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "sinfonia-2026-11-15-barcelona",
+      "region": "Mediterráneo",
+      "ship": "MSC Sinfonia",
+      "port": "Barcelona",
+      "start": "2026-11-15",
+      "end": "2026-11-22",
+      "nights": 7,
+      "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$539 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "sinfonia-2026-11-22-barcelona",
+      "region": "Mediterráneo",
+      "ship": "MSC Sinfonia",
+      "port": "Barcelona",
+      "start": "2026-11-22",
+      "end": "2026-11-29",
+      "nights": 7,
+      "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$526 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "sinfonia-2026-11-28-valencia",
+      "region": "Mediterráneo",
+      "ship": "MSC Sinfonia",
+      "port": "Valencia",
+      "start": "2026-11-28",
+      "end": "2026-12-05",
+      "nights": 7,
+      "route": "Mediterráneo desde Valencia; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$579 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
+    },
+    {
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "LATAM",
+      "id": "sinfonia-2026-12-13-barcelona",
+      "region": "Mediterráneo",
+      "ship": "MSC Sinfonia",
+      "port": "Barcelona",
+      "start": "2026-12-13",
+      "end": "2026-12-20",
+      "nights": 7,
+      "route": "Mediterráneo desde Barcelona; escalas exactas a confirmar con Suncar.",
+      "publicPriceNote": "Desde US$586 por persona como referencia pública observada en mercado LATAM; Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Precio de referencia; beneficios y condiciones finales se confirman con Suncar."
     }
   ],
   "fleet": [
@@ -966,7 +1092,7 @@
     {
       "name": "MSC World Asia",
       "class": "World Class",
-      "note": "World Class incorporado en 2026; opera itinerarios del Mediterráneo."
+      "note": "World Class. MSC anuncia su estreno en diciembre de 2026 con itinerarios por el Mediterráneo."
     },
     {
       "name": "MSC World Atlantic",
@@ -975,7 +1101,8 @@
     },
     {
       "name": "MSC World Europa",
-      "class": "World Class"
+      "class": "World Class",
+      "note": "World Class. MSC anuncia Mediterráneo en 2026-2028 y temporada de invierno 2026-2027 rumbo a las Antillas."
     }
   ]
 }
