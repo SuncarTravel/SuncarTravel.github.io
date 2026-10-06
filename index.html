@@ -445,8 +445,7 @@ cruiseQuoteForm?.addEventListener('submit',e=>{
     'Entiendo que tarifa y disponibilidad deben ser confirmadas por Suncar antes de reservar.'
   ];
   const url='https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n'));
-  const opened=window.open(url,'_blank','noopener');
-  if(!opened) window.location.href=url;
+  window.location.href=url;
 });
 
 const offersSection=document.getElementById('ofertas');
