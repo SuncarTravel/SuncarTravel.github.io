@@ -1,0 +1,33 @@
+name: Probar navegador MSC
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/msc_browser_probe.py"
+      - ".github/workflows/msc-browser-probe.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar Playwright
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Probar búsqueda pública MSC
+        run: python scripts/msc_browser_probe.py
+      - name: Guardar diagnóstico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: msc-browser-probe
+          path: msc-browser-probe.json
