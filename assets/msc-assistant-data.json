@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "updatedAt": "2026-10-06",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
@@ -2039,6 +2039,111 @@
       "publicPriceNote": "Desde US$878 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
       "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
       "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "euribia-2027-06-06-copenhagen",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Norte de Europa",
+      "ship": "MSC Euribia",
+      "port": "Copenhagen",
+      "start": "2027-06-06",
+      "end": "2027-06-13",
+      "nights": 7,
+      "route": "Copenhagen → navegación → Hellesylt → Geiranger → Alesund → Flaam → navegación → Kiel → Copenhagen",
+      "publicPriceNote": "Desde US$1,446 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "preziosa-2027-01-24-hamburg",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Norte de Europa",
+      "ship": "MSC Preziosa",
+      "port": "Hamburg",
+      "start": "2027-01-24",
+      "end": "2027-01-31",
+      "nights": 7,
+      "route": "Hamburg → navegación → Zeebrugge (Bruges) → Rotterdam (Amsterdam) → Le Havre (Paris) → Southampton (London) → navegación → Hamburg",
+      "publicPriceNote": "Desde US$593 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "virtuosa-2026-10-15-southampton",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Norte de Europa",
+      "ship": "MSC Virtuosa",
+      "port": "Southampton (London)",
+      "start": "2026-10-15",
+      "end": "2026-10-19",
+      "nights": 4,
+      "route": "Southampton (London) → Cork → Cork → Southampton (London)",
+      "publicPriceNote": "Serie pública observada desde aproximadamente US$542 por persona; Suncar confirma el precio exacto de esta fecha y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "world-asia-2026-12-18-barcelona",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Mediterráneo",
+      "ship": "MSC World Asia",
+      "port": "Barcelona",
+      "start": "2026-12-18",
+      "end": "2026-12-25",
+      "nights": 7,
+      "route": "Barcelona → Marseille → Genoa → Civitavecchia (Rome) → Messina → La Valletta → navegación → Barcelona",
+      "publicPriceNote": "Desde US$916 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "world-america-2027-12-24",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC World America",
+      "port": "Miami",
+      "start": "2027-12-24",
+      "end": "2027-12-31",
+      "nights": 7,
+      "route": "Miami → navegación → Puerto Plata → San Juan → navegación → navegación → Ocean Cay MSC Marine Reserve → Miami",
+      "publicPriceNote": "Desde US$1,284 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Caribe y Bahamas. Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "poesia-2027-12-12-miami-21n",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC Poesia",
+      "port": "Miami",
+      "start": "2027-12-12",
+      "end": "2028-01-02",
+      "nights": 21,
+      "route": "Miami → navegación → Ocho Rios → navegación → Cartagena → Colón → Puerto Limón → navegación → Isla de Roatán → Belize City → navegación → Miami → navegación → navegación → Oranjestad → Willemstad → Kralendijk → navegación → Cabo Rojo → Ocho Rios → navegación → Miami",
+      "publicPriceNote": "Desde US$2,866 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Itinerario largo por Caribe y Centroamérica. Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
+    },
+    {
+      "id": "meraviglia-2027-03-13-miami",
+      "sourceType": "OfficialPublic",
+      "sourceMarket": "USA",
+      "region": "Caribe",
+      "ship": "MSC Meraviglia",
+      "port": "Miami",
+      "start": "2027-03-13",
+      "end": "2027-03-21",
+      "nights": 8,
+      "route": "Miami → navegación → navegación → Philipsburg → St. John's (Antigua) → Charlotte Amalie (St. Thomas) → Amber Cove → navegación → Miami",
+      "publicPriceNote": "Desde US$778 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
+      "inclusions": "Caribe y Bahamas. Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "verifiedAt": "2026-10-06"
     }
   ],
   "fleet": [
@@ -2399,7 +2504,12 @@
       "roatan",
       "roatán",
       "san juan",
-      "puerto plata"
+      "puerto plata",
+      "caribe oriental",
+      "caribe occidental",
+      "southern caribbean",
+      "eastern caribbean",
+      "western caribbean"
     ],
     "Bahamas": [
       "bahamas",
@@ -2424,7 +2534,13 @@
       "genova",
       "génova",
       "venecia",
-      "atenas"
+      "atenas",
+      "mediterranean",
+      "marseille",
+      "genoa",
+      "naples",
+      "messina",
+      "valletta"
     ],
     "Norte de Europa": [
       "norte de europa",
@@ -2440,7 +2556,10 @@
       "southampton",
       "rotterdam",
       "oslo",
-      "copenhague"
+      "copenhague",
+      "copenhagen",
+      "kiel",
+      "hamburg"
     ],
     "Alaska": [
       "alaska",
