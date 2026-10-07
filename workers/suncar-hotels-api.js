@@ -115,9 +115,11 @@ async function serpQuota(env){
   if(cached)return cached;
   const r=await fetchJson("https://serpapi.com/account.json?api_key="+encodeURIComponent(env.SERPAPI_KEY),{},10000);
   if(!r.ok||!r.data)return null;
+  const leftRaw=Number(r.data.total_searches_left??r.data.plan_searches_left);
+  const perMonthRaw=Number(r.data.searches_per_month);
   const q={
-    left:numOrNull(r.data.total_searches_left??r.data.plan_searches_left)??0,
-    perMonth:numOrNull(r.data.searches_per_month)??0,
+    left:Number.isFinite(leftRaw)?leftRaw:null,
+    perMonth:Number.isFinite(perMonthRaw)?perMonthRaw:null,
     usage:Number(r.data.this_month_usage)||0
   };
   await cachePut(key,q,60);
@@ -189,7 +191,7 @@ function normalizeSerpRoom(room,ctx){
 async function searchSerp(ctx,env){
   if(!env.SERPAPI_KEY)return null;
   const quota=await serpQuota(env);
-  if(quota&&quota.left<=10)return null;
+  if(quota&&Number.isFinite(quota.left)&&quota.left<=15)return null;
   const p=serpParams(ctx,env);
   const r=await fetchJson("https://serpapi.com/search.json?"+p.toString());
   if(!r.ok||!r.data||r.data.error)return null;
