@@ -281,10 +281,17 @@ function addManualFallback(){
 function render(){
   if(!currentData)return;
   const nights=nightsBetween(currentData.checkin,currentData.checkout);
-  const filtered=currentHotels.map(h=>({...h,rates:(h.rates||[]).filter(r=>currentFilter==='all'||r.plan===currentFilter)}))
-    .filter(h=>currentFilter==='all'||h.rates.length||(!h.manual&&currentFilter==='room'));
+  const filtered=currentHotels.map(h=>{
+    const allRates=h.rates||[];
+    const matchingRates=allRates.filter(r=>currentFilter==='all'||r.plan===currentFilter);
+    const hotelText=norm([h.name,...(h.amenities||[])].join(' '));
+    const hotelPlan=planFromText(hotelText);
+    const autoWithoutDetails=!h.manual&&!allRates.length;
+    const keepAuto=currentFilter==='all'||(autoWithoutDetails&&(hotelPlan===currentFilter||hotelPlan==='room'));
+    return {...h,rates:currentFilter==='all'?allRates:matchingRates,_keepAuto:keepAuto};
+  }).filter(h=>currentFilter==='all'||h.rates.length||h._keepAuto);
   summary.textContent=currentData.destination+' · '+fmtDate(currentData.checkin)+' al '+fmtDate(currentData.checkout)+' · '+nights+' noche'+(nights===1?'':'s')+' · '+currentData.adults+' adulto'+(currentData.adults===1?'':'s')+' · '+currentHotels.length+' hotel(es)';
-  if(!filtered.length){list.innerHTML='<div class="empty">No hay opciones para este filtro. Prueba otro régimen o solicita una búsqueda con Suncar.</div>';addManualFallback();return;}
+  if(!filtered.length){list.innerHTML='<div class="empty">No tenemos todavía el régimen seleccionado identificado en estas tarifas. Puedes ver todos los hoteles o solicitar a Suncar que confirme opciones con este régimen.</div>';addManualFallback();return;}
   list.innerHTML='';
   filtered.forEach(h=>{
     const card=document.createElement('article');card.className='hotel-card';card.dataset.hotelId=h.id||h.name;
