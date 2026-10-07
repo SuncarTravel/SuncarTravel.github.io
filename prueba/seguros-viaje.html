@@ -35,6 +35,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <div class="field"><label>Cantidad de pasajeros</label><input type="number" min="1" max="9" name="pasajeros" required></div><div class="field"><label>Edades de los pasajeros</label><input name="edades" required placeholder="Ej. 45, 42, 12"></div>
 <div class="field full"><label>Comentarios</label><textarea name="comentarios" placeholder="Ej. Viaje en crucero, deseo comparar todos los planes..."></textarea></div>
 </div>
+<div class="actions"><button class="btn orange" type="button" id="calcEstimate">Ver precio estimado</button></div>
 <div class="estimate-box" id="estimateBox">
   <div class="estimate-head"><div><h3>Precio estimado</h3><p id="estimateSummary"></p></div></div>
   <div class="estimate-grid" id="estimateGrid"></div>
@@ -121,10 +122,20 @@ function updateEstimate(){
   });
 }
 
-['change','input'].forEach(ev=>form.addEventListener(ev,updateEstimate));
+document.getElementById('calcEstimate')?.addEventListener('click',()=>{
+  if(!form.reportValidity()) return;
+  updateEstimate();
+  estimateBox.scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+['change','input'].forEach(ev=>form.addEventListener(ev,()=>{
+  if(estimateBox.classList.contains('show')) updateEstimate();
+}));
 
 form?.addEventListener('submit',e=>{
   e.preventDefault();
+  if(!e.currentTarget.reportValidity()) return;
+  updateEstimate();
   const f=new FormData(e.currentTarget);
   const origen=f.get('origen')||'';
   const destino=f.get('destino')||'';
