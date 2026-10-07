@@ -1,0 +1,20 @@
+{
+  "name": "suncar-flights",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Buscador de vuelos Suncar",
+  "main": "flights-worker.js",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "SERPAPI_KEY": {
+        "description": "Pega aquí tu API key privada de SerpApi. Se guardará como secreto y no será pública."
+      }
+    }
+  }
+}
