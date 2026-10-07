@@ -10,6 +10,7 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;font-weight:900;border:1px solid transparent;cursor:pointer}.orange{background:var(--orange);color:#fff}.outline{background:#fff;border-color:#bfd0da;color:var(--navy)}.green{background:var(--green);color:#fff}
 .hero{background:linear-gradient(135deg,#052f50,#0b79aa);color:#fff;padding:62px 0}.hero .eyebrow{text-transform:uppercase;letter-spacing:.1em;color:#ffd08a;font-size:.76rem;font-weight:950}.hero h1{font-family:Georgia,serif;font-size:clamp(2.6rem,5vw,4.7rem);line-height:1;margin:10px 0}.hero p{max-width:760px;color:#e4eff5;line-height:1.65;font-size:1.04rem}
 section{padding:54px 0}.soft{background:var(--soft)}h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3rem);margin:0 0 10px}.lead{color:var(--muted);line-height:1.65;max-width:800px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:20px;padding:20px;background:#fff;box-shadow:0 10px 28px rgba(7,55,92,.06)}.card h3{font-family:Georgia,serif;color:var(--navy);font-size:1.45rem;margin:8px 0}.card p{color:var(--muted);line-height:1.55;font-size:.9rem}.tag{font-size:.72rem;color:var(--orange);font-weight:950;letter-spacing:.08em}.price{font-size:1.32rem;color:var(--navy);font-weight:950}
+.plan-card{border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 10px 28px rgba(7,55,92,.06);overflow:hidden;transition:.18s ease}.plan-card[open]{border-color:#aac7d7;box-shadow:0 16px 38px rgba(7,55,92,.10)}.plan-card summary{list-style:none;cursor:pointer;padding:20px;position:relative;min-height:195px}.plan-card summary::-webkit-details-marker{display:none}.plan-card summary:after{content:"Ver coberturas +";position:absolute;left:20px;bottom:18px;color:var(--navy);font-size:.78rem;font-weight:950}.plan-card[open] summary:after{content:"Cerrar coberturas −"}.plan-card summary:hover{background:#fbfdff}.plan-card h3{font-family:Georgia,serif;color:var(--navy);font-size:1.45rem;margin:8px 0}.plan-card p{color:var(--muted);line-height:1.55;font-size:.9rem;margin-bottom:34px}.plan-benefits{border-top:1px solid var(--line);padding:8px 20px 20px}.benefit-row{display:flex;justify-content:space-between;gap:18px;padding:10px 0;border-bottom:1px solid #edf2f5;font-size:.84rem;line-height:1.4}.benefit-row span:first-child{color:var(--muted);max-width:66%}.benefit-row strong{color:var(--navy);text-align:right}.benefit-note{margin:14px 0 0;color:var(--muted);font-size:.75rem;line-height:1.5}
 .formbox{border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;box-shadow:var(--shadow);margin-top:24px}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.82rem;font-weight:900;color:var(--navy)}input,select,textarea{width:100%;border:1px solid #cddbe4;border-radius:12px;padding:11px 12px;font:inherit}textarea{min-height:88px;resize:vertical}.note{font-size:.79rem;color:var(--muted);line-height:1.5}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .estimate-box{margin-top:22px;border:1px solid #cfe3ed;background:#eef7fb;border-radius:20px;padding:20px;display:none}.estimate-box.show{display:block}.estimate-head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:14px}.estimate-head h3{margin:0;color:var(--navy);font-family:Georgia,serif;font-size:1.7rem}.estimate-head p{margin:4px 0 0;color:var(--muted);font-size:.84rem}.estimate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.estimate-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}.estimate-card b{display:block;color:var(--navy);font-size:1rem}.estimate-card strong{display:block;color:var(--orange);font-size:1.45rem;margin:7px 0 3px}.estimate-card small{color:var(--muted);line-height:1.4}.estimate-warning{margin-top:13px;font-size:.78rem;line-height:1.5;color:var(--muted)}
 footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{position:fixed;right:16px;bottom:16px;background:var(--green);color:#fff;border-radius:999px;padding:13px 17px;font-weight:950;box-shadow:0 12px 28px rgba(0,0,0,.18)}
@@ -22,10 +23,106 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <a href="ofertas.html">Ofertas</a><a href="index.html#contacto">Contacto</a><a class="btn orange" href="servicios.html">Cotizar</a></div></nav></div></header>
 <main><section class="hero"><div class="container"><div class="eyebrow">Suncar Travel</div><h1>Seguro de viaje</h1><p>Cotiza tu asistencia de viaje con Suncar Travel. La gestión y venta se realiza contigo directamente a través de nuestra agencia.</p></div></section>
 <section class="soft"><div class="container"><h2>Planes disponibles</h2><p class="lead">Puedes comparar las opciones de cobertura y, al completar las fechas del viaje, ver un <strong>precio estimado</strong>. La tarifa final siempre se confirma con Suncar antes de reservar.</p><div class="grid">
-<div class="card"><div class="tag">MAYOR COBERTURA</div><h3>Elite</h3><p>Opción con cobertura médica más amplia y beneficios de asistencia durante el viaje.</p></div>
-<div class="card"><div class="tag">INTERMEDIO</div><h3>Euromundo Plus</h3><p>Plan con cobertura médica y beneficios de viaje para destinos internacionales.</p></div>
-<div class="card"><div class="tag">ECONÓMICO</div><h3>Essential</h3><p>Alternativa de menor costo con coberturas esenciales de asistencia.</p></div>
-<div class="card"><div class="tag">EUROPA</div><h3>Euromundo Visa</h3><p>Puede aparecer en cotizaciones con destino Europa, según las condiciones aplicables.</p></div>
+<details class="plan-card">
+<summary><div class="tag">MAYOR COBERTURA</div><h3>Elite</h3><p>Opción con cobertura médica más amplia y beneficios de asistencia durante el viaje.</p></summary>
+<div class="plan-benefits">
+<div class="benefit-row"><span>Asistencia médica por accidente</span><strong>USD 110,000</strong></div>
+<div class="benefit-row"><span>Asistencia médica por enfermedad no preexistente</span><strong>USD 110,000</strong></div>
+<div class="benefit-row"><span>Enfermedad crónica o preexistente</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Medicamentos recetados</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Telemedicina</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Asistencia psicológica</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Asistencia médica en cruceros</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Embarazo</span><strong>USD 5,000</strong></div>
+<div class="benefit-row"><span>Deportes y deportes en nieve</span><strong>USD 10,000</strong></div>
+<div class="benefit-row"><span>Odontología de urgencia</span><strong>USD 800</strong></div>
+<div class="benefit-row"><span>Pérdida de equipaje en crucero / línea aérea</span><strong>USD 1,200</strong></div>
+<div class="benefit-row"><span>Cancelación de viaje hasta 24 h antes</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Demora en entrega de equipaje</span><strong>USD 700</strong></div>
+<div class="benefit-row"><span>Muerte accidental</span><strong>USD 25,000</strong></div>
+<div class="benefit-row"><span>Seguro para aparatos electrónicos</span><strong>USD 1,100</strong></div>
+<div class="benefit-row"><span>Compra protegida</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Cobertura territorial</span><strong>Mundial, excepto país de residencia</strong></div>
+<div class="benefit-row"><span>Duración del viaje</span><strong>3 a 60 días</strong></div>
+<p class="benefit-note">Incluye además beneficios de repatriación, asistencia legal, acompañamiento de menores, seguimiento en crucero y otros servicios sujetos a términos y condiciones.</p>
+</div>
+</details>
+
+<details class="plan-card">
+<summary><div class="tag">INTERMEDIO</div><h3>Euromundo Plus</h3><p>Plan con cobertura médica y beneficios de viaje para destinos internacionales.</p></summary>
+<div class="plan-benefits">
+<div class="benefit-row"><span>Asistencia médica por accidente</span><strong>USD 80,000</strong></div>
+<div class="benefit-row"><span>Asistencia médica por enfermedad no preexistente</span><strong>USD 80,000</strong></div>
+<div class="benefit-row"><span>Enfermedad crónica o preexistente</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Medicamentos recetados</span><strong>USD 750</strong></div>
+<div class="benefit-row"><span>Telemedicina</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Asistencia psicológica</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Asistencia médica en cruceros</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Embarazo</span><strong>USD 5,000</strong></div>
+<div class="benefit-row"><span>Deportes y deportes en nieve</span><strong>USD 10,000</strong></div>
+<div class="benefit-row"><span>Odontología de urgencia</span><strong>USD 300</strong></div>
+<div class="benefit-row"><span>Pérdida de equipaje en crucero / línea aérea</span><strong>USD 1,200</strong></div>
+<div class="benefit-row"><span>Cancelación de viaje hasta 24 h antes</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Demora en entrega de equipaje</span><strong>USD 800 (72 h)</strong></div>
+<div class="benefit-row"><span>Muerte accidental</span><strong>USD 25,000</strong></div>
+<div class="benefit-row"><span>Repatriación funeraria</span><strong>Hasta USD 80,000</strong></div>
+<div class="benefit-row"><span>Seguro para aparatos electrónicos</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Compra protegida</span><strong>USD 900</strong></div>
+<div class="benefit-row"><span>Cobertura territorial</span><strong>Mundial, excepto país de residencia</strong></div>
+<div class="benefit-row"><span>Duración del viaje</span><strong>3 a 60 días</strong></div>
+<p class="benefit-note">Incluye además beneficios de repatriación, asistencia legal, acompañamiento de menores, seguimiento en crucero y otros servicios sujetos a términos y condiciones.</p>
+</div>
+</details>
+
+<details class="plan-card">
+<summary><div class="tag">ECONÓMICO</div><h3>Essential</h3><p>Alternativa de menor costo con coberturas esenciales de asistencia.</p></summary>
+<div class="plan-benefits">
+<div class="benefit-row"><span>Asistencia médica por accidente</span><strong>USD 20,000</strong></div>
+<div class="benefit-row"><span>Asistencia médica por enfermedad no preexistente</span><strong>USD 20,000</strong></div>
+<div class="benefit-row"><span>Enfermedad crónica o preexistente</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Medicamentos recetados</span><strong>USD 500</strong></div>
+<div class="benefit-row"><span>Telemedicina</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Asistencia psicológica</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Asistencia médica en cruceros</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Embarazo</span><strong>USD 2,000</strong></div>
+<div class="benefit-row"><span>Deportes y deportes en nieve</span><strong>USD 5,000</strong></div>
+<div class="benefit-row"><span>Odontología de urgencia</span><strong>USD 600</strong></div>
+<div class="benefit-row"><span>Pérdida de equipaje en crucero / línea aérea</span><strong>USD 1,000</strong></div>
+<div class="benefit-row"><span>Cancelación de viaje hasta 24 h antes</span><strong>USD 800</strong></div>
+<div class="benefit-row"><span>Demora en entrega de equipaje</span><strong>USD 300</strong></div>
+<div class="benefit-row"><span>Muerte accidental</span><strong>USD 25,000</strong></div>
+<div class="benefit-row"><span>Compra protegida</span><strong>USD 400</strong></div>
+<div class="benefit-row"><span>Cobertura territorial</span><strong>Mundial, excepto país de residencia</strong></div>
+<div class="benefit-row"><span>Duración del viaje</span><strong>3 a 60 días</strong></div>
+<p class="benefit-note">Incluye además beneficios de repatriación, asistencia legal, acompañamiento de menores, seguimiento en crucero y otros servicios sujetos a términos y condiciones.</p>
+</div>
+</details>
+
+<details class="plan-card">
+<summary><div class="tag">EUROPA</div><h3>Euromundo Visa</h3><p>Opción disponible para viajes a Europa, con límites expresados en USD / EUR según la cobertura.</p></summary>
+<div class="plan-benefits">
+<div class="benefit-row"><span>Asistencia médica por accidente</span><strong>USD/EUR 50,000</strong></div>
+<div class="benefit-row"><span>Asistencia médica por enfermedad no preexistente</span><strong>USD/EUR 50,000</strong></div>
+<div class="benefit-row"><span>Enfermedad crónica o preexistente</span><strong>USD/EUR 1,000</strong></div>
+<div class="benefit-row"><span>Medicamentos recetados</span><strong>USD/EUR 750</strong></div>
+<div class="benefit-row"><span>Telemedicina</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Asistencia psicológica</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Asistencia médica en cruceros</span><strong>Incluido</strong></div>
+<div class="benefit-row"><span>Embarazo</span><strong>USD/EUR 3,000</strong></div>
+<div class="benefit-row"><span>Deportes y deportes en nieve</span><strong>USD/EUR 10,000</strong></div>
+<div class="benefit-row"><span>Odontología de urgencia</span><strong>USD/EUR 300</strong></div>
+<div class="benefit-row"><span>Pérdida de equipaje en crucero / línea aérea</span><strong>USD/EUR 1,200</strong></div>
+<div class="benefit-row"><span>Cancelación de viaje hasta 24 h antes</span><strong>USD/EUR 1,000</strong></div>
+<div class="benefit-row"><span>Demora en entrega de equipaje</span><strong>USD/EUR 300 (72 h)</strong></div>
+<div class="benefit-row"><span>Repatriación funeraria</span><strong>USD/EUR 50,000</strong></div>
+<div class="benefit-row"><span>Daños del equipaje</span><strong>USD/EUR 50</strong></div>
+<div class="benefit-row"><span>Seguro para aparatos electrónicos</span><strong>USD/EUR 500</strong></div>
+<div class="benefit-row"><span>Compra protegida</span><strong>USD/EUR 400</strong></div>
+<div class="benefit-row"><span>Cobertura territorial</span><strong>Mundial, excepto país de residencia</strong></div>
+<div class="benefit-row"><span>Duración del viaje</span><strong>3 a 60 días</strong></div>
+<p class="benefit-note">Incluye además beneficios de repatriación, asistencia legal, acompañamiento de menores, seguimiento en crucero y otros servicios sujetos a términos y condiciones.</p>
+</div>
+</details>
 </div><p class="note" style="margin-top:16px">Las coberturas, límites, elegibilidad y precio dependen de la cotización vigente y de los términos y condiciones del proveedor.</p></div></section>
 <section><div class="container"><h2>Cotizar seguro</h2><p class="lead">Completa los mismos datos básicos que necesita el sistema: destino, fechas, cantidad de pasajeros y edades.</p>
 <form class="formbox" id="quoteForm"><div class="formgrid">
@@ -45,6 +142,13 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <footer><div class="container">Suncar Tours & Travel · Santo Domingo · 809-316-1070</div></footer>
 <a class="wa" target="_blank" rel="noopener" href="https://wa.me/18093161070">WhatsApp</a>
 <script>
+document.querySelectorAll('.plan-card').forEach(card=>{
+  card.addEventListener('toggle',()=>{
+    if(!card.open)return;
+    document.querySelectorAll('.plan-card[open]').forEach(other=>{if(other!==card)other.open=false;});
+  });
+});
+
 const form=document.getElementById('quoteForm');
 const estimateBox=document.getElementById('estimateBox');
 const estimateGrid=document.getElementById('estimateGrid');
