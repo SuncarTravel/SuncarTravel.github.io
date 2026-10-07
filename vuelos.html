@@ -19,7 +19,7 @@ section{padding:54px 0}.soft{background:var(--soft)}h2{font-family:Georgia,serif
 footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{position:fixed;right:16px;bottom:16px;background:var(--green);color:#fff;border-radius:999px;padding:13px 17px;font-weight:950;box-shadow:0 12px 28px rgba(0,0,0,.18);z-index:40}
 @media(max-width:900px){.formgrid{grid-template-columns:repeat(2,1fr)}.field.wide{grid-column:span 2}.flight-top{grid-template-columns:1fr 1fr}.fare{grid-column:1/-1;text-align:left}.links{gap:10px;font-size:.85rem}.dropmenu{right:0;left:auto}}
 @media(max-width:620px){.top{display:none}nav{min-height:78px;align-items:flex-start;padding:8px 0;flex-direction:column}.brand{height:54px}.brand img{height:54px}.links{width:100%;overflow-x:auto;padding-bottom:8px}.hero{padding:42px 0}.formgrid{grid-template-columns:1fr}.field.wide{grid-column:auto}.flight-top{grid-template-columns:1fr}.fare{grid-column:auto}.searchbox{padding:18px}}
-</style><script src="assets/whatsapp-safe.js?v=20261007b"></script></head><body>
+</style><script src="assets/whatsapp-safe.js?v=20261007c"></script></head><body>
 <div class="top"><div class="container"><span><strong>Suncar Tours & Travel</strong> · Santo Domingo</span><span>809-316-1070 · suncartravel@gmail.com</span></div></div>
 <header><div class="container"><nav><a class="brand" href="index.html"><img src="assets/logo.svg?v=7" alt="Suncar Tours & Travel"></a><div class="links">
 <details class="drop"><summary>Servicios</summary><div class="dropmenu"><a href="hoteles.html">🏨 Hoteles</a><a href="vuelos.html">✈️ Vuelos</a><a href="cruceros.html">🚢 Cruceros</a><a href="seguros-viaje.html">🛡️ Seguros de viaje</a><a href="paquetes.html">🌴 Paquetes y escapadas</a><a href="servicios.html"><strong>Ver todos →</strong></a></div></details>
@@ -153,9 +153,9 @@ function setupAirportAutocomplete(inputId,boxId){
           const airportName=x.name||'Aeropuerto';
           const city=x.city_name||x.city_code||'';
           const country=x.country_name||x.country_code||'';
-          btn.innerHTML='<strong>'+x.code+' — '+airportName+'</strong><span>'+[city,country].filter(Boolean).join(' · ')+'</span>';
+          btn.innerHTML='<strong>'+x.code+' - '+airportName+'</strong><span>'+[city,country].filter(Boolean).join(' · ')+'</span>';
           btn.addEventListener('click',function(){
-            input.value=x.code+' — '+airportName;
+            input.value=x.code+' - '+airportName;
             close();
           });
           box.appendChild(btn);
@@ -255,37 +255,37 @@ function confirmFlight(r,d){
   const price=(r.currency||'USD')+' '+Number(r.price||0).toLocaleString('en-US');
 
   const lines=[
-    'Hola Suncar 👋',
+    'Hola Suncar ',
     '',
-    'Quiero confirmar esta opción de *VUELO* ✈️',
+    'Quiero confirmar esta opción de *VUELO* ',
     '',
     '*DATOS DE LA BÚSQUEDA*',
-    '📍 Ruta: '+d.origin+' → '+d.destination,
-    '📅 Ida: '+fmtDate(d.outbound)
+    ' Ruta: '+d.origin+' -> '+d.destination,
+    ' Ida: '+fmtDate(d.outbound)
   ];
 
   if(d.trip==='roundtrip'){
-    lines.push('📅 Regreso: '+fmtDate(d.returnDate));
+    lines.push(' Regreso: '+fmtDate(d.returnDate));
   }
 
   lines.push(
-    '👤 Adultos: '+d.adults,
-    '🧒 Niños (2-11): '+d.children,
-    '👶 Infantes (0-1): '+d.infants,
+    ' Adultos: '+d.adults,
+    ' Niños (2-11): '+d.children,
+    ' Infantes (0-1): '+d.infants,
     '',
     '*OPCIÓN SELECCIONADA*',
-    '🛫 Aerolínea: '+airlines,
-    '🎫 Vuelo: '+flights,
-    '🕒 Salida: '+(r.departure_time||'Por confirmar'),
-    '🕓 Llegada: '+(r.arrival_time||'Por confirmar'),
-    '🔁 Escalas: '+stopsText,
-    '💵 Precio estimado: *'+price+'*',
+    ' Aerolínea: '+airlines,
+    ' Vuelo: '+flights,
+    ' Salida: '+(r.departure_time||'Por confirmar'),
+    ' Llegada: '+(r.arrival_time||'Por confirmar'),
+    ' Escalas: '+stopsText,
+    ' Precio estimado: *'+price+'*',
     '',
     'Por favor confirmar:',
-    '• Disponibilidad actual',
-    '• Precio final',
-    '• Equipaje incluido',
-    '• Condiciones de la tarifa',
+    '- Disponibilidad actual',
+    '- Precio final',
+    '- Equipaje incluido',
+    '- Condiciones de la tarifa',
     '',
     'Gracias.'
   );
@@ -297,7 +297,7 @@ function renderResults(data,d){
   flightList.innerHTML='';
   results.classList.add('show');
   const list=Array.isArray(data.results)?data.results:[];
-  resultSummary.textContent=d.origin+' → '+d.destination+' · '+fmtDate(d.outbound)+(d.trip==='roundtrip'?' al '+fmtDate(d.returnDate):' · solo ida')+' · '+list.length+' opción(es)';
+  resultSummary.textContent=d.origin+' -> '+d.destination+' · '+fmtDate(d.outbound)+(d.trip==='roundtrip'?' al '+fmtDate(d.returnDate):' · solo ida')+' · '+list.length+' opción(es)';
 
   if(data.price_insights&&data.price_insights.lowest_price){
     priceInsight.hidden=false;
@@ -321,7 +321,7 @@ function renderResults(data,d){
     card.innerHTML=
       '<div class="flight-top">'+
         '<div class="airline">'+logo+'<div>'+badge+'<b>'+airline+'</b><small>'+(r.flight_numbers||[]).join(' · ')+'</small></div></div>'+
-        '<div class="route"><strong>'+(r.origin||d.origin)+' → '+(r.destination||d.destination)+'</strong><small>'+(r.departure_time||'')+' → '+(r.arrival_time||'')+'</small><small>'+fmtDuration(r.total_duration)+' · '+stops+'</small></div>'+
+        '<div class="route"><strong>'+(r.origin||d.origin)+' -> '+(r.destination||d.destination)+'</strong><small>'+(r.departure_time||'')+' -> '+(r.arrival_time||'')+'</small><small>'+fmtDuration(r.total_duration)+' · '+stops+'</small></div>'+
         '<div class="fare"><strong>'+(r.currency||data.currency||'USD')+' '+Number(r.price||0).toLocaleString('en-US')+'</strong><small>precio estimado</small></div>'+
       '</div>';
 
