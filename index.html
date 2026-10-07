@@ -116,7 +116,7 @@ footer{background:#031f35;color:#dcebf3;padding:34px 0}.footer-grid{display:grid
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Suncar Tours & Travel","url":"https://suncartravel.github.io/","telephone":"+1-809-316-1070","email":"suncartravel@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Calle Trinitaria No. 5, San Carlos","addressLocality":"Santo Domingo","addressCountry":"DO"},"sameAs":["https://www.instagram.com/suncartravel/"]}</script>
-</head>
+<script src="assets/whatsapp-safe.js?v=20261007b"></script></head>
 <body>
 <div class="top"><div class="container"><span><strong>Suncar Tours & Travel</strong> · Santo Domingo</span><span><a href="tel:+18093161070">809-316-1070</a> · <a href="mailto:suncartravel@gmail.com">suncartravel@gmail.com</a> · <a href="https://www.instagram.com/suncartravel/" target="_blank" rel="noopener">@suncartravel</a></span></div></div>
 <header><div class="container"><nav>
@@ -427,7 +427,7 @@ const month=document.getElementById('qMonth'),children=document.getElementById('
 if(month){const d=new Date();month.min=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');}
 const validateAges=()=>{if(!children||!ages)return true;const n=Number(children.value)>0;ages.required=n;ages.setCustomValidity(n&&!ages.value.trim()?'Indica las edades de los niños.':'');return ages.checkValidity();};
 children?.addEventListener('input',validateAges);ages?.addEventListener('input',validateAges);
-document.getElementById('cruiseQuoteForm')?.addEventListener('submit',e=>{e.preventDefault();validateAges();if(!e.currentTarget.reportValidity())return;const v=id=>document.getElementById(id)?.value.trim()||'';const n=v('qChildren')||'0';const lines=['Hola Suncar 👋','Quiero solicitar una cotización de crucero.','','Destino: '+v('qDestination'),'Mes: '+v('qMonth'),'Naviera: '+v('qCruiseline'),'Cabina: '+v('qCabin'),'Adultos: '+v('qAdults'),'Niños: '+n+(n!=='0'?' (edades: '+v('qChildAges')+')':''),'Presupuesto: '+v('qBudget'),'','Nombre: '+v('qName'),'WhatsApp: '+v('qPhone'),'Comentarios: '+(v('qNotes')||'Ninguno'),'','Entiendo que tarifa y disponibilidad deben ser confirmadas por Suncar.'];location.href='https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n'));});
+document.getElementById('cruiseQuoteForm')?.addEventListener('submit',e=>{e.preventDefault();validateAges();if(!e.currentTarget.reportValidity())return;const v=id=>document.getElementById(id)?.value.trim()||'';const n=v('qChildren')||'0';const lines=['Hola Suncar 👋','Quiero solicitar una cotización de crucero.','','Destino: '+v('qDestination'),'Mes: '+v('qMonth'),'Naviera: '+v('qCruiseline'),'Cabina: '+v('qCabin'),'Adultos: '+v('qAdults'),'Niños: '+n+(n!=='0'?' (edades: '+v('qChildAges')+')':''),'Presupuesto: '+v('qBudget'),'','Nombre: '+v('qName'),'WhatsApp: '+v('qPhone'),'Comentarios: '+(v('qNotes')||'Ninguno'),'','Entiendo que tarifa y disponibilidad deben ser confirmadas por Suncar.'];location.href=SuncarWhatsApp.url('18093161070',lines.join('\n'));});
 const chat=document.getElementById('mscChat'),body=document.getElementById('mscChatBody'),input=document.getElementById('mscChatInput'),dataStatus=document.getElementById('mscDataStatus');
 let mscData=null,mscPublicIndex=null,mscDepartureCache=null,mscAvailableCache=null;
 const fallbackMscData={regions:['Caribe','Bahamas','Mediterráneo','Norte de Europa','Alaska','Sudamérica','Asia','Emiratos / Oriente Medio','Canarias y Madeira','Sudáfrica','Canal de Panamá','MSC Grand Voyages','Vuelta al Mundo'],knowledge:[],departures:[],series:[],fleet:[],whatsapp:'18093161070'};
@@ -438,7 +438,7 @@ const openChat=async()=>{chat?.classList.add('open');await mscLoad();setTimeout(
 document.getElementById('mscChatLaunch')?.addEventListener('click',openChat);document.getElementById('openMscChat')?.addEventListener('click',openChat);document.getElementById('mscChatClose')?.addEventListener('click',closeChat);
 const add=(txt,type='bot')=>{const el=document.createElement('div');el.className='msc-msg '+type;el.textContent=txt;body?.appendChild(el);if(body)body.scrollTop=body.scrollHeight;return el;};
 const addChoices=(items,onPick)=>{const wrap=document.createElement('div');wrap.className='msc-choice-grid';items.forEach(item=>{const b=document.createElement('button');b.type='button';b.className='msc-choice';b.textContent=item.label||item;b.addEventListener('click',()=>onPick(item));wrap.appendChild(b);});body?.appendChild(wrap);if(body)body.scrollTop=body.scrollHeight;return wrap;};
-const waUrl=message=>'https://wa.me/'+(mscData?.whatsapp||'18093161070')+'?text='+encodeURIComponent(message);
+const waUrl=message=>SuncarWhatsApp.url(mscData?.whatsapp||'18093161070',message);
 const addQuoteButton=(label,message)=>{const wrap=document.createElement('div');wrap.className='msc-result-actions';const a=document.createElement('a');a.className='quote';a.target='_blank';a.rel='noopener';a.href=waUrl(message);a.textContent=label;wrap.appendChild(a);body?.appendChild(wrap);if(body)body.scrollTop=body.scrollHeight;};
 const formatDate=iso=>{if(!iso)return'';const d=new Date(iso+'T12:00:00');return d.toLocaleDateString('es-DO',{day:'numeric',month:'long',year:'numeric'});};
 const addDaysISO=(iso,n)=>{const d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+Number(n||0));return d.toISOString().slice(0,10);};
@@ -671,7 +671,7 @@ function manualMessage(){
   return lines.join('\n');
 }
 function sendManual(){
-  window.open('https://wa.me/18093161070?text='+encodeURIComponent(manualMessage()),'_blank');
+  window.open(SuncarWhatsApp.url('18093161070',manualMessage()),'_blank');
 }
 document.getElementById('manualBtn').addEventListener('click',sendManual);
 document.getElementById('manualBtn2').addEventListener('click',sendManual);
@@ -718,7 +718,7 @@ function confirmFlight(r,d){
     'Gracias.'
   );
 
-  window.open('https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n')),'_blank');
+  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 }
 
 function renderResults(data,d){
