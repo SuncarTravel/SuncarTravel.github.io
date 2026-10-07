@@ -1,0 +1,8 @@
+name = "suncar-flights"
+main = "backend/flights-worker.js"
+compatibility_date = "2026-10-07"
+workers_dev = true
+keep_vars = true
+
+[observability]
+enabled = true
