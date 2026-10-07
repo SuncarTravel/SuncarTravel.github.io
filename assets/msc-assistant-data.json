@@ -1,6 +1,6 @@
 {
-  "version": 20,
-  "updatedAt": "2026-10-06",
+  "version": "20",
+  "updatedAt": "2026-10-07",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
   "policy": {
@@ -503,6 +503,18 @@
         "luna park arena"
       ],
       "answer": "MSC World America es un barco World Class que navega desde Miami por el Caribe Oriental y Occidental. Tiene una gran oferta de gastronomía, entretenimiento, áreas familiares, piscinas y MSC Yacht Club. En la base de Suncar también están cargadas salidas e itinerarios para que puedas buscar por mes, fecha o puerto."
+    },
+    {
+      "id": "semana-santa-opera-2027",
+      "keywords": [
+        "semana santa",
+        "semana santa 2027",
+        "22 marzo 2027",
+        "22 de marzo",
+        "msc opera semana santa",
+        "aruba curazao bonaire granada"
+      ],
+      "answer": "MSC Opera · Semana Santa 2027 · 22 al 29 de marzo, salida desde La Romana. Ruta: La Romana, Isla Catalina, Aruba, Curazao, Bonaire, Granada y regreso a La Romana. Alta demanda. Hay cabinas individuales con Bebidas Premium + Wi-Fi, opciones de bloqueo de grupo con bebidas + Wi-Fi y tarifas más bajas sin bebidas ni Wi-Fi. Adultos desde US$1,141 p/p en vista al mar triple; 3er pasajero niño US$29 p/p. Propinas US$105 p/p e impuesto de salida RD US$30 p/p, aparte. Las cabinas individuales indicadas están disponibles hasta el 11 de octubre o agotar existencia. Disponibilidad y tarifas pueden cambiar; Suncar confirma antes de reservar."
     }
   ],
   "departures": [
@@ -531,9 +543,9 @@
       "start": "2027-03-22",
       "end": "2027-03-29",
       "nights": 7,
-      "route": "La Romana → Isla Catalina → Oranjestad → Willemstad → Kralendijk → St. George → La Romana",
-      "suncarPrice": "Desde US$1,820 por cabina para 2 adultos en interior garantizada",
-      "inclusions": "Oferta de grupo sujeta a inventario y vigencia. Algunas categorías incluyen bebidas y Wi‑Fi; Suncar confirma la opción disponible.",
+      "route": "La Romana → Isla Catalina → Aruba → Curazao → Bonaire → Granada → La Romana",
+      "suncarPrice": "Semana Santa 2027: adultos desde US$1,141 p/p en vista al mar triple sin bebidas ni Wi-Fi; 3er pasajero niño US$29 p/p. También hay opciones con bebidas + Wi-Fi y cabinas individuales con tarifas dinámicas.",
+      "inclusions": "Oferta Suncar de alta demanda. Cabinas individuales indicadas hasta el 11 de octubre o agotar existencia. Opciones de bloqueo de grupo y tarifas más bajas sin bebidas/Wi-Fi. Propinas US$105 p/p e impuesto de salida RD US$30 p/p, aparte. Suncar confirma inventario y precio antes del pago.",
       "internalUrl": "msc-opera.html#semanaSantaOffer"
     },
     {
