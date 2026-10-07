@@ -16,12 +16,11 @@ header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid 
 .note{margin-top:12px;color:var(--muted);font-size:.78rem;line-height:1.5}.test-note{background:#fff8ec;border:1px solid #f3d8af;border-radius:14px;padding:12px 14px;margin-top:14px;color:#76511e;font-size:.78rem;line-height:1.5}
 .results-section{padding:44px 0 62px;background:var(--soft)}.results-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:18px}.results-head h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3rem);margin:0 0 6px}.summary{color:var(--muted);font-size:.85rem}
 .filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid #cbdbe5;background:#fff;border-radius:999px;padding:8px 11px;font-weight:850;color:var(--navy);cursor:pointer}.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.hotel-list{display:grid;gap:18px}.hotel-card{display:grid;grid-template-columns:260px 1fr;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 28px rgba(7,55,92,.07)}.hotel-media{min-height:230px;background:linear-gradient(135deg,#dcebf3,#a8c8d9);display:flex;align-items:center;justify-content:center;font-size:4rem}.hotel-body{padding:20px}.hotel-top{display:flex;justify-content:space-between;gap:16px;align-items:start}.hotel-title h3{font-family:Georgia,serif;color:var(--navy);font-size:1.55rem;margin:0 0 5px}.stars{color:#f0a41b;letter-spacing:.05em}.rating{display:inline-flex;gap:7px;align-items:center;background:#eef7fb;border-radius:10px;padding:7px 9px;font-weight:900;color:var(--navy)}.hotel-meta{color:var(--muted);font-size:.82rem;line-height:1.55;margin-top:8px}.amenities{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.amenity{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 9px;font-size:.72rem;font-weight:800;color:#365367}
-.rate-list{display:grid;gap:10px;margin-top:16px}.rate{display:grid;grid-template-columns:1.25fr 1fr auto;gap:14px;align-items:center;border:1px solid var(--line);border-radius:15px;padding:13px}.rate-name strong{display:block;color:var(--navy)}.rate-name small,.rate-info small{display:block;color:var(--muted);font-size:.72rem;margin-top:3px;line-height:1.4}.rate-price{text-align:right}.rate-price strong{display:block;color:var(--orange);font-size:1.2rem}.rate-price small{font-size:.68rem;color:var(--muted)}.rate .btn{white-space:nowrap;padding:10px 13px;font-size:.78rem}
+.hotel-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.hotel-card{display:grid;grid-template-columns:112px 1fr;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(7,55,92,.06)}.hotel-media{min-height:148px;background:linear-gradient(135deg,#dcebf3,#a8c8d9);display:flex;align-items:center;justify-content:center;font-size:2.4rem}.hotel-body{padding:14px}.hotel-top{display:flex;justify-content:space-between;gap:10px;align-items:start}.hotel-title h3{font-family:Georgia,serif;color:var(--navy);font-size:1.16rem;margin:1px 0 3px;line-height:1.2}.stars{color:#f0a41b;letter-spacing:.03em;font-size:.78rem}.rating{display:inline-flex;gap:5px;align-items:center;background:#eef7fb;border-radius:9px;padding:5px 7px;font-size:.75rem;font-weight:900;color:var(--navy);white-space:nowrap}.hotel-meta{color:var(--muted);font-size:.72rem;line-height:1.4;margin-top:5px}.amenities{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}.amenity{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 7px;font-size:.64rem;font-weight:800;color:#365367}.hotel-summary{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-top:8px;padding-top:9px;border-top:1px solid var(--line)}.from small{display:block;color:var(--muted);font-size:.65rem}.from strong{display:block;color:var(--orange);font-size:1.15rem}.compact-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.compact-actions .btn{padding:8px 10px;font-size:.7rem}.rate-list{display:none;grid-column:1/-1;gap:8px;padding:0 14px 14px;margin-top:-2px}.hotel-card.open .rate-list{display:grid}.rate{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px}.rate-name strong{display:block;color:var(--navy);font-size:.82rem}.rate-name small,.rate-info small{display:block;color:var(--muted);font-size:.67rem;margin-top:2px;line-height:1.35}.rate-info{grid-column:1/-1}.rate-price{text-align:right}.rate-price strong{display:block;color:var(--orange);font-size:1rem}.rate-price small{font-size:.62rem;color:var(--muted)}.rate .btn{white-space:nowrap;padding:8px 10px;font-size:.7rem}
 .empty{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;color:var(--muted);line-height:1.6}.hidden{display:none!important}
 footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:980px){.formgrid{grid-template-columns:repeat(3,1fr)}.field.destination{grid-column:span 3}.hotel-card{grid-template-columns:210px 1fr}.rate{grid-template-columns:1fr auto}.rate-info{grid-column:1/-1}}
-@media(max-width:700px){.top{display:none}.navlinks{font-size:.8rem;gap:10px}.brand img{height:62px}.formgrid{grid-template-columns:1fr 1fr}.field.destination{grid-column:1/-1}.hotel-card{grid-template-columns:1fr}.hotel-media{min-height:160px}.hotel-top{flex-direction:column}.rate{grid-template-columns:1fr}.rate-price{text-align:left}}
+@media(max-width:980px){.formgrid{grid-template-columns:repeat(3,1fr)}.field.destination{grid-column:span 3}.hotel-list{grid-template-columns:1fr}.hotel-card{grid-template-columns:112px 1fr}}
+@media(max-width:700px){.top{display:none}.navlinks{font-size:.8rem;gap:10px}.brand img{height:62px}.formgrid{grid-template-columns:1fr 1fr}.field.destination{grid-column:1/-1}.hotel-card{grid-template-columns:92px 1fr}.hotel-media{min-height:130px}.hotel-top{gap:7px}.amenities{display:none}.hotel-summary{align-items:center}.compact-actions{justify-content:flex-start}.rate{grid-template-columns:1fr}.rate-price{text-align:left}}
 </style>
 <script src="../assets/whatsapp-safe.js?v=20261007c"></script>
 </head>
@@ -165,22 +164,28 @@ function render(){
  list.innerHTML='';
  filtered.forEach((h,hi)=>{
    const card=document.createElement('article');card.className='hotel-card';
-   const media=document.createElement('div');media.className='hotel-media';media.textContent='🏨';
+   const media=document.createElement('div');media.className='hotel-media';media.textContent='HOTEL';
    const body=document.createElement('div');body.className='hotel-body';
+   const best=h.rates.reduce((a,b)=>a.night<=b.night?a:b);
+   const bestTotal=Math.round(best.night*nights*currentData.rooms);
    body.innerHTML='<div class="hotel-top"><div class="hotel-title"><div class="stars">'+stars(h.stars)+'</div><h3>'+h.name+'</h3><div class="hotel-meta">'+currentData.destination+' · '+h.location+'</div></div><div class="rating">'+h.rating+' / 10</div></div>'+
-     '<div class="amenities">'+h.amenities.map(a=>'<span class="amenity">'+a+'</span>').join('')+'</div>'+
-     '<div class="rate-list"></div>';
-   const rates=body.querySelector('.rate-list');
+     '<div class="amenities">'+h.amenities.slice(0,3).map(a=>'<span class="amenity">'+a+'</span>').join('')+'</div>'+
+     '<div class="hotel-summary"><div class="from"><small>Desde · total estadía</small><strong>USD '+bestTotal.toLocaleString('en-US')+'</strong><small>'+best.label+'</small></div><div class="compact-actions"><button class="btn outline toggle-rates" type="button">Ver '+h.rates.length+' tarifa'+(h.rates.length===1?'':'s')+'</button></div></div>';
+   const rates=document.createElement('div');rates.className='rate-list';
    h.rates.forEach((r,ri)=>{
      const total=Math.round(r.night*nights*currentData.rooms);
      const row=document.createElement('div');row.className='rate';
      row.innerHTML='<div class="rate-name"><strong>'+r.room+'</strong><small>'+r.label+'</small></div>'+
-       '<div class="rate-info"><strong>'+r.cancel+'</strong><small>USD '+r.night.toLocaleString('en-US')+' por noche · '+nights+' noche'+(nights===1?'':'s')+'</small></div>'+
-       '<div class="rate-price"><strong>USD '+total.toLocaleString('en-US')+'</strong><small>total mostrado</small><button class="btn green" type="button">Solicitar esta tarifa</button></div>';
+       '<div class="rate-price"><strong>USD '+total.toLocaleString('en-US')+'</strong><small>total</small><button class="btn green" type="button">Solicitar</button></div>'+
+       '<div class="rate-info"><strong>'+r.cancel+'</strong><small>USD '+r.night.toLocaleString('en-US')+' por noche · '+nights+' noche'+(nights===1?'':'s')+'</small></div>';
      row.querySelector('button').addEventListener('click',()=>quoteHotel(h,r,total,nights));
      rates.appendChild(row);
    });
-   card.append(media,body);list.appendChild(card);
+   body.querySelector('.toggle-rates').addEventListener('click',e=>{
+     card.classList.toggle('open');
+     e.currentTarget.textContent=card.classList.contains('open')?'Ocultar tarifas':'Ver '+h.rates.length+' tarifa'+(h.rates.length===1?'':'s');
+   });
+   card.append(media,body,rates);list.appendChild(card);
  });
 }
 form.addEventListener('submit',e=>{
