@@ -49,6 +49,71 @@ footer{background:#031f35;color:#dcebf3;padding:34px 0}.footer-grid{display:grid
 .msc-status{font-size:.7rem;color:var(--muted);padding:0 2px}.msc-search-summary{background:#eef7fb;border:1px solid #cfe3ed;border-radius:14px;padding:11px 12px;font-size:.8rem;line-height:1.5;color:var(--navy)}.msc-search-summary b{display:block;margin-bottom:4px}.msc-more{border:1px solid #bfd0da;background:#fff;color:var(--navy);border-radius:999px;padding:9px 13px;font-size:.76rem;font-weight:900;cursor:pointer;justify-self:start}
 @media(max-width:620px){.msc-chat{left:10px;right:10px;bottom:126px;width:auto;max-height:calc(100vh - 145px);border-radius:18px}.msc-chat-body{min-height:220px}}
 
+
+/* Buscador de vuelos integrado en inicio */
+#vuelos-home{padding:58px 0;background:#f7fafc}
+#vuelos-home .flight-home-head{display:flex;justify-content:space-between;gap:20px;align-items:end;flex-wrap:wrap;margin-bottom:20px}
+#vuelos-home h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3.1rem);margin:6px 0 8px}
+#vuelos-home .flight-home-lead{color:var(--muted);line-height:1.65;max-width:780px;margin:0}
+#vuelos-home .searchbox{border:1px solid var(--line);border-radius:24px;padding:24px;background:#fff;box-shadow:var(--shadow)}
+#vuelos-home .formgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+#vuelos-home .field{display:flex;flex-direction:column;gap:6px;position:relative}
+#vuelos-home .field.wide{grid-column:span 2}
+#vuelos-home .field label{font-size:.82rem;font-weight:900;color:var(--navy)}
+#vuelos-home .airport-wrap{position:relative}
+#vuelos-home .airport-suggestions{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:80;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);max-height:300px;overflow:auto;display:none}
+#vuelos-home .airport-suggestions.show{display:block}
+#vuelos-home .airport-option{display:block;width:100%;text-align:left;border:0;background:#fff;padding:11px 12px;cursor:pointer;border-bottom:1px solid #edf2f5;color:var(--ink)}
+#vuelos-home .airport-option:hover{background:var(--soft)}
+#vuelos-home .airport-option strong{display:block;color:var(--navy);font-size:.86rem}
+#vuelos-home .airport-option span{display:block;color:var(--muted);font-size:.72rem;margin-top:2px}
+#vuelos-home .airport-empty{padding:12px;color:var(--muted);font-size:.78rem}
+#vuelos-home input,#vuelos-home select{width:100%;border:1px solid #cddbe4;border-radius:12px;padding:11px 12px;font:inherit;background:#fff}
+#vuelos-home input:focus,#vuelos-home select:focus{outline:2px solid #cfe3ed;border-color:var(--blue)}
+#vuelos-home .trip-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+#vuelos-home .trip-tab{border:1px solid #cbdbe5;background:#fff;color:var(--navy);padding:9px 13px;border-radius:999px;font-weight:900;cursor:pointer}
+#vuelos-home .trip-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+#vuelos-home .helper{font-size:.73rem;color:var(--muted);line-height:1.45}
+#vuelos-home .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+#vuelos-home .btn-flight{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;font-weight:900;border:1px solid transparent;cursor:pointer}
+#vuelos-home .btn-flight.orange{background:var(--orange);color:#fff}
+#vuelos-home .btn-flight.outline{background:#fff;border-color:#bfd0da;color:var(--navy)}
+#vuelos-home .btn-flight.green{background:var(--green);color:#fff}
+#vuelos-home .btn-flight:disabled{opacity:.55;cursor:not-allowed}
+#vuelos-home .free-note{display:flex;gap:12px;align-items:flex-start;background:#fff8ec;border:1px solid #f3d8af;border-radius:16px;padding:14px 16px;margin-top:16px}
+#vuelos-home .free-note div{font-size:.8rem;color:#5b6872;line-height:1.55}
+#vuelos-home .status{display:none;margin-top:18px;border-radius:16px;padding:15px 17px;font-size:.86rem;line-height:1.55}
+#vuelos-home .status.show{display:block}
+#vuelos-home .status.loading{background:#eef7fb;border:1px solid #cfe3ed;color:var(--navy)}
+#vuelos-home .status.error{background:#fff1f0;border:1px solid #f0c2bd;color:#7c2c25}
+#vuelos-home .status.setup{background:#fff8ec;border:1px solid #f3d8af;color:#76511e}
+#vuelos-home .results{display:none;margin-top:28px}
+#vuelos-home .results.show{display:block}
+#vuelos-home .result-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:14px}
+#vuelos-home .result-head h3{font-family:Georgia,serif;color:var(--navy);font-size:1.8rem;margin:0}
+#vuelos-home .result-summary{color:var(--muted);font-size:.82rem;line-height:1.5}
+#vuelos-home .insight{background:#eef7fb;border:1px solid #cfe3ed;border-radius:14px;padding:11px 13px;font-size:.78rem;color:var(--navy);margin-bottom:13px}
+#vuelos-home .flight-list{display:grid;gap:13px}
+#vuelos-home .flight-card{border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 9px 24px rgba(7,55,92,.06);padding:18px}
+#vuelos-home .flight-top{display:grid;grid-template-columns:1.2fr .9fr auto;gap:16px;align-items:center}
+#vuelos-home .airline{display:flex;align-items:center;gap:11px}
+#vuelos-home .airline img{width:42px;height:42px;object-fit:contain;border:1px solid var(--line);border-radius:10px;background:#fff;padding:4px}
+#vuelos-home .airline b{display:block;color:var(--navy);font-size:1.05rem}
+#vuelos-home .airline small,#vuelos-home .route small{display:block;color:var(--muted);font-size:.76rem;margin-top:3px}
+#vuelos-home .route strong{color:var(--navy)}
+#vuelos-home .fare{text-align:right}
+#vuelos-home .fare strong{display:block;color:var(--orange);font-size:1.45rem}
+#vuelos-home .fare small{color:var(--muted);font-size:.7rem}
+#vuelos-home .badge{display:inline-block;background:#fff3e8;color:#a45110;border:1px solid #f2cfb0;border-radius:999px;padding:5px 8px;font-size:.66rem;font-weight:950;margin-bottom:6px}
+#vuelos-home .badge.blue{background:#eef7fb;color:var(--navy);border-color:#cfe3ed}
+#vuelos-home .flight-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+#vuelos-home .disclaimer{margin-top:16px;color:var(--muted);font-size:.76rem;line-height:1.55}
+#vuelos-home .fallback{margin-top:28px;border-top:1px solid var(--line);padding-top:22px}
+#vuelos-home .fallback h3{color:var(--navy);font-family:Georgia,serif;font-size:1.45rem;margin:0 0 8px}
+#vuelos-home .fallback p{color:var(--muted);font-size:.84rem;line-height:1.55}
+@media(max-width:900px){#vuelos-home .formgrid{grid-template-columns:repeat(2,1fr)}#vuelos-home .field.wide{grid-column:span 2}#vuelos-home .flight-top{grid-template-columns:1fr 1fr}#vuelos-home .fare{grid-column:1/-1;text-align:left}}
+@media(max-width:620px){#vuelos-home .formgrid{grid-template-columns:1fr}#vuelos-home .field.wide{grid-column:auto}#vuelos-home .flight-top{grid-template-columns:1fr}#vuelos-home .fare{grid-column:auto}#vuelos-home .searchbox{padding:18px}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Suncar Tours & Travel","url":"https://suncartravel.github.io/","telephone":"+1-809-316-1070","email":"suncartravel@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Calle Trinitaria No. 5, San Carlos","addressLocality":"Santo Domingo","addressCountry":"DO"},"sameAs":["https://www.instagram.com/suncartravel/"]}</script>
 </head>
@@ -92,6 +157,55 @@ footer{background:#031f35;color:#dcebf3;padding:34px 0}.footer-grid{display:grid
 <article class="service-card"><div class="tag">MÁS SERVICIOS</div><h3>Seguros y escapadas</h3><p>Seguro de viaje, paquetes y promociones, todo gestionado por Suncar.</p><a class="btn btn-outline" href="servicios.html">Ver servicios</a></article>
 </div>
 </div></section>
+
+
+<section id="vuelos-home">
+  <div class="container">
+    <div class="flight-home-head">
+      <div>
+        <div class="eyebrow">Vuelos · Suncar Travel</div>
+        <h2>Busca tu vuelo sin salir de Suncar</h2>
+        <p class="flight-home-lead">Consulta opciones y precios estimados. Antes de emitir, Suncar confirma disponibilidad, equipaje, condiciones y precio final.</p>
+      </div>
+    </div>
+
+    <form class="searchbox" id="flightSearch">
+      <div class="trip-tabs" role="group" aria-label="Tipo de viaje">
+        <button class="trip-tab active" type="button" data-trip="roundtrip">Ida y vuelta</button>
+        <button class="trip-tab" type="button" data-trip="oneway">Solo ida</button>
+      </div>
+      <input type="hidden" name="trip" id="tripType" value="roundtrip">
+
+      <div class="formgrid">
+        <div class="field wide"><label>Origen</label><div class="airport-wrap"><input name="origin" id="origin" autocomplete="off" maxlength="100" placeholder="Santo Domingo, Miami, Madrid..." required><div class="airport-suggestions" id="originSuggestions"></div></div><span class="helper">Busca por ciudad, aeropuerto o código IATA.</span></div>
+        <div class="field wide"><label>Destino</label><div class="airport-wrap"><input name="destination" id="destination" autocomplete="off" maxlength="100" placeholder="Nueva York, París, Bogotá..." required><div class="airport-suggestions" id="destinationSuggestions"></div></div><span class="helper">Puedes elegir aeropuertos internacionales.</span></div>
+        <div class="field"><label>Fecha de ida</label><input type="date" name="outbound" id="outbound" required></div>
+        <div class="field" id="returnWrap"><label>Fecha de regreso</label><input type="date" name="return" id="returnDate" required></div>
+        <div class="field"><label>Adultos</label><input type="number" name="adults" min="1" max="9" value="1" required></div>
+        <div class="field"><label>Niños 2–11 años</label><input type="number" name="children" min="0" max="8" value="0"></div>
+        <div class="field"><label>Infantes 0–1 año</label><input type="number" name="infants" min="0" max="4" value="0"></div>
+        <div class="field"><label>Clase</label><select name="travel_class"><option value="1">Económica</option><option value="2">Premium Economy</option><option value="3">Business</option><option value="4">Primera</option></select></div>
+        <div class="field"><label>Escalas</label><select name="stops"><option value="0">Cualquier cantidad</option><option value="1">Solo directo</option><option value="2">Máximo 1 escala</option><option value="3">Máximo 2 escalas</option></select></div>
+        <div class="field"><label>Ordenar</label><select name="sort"><option value="1">Mejores opciones</option><option value="2">Precio más bajo</option><option value="5">Menor duración</option></select></div>
+      </div>
+
+      <div class="actions"><button class="btn-flight orange" id="searchBtn" type="submit">Buscar vuelos</button><button class="btn-flight outline" type="button" id="manualBtn">Solicitar búsqueda manual</button></div>
+
+      <div class="free-note"><span>💡</span><div><strong>Precios de referencia.</strong> Las tarifas pueden cambiar según disponibilidad. Suncar confirma el precio final antes de cualquier pago.</div></div>
+
+      <div class="status" id="status"></div>
+
+      <div class="results" id="results">
+        <div class="result-head"><div><h3>Opciones encontradas</h3><div class="result-summary" id="resultSummary"></div></div></div>
+        <div class="insight" id="priceInsight" hidden></div>
+        <div class="flight-list" id="flightList"></div>
+        <div class="disclaimer">Los importes son referencias obtenidas al momento de la búsqueda y pueden cambiar sin previo aviso. Suncar confirma precio final, disponibilidad, equipaje y condiciones antes de emitir.</div>
+      </div>
+
+      <div class="fallback"><h3>¿No aparece una opción?</h3><p>Envíanos la misma búsqueda y la revisamos manualmente.</p><div class="actions"><button class="btn-flight green" type="button" id="manualBtn2">Enviar a Suncar por WhatsApp</button></div></div>
+    </form>
+  </div>
+</section>
 
 <section class="offers home-offers" id="ofertas"><div class="container">
 <div class="section-head"><div><div class="eyebrow">Lo más próximo</div><h2>Ofertas que no dejaría pasar</h2><p>Mostramos solo las 3 más próximas. En la página de ofertas puedes ver todas.</p></div><a class="btn btn-outline" href="ofertas.html">Ver todas</a></div>
@@ -382,5 +496,338 @@ document.getElementById('mscChatForm')?.addEventListener('submit',async e=>{e.pr
 body?.addEventListener('click',async e=>{const b=e.target.closest('button[data-q],button[data-action]');if(!b)return;if(b.dataset.action==='search'||b.dataset.action==='regions'){add(b.dataset.action==='regions'?'Ver todas las zonas MSC':'Buscar crucero MSC','user');startSearch();return;}const q=b.dataset.q||'';if(q){add(q,'user');renderAnswer(await answer(q),q);}});
 const mb=document.getElementById('menuButton'),nav=document.getElementById('navlinks');mb?.addEventListener('click',()=>{const open=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(open));});document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{const item=b.parentElement,open=!item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-q')?.setAttribute('aria-expanded','false');});item.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open));b.querySelector('span').textContent=open?'−':'＋';}));
+</script>
+<script>
+
+
+const API='https://suncar-flights-api.suncartravel.workers.dev';
+const form=document.getElementById('flightSearch');
+const tripInput=document.getElementById('tripType');
+const returnWrap=document.getElementById('returnWrap');
+const returnDate=document.getElementById('returnDate');
+const statusBox=document.getElementById('status');
+const results=document.getElementById('results');
+const flightList=document.getElementById('flightList');
+const resultSummary=document.getElementById('resultSummary');
+const priceInsight=document.getElementById('priceInsight');
+const searchBtn=document.getElementById('searchBtn');
+
+function showStatus(type,text){
+  statusBox.className='status show '+type;
+  statusBox.textContent=text;
+}
+function hideStatus(){
+  statusBox.className='status';
+  statusBox.textContent='';
+}
+function cleanIata(value){
+  const s=String(value||'').trim().toUpperCase();
+  const m=s.match(/^([A-Z]{3})/);
+  return m ? m[1] : '';
+}
+function fmtDate(value){
+  return value ? new Date(value+'T12:00:00').toLocaleDateString('es-DO',{day:'numeric',month:'long',year:'numeric'}) : '';
+}
+function fmtDuration(min){
+  const n=Number(min||0);
+  if(!n) return '';
+  const h=Math.floor(n/60);
+  const m=n%60;
+  return h+'h'+(m?' '+m+'m':'');
+}
+
+async function searchAirports(term){
+  const url='https://autocomplete.travelpayouts.com/places2?locale=es&types%5B%5D=airport&term='+encodeURIComponent(term);
+  const res=await fetch(url,{mode:'cors'});
+  if(!res.ok) throw new Error('airport lookup failed');
+  const data=await res.json();
+  return Array.isArray(data)?data:[];
+}
+
+function setupAirportAutocomplete(inputId,boxId){
+  const input=document.getElementById(inputId);
+  const box=document.getElementById(boxId);
+  let timer=null;
+  let requestId=0;
+
+  function close(){
+    box.classList.remove('show');
+    box.innerHTML='';
+  }
+
+  input.addEventListener('input',function(){
+    clearTimeout(timer);
+    const term=input.value.trim();
+    if(term.length<2){
+      close();
+      return;
+    }
+    const current=++requestId;
+    timer=setTimeout(async function(){
+      box.innerHTML='<div class="airport-empty">Buscando aeropuertos…</div>';
+      box.classList.add('show');
+      try{
+        const items=(await searchAirports(term)).filter(function(x){return x&&x.code;}).slice(0,12);
+        if(current!==requestId) return;
+        box.innerHTML='';
+        if(!items.length){
+          box.innerHTML='<div class="airport-empty">No encontré sugerencias. Puedes escribir directamente el código IATA, por ejemplo SDQ, JFK, MAD, NRT o DXB.</div>';
+          return;
+        }
+        items.forEach(function(x){
+          const btn=document.createElement('button');
+          btn.type='button';
+          btn.className='airport-option';
+          const airportName=x.name||'Aeropuerto';
+          const city=x.city_name||x.city_code||'';
+          const country=x.country_name||x.country_code||'';
+          btn.innerHTML='<strong>'+x.code+' — '+airportName+'</strong><span>'+[city,country].filter(Boolean).join(' · ')+'</span>';
+          btn.addEventListener('click',function(){
+            input.value=x.code+' — '+airportName;
+            close();
+          });
+          box.appendChild(btn);
+        });
+      }catch(error){
+        if(current!==requestId) return;
+        box.innerHTML='<div class="airport-empty">No pude cargar sugerencias ahora. Puedes escribir cualquier código IATA de 3 letras directamente.</div>';
+      }
+    },300);
+  });
+
+  input.addEventListener('focus',function(){
+    if(box.innerHTML) box.classList.add('show');
+  });
+  document.addEventListener('click',function(e){
+    if(!input.parentElement.contains(e.target)) close();
+  });
+}
+
+setupAirportAutocomplete('origin','originSuggestions');
+setupAirportAutocomplete('destination','destinationSuggestions');
+
+document.querySelectorAll('.trip-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.trip-tab').forEach(function(x){x.classList.remove('active');});
+    btn.classList.add('active');
+    tripInput.value=btn.dataset.trip;
+    const round=tripInput.value==='roundtrip';
+    returnWrap.style.display=round?'flex':'none';
+    returnDate.required=round;
+    if(!round) returnDate.value='';
+  });
+});
+
+function getSearchData(){
+  const f=new FormData(form);
+  return {
+    trip:tripInput.value,
+    origin:cleanIata(f.get('origin')),
+    destination:cleanIata(f.get('destination')),
+    outbound:String(f.get('outbound')||''),
+    returnDate:String(f.get('return')||''),
+    adults:Number(f.get('adults')||1),
+    children:Number(f.get('children')||0),
+    infants:Number(f.get('infants')||0),
+    travelClass:String(f.get('travel_class')||'1'),
+    stops:String(f.get('stops')||'0'),
+    sort:String(f.get('sort')||'1')
+  };
+}
+
+function validateSearch(d){
+  if(!d.origin||!d.destination){
+    showStatus('error','Selecciona un aeropuerto de la lista o escribe su código IATA de 3 letras, por ejemplo SDQ y MIA.');
+    return false;
+  }
+  if(d.origin===d.destination){
+    showStatus('error','Origen y destino no pueden ser iguales.');
+    return false;
+  }
+  if(!d.outbound){
+    showStatus('error','Selecciona la fecha de ida.');
+    return false;
+  }
+  if(d.trip==='roundtrip'&&!d.returnDate){
+    showStatus('error','Selecciona la fecha de regreso.');
+    return false;
+  }
+  if(d.trip==='roundtrip'&&d.returnDate<d.outbound){
+    showStatus('error','La fecha de regreso debe ser posterior a la ida.');
+    return false;
+  }
+  if(d.adults+d.children+d.infants>9){
+    showStatus('error','Máximo 9 pasajeros por búsqueda. Para grupos mayores solicita cotización manual.');
+    return false;
+  }
+  return true;
+}
+
+function manualMessage(){
+  const d=getSearchData();
+  const lines=['Hola Suncar,','','Quiero cotizar un *VUELO*.','','*BÚSQUEDA*','Origen: '+d.origin,'Destino: '+d.destination,'Ida: '+fmtDate(d.outbound)];
+  if(d.trip==='roundtrip') lines.push('Regreso: '+fmtDate(d.returnDate));
+  lines.push('Adultos: '+d.adults,'Niños 2-11: '+d.children,'Infantes 0-1: '+d.infants,'','Quiero recibir opciones y confirmar el precio final con Suncar.');
+  return lines.join('\n');
+}
+function sendManual(){
+  window.open('https://wa.me/18093161070?text='+encodeURIComponent(manualMessage()),'_blank');
+}
+document.getElementById('manualBtn').addEventListener('click',sendManual);
+document.getElementById('manualBtn2').addEventListener('click',sendManual);
+
+function confirmFlight(r,d){
+  const airlines=(r.airlines||[]).join(', ')||'Por confirmar';
+  const flights=(r.flight_numbers||[]).join(', ')||'Por confirmar';
+  const stopsText=r.stops===0?'Directo':r.stops+' escala'+(r.stops===1?'':'s');
+  const price=(r.currency||'USD')+' '+Number(r.price||0).toLocaleString('en-US');
+
+  const lines=[
+    'Hola Suncar 👋',
+    '',
+    'Quiero confirmar esta opción de *VUELO* ✈️',
+    '',
+    '*DATOS DE LA BÚSQUEDA*',
+    '📍 Ruta: '+d.origin+' → '+d.destination,
+    '📅 Ida: '+fmtDate(d.outbound)
+  ];
+
+  if(d.trip==='roundtrip'){
+    lines.push('📅 Regreso: '+fmtDate(d.returnDate));
+  }
+
+  lines.push(
+    '👤 Adultos: '+d.adults,
+    '🧒 Niños (2-11): '+d.children,
+    '👶 Infantes (0-1): '+d.infants,
+    '',
+    '*OPCIÓN SELECCIONADA*',
+    '🛫 Aerolínea: '+airlines,
+    '🎫 Vuelo: '+flights,
+    '🕒 Salida: '+(r.departure_time||'Por confirmar'),
+    '🕓 Llegada: '+(r.arrival_time||'Por confirmar'),
+    '🔁 Escalas: '+stopsText,
+    '💵 Precio estimado: *'+price+'*',
+    '',
+    'Por favor confirmar:',
+    '• Disponibilidad actual',
+    '• Precio final',
+    '• Equipaje incluido',
+    '• Condiciones de la tarifa',
+    '',
+    'Gracias.'
+  );
+
+  window.open('https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n')),'_blank');
+}
+
+function renderResults(data,d){
+  flightList.innerHTML='';
+  results.classList.add('show');
+  const list=Array.isArray(data.results)?data.results:[];
+  resultSummary.textContent=d.origin+' → '+d.destination+' · '+fmtDate(d.outbound)+(d.trip==='roundtrip'?' al '+fmtDate(d.returnDate):' · solo ida')+' · '+list.length+' opción(es)';
+
+  if(data.price_insights&&data.price_insights.lowest_price){
+    priceInsight.hidden=false;
+    priceInsight.textContent='Referencia de precio: mínimo encontrado '+(data.currency||'USD')+' '+Number(data.price_insights.lowest_price).toLocaleString('en-US');
+  }else{
+    priceInsight.hidden=true;
+  }
+
+  list.forEach(function(r,i){
+    const card=document.createElement('article');
+    card.className='flight-card';
+
+    let badge='';
+    if(i===data.cheapest_index) badge='<span class="badge">MEJOR PRECIO</span>';
+    else if(i===data.best_direct_index) badge='<span class="badge blue">MEJOR DIRECTO</span>';
+
+    const logo=r.airline_logo?'<img src="'+r.airline_logo+'" alt="" loading="lazy">':'';
+    const airline=(r.airlines||[]).join(' + ')||'Aerolínea por confirmar';
+    const stops=r.stops===0?'Directo':r.stops+' escala'+(r.stops===1?'':'s');
+
+    card.innerHTML=
+      '<div class="flight-top">'+
+        '<div class="airline">'+logo+'<div>'+badge+'<b>'+airline+'</b><small>'+(r.flight_numbers||[]).join(' · ')+'</small></div></div>'+
+        '<div class="route"><strong>'+(r.origin||d.origin)+' → '+(r.destination||d.destination)+'</strong><small>'+(r.departure_time||'')+' → '+(r.arrival_time||'')+'</small><small>'+fmtDuration(r.total_duration)+' · '+stops+'</small></div>'+
+        '<div class="fare"><strong>'+(r.currency||data.currency||'USD')+' '+Number(r.price||0).toLocaleString('en-US')+'</strong><small>precio estimado</small></div>'+
+      '</div>';
+
+    const actions=document.createElement('div');
+    actions.className='flight-actions';
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='btn green';
+    btn.textContent='Confirmar esta tarifa con Suncar';
+    btn.addEventListener('click',function(){confirmFlight(r,d);});
+    actions.appendChild(btn);
+    card.appendChild(actions);
+    flightList.appendChild(card);
+  });
+
+  if(!list.length){
+    flightList.innerHTML='<div class="status show setup">No encontramos vuelos automáticos para esta búsqueda. Puedes enviarla a Suncar para revisión manual.</div>';
+  }
+
+  results.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  hideStatus();
+  results.classList.remove('show');
+
+  const d=getSearchData();
+  if(!validateSearch(d)) return;
+
+  searchBtn.disabled=true;
+  searchBtn.textContent='Buscando…';
+  showStatus('loading','Buscando vuelos y precios estimados. Puede tardar unos segundos…');
+
+  try{
+    const q=new URLSearchParams({
+      trip:d.trip,
+      origin:d.origin,
+      destination:d.destination,
+      outbound:d.outbound,
+      adults:String(d.adults),
+      children:String(d.children),
+      infants:String(d.infants),
+      travel_class:d.travelClass,
+      stops:d.stops,
+      sort:d.sort
+    });
+    if(d.trip==='roundtrip') q.set('return',d.returnDate);
+
+    const url=API+'/search?'+q.toString();
+    const res=await fetch(url,{method:'GET',headers:{'Accept':'application/json'}});
+    const data=await res.json().catch(function(){return {};});
+
+    if(!res.ok){
+      throw new Error(data.message||('Error '+res.status+' al consultar vuelos.'));
+    }
+
+    hideStatus();
+    renderResults(data,d);
+  }catch(error){
+    console.error('Suncar flight search error',error);
+    showStatus('error',(error&&error.message?error.message:'No pudimos consultar las tarifas ahora mismo.')+' Puedes enviar la búsqueda a Suncar por WhatsApp.');
+  }finally{
+    searchBtn.disabled=false;
+    searchBtn.textContent='Buscar precios estimados';
+  }
+});
+
+const now=new Date();
+now.setHours(0,0,0,0);
+const iso=now.toISOString().slice(0,10);
+document.getElementById('outbound').min=iso;
+returnDate.min=iso;
+document.getElementById('outbound').addEventListener('change',function(e){
+  returnDate.min=e.target.value||iso;
+  if(returnDate.value&&returnDate.value<returnDate.min) returnDate.value='';
+});
+
+
 </script>
 </body></html>
