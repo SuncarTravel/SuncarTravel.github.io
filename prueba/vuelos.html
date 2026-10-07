@@ -249,21 +249,47 @@ document.getElementById('manualBtn').addEventListener('click',sendManual);
 document.getElementById('manualBtn2').addEventListener('click',sendManual);
 
 function confirmFlight(r,d){
-  const lines=['Hola Suncar,','','Quiero confirmar esta opción de *VUELO*.','','*BÚSQUEDA*',d.origin+' → '+d.destination,'Ida: '+fmtDate(d.outbound)];
-  if(d.trip==='roundtrip') lines.push('Regreso solicitado: '+fmtDate(d.returnDate));
+  const airlines=(r.airlines||[]).join(', ')||'Por confirmar';
+  const flights=(r.flight_numbers||[]).join(', ')||'Por confirmar';
+  const stopsText=r.stops===0?'Directo':r.stops+' escala'+(r.stops===1?'':'s');
+  const price=(r.currency||'USD')+' '+Number(r.price||0).toLocaleString('en-US');
+
+  const lines=[
+    'Hola Suncar 👋',
+    '',
+    'Quiero confirmar esta opción de *VUELO* ✈️',
+    '',
+    '*DATOS DE LA BÚSQUEDA*',
+    '📍 Ruta: '+d.origin+' → '+d.destination,
+    '📅 Ida: '+fmtDate(d.outbound)
+  ];
+
+  if(d.trip==='roundtrip'){
+    lines.push('📅 Regreso: '+fmtDate(d.returnDate));
+  }
+
   lines.push(
-    'Pasajeros: '+d.adults+' adulto(s), '+d.children+' niño(s), '+d.infants+' infante(s)',
+    '👤 Adultos: '+d.adults,
+    '🧒 Niños (2-11): '+d.children,
+    '👶 Infantes (0-1): '+d.infants,
     '',
-    '*OPCIÓN MOSTRADA*',
-    'Aerolínea(s): '+(r.airlines||[]).join(', '),
-    'Vuelo(s): '+(r.flight_numbers||[]).join(', '),
-    'Salida: '+(r.departure_time||''),
-    'Llegada: '+(r.arrival_time||''),
-    'Escalas: '+(r.stops===0?'Directo':r.stops),
-    'Precio estimado mostrado: '+(r.currency||'USD')+' '+Number(r.price||0).toLocaleString('en-US'),
+    '*OPCIÓN SELECCIONADA*',
+    '🛫 Aerolínea: '+airlines,
+    '🎫 Vuelo: '+flights,
+    '🕒 Salida: '+(r.departure_time||'Por confirmar'),
+    '🕓 Llegada: '+(r.arrival_time||'Por confirmar'),
+    '🔁 Escalas: '+stopsText,
+    '💵 Precio estimado: *'+price+'*',
     '',
-    'Quiero confirmar disponibilidad, equipaje, condiciones y precio final con Suncar.'
+    'Por favor confirmar:',
+    '• Disponibilidad actual',
+    '• Precio final',
+    '• Equipaje incluido',
+    '• Condiciones de la tarifa',
+    '',
+    'Gracias.'
   );
+
   window.open('https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n')),'_blank');
 }
 
