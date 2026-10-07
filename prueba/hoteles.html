@@ -73,7 +73,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 <div class="field"><label>Niños</label><input id="children" type="number" min="0" max="8" value="0"></div>
 <div class="field"><label>Habitaciones</label><input id="rooms" type="number" min="1" max="6" value="1" required></div>
 </div>
-<div class="note" style="margin-top:10px">Busca cualquier destino. El cotizador está preparado para mostrar hoteles reales y priorizar tarifas propias de Suncar cuando existan.</div>
+<div class="note" style="margin-top:10px">Busca cualquier destino. Cuando exista una tarifa propia de Suncar, tendrá prioridad; de lo contrario verás opciones automáticas disponibles para tus fechas.</div>
 <div class="actions"><button class="btn orange" type="submit" id="searchBtn">Buscar hoteles</button><button class="btn outline" type="button" id="realSampleBtn">Ver ejemplo Suncar</button><button class="btn outline" type="button" id="clearBtn">Limpiar</button></div>
 <div class="note" id="dataNote">Las tarifas son referencias vigentes al momento de la consulta. Suncar confirma disponibilidad, impuestos, régimen, condiciones y precio final antes de reservar.</div>
 <div class="status" id="status"></div></form>
@@ -256,13 +256,26 @@ async function loadDetails(h,card,button){
     status('No pudimos cargar las habitaciones en este momento. Puedes solicitar el hotel y Suncar lo confirma manualmente.','warn');
   }finally{button.disabled=false;}
 }
+function manualSearchMessage(){
+  if(!currentData)return '';
+  const d=currentData;
+  return ['Hola Suncar','','Quiero cotizar HOTEL.','','Destino: '+d.destination,'Entrada: '+fmtDate(d.checkin),'Salida: '+fmtDate(d.checkout),'Adultos: '+d.adults,'Ninos: '+d.children,'Habitaciones: '+d.rooms,'','No encontre una tarifa automatica y quiero que Suncar revise opciones.'].join('\n');
+}
+function addManualFallback(){
+  const empty=list.querySelector('.empty');
+  if(!empty||empty.querySelector('button'))return;
+  const box=document.createElement('div');box.className='actions';
+  const b=document.createElement('button');b.className='btn green';b.type='button';b.textContent='Solicitar cotización a Suncar';
+  b.addEventListener('click',()=>window.open(SuncarWhatsApp.url('18093161070',manualSearchMessage()),'_blank'));
+  box.appendChild(b);empty.appendChild(box);
+}
 function render(){
   if(!currentData)return;
   const nights=nightsBetween(currentData.checkin,currentData.checkout);
   const filtered=currentHotels.map(h=>({...h,rates:(h.rates||[]).filter(r=>currentFilter==='all'||r.plan===currentFilter)}))
     .filter(h=>currentFilter==='all'||h.rates.length||(!h.manual&&currentFilter==='room'));
   summary.textContent=currentData.destination+' · '+fmtDate(currentData.checkin)+' al '+fmtDate(currentData.checkout)+' · '+nights+' noche'+(nights===1?'':'s')+' · '+currentData.adults+' adulto'+(currentData.adults===1?'':'s')+' · '+currentHotels.length+' hotel(es)';
-  if(!filtered.length){list.innerHTML='<div class="empty">No hay opciones para este filtro. Prueba otro régimen o solicita una búsqueda con Suncar.</div>';return;}
+  if(!filtered.length){list.innerHTML='<div class="empty">No hay opciones para este filtro. Prueba otro régimen o solicita una búsqueda con Suncar.</div>';addManualFallback();return;}
   list.innerHTML='';
   filtered.forEach(h=>{
     const card=document.createElement('article');card.className='hotel-card';card.dataset.hotelId=h.id||h.name;
@@ -308,8 +321,8 @@ async function searchHotels(){
   currentHotels=mergeHotels(manualHotels,apiHotels);
   render();
   if(apiOk)status('Resultados reales cargados. Las fuentes se mantienen internas; Suncar confirma el precio final antes de reservar.','loading');
-  else if(manualHotels.length)status('Mostrando tarifas reales cargadas por Suncar para estas fechas. El motor mundial automático todavía no respondió.','warn');
-  else status('El motor mundial automático todavía no está conectado en esta prueba. No inventamos tarifas: cambia fechas/destino o solicita la búsqueda a Suncar.','warn');
+  else if(manualHotels.length)status('Mostrando tarifas disponibles de Suncar para estas fechas. Todas se confirman antes de reservar.','loading');
+  else { status(''); list.innerHTML='<div class="empty"><strong>No encontramos una tarifa automática para esta búsqueda.</strong><br>Puedes cambiar fechas o solicitar la cotización a Suncar; no mostramos precios inventados.</div>'; addManualFallback(); }
   searchBtn.disabled=false;
 }
 form.addEventListener('submit',async e=>{
