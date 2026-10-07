@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suncar Tours & Travel | Cruceros, Hoteles, Vuelos y Vacaciones</title>
+<meta name="description" content="Suncar Tours & Travel: cruceros, hoteles, vuelos, escapadas y vacaciones desde República Dominicana. Cotiza con atención personalizada por WhatsApp.">
+<link rel="icon" href="../assets/logo.svg?v=7">
+<link rel="canonical" href="https://suncartravel.github.io/">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Suncar Tours & Travel | Cruceros, Hoteles, Vuelos y Vacaciones">
+<meta property="og:description" content="Cruceros, hoteles, vuelos, escapadas y vacaciones desde República Dominicana. Ofertas y cotizaciones con atención personalizada por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_DO">
+<meta property="og:site_name" content="Suncar Tours & Travel">
+<meta property="og:url" content="https://suncartravel.github.io/">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--navy:#07375c;--blue:#0b79aa;--orange:#f07f26;--gold:#f7b82b;--ink:#183246;--muted:#617383;--line:#dce7ed;--soft:#f5f9fc;--green:#25d366;--shadow:0 18px 55px rgba(7,55,92,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}.container{width:min(1180px,calc(100% - 32px));margin:auto}a{text-decoration:none;color:inherit}
+.top{background:#052f50;color:#dcebf3;font-size:.86rem}.top .container{display:flex;justify-content:space-between;gap:18px;padding:9px 0;flex-wrap:wrap}.top a{color:#fff}
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);border-bottom:1px solid rgba(7,55,92,.08);box-shadow:0 8px 24px rgba(7,55,92,.05)}nav{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;flex:0 0 180px;height:96px;overflow:hidden}.brand img{height:100px;width:auto;transform:scale(1.34);transform-origin:left center}.navlinks{display:flex;align-items:center;gap:18px;font-weight:850;color:#294456}.navlinks a{white-space:nowrap}.menu{display:none;border:0;background:none;font-size:1.6rem}
+.nav-dropdown{position:relative}.nav-dropdown summary{list-style:none;cursor:pointer;white-space:nowrap}.nav-dropdown summary::-webkit-details-marker{display:none}.nav-dropdown summary:after{content:" ▾";font-size:.72em}.nav-dropdown-menu{position:absolute;top:calc(100% + 14px);left:-18px;min-width:235px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:9px;box-shadow:var(--shadow);display:grid;gap:3px;z-index:50}.nav-dropdown-menu a{padding:10px 12px;border-radius:10px;font-size:.9rem}.nav-dropdown-menu a:hover{background:var(--soft);color:var(--navy)}.nav-dropdown:not([open]) .nav-dropdown-menu{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;font-weight:900;border:1px solid transparent;cursor:pointer}.btn-orange{background:var(--orange);color:#fff}.btn-light{background:#fff;color:var(--navy)}.btn-outline{background:#fff;color:var(--navy);border-color:#bfd0da}
+.hero{min-height:560px;display:grid;align-items:center;background:linear-gradient(90deg,rgba(4,39,67,.95),rgba(4,39,67,.72) 48%,rgba(4,39,67,.18)),url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1900&q=85') center/cover;color:#fff}.hero-copy{max-width:700px;padding:74px 0 100px}.kicker,.eyebrow{text-transform:uppercase;letter-spacing:.1em;font-size:.77rem;font-weight:950}.kicker{color:#ffd08a}.eyebrow{color:var(--orange)}.hero h1{font-family:Georgia,serif;font-size:clamp(3rem,6vw,5.5rem);line-height:.98;margin:16px 0}.hero h1 span{color:var(--gold)}.hero p{font-size:1.08rem;line-height:1.7;color:#e7f1f6;max-width:630px}.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-42px;position:relative;z-index:4}.proof .item{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}.proof b{display:block;color:var(--navy);margin-bottom:4px}.proof span{font-size:.88rem;color:var(--muted)}
+section{padding:62px 0}section[id]{scroll-margin-top:112px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:26px}.section-head h2,.guide h2,.cta h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3.25rem);margin:7px 0 8px}.section-head p,.guide p{color:var(--muted);line-height:1.65;max-width:760px}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service-card{border:1px solid var(--line);border-radius:20px;padding:21px;background:#fff;display:flex;flex-direction:column;min-height:200px;box-shadow:0 10px 28px rgba(7,55,92,.06)}.service-card .tag{font-size:.7rem;color:var(--orange);font-weight:950;letter-spacing:.08em}.service-card h3{font-family:Georgia,serif;color:var(--navy);font-size:1.55rem;margin:10px 0 8px}.service-card p{color:var(--muted);font-size:.88rem;line-height:1.55;margin:0 0 15px}.service-card .btn{margin-top:auto;align-self:flex-start}
+.offers{background:var(--soft)}.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.offer-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(7,55,92,.07)}.offer-media{height:155px;background-size:cover;background-position:center;position:relative}.offer-badge{position:absolute;left:12px;top:12px;background:var(--orange);color:#fff;border-radius:999px;padding:6px 9px;font-size:.68rem;font-weight:950}.offer-body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}.offer-body h3{margin:0;color:var(--navy);font-size:1.22rem}.offer-date{font-size:.8rem;font-weight:900;color:var(--orange)}.offer-price{font-size:1.42rem;font-weight:950;color:var(--navy)}.offer-meta{font-size:.84rem;line-height:1.5;color:var(--muted)}.offer-body .btn{margin-top:auto;align-self:flex-start}.home-offers .offer-card.is-hidden{display:none}.more-row{text-align:center;margin-top:22px}
+.quote-shell{border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.quote-head{padding:26px;background:linear-gradient(135deg,#062f50,#0b79aa);color:#fff}.quote-head h2{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);margin:5px 0 8px}.quote-head p{margin:0;color:#dcecf4;line-height:1.6}.quote-details summary{list-style:none;cursor:pointer;padding:18px 24px;font-weight:950;color:var(--navy);display:flex;justify-content:space-between;align-items:center}.quote-details summary::-webkit-details-marker{display:none}.quote-details summary:after{content:"＋";font-size:1.3rem}.quote-details[open] summary:after{content:"−"}.quote-form{padding:22px;border-top:1px solid var(--line)}.quote-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.wide{grid-column:span 2}.field label{font-size:.82rem;font-weight:900;color:var(--navy)}.field input,.field select,.field textarea{border:1px solid #cddbe4;border-radius:12px;padding:11px 12px;font:inherit;width:100%}.field textarea{min-height:78px;resize:vertical}.consent{display:flex;gap:9px;margin:16px 0;color:var(--muted);font-size:.78rem;line-height:1.45}.consent a{text-decoration:underline;color:var(--navy)}
+.msc{background:linear-gradient(135deg,#062f50,#0a6d9c);color:#fff}.msc-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}.msc h2{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.4rem);margin:7px 0}.msc p{color:#dcecf4;line-height:1.65}.msc-points{display:grid;grid-template-columns:1fr 1fr;gap:11px}.msc-point{padding:15px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:16px}.msc-point b{display:block;margin-bottom:4px}.msc-point span{font-size:.82rem;color:#dcecf4}
+.opera-preview{background:#fff}.mini-offers{display:grid;grid-template-columns:1fr 1fr;gap:16px}.mini{border:1px solid var(--line);border-radius:20px;padding:20px;background:linear-gradient(120deg,#fff9f2,#fff)}.mini .date{font-size:.78rem;color:var(--orange);font-weight:950}.mini h3{color:var(--navy);margin:8px 0}.mini strong{font-size:1.45rem;color:var(--navy)}.mini p{color:var(--muted);font-size:.86rem;line-height:1.5}
+.naviera-line{display:flex;gap:10px;flex-wrap:wrap}.naviera-line span{padding:10px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;font-weight:850;color:var(--navy);font-size:.84rem}
+.soft{background:var(--soft)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.step b{display:block;color:var(--navy);margin-bottom:6px}.step p{color:var(--muted);font-size:.87rem;line-height:1.55;margin:0}.faq{max-width:860px}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;border:0;background:none;text-align:left;padding:18px 0;display:flex;justify-content:space-between;gap:16px;color:var(--navy);font-weight:900;cursor:pointer}.faq-a{display:none;color:var(--muted);line-height:1.6;padding:0 0 18px}.faq-item.open .faq-a{display:block}
+.cta{background:#052f50;color:#fff}.cta .container{display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{color:#fff}.cta p{color:#dcebf3;max-width:700px;line-height:1.6}
+footer{background:#031f35;color:#dcebf3;padding:34px 0}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}.footer-logo{height:85px;background:#fff;border-radius:12px;padding:5px}.footer-grid h4{margin:0 0 8px;color:#fff}.footer-grid p,.footer-grid a{font-size:.84rem;line-height:1.6;color:#dcebf3}.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:24px;padding-top:16px;font-size:.76rem;color:#a9c0cf}
+.wa{position:fixed;right:18px;bottom:18px;z-index:42;background:var(--green);color:#fff;border-radius:999px;padding:13px 17px;font-weight:950;box-shadow:0 12px 28px rgba(0,0,0,.18)}.msc-chat-launch{position:fixed;right:18px;bottom:76px;z-index:42;border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:12px 16px;font-weight:950;box-shadow:0 12px 28px rgba(0,0,0,.15);cursor:pointer}.msc-chat{position:fixed;right:18px;bottom:132px;width:min(390px,calc(100vw - 28px));max-height:min(610px,calc(100vh - 160px));z-index:60;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 60px rgba(7,55,92,.25);display:none;overflow:hidden}.msc-chat.open{display:flex;flex-direction:column}.msc-chat-head{background:linear-gradient(135deg,#062f50,#0b79aa);color:#fff;padding:15px;display:flex;justify-content:space-between;align-items:center}.msc-chat-close{border:0;background:rgba(255,255,255,.12);color:#fff;width:32px;height:32px;border-radius:50%;font-size:1.1rem}.msc-chat-body{padding:14px;overflow:auto;display:grid;gap:9px;background:#f7fafc}.msc-msg{max-width:88%;padding:10px 12px;border-radius:14px;font-size:.86rem;line-height:1.45}.msc-msg.bot{background:#fff;border:1px solid var(--line)}.msc-msg.user{background:var(--blue);color:#fff;margin-left:auto}.msc-quick{display:flex;gap:6px;flex-wrap:wrap}.msc-quick button{border:1px solid #cbdbe5;background:#fff;color:var(--navy);padding:6px 8px;border-radius:999px;font-size:.72rem;font-weight:800}.msc-chat-form{display:flex;gap:7px;padding:10px;border-top:1px solid var(--line)}.msc-chat-form input{flex:1;min-width:0;border:1px solid #cbdbe5;border-radius:999px;padding:10px 12px}.msc-chat-form button{border:0;background:var(--orange);color:#fff;border-radius:999px;padding:0 13px;font-weight:900}.msc-chat-note{padding:0 12px 10px;font-size:.68rem;color:var(--muted)}
+@media(max-width:940px){.navlinks{display:none;position:absolute;left:16px;right:16px;top:96px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.menu{display:block}.nav-dropdown-menu{position:static;margin-top:8px;box-shadow:none;border-radius:12px;background:var(--soft)}.service-grid{grid-template-columns:1fr 1fr}.quote-grid{grid-template-columns:1fr 1fr}.msc-wrap{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.offers-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.top{display:none}nav{min-height:82px}.brand{height:82px;flex-basis:145px}.brand img{height:86px;transform:scale(1.25)}.navlinks{top:82px}.hero{min-height:500px}.hero-copy{padding:58px 0 86px}.hero h1{font-size:3.2rem}.proof{grid-template-columns:1fr;margin-top:-34px}.proof .item:nth-child(3){display:none}section{padding:48px 0}.service-grid,.quote-grid,.mini-offers,.steps,.footer-grid,.offers-grid{grid-template-columns:1fr}.service-card{min-height:0}.home-offers .offer-card.is-hidden{display:none}.field.wide{grid-column:auto}.cta .container{align-items:flex-start;flex-direction:column}.msc-points{grid-template-columns:1fr 1fr}.wa{right:12px;bottom:12px}.msc-chat-launch{right:12px;bottom:68px;width:54px;height:54px;padding:0;font-size:0}.msc-chat-launch:after{content:"MSC";font-size:.7rem}.msc-chat{right:12px;bottom:128px}.section-head{align-items:flex-start;flex-direction:column}}
+
+/* Asistente MSC de Suncar */
+.msc-chat{width:min(680px,calc(100vw - 28px));max-height:min(760px,calc(100vh - 150px))}
+.msc-chat-head{gap:12px}.msc-chat-head small{display:block;font-size:.68rem;font-weight:600;opacity:.86;margin-top:2px}
+.msc-chat-body{min-height:260px}.msc-msg.bot{max-width:94%}
+.msc-quick button,.msc-choice{cursor:pointer;transition:.15s ease}.msc-quick button:hover,.msc-choice:hover{border-color:var(--blue);transform:translateY(-1px)}
+.msc-choice-grid{display:flex;gap:7px;flex-wrap:wrap}.msc-choice{border:1px solid #cbdbe5;background:#fff;color:var(--navy);padding:8px 10px;border-radius:12px;font-size:.76rem;font-weight:850}
+.msc-result{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;gap:6px}.msc-result b{color:var(--navy)}.msc-result small{color:var(--muted);line-height:1.45}
+.msc-result-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:3px}.msc-result-actions a{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:8px 11px;font-size:.73rem;font-weight:900}.msc-result-actions .quote{background:var(--green);color:#fff}.msc-result-actions .internal{border:1px solid #cbdbe5;color:var(--navy);background:#fff}
+.msc-status{font-size:.7rem;color:var(--muted);padding:0 2px}.msc-search-summary{background:#eef7fb;border:1px solid #cfe3ed;border-radius:14px;padding:11px 12px;font-size:.8rem;line-height:1.5;color:var(--navy)}.msc-search-summary b{display:block;margin-bottom:4px}.msc-more{border:1px solid #bfd0da;background:#fff;color:var(--navy);border-radius:999px;padding:9px 13px;font-size:.76rem;font-weight:900;cursor:pointer;justify-self:start}
+@media(max-width:620px){.msc-chat{left:10px;right:10px;bottom:126px;width:auto;max-height:calc(100vh - 145px);border-radius:18px}.msc-chat-body{min-height:220px}}
+
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Suncar Tours & Travel","url":"https://suncartravel.github.io/","telephone":"+1-809-316-1070","email":"suncartravel@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Calle Trinitaria No. 5, San Carlos","addressLocality":"Santo Domingo","addressCountry":"DO"},"sameAs":["https://www.instagram.com/suncartravel/"]}</script>
+</head>
+<body>
+<div class="top"><div class="container"><span><strong>Suncar Tours & Travel</strong> · Santo Domingo</span><span><a href="tel:+18093161070">809-316-1070</a> · <a href="mailto:suncartravel@gmail.com">suncartravel@gmail.com</a> · <a href="https://www.instagram.com/suncartravel/" target="_blank" rel="noopener">@suncartravel</a></span></div></div>
+<header><div class="container"><nav>
+<a class="brand" href="index.html" aria-label="Suncar Tours & Travel"><img src="../assets/logo.svg?v=7" alt="Suncar Tours & Travel"></a>
+<div class="navlinks" id="navlinks">
+<details class="nav-dropdown"><summary>Servicios</summary><div class="nav-dropdown-menu">
+<a href="hoteles.html">🏨 Hoteles</a>
+<a href="vuelos.html">✈️ Vuelos</a>
+<a href="cruceros.html">🚢 Cruceros</a>
+<a href="seguros-viaje.html">🛡️ Seguros de viaje</a>
+<a href="paquetes.html">🌴 Paquetes y escapadas</a>
+<a href="servicios.html"><strong>Ver todos los servicios →</strong></a>
+</div></details>
+<a href="../ofertas.html">Ofertas</a><a href="#cruceros">Cruceros</a><a href="#contacto">Contacto</a><a class="btn btn-orange" href="servicios.html">Cotizar</a></div>
+<button class="menu" id="menuButton" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+</nav></div></header>
+
+<main>
+<section class="hero"><div class="container"><div class="hero-copy">
+<div class="kicker">Cruceros · hoteles · vuelos · escapadas</div>
+<h1>Tu próximo viaje empieza con <span>Suncar.</span></h1>
+<p>Te ayudamos a comparar opciones y reservar con seguimiento directo, sin llenarte de información innecesaria.</p>
+<div class="actions"><a class="btn btn-orange" href="servicios.html">Quiero cotizar</a><a class="btn btn-light" href="../ofertas.html">Ver ofertas</a></div>
+</div></div></section>
+
+<div class="container proof">
+<div class="item"><b>Todo en un lugar</b><span>Cruceros, hoteles, vuelos y escapadas.</span></div>
+<div class="item"><b>Atención en RD</b><span>Seguimiento directo desde Santo Domingo.</span></div>
+<div class="item"><b>Confirmamos antes de cobrar</b><span>Precio, disponibilidad y condiciones primero.</span></div>
+</div>
+
+<section id="servicios"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Empieza aquí</div><h2>¿Qué quieres cotizar?</h2><p>Elige el tipo de viaje y nos encargamos de ayudarte con el resto.</p></div></div>
+<div class="service-grid">
+<article class="service-card"><div class="tag">CRUCEROS</div><h3>Cruceros</h3><p>MSC, Royal Caribbean, Carnival, Costa, NCL y otras navieras.</p><a class="btn btn-orange" href="cruceros.html">Ver cruceros</a></article>
+<article class="service-card"><div class="tag">HOTELES</div><h3>Hoteles</h3><p>Ofertas publicadas y cotización según tus fechas, pasajeros y zona.</p><a class="btn btn-outline" href="hoteles.html">Ver hoteles</a></article>
+<article class="service-card"><div class="tag">VUELOS</div><h3>Vuelos</h3><p>Opciones aéreas, equipaje y condiciones para tu ruta.</p><a class="btn btn-outline" href="vuelos.html">Cotizar vuelo</a></article>
+<article class="service-card"><div class="tag">MÁS SERVICIOS</div><h3>Seguros y escapadas</h3><p>Seguro de viaje, paquetes y promociones, todo gestionado por Suncar.</p><a class="btn btn-outline" href="servicios.html">Ver servicios</a></article>
+</div>
+</div></section>
+
+<section class="offers home-offers" id="ofertas"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Lo más próximo</div><h2>Ofertas que no dejaría pasar</h2><p>Mostramos solo las 3 más próximas. En la página de ofertas puedes ver todas.</p></div><a class="btn btn-outline" href="../ofertas.html">Ver todas</a></div>
+<div class="offers-grid">
+
+<article class="offer-card limited-offer" data-expire="2027-05-31T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">MSC OPERA · LA ROMANA</span></div>
+<div class="offer-body">
+<div class="offer-date">31 mayo–7 junio 2027 · 7 noches</div>
+<h3>MSC Opera · Caribe</h3>
+<div class="offer-price">Desde US$2,322 / cabina</div>
+<div class="offer-meta">Tarifa total para 2 adultos, impuestos incluidos. Incluye Open Bar Premium Extra, Wi‑Fi Browse (1 dispositivo por persona, 2 en total) y crédito a bordo. Propinas aparte.</div>
+<a class="btn btn-orange" href="../msc-opera.html#opera-may31-2027">Ver tarifas e itinerario</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-12-14T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">MSC OPERA · LA ROMANA</span></div>
+<div class="offer-body">
+<div class="offer-date">14–21 diciembre 2026 · 7 noches</div>
+<h3>MSC Opera · Caribe</h3>
+<div class="offer-price">Desde US$1,962 / cabina</div>
+<div class="offer-meta">Tarifa total para 2 adultos, impuestos incluidos. Oferta con Open Bar Premium Extra, Wi‑Fi Browse para 1 dispositivo por persona (2 dispositivos en total para 2 adultos) y crédito a bordo. Propinas se pagan aparte.</div>
+<a class="btn btn-orange" href="../msc-opera.html#opera-dic14">Ver tarifas y ruta</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-10-09T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">PUNTA CANA</span></div>
+<div class="offer-body">
+<div class="offer-date">9–11 octubre 2026</div>
+<h3>RIU Bambu</h3>
+<div class="offer-price">RD$22,925 por pareja</div>
+<div class="offer-meta">2 noches para una escapada en Punta Cana. Oferta sujeta a disponibilidad al momento de reservar.</div>
+<a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar.%0AQuiero%20cotizar%20RIU%20Bambu%20del%209%20al%2011%20de%20octubre.%0A%0ANombres%20de%20los%20pasajeros%3A%20">Cotizar RIU Bambu</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-10-09T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">SOLO ADULTOS</span></div>
+<div class="offer-body">
+<div class="offer-date">9–11 octubre 2026</div>
+<h3>RIU Republica</h3>
+<div class="offer-price">RD$25,684 por pareja</div>
+<div class="offer-meta">Escapada de 2 noches en Punta Cana, hotel solo para adultos. Sujeta a disponibilidad.</div>
+<a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar.%0AQuiero%20cotizar%20RIU%20Republica%20del%209%20al%2011%20de%20octubre.%0A%0ANombres%20de%20los%20pasajeros%3A%20">Cotizar RIU Republica</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-10-09T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">TODO INCLUIDO</span></div>
+<div class="offer-body">
+<div class="offer-date">9–11 octubre 2026</div>
+<h3>RIU Palace Punta Cana</h3>
+<div class="offer-price">RD$28,800 por pareja</div>
+<div class="offer-meta">2 noches · Todo incluido. Punta Cana con el estilo y confort de RIU.</div>
+<a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar.%0AQuiero%20cotizar%20RIU%20Palace%20Punta%20Cana%20del%209%20al%2011%20de%20octubre.%0A%0ANombres%20de%20los%20pasajeros%3A%20">Cotizar RIU Palace</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-11-06T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">COLOMBIA</span></div>
+<div class="offer-body">
+<div class="offer-date">6–9 noviembre 2026 · 4 días / 3 noches</div>
+<h3>Bogotá, Colombia</h3>
+<div class="offer-price">Desde US$720 p/p</div>
+<div class="offer-meta">Ocupación doble. Incluye vuelos desde SDQ, alojamiento, seguro, traslados privados, City Tour + Museo del Oro, Catedral de Sal de Zipaquirá, transporte para tours y guía profesional. Reserva con US$200 p/p no reembolsables.</div>
+<a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar.%0AQuiero%20cotizar%20el%20paquete%20a%20Bogot%C3%A1%20del%206%20al%209%20de%20noviembre%202026.%0A%0APasajeros%3A%20">Cotizar Bogotá</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-11-06T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">BOGOTÁ · FERIADO</span></div>
+<div class="offer-body">
+<div class="offer-date">6–9 noviembre 2026</div>
+<h3>Bogotá · Feriado de la Constitución</h3>
+<div class="offer-price">Desde US$830 p/p</div>
+<div class="offer-meta">Separa con US$250. Incluye boleto aéreo ida y vuelta, equipaje de bodega de 23 kg, alojamiento, desayuno diario, 2 excursiones y todos los traslados. Tarifa y disponibilidad sujetas a confirmación.</div>
+<a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar.%0AQuiero%20cotizar%20la%20oferta%20de%20Bogot%C3%A1%20del%206%20al%209%20de%20noviembre%20desde%20US%24830.%0A%0APasajeros%3A%20">Cotizar esta opción</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-11-06T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">PUERTO PLATA · ADULTOS</span></div>
+<div class="offer-body">
+<div class="offer-date">6–8 noviembre 2026</div>
+<h3>BlueBay Villas Doradas</h3>
+<div class="offer-price">RD$6,650 p/p/noche</div>
+<div class="offer-meta">Playa Dorada, Puerto Plata. Resort solo para adultos y todo incluido. La oferta compartida destaca playa, restaurantes incluidos, ambiente relax y piscinas. Tarifa sujeta a disponibilidad y condiciones al cotizar.</div>
+<a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar.%0AQuiero%20cotizar%20BlueBay%20Villas%20Doradas%20del%206%20al%208%20de%20noviembre%202026.%0A%0AAdultos%3A%20%0ATipo%20de%20habitaci%C3%B3n%3A%20">Cotizar BlueBay</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-11-07T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">FERIADO</span></div>
+<div class="offer-body">
+<div class="offer-date">7–9 noviembre 2026 · Punta Cana</div>
+<h3>Lopesan Costa Bávaro</h3>
+<div class="offer-price">Desde US$180 p/p/noche</div>
+<div class="offer-meta">Tarifas publicadas: doble US$197, sencilla US$294, triple US$180 y niños 2–12 años US$99, por persona por noche.</div>
+<a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar.%0AQuiero%20cotizar%20Lopesan%20Costa%20B%C3%A1varo%20del%207%20al%209%20de%20noviembre.%0A%0AAdultos%3A%20%0ANi%C3%B1os%3A%20">Cotizar Lopesan</a>
+</div>
+</article>
+
+<article class="offer-card limited-offer" data-expire="2026-12-04T00:00:00-04:00">
+<div class="offer-media" style="background-image:url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=80')"><span class="offer-badge">FAMILIAR</span></div>
+<div class="offer-body">
+<div class="offer-date">4–6 diciembre</div>
+<h3>Lopesan Splash Cove</h3>
+<div class="offer-price">Doble US$178 · Niño US$89</div>
+<div class="offer-meta">Resort, spa & casino. Todo incluido, bebidas ilimitadas, entretenimiento diario y servicio premium, según la oferta compartida.</div>
+<a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar.%0AQuiero%20cotizar%20Lopesan%20Splash%20Cove%20del%204%20al%206%20de%20diciembre.%0A%0AAdultos%3A%20%0ANi%C3%B1os%3A%20">Cotizar Splash Cove</a>
+</div>
+</article>
+
+</div>
+<div class="more-row"><a class="btn btn-orange" href="../ofertas.html">Ver todas las ofertas activas</a></div>
+</div></section>
+
+<section id="cruceros"><div class="container">
+<div class="quote-shell">
+<div class="quote-head"><div class="eyebrow" style="color:#ffd08a">Cruceros en todo el mundo</div><h2>Cotiza tu crucero con Suncar</h2><p>MSC, Royal Caribbean, Carnival, Costa, NCL y otras líneas. Tu solicitud llega a Suncar; no te enviamos a comprar directo con la naviera.</p></div>
+<details class="quote-details"><summary>Abrir cotizador de cruceros</summary>
+<form class="quote-form" id="cruiseQuoteForm">
+<div class="quote-grid">
+<div class="field"><label for="qDestination">Destino</label><select id="qDestination" required><option value="">Selecciona</option><option>Caribe</option><option>Bahamas</option><option>Mediterráneo</option><option>Norte de Europa</option><option>Alaska</option><option>Sudamérica</option><option>Asia</option><option>Otro / no estoy seguro</option></select></div>
+<div class="field"><label for="qMonth">Mes</label><input id="qMonth" type="month" required></div>
+<div class="field"><label for="qCruiseline">Naviera</label><select id="qCruiseline"><option>Cualquiera / comparar</option><option>MSC Cruises</option><option>Royal Caribbean</option><option>Carnival Cruise Line</option><option>Norwegian Cruise Line (NCL)</option><option>Costa Cruises</option><option>Otra</option></select></div>
+<div class="field"><label for="qCabin">Cabina</label><select id="qCabin"><option>Cualquiera / mejor precio</option><option>Interior</option><option>Vista al mar</option><option>Balcón</option><option>Suite</option></select></div>
+<div class="field"><label for="qAdults">Adultos</label><input id="qAdults" type="number" min="1" max="12" value="2" required></div>
+<div class="field"><label for="qChildren">Niños</label><input id="qChildren" type="number" min="0" max="8" value="0"></div>
+<div class="field"><label for="qChildAges">Edades niños</label><input id="qChildAges" type="text" placeholder="Ej. 5 y 9"></div>
+<div class="field"><label for="qBudget">Presupuesto</label><select id="qBudget"><option>Prefiero ver opciones</option><option>Hasta US$1,500</option><option>US$1,500–2,500</option><option>US$2,500–4,000</option><option>Más de US$4,000</option></select></div>
+<div class="field"><label for="qName">Nombre</label><input id="qName" type="text" autocomplete="name" required></div>
+<div class="field"><label for="qPhone">WhatsApp</label><input id="qPhone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+<div class="field wide"><label for="qNotes">Comentarios</label><textarea id="qNotes" placeholder="Fecha exacta, puerto de salida, barco preferido, etc."></textarea></div>
+</div>
+<label class="consent"><input id="qConfirm" type="checkbox" required><span>Entiendo que es una solicitud de cotización. Precio y disponibilidad deben ser confirmados por Suncar. He leído la <a href="politica-privacidad.html">Política de Privacidad</a> y los <a href="terminos-condiciones.html">Términos</a>.</span></label>
+<button class="btn btn-orange" type="submit">Enviar solicitud por WhatsApp</button>
+</form>
+</details>
+</div>
+</div></section>
+
+<section class="msc" id="msc"><div class="container msc-wrap">
+<div><div class="kicker">Especialidad en cruceros</div><h2>MSC Cruises, sin complicarte</h2><p>Te orientamos sobre barcos, cabinas, experiencias, bebidas, internet, documentación y pagos. Para dudas rápidas puedes usar el Asistente MSC sin salir de la página.</p><div class="actions"><button class="btn btn-light" type="button" id="openMscChat">Abrir Asistente MSC</button><a class="btn btn-orange" href="../msc-opera.html">Ver MSC Opera</a></div></div>
+<div class="msc-points"><div class="msc-point"><b>Bella / Fantastica</b><span>Opciones enfocadas en precio y flexibilidad.</span></div><div class="msc-point"><b>Aurea / Yacht Club</b><span>Más beneficios y opciones premium.</span></div><div class="msc-point"><b>Bebidas y Wi‑Fi</b><span>Dependen de la tarifa o promoción.</span></div><div class="msc-point"><b>Documentación</b><span>La revisamos según el itinerario.</span></div></div>
+</div></section>
+
+<section class="opera-preview"><div class="container">
+<div class="section-head"><div><div class="eyebrow">MSC Opera desde La Romana</div><h2>Dos salidas destacadas</h2><p>El detalle completo de tarifas, categorías e itinerarios está en una página aparte para que el inicio no se haga eterno.</p></div><a class="btn btn-outline" href="../msc-opera.html">Ver todas las salidas</a></div>
+<div class="mini-offers">
+<article class="mini"><div class="date">14–21 diciembre 2026 · 7 noches</div><h3>MSC Opera · Caribe</h3><strong>Desde US$1,962 / cabina</strong><p>2 adultos · impuestos incluidos · Open Bar Premium Extra · Wi‑Fi 1 dispositivo por persona · crédito a bordo. Propinas aparte.</p><a class="btn btn-orange" href="../msc-opera.html#opera-dic14">Ver detalle</a></article>
+<article class="mini"><div class="date">31 mayo–7 junio 2027 · 7 noches</div><h3>MSC Opera · Caribe y Antillas</h3><strong>Desde US$2,322 / cabina</strong><p>2 adultos · impuestos incluidos · misma promoción de bebidas, Wi‑Fi y crédito a bordo. Propinas aparte.</p><a class="btn btn-outline" href="../msc-opera.html#opera-may31-2027">Ver detalle</a></article>
+</div>
+</div></section>
+
+<section class="soft"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Más navieras</div><h2>También comparamos otras líneas</h2><p>No te cerramos a una sola opción.</p></div></div>
+<div class="naviera-line"><span>Royal Caribbean</span><span>Carnival Cruise Line</span><span>Norwegian Cruise Line</span><span>Costa Cruises</span><span>Celebrity</span><span>Princess</span><span>Disney Cruise Line</span><span>Virgin Voyages</span></div>
+</div></section>
+
+<section><div class="container">
+<div class="section-head"><div><div class="eyebrow">Cómo trabajamos</div><h2>Simple y claro</h2></div></div>
+<div class="steps"><div class="step"><b>1. Nos dices qué buscas</b><p>Fechas, pasajeros, destino y presupuesto.</p></div><div class="step"><b>2. Verificamos opciones</b><p>Comparamos y confirmamos condiciones reales.</p></div><div class="step"><b>3. Te acompañamos</b><p>Reserva, pagos, documentos y seguimiento.</p></div></div>
+</div></section>
+
+<section class="soft"><div class="container faq">
+<div class="guide"><div class="eyebrow">Preguntas rápidas</div><h2>Lo esencial antes de reservar</h2></div>
+<div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">¿Suncar trabaja solamente cruceros?<span>＋</span></button><div class="faq-a">No. Cotizamos cruceros, hoteles, vuelos, escapadas y paquetes.</div></div>
+<div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">¿Las tarifas de la web quedan garantizadas?<span>＋</span></button><div class="faq-a">No hasta que Suncar confirme disponibilidad, condiciones y precio final con el proveedor.</div></div>
+<div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">¿Puedo reservar con depósito?<span>＋</span></button><div class="faq-a">En muchas opciones sí. Te confirmamos depósito, saldo y condiciones antes de pagar.</div></div>
+<div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">¿Qué pasa si necesito cancelar o cambiar?<span>＋</span></button><div class="faq-a">Depende de la tarifa y proveedor. Consulta nuestra política de cambios, cancelaciones y reembolsos para la guía general.</div></div>
+</div></section>
+
+<section class="cta" id="contacto"><div class="container"><div><div class="kicker">Suncar Tours & Travel</div><h2>¿Listo para cotizar?</h2><p>Escríbenos qué quieres hacer y te ayudamos a encontrar una opción que tenga sentido para ti.</p></div><a class="btn btn-orange" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20cotizar%20mi%20pr%C3%B3ximo%20viaje.">Escribir por WhatsApp</a></div></section>
+</main>
+
+<footer><div class="container">
+<div class="footer-grid">
+<div><img class="footer-logo" src="../assets/logo.svg?v=7" alt="Suncar Tours & Travel"><p>Cruceros, hoteles, vuelos y escapadas con atención personalizada desde República Dominicana.</p></div>
+<div><h4>Contacto</h4><p><a href="tel:+18093161070">809-316-1070</a><br><a href="mailto:suncartravel@gmail.com">suncartravel@gmail.com</a><br>Calle Trinitaria No. 5, San Carlos, Santo Domingo</p></div>
+<div><h4>Información</h4><p><a href="../ofertas.html">Todas las ofertas</a><br><a href="../msc-opera.html">MSC Opera</a><br><a href="politica-privacidad.html">Política de Privacidad</a><br><a href="terminos-condiciones.html">Términos y Condiciones</a><br><a href="cambios-cancelaciones-reembolsos.html">Cambios y reembolsos</a></p></div>
+</div>
+<div class="copy">© 2026 Suncar Tours & Travel. Ninguna solicitud enviada desde esta web confirma una reserva ni genera un cargo automático.</div>
+</div></footer>
+
+<button class="msc-chat-launch" id="mscChatLaunch" type="button" aria-label="Abrir Asistente MSC">💬 <span>Asistente MSC</span></button>
+<div class="msc-chat" id="mscChat" role="dialog" aria-labelledby="mscChatTitle">
+<div class="msc-chat-head"><div><b id="mscChatTitle">Asistente MSC · Suncar</b><small>Información y búsqueda · reservas solo con Suncar</small></div><button class="msc-chat-close" id="mscChatClose" type="button" aria-label="Cerrar">×</button></div>
+<div class="msc-chat-body" id="mscChatBody" aria-live="polite">
+<div class="msc-msg bot">¡Hola! 👋 Soy el Asistente MSC de Suncar. Puedo buscar entre miles de salidas del índice público MSC y combinarlas con las ofertas verificadas por Suncar: zonas, barcos, puertos, itinerarios, fechas, noches y precios públicos de referencia. Prueba “Miami diciembre 2026”, “Alaska 2027” o “MSC World America agosto 2027”. Toda cotización y reserva se gestiona exclusivamente con Suncar.</div>
+<div class="msc-quick">
+<button type="button" data-action="search">🔎 Buscar crucero MSC</button>
+<button type="button" data-action="regions">🌎 Ver todas las zonas</button>
+<button type="button" data-q="MSC World America">MSC World America</button>
+<button type="button" data-q="salidas desde Miami">Salidas desde Miami</button>
+<button type="button" data-q="¿Qué incluye un crucero MSC?">¿Qué incluye?</button>
+<button type="button" data-q="¿Qué diferencia hay entre Bella, Fantastica, Aurea y Yacht Club?">Experiencias</button>
+<button type="button" data-q="¿Bebidas e internet están incluidos?">Bebidas/Wi‑Fi</button>
+<button type="button" data-q="¿Qué documentación necesito?">Documentación</button>
+</div>
+<div class="msc-status" id="mscDataStatus">Base MSC de Suncar</div>
+</div>
+<form class="msc-chat-form" id="mscChatForm"><input id="mscChatInput" type="text" autocomplete="off" placeholder="Busca barco, destino, puerto, fecha o pregunta sobre MSC..."><button type="submit">Enviar</button></form>
+<div class="msc-chat-note">El asistente orienta. Precio, disponibilidad, documentación crítica, reserva y pago se confirman siempre con Suncar Tours & Travel.</div>
+</div>
+
+<a class="wa" target="_blank" rel="noopener" href="https://wa.me/18093161070?text=Hola%20Suncar%2C%20quiero%20cotizar%20un%20viaje.">WhatsApp</a>
+
+<script>
+document.querySelectorAll('.limited-offer[data-expire]').forEach(offer=>{const x=new Date(offer.dataset.expire);if(!Number.isNaN(x.getTime())&&new Date()>=x)offer.remove();});
+const grid=document.querySelector('.home-offers .offers-grid');
+if(grid){
+  [...grid.querySelectorAll(':scope > .limited-offer[data-expire]')].sort((a,b)=>new Date(a.dataset.expire)-new Date(b.dataset.expire)).forEach(x=>grid.appendChild(x));
+  [...grid.children].forEach((x,i)=>x.classList.toggle('is-hidden',i>=3));
+}
+const month=document.getElementById('qMonth'),children=document.getElementById('qChildren'),ages=document.getElementById('qChildAges');
+if(month){const d=new Date();month.min=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');}
+const validateAges=()=>{if(!children||!ages)return true;const n=Number(children.value)>0;ages.required=n;ages.setCustomValidity(n&&!ages.value.trim()?'Indica las edades de los niños.':'');return ages.checkValidity();};
+children?.addEventListener('input',validateAges);ages?.addEventListener('input',validateAges);
+document.getElementById('cruiseQuoteForm')?.addEventListener('submit',e=>{e.preventDefault();validateAges();if(!e.currentTarget.reportValidity())return;const v=id=>document.getElementById(id)?.value.trim()||'';const n=v('qChildren')||'0';const lines=['Hola Suncar 👋','Quiero solicitar una cotización de crucero.','','Destino: '+v('qDestination'),'Mes: '+v('qMonth'),'Naviera: '+v('qCruiseline'),'Cabina: '+v('qCabin'),'Adultos: '+v('qAdults'),'Niños: '+n+(n!=='0'?' (edades: '+v('qChildAges')+')':''),'Presupuesto: '+v('qBudget'),'','Nombre: '+v('qName'),'WhatsApp: '+v('qPhone'),'Comentarios: '+(v('qNotes')||'Ninguno'),'','Entiendo que tarifa y disponibilidad deben ser confirmadas por Suncar.'];location.href='https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n'));});
+const chat=document.getElementById('mscChat'),body=document.getElementById('mscChatBody'),input=document.getElementById('mscChatInput'),dataStatus=document.getElementById('mscDataStatus');
+let mscData=null,mscPublicIndex=null,mscDepartureCache=null,mscAvailableCache=null;
+const fallbackMscData={regions:['Caribe','Bahamas','Mediterráneo','Norte de Europa','Alaska','Sudamérica','Asia','Emiratos / Oriente Medio','Canarias y Madeira','Sudáfrica','Canal de Panamá','MSC Grand Voyages','Vuelta al Mundo'],knowledge:[],departures:[],series:[],fleet:[],whatsapp:'18093161070'};
+const normalize=s=>(s||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'');
+const loadMscJson=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return r.json();};
+const mscLoad=async()=>{if(mscData)return mscData;const results=await Promise.allSettled([loadMscJson('../assets/msc-assistant-data.json?v=20261006w'),loadMscJson('../assets/msc-public-index.json?v=20261006w')]);const baseResult=results[0],publicResult=results[1];mscData=baseResult.status==='fulfilled'?baseResult.value:fallbackMscData;mscPublicIndex=publicResult.status==='fulfilled'?publicResult.value:null;mscDepartureCache=null;mscAvailableCache=null;if(mscPublicIndex&&mscPublicIndex.stats&&mscPublicIndex.stats.regions){mscData.regions=[...new Set([...(mscData.regions||fallbackMscData.regions),...Object.keys(mscPublicIndex.stats.regions)])];}if(dataStatus){const active=availableDepartures().length;const ships=mscPublicIndex&&mscPublicIndex.stats?mscPublicIndex.stats.ships:new Set(availableDepartures().map(x=>x.ship)).size;const refreshed=mscPublicIndex&&mscPublicIndex.refreshedAt?new Date(mscPublicIndex.refreshedAt).toLocaleDateString('es-DO'):(mscData.updatedAt||'vigente');dataStatus.textContent='Base MSC · '+active.toLocaleString('es-DO')+' salidas futuras · '+ships+' barcos · actualizada '+refreshed+(mscPublicIndex?' · índice público MSC':'');}return mscData;};
+const openChat=async()=>{chat?.classList.add('open');await mscLoad();setTimeout(()=>input?.focus(),50)},closeChat=()=>chat?.classList.remove('open');
+document.getElementById('mscChatLaunch')?.addEventListener('click',openChat);document.getElementById('openMscChat')?.addEventListener('click',openChat);document.getElementById('mscChatClose')?.addEventListener('click',closeChat);
+const add=(txt,type='bot')=>{const el=document.createElement('div');el.className='msc-msg '+type;el.textContent=txt;body?.appendChild(el);if(body)body.scrollTop=body.scrollHeight;return el;};
+const addChoices=(items,onPick)=>{const wrap=document.createElement('div');wrap.className='msc-choice-grid';items.forEach(item=>{const b=document.createElement('button');b.type='button';b.className='msc-choice';b.textContent=item.label||item;b.addEventListener('click',()=>onPick(item));wrap.appendChild(b);});body?.appendChild(wrap);if(body)body.scrollTop=body.scrollHeight;return wrap;};
+const waUrl=message=>'https://wa.me/'+(mscData?.whatsapp||'18093161070')+'?text='+encodeURIComponent(message);
+const addQuoteButton=(label,message)=>{const wrap=document.createElement('div');wrap.className='msc-result-actions';const a=document.createElement('a');a.className='quote';a.target='_blank';a.rel='noopener';a.href=waUrl(message);a.textContent=label;wrap.appendChild(a);body?.appendChild(wrap);if(body)body.scrollTop=body.scrollHeight;};
+const formatDate=iso=>{if(!iso)return'';const d=new Date(iso+'T12:00:00');return d.toLocaleDateString('es-DO',{day:'numeric',month:'long',year:'numeric'});};
+const addDaysISO=(iso,n)=>{const d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+Number(n||0));return d.toISOString().slice(0,10);};
+const allDepartures=()=>{if(mscDepartureCache)return mscDepartureCache;const map=new Map();const key=d=>normalize(d.ship)+'|'+String(d.start||'')+'|'+normalize(d.port||'');(mscPublicIndex?.departures||[]).forEach(raw=>{if(!raw?.ship||!raw?.start)return;const amount=Number(raw.priceFrom);const price=Number.isFinite(amount)&&amount>0?'Desde US$'+Math.round(amount).toLocaleString('en-US')+' p/p · referencia pública MSC USA para 2 adultos'+(mscPublicIndex?.priceIncludesFeesTaxes?' · tasas e impuestos incluidos en esa referencia':'')+'. Suncar confirma tarifa y disponibilidad.':'Precio a confirmar con Suncar';const d={...raw,sourceType:'OfficialPublicIndex',sourceMarket:mscPublicIndex?.market||'USA',publicPriceNote:price,inclusions:'Referencia informativa; reserva, condiciones y pago se confirman exclusivamente con Suncar Tours & Travel.'};map.set(key(d),d);});(mscData?.series||[]).forEach(s=>{(s.dates||[]).forEach(start=>{const d={id:s.id+'-'+start,seriesId:s.id,sourceType:s.sourceType,sourceMarket:s.sourceMarket,region:s.region,ship:s.ship,port:s.port,start,end:s.nights?addDaysISO(start,s.nights):undefined,nights:s.nights,route:s.route,publicPriceNote:s.publicPriceNote,inclusions:s.inclusions};if(!map.has(key(d)))map.set(key(d),d);});});(mscData?.departures||[]).forEach(d=>{if(d?.ship&&d?.start)map.set(key(d),d);});mscDepartureCache=[...map.values()].sort((a,b)=>String(a.start).localeCompare(String(b.start))||String(a.ship).localeCompare(String(b.ship)));return mscDepartureCache;};
+const availableDepartures=()=>{if(mscAvailableCache)return mscAvailableCache;const today=new Date().toISOString().slice(0,10);mscAvailableCache=allDepartures().filter(d=>String(d.start||'')>=today);return mscAvailableCache;};
+const priceNumber=text=>{const m=String(text||'').replace(/,/g,'').match(/US\\$\\s*([0-9]+(?:\\.[0-9]+)?)/i);return m?Number(m[1]):null;};
+const derivedPrice=d=>{if(d.suncarPrice)return d.suncarPrice;const own=priceNumber(d.publicPriceNote);if(own)return d.publicPriceNote;const same=availableDepartures().filter(x=>x!==d&&x.ship===d.ship&&x.region===d.region&&Number(x.nights||0)===Number(d.nights||0)).map(x=>priceNumber(x.publicPriceNote)).filter(Number.isFinite).sort((a,b)=>a-b);const broad=same.length?same:availableDepartures().filter(x=>x!==d&&x.region===d.region&&Number(x.nights||0)===Number(d.nights||0)).map(x=>priceNumber(x.publicPriceNote)).filter(Number.isFinite).sort((a,b)=>a-b);if(broad.length){const mid=broad[Math.floor(broad.length/2)];return 'Referencia aproximada: alrededor de US$'+Math.round(mid).toLocaleString('en-US')+' p/p basada en salidas públicas similares; Suncar confirma la tarifa real.';}return d.publicPriceNote||'Precio a confirmar con Suncar';};
+const departureText=d=>{const price=derivedPrice(d);return d.ship+' · '+formatDate(d.start)+(d.nights?' · '+d.nights+' noches':'')+'\nSalida: '+(d.port||'Por confirmar')+(d.itineraryName?'\nItinerario: '+d.itineraryName:'')+(d.priceCategory?'\nCategoría de referencia: '+d.priceCategory:'')+'\nRuta: '+(d.route||'Consultar con Suncar')+'\n'+price+(d.inclusions?'\n'+d.inclusions:'');};
+const searchPrefs=()=>searchState?.month?('\nPreferencias: '+searchState.adults+' adulto(s), '+searchState.children+' niño(s), cabina '+(searchState.cabin||'cualquiera')+', presupuesto '+(searchState.budget||'sin definir')):'';
+const whatsappRoute=d=>{const raw=String(d.route||'').split('→').map(x=>x.trim()).filter(Boolean).filter(x=>!/^navegaci[oó]n$/i.test(x));const clean=[];raw.forEach(x=>{if(!clean.length||normalize(clean[clean.length-1])!==normalize(x))clean.push(x);});if(clean.length<=9)return clean.join(' → ');return [...clean.slice(0,4),'…',...clean.slice(-4)].join(' → ');};
+const whatsappPrice=d=>{const amount=Number(d.priceFrom);if(Number.isFinite(amount)&&amount>0)return 'Desde US$'+Math.round(amount).toLocaleString('en-US')+' p/p (referencia pública)';const text=String(derivedPrice(d)||'').replace(/\s+/g,' ').trim();const match=text.match(/(?:Desde|alrededor de)\s+US\$[\d,.]+\s*(?:por persona|p\/p)?/i);return match?match[0]:'Tarifa a confirmar con Suncar';};
+const whatsappPrefs=()=>{if(!searchState?.month)return'';return '\n\n👥 Pasajeros: '+searchState.adults+' adulto(s) · '+searchState.children+' niño(s)'+
+'\n🛏️ Cabina: '+(searchState.cabin||'Cualquiera')+
+'\n💰 Presupuesto: '+(searchState.budget||'Sin definir');};
+const whatsappQuoteMessage=d=>{let msg='Hola Suncar 👋\n\nQuiero cotizar este crucero MSC:\n\n';
+msg+='🚢 '+d.ship+'\n';
+msg+='📅 '+formatDate(d.start)+(d.nights?' · '+d.nights+' noches':'')+'\n';
+msg+='📍 Salida: '+(d.port||'Por confirmar')+'\n';
+if(d.itineraryName)msg+='🗺️ Itinerario: '+d.itineraryName+'\n';
+if(d.priceCategory)msg+='🏷️ Cabina de referencia: '+d.priceCategory+'\n';
+msg+='💵 '+whatsappPrice(d)+'\n';
+const route=whatsappRoute(d);if(route)msg+='\nRuta principal:\n'+route;
+msg+=whatsappPrefs();
+msg+='\n\nQuiero confirmar tarifa y disponibilidad con Suncar. Gracias.';
+return msg;};
+const showDeparture=d=>{const card=document.createElement('div');card.className='msc-result';const title=document.createElement('b');title.textContent=d.ship+' · '+formatDate(d.start);const details=document.createElement('small');details.textContent=(d.port?'Salida desde '+d.port+'. ':'')+(d.itineraryName?d.itineraryName+'. ':'')+(d.priceCategory?'Categoría ref.: '+d.priceCategory+'. ':'')+(d.route||'')+' '+(derivedPrice(d)||'Precio a confirmar con Suncar.')+(d.inclusions?' '+d.inclusions:'');card.append(title,details);const actions=document.createElement('div');actions.className='msc-result-actions';const q=document.createElement('a');q.className='quote';q.target='_blank';q.rel='noopener';q.href=waUrl(whatsappQuoteMessage(d));q.textContent='Cotizar con Suncar';actions.appendChild(q);if(d.internalUrl){const more=document.createElement('a');more.className='internal';more.href=d.internalUrl;more.textContent='Ver detalle en Suncar';actions.appendChild(more);}card.appendChild(actions);body?.appendChild(card);if(body)body.scrollTop=body.scrollHeight;};
+const monthNames=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const longestIncluded=(s,items,key)=>items.filter(x=>x?.[key]&&s.includes(normalize(x[key]))).sort((a,b)=>normalize(b[key]).length-normalize(a[key]).length)[0]||null;
+const findRegionAlias=s=>{const aliases=mscData?.regionAliases||{};let best=null,bestLen=0;Object.entries(aliases).forEach(([region,vals])=>{[region,...(vals||[])].forEach(v=>{const n=normalize(v);if(n.length>bestLen&&s.includes(n)){best={region};bestLen=n.length;}});});return best;};
+const findDepartureMatches=q=>{if(!availableDepartures().length)return[];const s=normalize(q);const ship=longestIncluded(s,mscData.fleet||[],'name');const ports=[...new Set(availableDepartures().map(d=>d.port).filter(Boolean))].map(port=>({port}));const portMatch=longestIncluded(s,ports,'port');const regions=[...new Set(availableDepartures().map(d=>d.region).filter(Boolean))].map(region=>({region}));const regionMatch=findRegionAlias(s)||longestIncluded(s,regions,'region');const stops=[...new Set(availableDepartures().flatMap(d=>String(d.route||'').split('→').map(x=>x.trim()).filter(x=>x&&normalize(x)!=='navegacion')))];const routeStopMatch=longestIncluded(s,stops.map(stop=>({stop})),'stop');const year=(s.match(/\b20\d{2}\b/)||[])[0]||null;const monthIndex=monthNames.findIndex(m=>s.includes(m));const travelIntent=/salid|itiner|crucero|viaj|fecha|desde|puerto|precio|tarifa|opcion|opción|buscar|busca/.test(s)||monthNames.some(m=>s.includes(m));const directEntity=!!(ship||portMatch||regionMatch||routeStopMatch);if(!travelIntent&&!directEntity&&!year&&monthIndex<0)return[];let applied=0;let out=[...availableDepartures()];if(ship){out=out.filter(d=>normalize(d.ship)===normalize(ship.name));applied++;}if(portMatch){out=out.filter(d=>normalize(d.port)===normalize(portMatch.port));applied++;}if(regionMatch){out=out.filter(d=>normalize(d.region)===normalize(regionMatch.region));applied++;}if(routeStopMatch&&!portMatch){out=out.filter(d=>normalize(d.route).includes(normalize(routeStopMatch.stop)));applied++;}if(year){out=out.filter(d=>String(d.start||'').startsWith(year+'-'));applied++;}if(monthIndex>=0){const mm=String(monthIndex+1).padStart(2,'0');out=out.filter(d=>String(d.start||'').slice(5,7)===mm);applied++;}if(applied<1)return[];return out.sort((a,b)=>String(a.start).localeCompare(String(b.start)));};
+const findDeparture=q=>{if(!availableDepartures().length)return null;const s=normalize(q);let best=null,bestScore=0;availableDepartures().forEach(d=>{let score=0;const tokens=[d.ship,d.port,d.region,d.start,d.route].filter(Boolean).map(normalize);tokens.forEach(t=>{t.split(/[^a-z0-9]+/).filter(x=>x.length>3).forEach(x=>{if(s.includes(x))score++;});});const date=new Date(d.start+'T12:00:00');const month=date.toLocaleDateString('es-DO',{month:'long'});if(s.includes(normalize(month)))score+=2;if(s.includes(String(date.getFullYear())))score+=2;if(score>bestScore){best=d;bestScore=score;}});return bestScore>=3?best:null;};
+const answer=async q=>{await mscLoad();const s=normalize(q);if(/(que|cuales).*barcos|flota.*msc|lista.*barcos/.test(s)){const names=(mscData.fleet||[]).map(x=>x.name).join(', ');return{kind:'text',text:'Tengo cargados estos barcos de MSC: '+names+'. Puedes escribir el nombre de cualquiera, un puerto, un destino o una fecha y te muestro lo que hay en la base de Suncar.'};}if(/(que|cuales|cuáles).*yacht club|barcos.*yacht club/.test(s)){const list=(mscData.fleet||[]).filter(x=>x.yachtClub).map(x=>x.name);return{kind:'text',text:'En la base actual de Suncar, MSC Yacht Club está disponible o anunciado en: '+list.join(', ')+'. La disponibilidad real depende del barco, fecha y categoría; Suncar la confirma al cotizar.'};}const ship=(mscData.fleet||[]).find(x=>s.includes(normalize(x.name)));const specificSearch=/salid|itiner|fecha|desde|puerto|precio|tarifa|202\d/.test(s)||monthNames.some(m=>s.includes(m));if(ship&&!specificSearch){const next=availableDepartures().filter(d=>normalize(d.ship)===normalize(ship.name)).slice(0,8);return{kind:'ship',ship,departures:next};}const deps=findDepartureMatches(q);if(deps.length>1)return{kind:'departures',departures:deps};if(deps.length===1)return{kind:'departure',departure:deps[0]};const dep=findDeparture(q);if(dep)return{kind:'departure',departure:dep};if(ship){const next=availableDepartures().filter(d=>normalize(d.ship)===normalize(ship.name)).slice(0,8);return{kind:'ship',ship,departures:next};}let best=null,bestScore=0;(mscData.knowledge||[]).forEach(k=>{let score=0;(k.keywords||[]).forEach(kw=>{const n=normalize(kw);if(s.includes(n))score+=Math.max(1,n.split(' ').length*2);else n.split(' ').filter(t=>t.length>3).forEach(t=>{if(s.includes(t))score++;});});if(score>bestScore){best=k;bestScore=score;}});if(best&&bestScore>0)return{kind:'text',text:best.answer};return{kind:'text',text:'No encontré una coincidencia exacta. Prueba con un barco (por ejemplo MSC World America), un puerto como Miami, un destino como Noruega o Caribe, o un mes y año. El buscador usa el índice público MSC disponible y las ofertas verificadas por Suncar; si algo no aparece, Suncar lo revisa manualmente.'};};
+const resultPager={items:[],shown:0,pageSize:10,label:''};
+const addSearchSummary=(label,items)=>{const box=document.createElement('div');box.className='msc-search-summary';const ships=[...new Set(items.map(x=>x.ship).filter(Boolean))];const ports=[...new Set(items.map(x=>x.port).filter(Boolean))];const dates=items.map(x=>x.start).filter(Boolean).sort();const title=document.createElement('b');title.textContent=label;const meta=document.createElement('span');const shipText=ships.length<=12?ships.join(', '):(ships.slice(0,12).join(', ')+' y '+(ships.length-12)+' más');const portText=ports.length<=8?ports.join(', '):(ports.slice(0,8).join(', ')+' y '+(ports.length-8)+' más');meta.textContent=items.length.toLocaleString('es-DO')+' salida(s) · '+ships.length+' barco(s)'+(dates.length?' · '+formatDate(dates[0])+' a '+formatDate(dates[dates.length-1]):'')+'. Barcos: '+shipText+(ports.length?' · Puertos: '+portText:'');box.append(title,meta);body?.appendChild(box);if(body)body.scrollTop=body.scrollHeight;};
+const showMoreResults=()=>{const next=resultPager.items.slice(resultPager.shown,resultPager.shown+resultPager.pageSize);next.forEach(showDeparture);resultPager.shown+=next.length;document.getElementById('mscMoreResults')?.remove();if(resultPager.shown<resultPager.items.length){const b=document.createElement('button');b.type='button';b.id='mscMoreResults';b.className='msc-more';b.textContent='Ver '+Math.min(resultPager.pageSize,resultPager.items.length-resultPager.shown)+' más ('+(resultPager.items.length-resultPager.shown)+' pendientes)';b.addEventListener('click',showMoreResults);body?.appendChild(b);}if(body)body.scrollTop=body.scrollHeight;};
+const renderDepartureList=(label,items)=>{resultPager.items=[...items];resultPager.shown=0;resultPager.label=label;addSearchSummary(label,items);showMoreResults();};
+const regionItems=region=>availableDepartures().filter(d=>normalize(d.region)===normalize(region)).sort((a,b)=>String(a.start).localeCompare(String(b.start)));
+const showRegion=region=>{const items=regionItems(region);if(!items.length){const info=mscData?.regionInfo?.[region];if(info?.note)add(info.note);else add('Todavía no tengo salidas futuras verificadas para '+region+'. Suncar puede revisarlas manualmente.');return;}renderDepartureList(region+' · todas las salidas cargadas',items);const info=mscData?.regionInfo?.[region];if(info?.note)add(info.note);};
+const searchState={region:null,month:null,port:null,ship:null,cabin:null,budget:null,adults:2,children:0};
+const monthOptions=()=>{const out=[];const base=new Date();base.setDate(1);for(let i=0;i<15;i++){const d=new Date(base.getFullYear(),base.getMonth()+i,1);out.push({label:d.toLocaleDateString('es-DO',{month:'short',year:'numeric'}),value:d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')});}return out;};
+const baseMatches=()=>availableDepartures().filter(d=>normalize(d.region)===normalize(searchState.region)&&String(d.start||'').startsWith(searchState.month));
+const uniqueVals=(items,key)=>[...new Set(items.map(x=>x[key]).filter(Boolean))].sort();
+const runSearch=()=>{const matches=baseMatches().filter(d=>(!searchState.port||d.port===searchState.port)&&(!searchState.ship||d.ship===searchState.ship));const filters=[searchState.region,searchState.month,searchState.port,searchState.ship,searchState.cabin&&('Cabina '+searchState.cabin),searchState.budget&&('Presupuesto '+searchState.budget),searchState.adults+' adulto(s)',searchState.children+' niño(s)'].filter(Boolean);if(matches.length){renderDepartureList(filters.join(' · '),matches);}else{add('No tengo una salida exacta cargada para esa combinación. Suncar puede revisarla por ti y cotizarla.');addQuoteButton('Solicitar búsqueda a Suncar','Hola Suncar 👋\\nQuiero que me busquen un crucero MSC.\\n\\nRegión: '+searchState.region+'\\nMes: '+searchState.month+'\\nPuerto: '+(searchState.port||'Cualquiera')+'\\nBarco: '+(searchState.ship||'Cualquiera')+'\\nCabina: '+(searchState.cabin||'Cualquiera')+'\\nPresupuesto total aproximado: '+(searchState.budget||'Sin definir')+'\\nAdultos: '+searchState.adults+'\\nNiños: '+searchState.children+(Number(searchState.children)>0?'\\nEdades de niños: pendiente de indicar':'')+'\\n\\nQuiero recibir opciones y cotizar directamente con Suncar.');}};
+const askBudget=()=>{add('¿Tienes un presupuesto total aproximado para el crucero?');addChoices(['Sin presupuesto fijo','Hasta US$1,500','US$1,500–2,500','US$2,500–4,000','Más de US$4,000'],x=>{searchState.budget=x==='Sin presupuesto fijo'?null:x;runSearch();});};
+const askChildren=()=>{add('¿Cuántos niños viajan?');addChoices(['0','1','2','3+'],x=>{searchState.children=x==='3+'?3:Number(x);askBudget();});};
+const askAdults=()=>{add('¿Cuántos adultos viajan?');addChoices(['1','2','3','4+'],x=>{searchState.adults=x==='4+'?4:Number(x);askChildren();});};
+const askCabin=()=>{add('¿Qué tipo de cabina prefieres?');addChoices(['Cualquiera','Interior','Vista al mar','Balcón','Suite','Yacht Club'],x=>{searchState.cabin=x==='Cualquiera'?null:x;askAdults();});};
+const askShip=()=>{const matches=baseMatches().filter(d=>!searchState.port||d.port===searchState.port);const ships=uniqueVals(matches,'ship');if(!ships.length){searchState.ship=null;askCabin();return;}add('¿Tienes preferencia de barco?');addChoices(['Cualquiera',...ships],x=>{searchState.ship=x==='Cualquiera'?null:x;askCabin();});};
+const askPort=()=>{const ports=uniqueVals(baseMatches(),'port');if(!ports.length){searchState.port=null;searchState.ship=null;askCabin();return;}add('¿Desde qué puerto prefieres salir?');addChoices(['Cualquiera',...ports],x=>{searchState.port=x==='Cualquiera'?null:x;askShip();});};
+const askMonth=()=>{add('¿Para qué mes quieres viajar?');addChoices(monthOptions(),x=>{searchState.month=x.value;searchState.port=null;searchState.ship=null;askPort();});};
+const startSearch=async()=>{await mscLoad();searchState.region=null;searchState.month=null;searchState.port=null;searchState.ship=null;searchState.cabin=null;searchState.budget=null;add('Elige una zona. El buscador consulta miles de salidas públicas MSC y las combina con las ofertas verificadas por Suncar. Los precios públicos son referencias para 2 adultos; Suncar confirma la tarifa final y disponibilidad.');const regions=(mscData.regions||fallbackMscData.regions).map(r=>{const count=regionItems(r).length;const info=mscData?.regionInfo?.[r];return{label:r+(count?' ('+count.toLocaleString('es-DO')+' salidas)':info?.status==='not_currently_available'?' (sin itinerarios actuales)':' (por verificar)'),value:r};});addChoices(regions,x=>{searchState.region=x.value||x;showRegion(searchState.region);if(regionItems(searchState.region).length){add('¿Quieres afinar la búsqueda?');addChoices([{label:'Elegir mes',value:'month'},{label:'Dejar así y cotizar',value:'quote'}],choice=>{if(choice.value==='month')askMonth();else addQuoteButton('Cotizar opciones de '+searchState.region,'Hola Suncar 👋\\nQuiero cotizar opciones MSC en '+searchState.region+'.\\n\\nQuiero que me ayuden a comparar barcos, fechas y tarifas.');});}});};
+const addShipProfile=ship=>{const card=document.createElement('div');card.className='msc-result';const title=document.createElement('b');title.textContent=ship.name+' · '+ship.class;card.appendChild(title);const line=(label,value)=>{if(!value||(Array.isArray(value)&&!value.length))return;const el=document.createElement('small');el.textContent=label+(Array.isArray(value)?value.join(' · '):value);card.appendChild(el);};line('',ship.note);line('Destacados: ',ship.highlights);line('Gastronomía: ',ship.dining);line('Bares y lounges: ',ship.bars);line('Familias: ',ship.family);if(ship.yachtClub)line('MSC Yacht Club: ',ship.yachtClubDetails?.length?ship.yachtClubDetails:['Disponible; Suncar confirma categorías y beneficios de la salida.']);body?.appendChild(card);if(body)body.scrollTop=body.scrollHeight;};
+const renderAnswer=(r,q='')=>{if(r.kind==='ship'){addShipProfile(r.ship);if(r.departures?.length)renderDepartureList('Próximas salidas cargadas de '+r.ship.name,r.departures);else add('No tengo una salida futura exacta cargada para este barco. Suncar puede buscarla y cotizarla sin enviarte fuera de nuestra página.');return;}if(r.kind==='departures'){renderDepartureList('Resultados para: '+q,r.departures);return;}if(r.kind==='departure'){add('Encontré una opción relacionada en la base de Suncar:');showDeparture(r.departure);return;}add(r.text);if(/precio|tarifa|disponibilidad|reserv|cotiz/i.test(q))addQuoteButton('Cotizar con Suncar','Hola Suncar 👋\\nTengo esta consulta sobre MSC: '+q+'\\n\\nQuiero cotizar y confirmar la información con Suncar.');};
+document.getElementById('mscChatForm')?.addEventListener('submit',async e=>{e.preventDefault();const q=input?.value.trim();if(!q)return;add(q,'user');input.value='';renderAnswer(await answer(q),q);});
+body?.addEventListener('click',async e=>{const b=e.target.closest('button[data-q],button[data-action]');if(!b)return;if(b.dataset.action==='search'||b.dataset.action==='regions'){add(b.dataset.action==='regions'?'Ver todas las zonas MSC':'Buscar crucero MSC','user');startSearch();return;}const q=b.dataset.q||'';if(q){add(q,'user');renderAnswer(await answer(q),q);}});
+const mb=document.getElementById('menuButton'),nav=document.getElementById('navlinks');mb?.addEventListener('click',()=>{const open=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(open));});document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{const item=b.parentElement,open=!item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-q')?.setAttribute('aria-expanded','false');});item.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open));b.querySelector('span').textContent=open?'−':'＋';}));
+</script>
+</body></html>
