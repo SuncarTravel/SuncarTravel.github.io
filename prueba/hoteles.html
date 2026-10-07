@@ -38,14 +38,42 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 <div class="search-wrap"><div class="container">
 <form class="searchbox" id="hotelSearch">
 <div class="formgrid">
-<div class="field destination"><label>Destino</label><input id="destination" required placeholder="Ej. Punta Cana, Madrid, Nueva York"></div>
+<div class="field destination"><label>Destino</label>
+  <input id="destination" list="destinationsList" autocomplete="off" required placeholder="Escribe ciudad o destino, ej. Punta Cana">
+  <datalist id="destinationsList">
+    <option value="Punta Cana, República Dominicana"></option>
+    <option value="Santo Domingo, República Dominicana"></option>
+    <option value="Puerto Plata, República Dominicana"></option>
+    <option value="La Romana, República Dominicana"></option>
+    <option value="Bayahibe, República Dominicana"></option>
+    <option value="Samaná, República Dominicana"></option>
+    <option value="Miami, Florida, Estados Unidos"></option>
+    <option value="Orlando, Florida, Estados Unidos"></option>
+    <option value="Nueva York, Estados Unidos"></option>
+    <option value="Madrid, España"></option>
+    <option value="Barcelona, España"></option>
+    <option value="París, Francia"></option>
+    <option value="Roma, Italia"></option>
+    <option value="Londres, Reino Unido"></option>
+    <option value="Cancún, México"></option>
+    <option value="Ciudad de México, México"></option>
+    <option value="Bogotá, Colombia"></option>
+    <option value="Medellín, Colombia"></option>
+    <option value="Cartagena, Colombia"></option>
+    <option value="San José, Costa Rica"></option>
+    <option value="Panamá, Panamá"></option>
+    <option value="Aruba"></option>
+    <option value="Curazao"></option>
+    <option value="Nassau, Bahamas"></option>
+    <option value="San Juan, Puerto Rico"></option>
+  </datalist></div>
 <div class="field"><label>Entrada</label><input id="checkin" type="date" required></div>
 <div class="field"><label>Salida</label><input id="checkout" type="date" required></div>
 <div class="field"><label>Adultos</label><input id="adults" type="number" min="1" max="12" value="2" required></div>
 <div class="field"><label>Niños</label><input id="children" type="number" min="0" max="8" value="0"></div>
 <div class="field"><label>Habitaciones</label><input id="rooms" type="number" min="1" max="6" value="1" required></div>
 </div>
-<div class="actions"><button class="btn orange" type="submit">Buscar hoteles</button><button class="btn outline" type="button" id="clearBtn">Limpiar</button></div>
+<div class="note" style="margin-top:10px">Empieza escribiendo la ciudad. Verás sugerencias; luego completa las fechas y pulsa <strong>Buscar hoteles</strong>.</div><div class="actions"><button class="btn orange" type="submit">Buscar hoteles</button><button class="btn outline" type="button" id="clearBtn">Limpiar</button></div>
 <div class="note">Las tarifas mostradas en esta página de prueba son de demostración visual para validar el cotizador. La versión con tarifas automáticas en tiempo real se conectará al backend antes de publicarla oficialmente.</div>
 </form>
 </div></div>
@@ -173,6 +201,14 @@ $('clearBtn').addEventListener('click',()=>{form.reset();$('adults').value=2;$('
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
  document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');currentFilter=btn.dataset.filter;if(currentData)render();
 }));
+$('destination').addEventListener('input',()=>{
+  const city=$('destination').value.trim();
+  if(!currentData){
+    summary.textContent=city
+      ? 'Destino seleccionado: '+city+'. Completa las fechas y pulsa Buscar hoteles.'
+      : 'Haz una búsqueda para ver cómo funcionará el cotizador.';
+  }
+});
 const today=new Date();const min=today.toISOString().slice(0,10);$('checkin').min=min;$('checkout').min=min;
 $('checkin').addEventListener('change',()=>{$('checkout').min=$('checkin').value;if($('checkout').value&&$('checkout').value<=$('checkin').value)$('checkout').value='';});
 </script>
