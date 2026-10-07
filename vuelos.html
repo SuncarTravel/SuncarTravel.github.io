@@ -19,7 +19,7 @@ section{padding:54px 0}.soft{background:var(--soft)}h2{font-family:Georgia,serif
 footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{position:fixed;right:16px;bottom:16px;background:var(--green);color:#fff;border-radius:999px;padding:13px 17px;font-weight:950;box-shadow:0 12px 28px rgba(0,0,0,.18);z-index:40}
 @media(max-width:900px){.formgrid{grid-template-columns:repeat(2,1fr)}.field.wide{grid-column:span 2}.flight-top{grid-template-columns:1fr 1fr}.fare{grid-column:1/-1;text-align:left}.links{gap:10px;font-size:.85rem}.dropmenu{right:0;left:auto}}
 @media(max-width:620px){.top{display:none}nav{min-height:78px;align-items:flex-start;padding:8px 0;flex-direction:column}.brand{height:54px}.brand img{height:54px}.links{width:100%;overflow-x:auto;padding-bottom:8px}.hero{padding:42px 0}.formgrid{grid-template-columns:1fr}.field.wide{grid-column:auto}.flight-top{grid-template-columns:1fr}.fare{grid-column:auto}.searchbox{padding:18px}}
-</style></head><body>
+</style><script src="assets/whatsapp-safe.js?v=20261007b"></script></head><body>
 <div class="top"><div class="container"><span><strong>Suncar Tours & Travel</strong> · Santo Domingo</span><span>809-316-1070 · suncartravel@gmail.com</span></div></div>
 <header><div class="container"><nav><a class="brand" href="index.html"><img src="assets/logo.svg?v=7" alt="Suncar Tours & Travel"></a><div class="links">
 <details class="drop"><summary>Servicios</summary><div class="dropmenu"><a href="hoteles.html">🏨 Hoteles</a><a href="vuelos.html">✈️ Vuelos</a><a href="cruceros.html">🚢 Cruceros</a><a href="seguros-viaje.html">🛡️ Seguros de viaje</a><a href="paquetes.html">🌴 Paquetes y escapadas</a><a href="servicios.html"><strong>Ver todos →</strong></a></div></details>
@@ -243,7 +243,7 @@ function manualMessage(){
   return lines.join('\n');
 }
 function sendManual(){
-  window.open('https://wa.me/18093161070?text='+encodeURIComponent(manualMessage()),'_blank');
+  window.open(SuncarWhatsApp.url('18093161070',manualMessage()),'_blank');
 }
 document.getElementById('manualBtn').addEventListener('click',sendManual);
 document.getElementById('manualBtn2').addEventListener('click',sendManual);
@@ -290,7 +290,7 @@ function confirmFlight(r,d){
     'Gracias.'
   );
 
-  window.open('https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n')),'_blank');
+  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 }
 
 function renderResults(data,d){
