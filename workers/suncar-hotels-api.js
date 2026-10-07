@@ -120,7 +120,19 @@ async function detailsSerp(token,ctx,env){
   });
   const r=await fetchJson("https://serpapi.com/search.json?"+p.toString());
   if(!r.ok||!r.data||r.data.error)return null;
-  const rooms=arr(r.data.rooms).slice(0,12).map(normalizeSerpRoom);
+  // Property Details puede devolver habitaciones en el nivel principal
+  // y/o agrupadas dentro de featured_prices/prices.
+  const rawRooms=[
+    ...arr(r.data.rooms),
+    ...arr(r.data.featured_prices).flatMap(x=>arr(x?.rooms)),
+    ...arr(r.data.prices).flatMap(x=>arr(x?.rooms))
+  ];
+  const seen=new Set();
+  const rooms=rawRooms.filter(room=>{
+    const key=[room?.name,room?.total_rate?.lowest,room?.rate_per_night?.lowest].join("|");
+    if(seen.has(key))return false;
+    seen.add(key);return true;
+  }).slice(0,12).map(normalizeSerpRoom);
   return rooms.length?rooms:null;
 }
 
