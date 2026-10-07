@@ -72,8 +72,8 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 <div class="field"><label>Niños</label><input id="children" type="number" min="0" max="8" value="0"></div>
 <div class="field"><label>Habitaciones</label><input id="rooms" type="number" min="1" max="6" value="1" required></div>
 </div>
-<div class="note" style="margin-top:10px">Empieza escribiendo la ciudad. Verás sugerencias; luego completa las fechas y pulsa <strong>Buscar hoteles</strong>.</div><div class="actions"><button class="btn orange" type="submit">Buscar hoteles</button><button class="btn outline" type="button" id="clearBtn">Limpiar</button></div>
-<div class="note">Las tarifas mostradas en esta página de prueba son de demostración visual para validar el cotizador. La versión con tarifas automáticas en tiempo real se conectará al backend antes de publicarla oficialmente.</div>
+<div class="note" style="margin-top:10px">Empieza escribiendo la ciudad. Para esta prueba cargamos un ejemplo real de Suncar para <strong>Punta Cana · 9 al 11 de octubre de 2026 · 2 adultos</strong>.</div><div class="actions"><button class="btn orange" type="submit">Buscar hoteles</button><button class="btn outline" type="button" id="realSampleBtn">Ver ejemplo real</button><button class="btn outline" type="button" id="clearBtn">Limpiar</button></div>
+<div class="note">Los hoteles y tarifas del ejemplo real provienen de ofertas publicadas por Suncar. No son todavía resultados automáticos en vivo; la tarifa y disponibilidad final se confirman con Suncar.</div>
 </form>
 </div></div>
 
@@ -97,20 +97,15 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 <footer><div class="container footer-inner"><span>Suncar Tours & Travel</span><span>Prueba privada · No indexada</span></div></footer>
 
 <script>
-const DEMO_HOTELS=[
- {name:'Suncar Beach Resort Demo',stars:5,rating:'9.1',location:'Zona de playa',amenities:['Piscina','Wi-Fi','Playa','Gimnasio'],rates:[
-  {plan:'room',label:'Solo habitación',room:'Habitación Deluxe',cancel:'Cancelación según condiciones',night:154},
-  {plan:'breakfast',label:'Desayuno incluido',room:'Habitación Deluxe',cancel:'Cancelación flexible',night:176},
-  {plan:'allinclusive',label:'Todo incluido',room:'Habitación Deluxe',cancel:'Cancelación según condiciones',night:238}
+const REAL_SAMPLE_HOTELS=[
+ {name:'RIU Bambu',stars:5,rating:'',location:'Punta Cana',amenities:['Oferta Suncar','2 noches'],rates:[
+  {plan:'room',label:'Oferta Suncar',room:'Habitación para 2 adultos',cancel:'Condiciones a confirmar con Suncar',currency:'DOP',total:22925,display:'RD$22,925 por pareja'}
  ]},
- {name:'Suncar Grand Hotel Demo',stars:4,rating:'8.7',location:'Centro / zona turística',amenities:['Wi-Fi','Desayuno','Restaurante'],rates:[
-  {plan:'room',label:'Solo habitación',room:'Habitación Estándar',cancel:'No reembolsable',night:119},
-  {plan:'half',label:'Media pensión',room:'Habitación Superior',cancel:'Cancelación según condiciones',night:163},
-  {plan:'full',label:'Pensión completa',room:'Habitación Superior',cancel:'Cancelación según condiciones',night:194}
+ {name:'RIU Republica',stars:5,rating:'',location:'Punta Cana · Solo adultos',amenities:['Solo adultos','Oferta Suncar','2 noches'],rates:[
+  {plan:'room',label:'Oferta Suncar',room:'Habitación para 2 adultos',cancel:'Condiciones a confirmar con Suncar',currency:'DOP',total:25684,display:'RD$25,684 por pareja'}
  ]},
- {name:'Suncar Family Suites Demo',stars:4,rating:'8.9',location:'Área familiar',amenities:['Piscina','Familias','Wi-Fi','Kids Club'],rates:[
-  {plan:'breakfast',label:'Desayuno incluido',room:'Suite Familiar',cancel:'Cancelación flexible',night:146},
-  {plan:'allinclusive',label:'Todo incluido',room:'Suite Familiar',cancel:'Cancelación según condiciones',night:221}
+ {name:'RIU Palace Punta Cana',stars:5,rating:'',location:'Punta Cana',amenities:['Todo incluido','Oferta Suncar','2 noches'],rates:[
+  {plan:'allinclusive',label:'Todo incluido',room:'Habitación para 2 adultos',cancel:'Condiciones a confirmar con Suncar',currency:'DOP',total:28800,display:'RD$28,800 por pareja'}
  ]}
 ];
 
@@ -149,7 +144,7 @@ function quoteHotel(h,r,total,nights){
  'Habitacion: '+r.room,
  'Plan: '+r.label,
  'Condicion: '+r.cancel,
- 'Tarifa mostrada en prueba: USD '+total.toLocaleString('en-US')+' total',
+ 'Tarifa mostrada: '+(r.display||((r.currency||'USD')+' '+total.toLocaleString('en-US'))),
  '',
  'Quiero confirmar disponibilidad, impuestos, condiciones y precio final con Suncar.'
  ];
@@ -158,26 +153,27 @@ function quoteHotel(h,r,total,nights){
 function render(){
  if(!currentData)return;
  const nights=nightsBetween(currentData.checkin,currentData.checkout);
- const filtered=DEMO_HOTELS.map(h=>({...h,rates:h.rates.filter(r=>currentFilter==='all'||r.plan===currentFilter)})).filter(h=>h.rates.length);
+ const isRealSample=currentData.destination.toLowerCase().includes('punta cana')&&currentData.checkin==='2026-10-09'&&currentData.checkout==='2026-10-11'&&currentData.adults===2&&currentData.rooms===1;
+ const filtered=(isRealSample?REAL_SAMPLE_HOTELS:[]).map(h=>({...h,rates:h.rates.filter(r=>currentFilter==='all'||r.plan===currentFilter)})).filter(h=>h.rates.length);
  summary.textContent=currentData.destination+' · '+fmtDate(currentData.checkin)+' al '+fmtDate(currentData.checkout)+' · '+nights+' noche'+(nights===1?'':'s')+' · '+currentData.adults+' adulto'+(currentData.adults===1?'':'s');
- if(!filtered.length){list.innerHTML='<div class="empty">No hay opciones de demostración para este filtro. Prueba otro régimen.</div>';return;}
+ if(!filtered.length){list.innerHTML='<div class="empty">En esta prueba real todavía solo está cargado el ejemplo de <strong>Punta Cana, 9 al 11 de octubre de 2026, 2 adultos y 1 habitación</strong>. Pulsa “Ver ejemplo real” para cargarlo.</div>';return;}
  list.innerHTML='';
  filtered.forEach((h,hi)=>{
    const card=document.createElement('article');card.className='hotel-card';
    const media=document.createElement('div');media.className='hotel-media';media.textContent='HOTEL';
    const body=document.createElement('div');body.className='hotel-body';
-   const best=h.rates.reduce((a,b)=>a.night<=b.night?a:b);
-   const bestTotal=Math.round(best.night*nights*currentData.rooms);
+   const best=h.rates.reduce((a,b)=>((a.total??a.night*1000000)<=(b.total??b.night*1000000))?a:b);
+   const bestTotal=best.total!=null?best.total:Math.round(best.night*nights*currentData.rooms);
    body.innerHTML='<div class="hotel-top"><div class="hotel-title"><div class="stars">'+stars(h.stars)+'</div><h3>'+h.name+'</h3><div class="hotel-meta">'+currentData.destination+' · '+h.location+'</div></div><div class="rating">'+h.rating+' / 10</div></div>'+
      '<div class="amenities">'+h.amenities.slice(0,3).map(a=>'<span class="amenity">'+a+'</span>').join('')+'</div>'+
-     '<div class="hotel-summary"><div class="from"><small>Desde · total estadía</small><strong>USD '+bestTotal.toLocaleString('en-US')+'</strong><small>'+best.label+'</small></div><div class="compact-actions"><button class="btn outline toggle-rates" type="button">Ver '+h.rates.length+' tarifa'+(h.rates.length===1?'':'s')+'</button></div></div>';
+     '<div class="hotel-summary"><div class="from"><small>Tarifa mostrada</small><strong>'+(best.display||((best.currency||'USD')+' '+bestTotal.toLocaleString('en-US')))+'</strong><small>'+best.label+'</small></div><div class="compact-actions"><button class="btn outline toggle-rates" type="button">Ver tarifa</button></div></div>';
    const rates=document.createElement('div');rates.className='rate-list';
    h.rates.forEach((r,ri)=>{
-     const total=Math.round(r.night*nights*currentData.rooms);
+     const total=r.total!=null?r.total:Math.round(r.night*nights*currentData.rooms);
      const row=document.createElement('div');row.className='rate';
      row.innerHTML='<div class="rate-name"><strong>'+r.room+'</strong><small>'+r.label+'</small></div>'+
-       '<div class="rate-price"><strong>USD '+total.toLocaleString('en-US')+'</strong><small>total</small><button class="btn green" type="button">Solicitar</button></div>'+
-       '<div class="rate-info"><strong>'+r.cancel+'</strong><small>USD '+r.night.toLocaleString('en-US')+' por noche · '+nights+' noche'+(nights===1?'':'s')+'</small></div>';
+       '<div class="rate-price"><strong>'+(r.display||((r.currency||'USD')+' '+total.toLocaleString('en-US')))+'</strong><small>tarifa mostrada</small><button class="btn green" type="button">Solicitar</button></div>'+
+       '<div class="rate-info"><strong>'+r.cancel+'</strong><small>'+nights+' noche'+(nights===1?'':'s')+' · precio final sujeto a confirmación</small></div>';
      row.querySelector('button').addEventListener('click',()=>quoteHotel(h,r,total,nights));
      rates.appendChild(row);
    });
@@ -199,6 +195,19 @@ form.addEventListener('submit',e=>{
   children:Number($('children').value||0),
   rooms:Number($('rooms').value||1)
  };
+ render();
+ document.querySelector('.results-section').scrollIntoView({behavior:'smooth',block:'start'});
+});
+$('realSampleBtn').addEventListener('click',()=>{
+ $('destination').value='Punta Cana, República Dominicana';
+ $('checkin').value='2026-10-09';
+ $('checkout').value='2026-10-11';
+ $('adults').value=2;
+ $('children').value=0;
+ $('rooms').value=1;
+ currentData={destination:$('destination').value,checkin:$('checkin').value,checkout:$('checkout').value,adults:2,children:0,rooms:1};
+ currentFilter='all';
+ document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x.dataset.filter==='all'));
  render();
  document.querySelector('.results-section').scrollIntoView({behavior:'smooth',block:'start'});
 });
