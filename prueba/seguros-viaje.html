@@ -11,16 +11,17 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
 .hero{background:linear-gradient(135deg,#052f50,#0b79aa);color:#fff;padding:62px 0}.hero .eyebrow{text-transform:uppercase;letter-spacing:.1em;color:#ffd08a;font-size:.76rem;font-weight:950}.hero h1{font-family:Georgia,serif;font-size:clamp(2.6rem,5vw,4.7rem);line-height:1;margin:10px 0}.hero p{max-width:760px;color:#e4eff5;line-height:1.65;font-size:1.04rem}
 section{padding:54px 0}.soft{background:var(--soft)}h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3rem);margin:0 0 10px}.lead{color:var(--muted);line-height:1.65;max-width:800px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:20px;padding:20px;background:#fff;box-shadow:0 10px 28px rgba(7,55,92,.06)}.card h3{font-family:Georgia,serif;color:var(--navy);font-size:1.45rem;margin:8px 0}.card p{color:var(--muted);line-height:1.55;font-size:.9rem}.tag{font-size:.72rem;color:var(--orange);font-weight:950;letter-spacing:.08em}.price{font-size:1.32rem;color:var(--navy);font-weight:950}
 .formbox{border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;box-shadow:var(--shadow);margin-top:24px}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.82rem;font-weight:900;color:var(--navy)}input,select,textarea{width:100%;border:1px solid #cddbe4;border-radius:12px;padding:11px 12px;font:inherit}textarea{min-height:88px;resize:vertical}.note{font-size:.79rem;color:var(--muted);line-height:1.5}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.estimate-box{margin-top:22px;border:1px solid #cfe3ed;background:#eef7fb;border-radius:20px;padding:20px;display:none}.estimate-box.show{display:block}.estimate-head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:14px}.estimate-head h3{margin:0;color:var(--navy);font-family:Georgia,serif;font-size:1.7rem}.estimate-head p{margin:4px 0 0;color:var(--muted);font-size:.84rem}.estimate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.estimate-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}.estimate-card b{display:block;color:var(--navy);font-size:1rem}.estimate-card strong{display:block;color:var(--orange);font-size:1.45rem;margin:7px 0 3px}.estimate-card small{color:var(--muted);line-height:1.4}.estimate-warning{margin-top:13px;font-size:.78rem;line-height:1.5;color:var(--muted)}
 footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{position:fixed;right:16px;bottom:16px;background:var(--green);color:#fff;border-radius:999px;padding:13px 17px;font-weight:950;box-shadow:0 12px 28px rgba(0,0,0,.18)}
-@media(max-width:800px){.links{gap:10px;font-size:.85rem}.grid{grid-template-columns:1fr 1fr}.dropmenu{right:0;left:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
-@media(max-width:620px){.top{display:none}nav{min-height:78px;align-items:flex-start;padding:8px 0;flex-direction:column}.brand{height:54px}.brand img{height:54px}.links{width:100%;overflow-x:auto;padding-bottom:8px}.grid{grid-template-columns:1fr}.hero{padding:42px 0}}
+@media(max-width:800px){.links{gap:10px;font-size:.85rem}.grid{grid-template-columns:1fr 1fr}.estimate-grid{grid-template-columns:1fr 1fr}.dropmenu{right:0;left:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+@media(max-width:620px){.top{display:none}nav{min-height:78px;align-items:flex-start;padding:8px 0;flex-direction:column}.brand{height:54px}.brand img{height:54px}.links{width:100%;overflow-x:auto;padding-bottom:8px}.grid,.estimate-grid{grid-template-columns:1fr}.hero{padding:42px 0}}
 </style></head><body>
 <div class="top"><div class="container"><span><strong>Suncar Tours & Travel</strong> · Santo Domingo</span><span>809-316-1070 · suncartravel@gmail.com</span></div></div>
 <header><div class="container"><nav><a class="brand" href="index.html"><img src="../assets/logo.svg?v=7" alt="Suncar Tours & Travel"></a><div class="links">
 <details class="drop"><summary>Servicios</summary><div class="dropmenu"><a href="hoteles.html">🏨 Hoteles</a><a href="vuelos.html">✈️ Vuelos</a><a href="cruceros.html">🚢 Cruceros</a><a href="seguros-viaje.html">🛡️ Seguros de viaje</a><a href="paquetes.html">🌴 Paquetes y escapadas</a><a href="servicios.html"><strong>Ver todos →</strong></a></div></details>
 <a href="ofertas.html">Ofertas</a><a href="index.html#contacto">Contacto</a><a class="btn orange" href="servicios.html">Cotizar</a></div></nav></div></header>
 <main><section class="hero"><div class="container"><div class="eyebrow">Suncar Travel</div><h1>Seguro de viaje</h1><p>Cotiza tu asistencia de viaje con Suncar Travel. La gestión y venta se realiza contigo directamente a través de nuestra agencia.</p></div></section>
-<section class="soft"><div class="container"><h2>Planes que puede mostrar la cotización</h2><p class="lead">Según destino, fechas y edad, pueden aparecer diferentes opciones de asistencia. La tarifa exacta se confirma con los datos de cada viaje.</p><div class="grid">
+<section class="soft"><div class="container"><h2>Planes disponibles</h2><p class="lead">Puedes comparar las opciones de cobertura y, al completar las fechas del viaje, ver un <strong>precio estimado</strong>. La tarifa final siempre se confirma con Suncar antes de reservar.</p><div class="grid">
 <div class="card"><div class="tag">MAYOR COBERTURA</div><h3>Elite</h3><p>Opción con cobertura médica más amplia y beneficios de asistencia durante el viaje.</p></div>
 <div class="card"><div class="tag">INTERMEDIO</div><h3>Euromundo Plus</h3><p>Plan con cobertura médica y beneficios de viaje para destinos internacionales.</p></div>
 <div class="card"><div class="tag">ECONÓMICO</div><h3>Essential</h3><p>Alternativa de menor costo con coberturas esenciales de asistencia.</p></div>
@@ -33,11 +34,96 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <div class="field"><label>Fecha de salida</label><input type="date" name="salida" required></div><div class="field"><label>Fecha de regreso</label><input type="date" name="regreso" required></div>
 <div class="field"><label>Cantidad de pasajeros</label><input type="number" min="1" max="9" name="pasajeros" required></div><div class="field"><label>Edades de los pasajeros</label><input name="edades" required placeholder="Ej. 45, 42, 12"></div>
 <div class="field full"><label>Comentarios</label><textarea name="comentarios" placeholder="Ej. Viaje en crucero, deseo comparar todos los planes..."></textarea></div>
-</div><div class="actions"><button class="btn green" type="submit">Solicitar cotización a Suncar</button></div></form></div></section></main>
+</div>
+<div class="estimate-box" id="estimateBox">
+  <div class="estimate-head"><div><h3>Precio estimado</h3><p id="estimateSummary"></p></div></div>
+  <div class="estimate-grid" id="estimateGrid"></div>
+  <div class="estimate-warning">Estimado informativo calculado con las tarifas de referencia cargadas por Suncar para viajeros de 0 a 75 años. Mínimo 3 días y máximo 60 días. Precio, elegibilidad, impuestos, disponibilidad y condiciones deben confirmarse antes de la emisión.</div>
+</div>
+<div class="actions"><button class="btn green" type="submit">Cotizar precio final con Suncar</button></div></form></div></section></main>
 <footer><div class="container">Suncar Tours & Travel · Santo Domingo · 809-316-1070</div></footer>
 <a class="wa" target="_blank" rel="noopener" href="https://wa.me/18093161070">WhatsApp</a>
 <script>
-document.getElementById('quoteForm')?.addEventListener('submit',e=>{
+const form=document.getElementById('quoteForm');
+const estimateBox=document.getElementById('estimateBox');
+const estimateGrid=document.getElementById('estimateGrid');
+const estimateSummary=document.getElementById('estimateSummary');
+
+const dailyRates={
+  Mundial:[
+    {name:'Elite',rate:8.433125},
+    {name:'Euromundo Plus',rate:7.3425},
+    {name:'Essential',rate:3.48}
+  ],
+  Europa:[
+    {name:'Elite',rate:8.4329032258},
+    {name:'Euromundo Plus',rate:7.3425806452},
+    {name:'Euromundo Visa',rate:3.224516129},
+    {name:'Essential',rate:3.48}
+  ]
+};
+
+const money=n=>'US$'+n.toFixed(2);
+const tripDays=(a,b)=>{
+  if(!a||!b)return 0;
+  const start=new Date(a+'T12:00:00');
+  const end=new Date(b+'T12:00:00');
+  if(end<start)return 0;
+  return Math.round((end-start)/86400000)+1;
+};
+const maxAge=txt=>{
+  const nums=String(txt||'').match(/\d+/g)||[];
+  return nums.length?Math.max(...nums.map(Number)):null;
+};
+
+function updateEstimate(){
+  const f=new FormData(form);
+  const destino=f.get('destino')||'';
+  const salida=f.get('salida')||'';
+  const regreso=f.get('regreso')||'';
+  const pasajeros=Number(f.get('pasajeros')||0);
+  const edades=f.get('edades')||'';
+  const days=tripDays(salida,regreso);
+  const rates=dailyRates[destino];
+
+  estimateGrid.innerHTML='';
+  estimateBox.classList.remove('show');
+  if(!destino||!salida||!regreso||!pasajeros)return;
+
+  estimateBox.classList.add('show');
+
+  if(!rates){
+    estimateSummary.textContent='Para este destino te confirmamos la tarifa directamente.';
+    estimateGrid.innerHTML='<div class="estimate-card"><b>Cotización personalizada</b><strong>Por confirmar</strong><small>Envíanos la solicitud y Suncar te confirma las opciones.</small></div>';
+    return;
+  }
+
+  if(days<3||days>60){
+    estimateSummary.textContent=days?days+' día(s) · fuera del rango de referencia':'Revisa las fechas seleccionadas';
+    estimateGrid.innerHTML='<div class="estimate-card"><b>Revisar fechas</b><strong>Por confirmar</strong><small>La referencia disponible aplica de 3 a 60 días.</small></div>';
+    return;
+  }
+
+  const age=maxAge(edades);
+  if(age!==null&&age>75){
+    estimateSummary.textContent=days+' día(s) · '+pasajeros+' pasajero(s)';
+    estimateGrid.innerHTML='<div class="estimate-card"><b>Edad especial</b><strong>Por confirmar</strong><small>Para viajeros mayores de 75 años la tarifa puede cambiar. Suncar confirma el precio final.</small></div>';
+    return;
+  }
+
+  estimateSummary.textContent=days+' día(s) · '+pasajeros+' pasajero(s) · '+destino;
+  rates.forEach(p=>{
+    const total=p.rate*days*pasajeros;
+    const card=document.createElement('div');
+    card.className='estimate-card';
+    card.innerHTML='<b>'+p.name+'</b><strong>'+money(total)+'</strong><small>Precio estimado total para '+pasajeros+' pasajero(s).</small>';
+    estimateGrid.appendChild(card);
+  });
+}
+
+['change','input'].forEach(ev=>form.addEventListener(ev,updateEstimate));
+
+form?.addEventListener('submit',e=>{
   e.preventDefault();
   const f=new FormData(e.currentTarget);
   const origen=f.get('origen')||'';
@@ -47,6 +133,9 @@ document.getElementById('quoteForm')?.addEventListener('submit',e=>{
   const pasajeros=f.get('pasajeros')||'';
   const edades=f.get('edades')||'';
   const comentarios=(f.get('comentarios')||'').trim();
+  const days=tripDays(salida,regreso);
+  const rates=dailyRates[destino];
+  const age=maxAge(edades);
 
   const formatDate=value=>{
     if(!value) return '';
@@ -64,22 +153,23 @@ document.getElementById('quoteForm')?.addEventListener('submit',e=>{
     'Destino: '+destino,
     'Salida: '+formatDate(salida),
     'Regreso: '+formatDate(regreso),
+    'Duración: '+days+' día(s)',
     '',
     '*VIAJEROS*',
     'Cantidad: '+pasajeros,
     'Edades: '+edades
   ];
 
-  if(comentarios){
-    lines.push('','*COMENTARIOS*',comentarios);
+  if(rates&&days>=3&&days<=60&&!(age!==null&&age>75)){
+    lines.push('','*PRECIOS ESTIMADOS*');
+    rates.forEach(p=>lines.push(p.name+': '+money(p.rate*days*Number(pasajeros))));
+    lines.push('','Estos valores son estimados. Quiero confirmar el precio final y las condiciones con Suncar.');
+  }else{
+    lines.push('','Quiero recibir los planes disponibles, coberturas y el precio final para estas fechas.');
   }
 
-  lines.push(
-    '',
-    'Quiero recibir los planes disponibles, coberturas y el precio final para estas fechas.',
-    '',
-    'Gracias.'
-  );
+  if(comentarios) lines.push('','*COMENTARIOS*',comentarios);
+  lines.push('','Gracias.');
 
   window.open('https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n')),'_blank');
 });
