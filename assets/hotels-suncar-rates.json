@@ -1,0 +1,172 @@
+{
+  "version": "2026-10-07.1",
+  "updatedAt": "2026-10-07",
+  "currencyNote": "Tarifas cargadas por Suncar. La disponibilidad y el precio final se confirman antes del pago.",
+  "rates": [
+    {
+      "id": "riu-bambu-2026-10-09",
+      "destination": "Punta Cana, República Dominicana",
+      "destinationAliases": [
+        "Punta Cana",
+        "Bávaro",
+        "Bavaro"
+      ],
+      "hotel": "RIU Bambu",
+      "stars": 5,
+      "checkIn": "2026-10-09",
+      "checkOut": "2026-10-11",
+      "adults": 2,
+      "children": 0,
+      "rooms": 1,
+      "room": "Habitación para 2 adultos",
+      "mealPlan": "Oferta Suncar",
+      "planCode": "room",
+      "priceDisplay": "RD$22,925 por pareja",
+      "totalAmount": 22925,
+      "currency": "DOP",
+      "amenities": [
+        "2 noches",
+        "Oferta Suncar"
+      ],
+      "conditions": "Tarifa y disponibilidad sujetas a confirmación con Suncar."
+    },
+    {
+      "id": "riu-republica-2026-10-09",
+      "destination": "Punta Cana, República Dominicana",
+      "destinationAliases": [
+        "Punta Cana",
+        "Bávaro",
+        "Bavaro"
+      ],
+      "hotel": "RIU Republica",
+      "stars": 5,
+      "checkIn": "2026-10-09",
+      "checkOut": "2026-10-11",
+      "adults": 2,
+      "children": 0,
+      "rooms": 1,
+      "room": "Habitación para 2 adultos",
+      "mealPlan": "Oferta Suncar",
+      "planCode": "room",
+      "priceDisplay": "RD$25,684 por pareja",
+      "totalAmount": 25684,
+      "currency": "DOP",
+      "amenities": [
+        "Solo adultos",
+        "2 noches",
+        "Oferta Suncar"
+      ],
+      "conditions": "Tarifa y disponibilidad sujetas a confirmación con Suncar."
+    },
+    {
+      "id": "riu-palace-punta-cana-2026-10-09",
+      "destination": "Punta Cana, República Dominicana",
+      "destinationAliases": [
+        "Punta Cana",
+        "Bávaro",
+        "Bavaro"
+      ],
+      "hotel": "RIU Palace Punta Cana",
+      "stars": 5,
+      "checkIn": "2026-10-09",
+      "checkOut": "2026-10-11",
+      "adults": 2,
+      "children": 0,
+      "rooms": 1,
+      "room": "Habitación para 2 adultos",
+      "mealPlan": "Todo incluido",
+      "planCode": "allinclusive",
+      "priceDisplay": "RD$28,800 por pareja",
+      "totalAmount": 28800,
+      "currency": "DOP",
+      "amenities": [
+        "Todo incluido",
+        "2 noches",
+        "Oferta Suncar"
+      ],
+      "conditions": "Tarifa y disponibilidad sujetas a confirmación con Suncar."
+    },
+    {
+      "id": "bluebay-villas-doradas-2026-11-06",
+      "destination": "Puerto Plata, República Dominicana",
+      "destinationAliases": [
+        "Puerto Plata",
+        "Playa Dorada"
+      ],
+      "hotel": "BlueBay Villas Doradas",
+      "stars": 4,
+      "checkIn": "2026-11-06",
+      "checkOut": "2026-11-08",
+      "adults": 2,
+      "children": 0,
+      "rooms": 1,
+      "room": "Habitación doble",
+      "mealPlan": "Todo incluido",
+      "planCode": "allinclusive",
+      "priceDisplay": "RD$6,650 p/p/noche",
+      "currency": "DOP",
+      "perPersonPerNight": 6650,
+      "amenities": [
+        "Solo adultos",
+        "Todo incluido",
+        "Playa"
+      ],
+      "conditions": "Tarifa por persona por noche. Precio final según ocupación y disponibilidad."
+    },
+    {
+      "id": "lopesan-costa-bavaro-2026-11-07",
+      "destination": "Punta Cana, República Dominicana",
+      "destinationAliases": [
+        "Punta Cana",
+        "Bávaro",
+        "Bavaro"
+      ],
+      "hotel": "Lopesan Costa Bávaro",
+      "stars": 5,
+      "checkIn": "2026-11-07",
+      "checkOut": "2026-11-09",
+      "adults": 2,
+      "children": 0,
+      "rooms": 1,
+      "room": "Habitación doble",
+      "mealPlan": "Oferta Suncar",
+      "planCode": "room",
+      "priceDisplay": "Doble US$197 p/p/noche",
+      "currency": "USD",
+      "perPersonPerNight": 197,
+      "amenities": [
+        "Resort",
+        "Oferta Suncar"
+      ],
+      "conditions": "Tarifa publicada por persona por noche para ocupación doble. Otras ocupaciones disponibles."
+    },
+    {
+      "id": "lopesan-splash-cove-2026-12-04",
+      "destination": "Punta Cana, República Dominicana",
+      "destinationAliases": [
+        "Punta Cana",
+        "Bávaro",
+        "Bavaro"
+      ],
+      "hotel": "Lopesan Splash Cove",
+      "stars": 5,
+      "checkIn": "2026-12-04",
+      "checkOut": "2026-12-06",
+      "adults": 2,
+      "children": 0,
+      "rooms": 1,
+      "room": "Habitación doble",
+      "mealPlan": "Todo incluido",
+      "planCode": "allinclusive",
+      "priceDisplay": "Doble US$178 p/p/noche",
+      "currency": "USD",
+      "perPersonPerNight": 178,
+      "amenities": [
+        "Todo incluido",
+        "Bebidas ilimitadas",
+        "Entretenimiento"
+      ],
+      "conditions": "Tarifa publicada por persona por noche. Niños según edad y condiciones de la oferta."
+    }
+  ]
+}
