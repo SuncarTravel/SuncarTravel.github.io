@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-07.1",
+  "version": "2026-10-07.2",
   "updatedAt": "2026-10-07",
   "currencyNote": "Tarifas cargadas por Suncar. La disponibilidad y el precio final se confirman antes del pago.",
   "rates": [
@@ -167,6 +167,60 @@
         "Entretenimiento"
       ],
       "conditions": "Tarifa publicada por persona por noche. Niños según edad y condiciones de la oferta."
+    },
+    {
+      "id": "grand-palladium-bavaro-2026-10-16",
+      "destination": "Punta Cana, República Dominicana",
+      "destinationAliases": [
+        "Punta Cana",
+        "Bávaro",
+        "Bavaro"
+      ],
+      "hotel": "Grand Palladium Bávaro",
+      "stars": 5,
+      "checkIn": "2026-10-16",
+      "checkOut": "2026-10-18",
+      "adults": 2,
+      "children": 0,
+      "rooms": 1,
+      "room": "Ocupación doble",
+      "mealPlan": "Todo incluido",
+      "planCode": "allinclusive",
+      "priceDisplay": "DBL US$158",
+      "currency": "USD",
+      "amenities": [
+        "Todo incluido",
+        "Habitaciones remodeladas",
+        "Oferta Suncar"
+      ],
+      "conditions": "Tarifa publicada para ocupación doble. Disponibilidad, base exacta de la tarifa y precio final sujetos a confirmación con Suncar."
+    },
+    {
+      "id": "grand-palladium-bavaro-2026-10-23",
+      "destination": "Punta Cana, República Dominicana",
+      "destinationAliases": [
+        "Punta Cana",
+        "Bávaro",
+        "Bavaro"
+      ],
+      "hotel": "Grand Palladium Bávaro",
+      "stars": 5,
+      "checkIn": "2026-10-23",
+      "checkOut": "2026-10-25",
+      "adults": 2,
+      "children": 0,
+      "rooms": 1,
+      "room": "Ocupación doble",
+      "mealPlan": "Todo incluido",
+      "planCode": "allinclusive",
+      "priceDisplay": "DBL US$158",
+      "currency": "USD",
+      "amenities": [
+        "Todo incluido",
+        "Habitaciones remodeladas",
+        "Oferta Suncar"
+      ],
+      "conditions": "Tarifa publicada para ocupación doble. Disponibilidad, base exacta de la tarifa y precio final sujetos a confirmación con Suncar."
     }
   ]
 }
