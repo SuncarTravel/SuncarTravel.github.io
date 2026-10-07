@@ -218,43 +218,52 @@ function rateLabelFromRoom(room){
   return {plan:p,label:labels[p]};
 }
 async function loadDetails(h,card,button){
-  if(h.manual&&h.rates.length){
-    card.classList.toggle('open');
-    button.textContent=card.classList.contains('open')?'Ocultar tarifas':'Ver tarifas';
-    return;
-  }
   if(h.rates.length){
     card.classList.toggle('open');
     button.textContent=card.classList.contains('open')?'Ocultar tarifas':'Ver tarifas';
     return;
   }
-  if(!API||!h.id){status('El detalle automático todavía no está conectado. Puedes solicitar esta opción y Suncar confirma la tarifa.','warn');return;}
-  button.disabled=true;button.textContent='Cargando...';
+  if(!API||!h.id){
+    card.classList.add('open');
+    button.textContent='Ocultar tarifas';
+    return;
+  }
+  card.classList.add('open');
+  button.disabled=true;
+  button.textContent='Consultando...';
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),22000);
   try{
     const q=new URLSearchParams({
       property_token:h.id,q:currentData.destination,check_in:currentData.checkin,check_out:currentData.checkout,
       adults:String(currentData.adults),children:String(currentData.children),currency:'USD'
     });
-    const r=await fetch(API+'/hotels/details?'+q.toString());
+    const r=await fetch(API+'/hotels/details?'+q.toString(),{signal:controller.signal});
     const d=await r.json();
     if(!r.ok||!d.ok)throw new Error(d.error||'No se pudo cargar el detalle');
-    h.rates=(d.rooms||[]).map(room=>{
+    const detailed=(d.rooms||[]).map(room=>{
       const p=rateLabelFromRoom(room);
       return {
         room:room.name||'Habitación',plan:p.plan,label:p.label,
         cancel:room.freeCancellation?'Cancelación gratis según condiciones':'Condiciones de cancelación por confirmar',
-        display:room.total?.display||room.night?.display||'Por confirmar',
-        total:Number(room.total?.amount||0),
-        inclusions:room.inclusions||[]
+        display:room.total?.display||room.night?.display||'',
+        total:Number(room.total?.amount||0),inclusions:room.inclusions||[]
       };
     }).filter(x=>x.display);
-    if(!h.rates.length)h.rates=[{room:'Opción disponible',plan:'room',label:'Tarifa disponible',cancel:'Condiciones por confirmar',display:h.totalDisplay||h.nightDisplay||'Por confirmar'}];
+    if(detailed.length)h.rates=detailed;
+  }catch(e){
+    // Si el detalle externo tarda o no responde, mantenemos la tarifa
+    // de referencia ya obtenida y el cliente puede solicitarla a Suncar.
+  }finally{
+    clearTimeout(timer);
     render();
     const reopened=[...document.querySelectorAll('.hotel-card')].find(x=>x.dataset.hotelId===h.id);
-    if(reopened){reopened.classList.add('open');const b=reopened.querySelector('.toggle-rates');if(b)b.textContent='Ocultar tarifas';}
-  }catch(e){
-    status('No pudimos cargar las habitaciones en este momento. Puedes solicitar el hotel y Suncar lo confirma manualmente.','warn');
-  }finally{button.disabled=false;}
+    if(reopened){
+      reopened.classList.add('open');
+      const b=reopened.querySelector('.toggle-rates');
+      if(b){b.disabled=false;b.textContent='Ocultar tarifas';}
+    }
+  }
 }
 function manualSearchMessage(){
   if(!currentData)return '';
@@ -285,11 +294,12 @@ function render(){
     const body=document.createElement('div');body.className='hotel-body';
     const manualBest=h.rates&&h.rates.length?h.rates.reduce((a,b)=>(Number(a.total||1e12)<=Number(b.total||1e12)?a:b)):null;
     const bestDisplay=manualBest?.display||h.totalDisplay||h.nightDisplay||'Consultar';
+    const priceScope=h.manual?'Tarifa Suncar':(h.totalDisplay?'Desde · estadía':(h.nightDisplay?'Desde · por noche':'Tarifa a consultar'));
     body.innerHTML='<div class="hotel-top"><div class="hotel-title"><div class="stars">'+stars(h.stars)+'</div><h3>'+h.name+'</h3><div class="hotel-meta">'+(h.location||currentData.destination)+(h.reviews?' · '+h.reviews.toLocaleString('en-US')+' reseñas':'')+'</div></div>'+(h.rating?'<div class="rating">'+h.rating+' / 5</div>':'')+'</div>'+
       '<div class="amenities">'+(h.amenities||[]).slice(0,3).map(a=>'<span class="amenity">'+a+'</span>').join('')+'</div>'+
-      '<div class="hotel-summary"><div class="from"><small>'+(h.manual?'Tarifa Suncar':'Desde · estadía')+'</small><strong>'+bestDisplay+'</strong><small>'+(manualBest?.label||(h.freeCancellation?'Cancelación gratis disponible':'Tarifa de referencia'))+'</small></div><div class="compact-actions"><button class="btn outline toggle-rates" type="button">Ver tarifas</button></div></div>';
+      '<div class="hotel-summary"><div class="from"><small>'+priceScope+'</small><strong>'+bestDisplay+'</strong><small>'+(manualBest?.label||(h.freeCancellation?'Cancelación gratis disponible':'Tarifa de referencia'))+'</small></div><div class="compact-actions"><button class="btn outline toggle-rates" type="button">Ver tarifas</button></div></div>';
     const rates=document.createElement('div');rates.className='rate-list';
-    const visibleRates=(h.rates&&h.rates.length)?h.rates:[{room:'Opción disponible',plan:'room',label:'Tarifa de referencia',cancel:h.freeCancellation?'Cancelación gratis según condiciones':'Condiciones por confirmar',display:h.totalDisplay||h.nightDisplay||'Consultar'}];
+    const visibleRates=(h.rates&&h.rates.length)?h.rates:[{room:'Opción disponible',plan:'room',label:h.totalDisplay?'Precio de referencia para la estadía':(h.nightDisplay?'Precio de referencia por noche':'Tarifa de referencia'),cancel:h.freeCancellation?'Cancelación gratis disponible · confirmar condiciones':'Condiciones por confirmar',display:h.totalDisplay||h.nightDisplay||'Consultar'}];
     visibleRates.forEach(r=>{
       const row=document.createElement('div');row.className='rate';
       row.innerHTML='<div class="rate-name"><strong>'+r.room+'</strong><small>'+r.label+'</small></div>'+
