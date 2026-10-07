@@ -1,4 +1,3 @@
 // Endpoint seguro del buscador de vuelos de Suncar.
-// La clave del proveedor nunca debe colocarse aquí ni en ningún archivo público.
-// Cuando el Worker esté desplegado, cambia solamente esta URL.
-window.SUNCAR_FLIGHTS_API = "";
+// La clave del proveedor nunca se guarda aquí ni en GitHub.
+window.SUNCAR_FLIGHTS_API = "https://suncar-flights.suncartravel.workers.dev";
