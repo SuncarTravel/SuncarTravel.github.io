@@ -20,7 +20,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <details class="drop"><summary>Servicios</summary><div class="dropmenu"><a href="hoteles.html">🏨 Hoteles</a><a href="vuelos.html">✈️ Vuelos</a><a href="cruceros.html">🚢 Cruceros</a><a href="seguros-viaje.html">🛡️ Seguros de viaje</a><a href="paquetes.html">🌴 Paquetes y escapadas</a><a href="servicios.html"><strong>Ver todos →</strong></a></div></details>
 <a href="ofertas.html">Ofertas</a><a href="index.html#contacto">Contacto</a><a class="btn orange" href="servicios.html">Cotizar</a></div></nav></div></header>
 <main><section class="hero"><div class="container"><div class="eyebrow">Suncar Travel</div><h1>Seguro de viaje</h1><p>Cotiza tu asistencia de viaje con Suncar Travel. La gestión y venta se realiza contigo directamente a través de nuestra agencia.</p></div></section>
-<section class="soft"><div class="container"><h2>Planes que puede mostrar la cotización</h2><p class="lead">Según destino, fechas y edad, Seguros Universal puede presentar diferentes opciones. La tarifa exacta se confirma con los datos de cada viaje.</p><div class="grid">
+<section class="soft"><div class="container"><h2>Planes que puede mostrar la cotización</h2><p class="lead">Según destino, fechas y edad, pueden aparecer diferentes opciones de asistencia. La tarifa exacta se confirma con los datos de cada viaje.</p><div class="grid">
 <div class="card"><div class="tag">MAYOR COBERTURA</div><h3>Elite</h3><p>Opción con cobertura médica más amplia y beneficios de asistencia durante el viaje.</p></div>
 <div class="card"><div class="tag">INTERMEDIO</div><h3>Euromundo Plus</h3><p>Plan con cobertura médica y beneficios de viaje para destinos internacionales.</p></div>
 <div class="card"><div class="tag">ECONÓMICO</div><h3>Essential</h3><p>Alternativa de menor costo con coberturas esenciales de asistencia.</p></div>
@@ -38,14 +38,49 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <a class="wa" target="_blank" rel="noopener" href="https://wa.me/18093161070">WhatsApp</a>
 <script>
 document.getElementById('quoteForm')?.addEventListener('submit',e=>{
- e.preventDefault(); const f=new FormData(e.currentTarget); const lines=['Hola Suncar 👋','Quiero cotizar un seguro de viaje.',''];
- lines.push('Origen: '+(f.get('origen')||''));
- lines.push('Destino: '+(f.get('destino')||''));
- lines.push('Salida: '+(f.get('salida')||''));
- lines.push('Regreso: '+(f.get('regreso')||''));
- lines.push('Pasajeros: '+(f.get('pasajeros')||''));
- lines.push('Edades: '+(f.get('edades')||''));
- lines.push('Comentarios: '+(f.get('comentarios')||''));
- lines.push('','Quiero recibir opciones, disponibilidad y precio final con Suncar.');
- window.open('https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n')),'_blank');
-});</script></body></html>
+  e.preventDefault();
+  const f=new FormData(e.currentTarget);
+  const origen=f.get('origen')||'';
+  const destino=f.get('destino')||'';
+  const salida=f.get('salida')||'';
+  const regreso=f.get('regreso')||'';
+  const pasajeros=f.get('pasajeros')||'';
+  const edades=f.get('edades')||'';
+  const comentarios=(f.get('comentarios')||'').trim();
+
+  const formatDate=value=>{
+    if(!value) return '';
+    const d=new Date(value+'T12:00:00');
+    return d.toLocaleDateString('es-DO',{day:'numeric',month:'long',year:'numeric'});
+  };
+
+  const lines=[
+    'Hola Suncar,',
+    '',
+    'Quiero cotizar un *SEGURO DE VIAJE*.',
+    '',
+    '*DATOS DEL VIAJE*',
+    'Origen: '+origen,
+    'Destino: '+destino,
+    'Salida: '+formatDate(salida),
+    'Regreso: '+formatDate(regreso),
+    '',
+    '*VIAJEROS*',
+    'Cantidad: '+pasajeros,
+    'Edades: '+edades
+  ];
+
+  if(comentarios){
+    lines.push('','*COMENTARIOS*',comentarios);
+  }
+
+  lines.push(
+    '',
+    'Quiero recibir los planes disponibles, coberturas y el precio final para estas fechas.',
+    '',
+    'Gracias.'
+  );
+
+  window.open('https://wa.me/18093161070?text='+encodeURIComponent(lines.join('\n')),'_blank');
+});
+</script></body></html>
