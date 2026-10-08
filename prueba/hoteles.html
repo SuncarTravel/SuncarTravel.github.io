@@ -299,6 +299,15 @@ function planLabel(plan){
     unknown:'Régimen por confirmar'
   }[plan]||'Régimen por confirmar';
 }
+function propertyPlanHint(h,plan){
+  const t=norm([h.name,...(h.amenities||[])].join(' | '));
+  if(plan==='allinclusive')return t.includes('all inclusive')||t.includes('all-inclusive')||t.includes('todo incluido');
+  if(plan==='breakfast')return t.includes('free breakfast')||t.includes('complimentary breakfast')||t.includes('desayuno incluido')||t.includes('desayuno gratis');
+  if(plan==='half')return t.includes('half board')||t.includes('media pension');
+  if(plan==='full')return t.includes('full board')||t.includes('pension completa');
+  if(plan==='room')return t.includes('room only')||t.includes('solo alojamiento');
+  return false;
+}
 function amenityLabel(v){
   const raw=String(v||'').trim(),t=norm(raw);
   const map=[
@@ -594,11 +603,16 @@ async function loadDetails(h,card,button){
     if(b){b.disabled=false;b.textContent='Ocultar opciones';}
   }
 }
-async function verifyNextRates(auto=false){
+async function verifyNextRates(auto=false,plan=currentFilter){
   const run=++detailRun;
-  const targets=currentHotels.filter(h=>!h.manual&&!h.detailsLoaded&&!h.detailLoading).slice(0,AUTO_DETAIL_LIMIT);
+  let pending=currentHotels.filter(h=>!h.manual&&!h.detailsLoaded&&!h.detailLoading);
+  if(plan!=='all'&&plan!=='saved'){
+    pending=pending.sort((a,b)=>Number(propertyPlanHint(b,plan))-Number(propertyPlanHint(a,plan)));
+  }
+  const targets=pending.slice(0,AUTO_DETAIL_LIMIT);
   if(!targets.length){updateVerifyBar();return;}
-  status(auto?'Verificando automáticamente las primeras tarifas para mostrarlas sin clics...':'Comprobando más tarifas...','loading');
+  const planText=(plan!=='all'&&plan!=='saved')?' de '+planLabel(plan):'';
+  status(auto?'Verificando automáticamente las primeras tarifas para mostrarlas sin clics...':'Comprobando más tarifas'+planText+'...','loading');
   let cursor=0,done=0;
   async function worker(){
     while(cursor<targets.length&&run===detailRun){
@@ -691,10 +705,16 @@ function updateVerifyBar(){
   const done=verifiedCount();
   const pending=currentHotels.filter(h=>!h.manual&&!h.detailsLoaded&&!h.detailLoading).length;
   const textEl=$('verifyText'),btn=$('verifyMoreBtn');
-  if(textEl)textEl.textContent=total?done+' de '+total+' hoteles con tarifa comprobada o propia de Suncar. Las demás pueden comprobarse por bloques.':'Las primeras tarifas se comprueban automáticamente y las demás por bloques.';
+  if(textEl){
+    if(total){
+      const planText=(currentFilter!=='all'&&currentFilter!=='saved')?' · filtro: '+planLabel(currentFilter):'';
+      textEl.textContent=done+' de '+total+' hoteles con tarifa comprobada o propia de Suncar'+planText+'. Las demás pueden comprobarse por bloques.';
+    }else textEl.textContent='Las primeras tarifas se comprueban automáticamente y las demás por bloques.';
+  }
   if(btn){
     btn.disabled=pending===0||!currentData;
-    btn.textContent=pending>0?'Comprobar '+Math.min(AUTO_DETAIL_LIMIT,pending)+' tarifas más':'Tarifas disponibles comprobadas';
+    const targetLabel=(currentFilter!=='all'&&currentFilter!=='saved')?'Buscar más '+planLabel(currentFilter):'Comprobar '+Math.min(AUTO_DETAIL_LIMIT,pending)+' tarifas más';
+    btn.textContent=pending>0?targetLabel:'Tarifas disponibles comprobadas';
   }
 }
 function sortHotels(items){
@@ -817,7 +837,7 @@ function render(){
   $('loadMoreBtn').textContent='Mostrar más hoteles ('+Math.max(0,totalFiltered-visibleLimit)+' restantes)';
 
   if(!filtered.length){
-    list.innerHTML='<div class="empty"><strong>No tenemos todavía una tarifa confirmada con ese régimen entre las opciones cargadas.</strong><br>Para evitar precios engañosos, un hotel no entra en este filtro solo porque ofrezca ese plan: necesitamos que la tarifa específica lo confirme. Las primeras opciones se verifican automáticamente. Si buscas otro hotel, puedes consultar su tarifa o pedir a Suncar la cotización exacta.</div>';
+    list.innerHTML='<div class="empty"><strong>No tenemos todavía una tarifa confirmada con ese régimen entre las opciones cargadas.</strong><br>Para evitar precios engañosos, un hotel solo entra aquí cuando una tarifa específica confirma ese régimen. Al seleccionar este filtro verificamos automáticamente más hoteles que parecen ofrecerlo y solo mostramos los que realmente lo confirman.</div>';
     addManualFallback(planLabel(currentFilter));
     return;
   }
@@ -1121,7 +1141,10 @@ document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',(
   btn.classList.add('active');
   currentFilter=btn.dataset.filter;
   visibleLimit=8;
-  if(currentData)render();
+  if(currentData){
+    render();
+    if(currentFilter!=='all'&&currentFilter!=='saved')void verifyNextRates(false,currentFilter);
+  }
 }));
 $('hotelSort').addEventListener('change',()=>{
   currentSort=$('hotelSort').value||'recommended';
