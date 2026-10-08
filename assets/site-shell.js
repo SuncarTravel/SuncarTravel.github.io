@@ -32,9 +32,10 @@
   }
 
   const footer=document.querySelector('footer');
-  if(footer&&!footer.classList.contains('suncar-footer')&&!footer.classList.contains('foot')){
+  if(footer&&!footer.classList.contains('suncar-footer')){
     const container=footer.querySelector('.container');
     if(container){
+      footer.classList.remove('foot');
       footer.classList.add('suncar-footer');
       container.innerHTML=
         '<div class="footer-grid">'+
