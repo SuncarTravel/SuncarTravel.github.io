@@ -12,10 +12,10 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;font-weight:900;border:1px solid transparent;cursor:pointer}.orange{background:var(--orange);color:#fff}.outline{background:#fff;border-color:#bfd0da;color:var(--navy)}.green{background:var(--green);color:#fff}
 .hero{background:linear-gradient(135deg,#052f50,#0b79aa);color:#fff;padding:62px 0}.hero .eyebrow{text-transform:uppercase;letter-spacing:.1em;color:#ffd08a;font-size:.76rem;font-weight:950}.hero h1{font-family:Georgia,serif;font-size:clamp(2.6rem,5vw,4.7rem);line-height:1;margin:10px 0}.hero p{max-width:760px;color:#e4eff5;line-height:1.65;font-size:1.04rem}
 section{padding:54px 0}.soft{background:var(--soft)}h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3rem);margin:0 0 10px}.lead{color:var(--muted);line-height:1.65;max-width:800px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:20px;padding:20px;background:#fff;box-shadow:0 10px 28px rgba(7,55,92,.06)}.card h3{font-family:Georgia,serif;color:var(--navy);font-size:1.45rem;margin:8px 0}.card p{color:var(--muted);line-height:1.55;font-size:.9rem}.tag{font-size:.72rem;color:var(--orange);font-weight:950;letter-spacing:.08em}.price{font-size:1.32rem;color:var(--navy);font-weight:950}
-.formbox{border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;box-shadow:var(--shadow);margin-top:24px}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.82rem;font-weight:900;color:var(--navy)}input,select,textarea{width:100%;border:1px solid #cddbe4;border-radius:12px;padding:11px 12px;font:inherit}textarea{min-height:88px;resize:vertical}.note{font-size:.79rem;color:var(--muted);line-height:1.5}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.formbox{border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;box-shadow:var(--shadow);margin-top:24px}.formgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.hotel-quote-note{margin-top:14px;padding:13px 15px;border-radius:14px;background:#eef7fb;border:1px solid #cfe3ed;color:var(--navy);font-size:.8rem;line-height:1.5}.hotel-trust{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.hotel-trust span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;font-size:.72rem;font-weight:850;color:#365367}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.82rem;font-weight:900;color:var(--navy)}input,select,textarea{width:100%;border:1px solid #cddbe4;border-radius:12px;padding:11px 12px;font:inherit}textarea{min-height:88px;resize:vertical}.note{font-size:.79rem;color:var(--muted);line-height:1.5}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{position:fixed;right:16px;bottom:16px;background:var(--green);color:#fff;border-radius:999px;padding:13px 17px;font-weight:950;box-shadow:0 12px 28px rgba(0,0,0,.18)}
-@media(max-width:800px){.links{gap:10px;font-size:.85rem}.grid{grid-template-columns:1fr 1fr}.dropmenu{right:0;left:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
-@media(max-width:620px){.top{display:none}nav{min-height:78px;align-items:flex-start;padding:8px 0;flex-direction:column}.brand{height:54px}.brand img{height:54px}.links{width:100%;overflow-x:auto;padding-bottom:8px}.grid{grid-template-columns:1fr}.hero{padding:42px 0}}
+@media(max-width:800px){.links{gap:10px;font-size:.85rem}.grid{grid-template-columns:1fr 1fr}.dropmenu{right:0;left:auto}.formgrid{grid-template-columns:1fr 1fr}.field.full{grid-column:1/-1}}
+@media(max-width:620px){.top{display:none}nav{min-height:78px;align-items:flex-start;padding:8px 0;flex-direction:column}.brand{height:54px}.brand img{height:54px}.links{width:100%;overflow-x:auto;padding-bottom:8px}.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding:42px 0}}
 </style><script src="assets/whatsapp-safe.js?v=20261007c"></script><meta name="theme-color" content="#07375c">
 <meta property="og:title" content="Hoteles | Suncar Tours & Travel">
 <meta property="og:description" content="Ofertas de hoteles y cotizaciones personalizadas con Suncar Tours & Travel. Indica destino, fechas y viajeros y recibe opciones confirmadas por Suncar.">
@@ -32,39 +32,58 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <header><div class="container"><nav><a class="brand" href="index.html"><img src="assets/logo.svg?v=7" alt="Suncar Tours & Travel"></a><div class="links">
 <details class="drop"><summary>Servicios</summary><div class="dropmenu"><a href="hoteles.html">🏨 Hoteles</a><a href="vuelos.html">✈️ Vuelos</a><a href="cruceros.html">🚢 Cruceros</a><a href="seguros-viaje.html">🛡️ Seguros de viaje</a><a href="paquetes.html">🌴 Paquetes y escapadas</a><a href="servicios.html"><strong>Ver todos →</strong></a></div></details>
 <a href="ofertas.html">Ofertas</a><a href="index.html#contacto">Contacto</a><a class="btn orange" href="servicios.html">Cotizar</a></div></nav></div></header>
-<main><section class="hero"><div class="container"><div class="eyebrow">Suncar Travel</div><h1>Hoteles</h1><p>Mira primero algunas ofertas publicadas por Suncar. Si buscas otra zona, otras fechas o un hotel distinto, envíanos los datos y lo buscamos por ti.</p></div></section>
-<section class="soft"><div class="container"><h2>Ofertas de hoteles</h2><p class="lead">Estas son algunas de las ofertas que ya están publicadas en Suncar. Disponibilidad y tarifa final se confirman al momento de reservar.</p><div class="grid">
-<div class="card"><div class="tag">PUNTA CANA</div><h3>RIU Bambu</h3><div class="price">RD$22,925 por pareja</div><p>9–11 octubre 2026 · 2 noches.</p><a class="btn orange" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">SOLO ADULTOS</div><h3>RIU Republica</h3><div class="price">RD$25,684 por pareja</div><p>9–11 octubre 2026 · Punta Cana.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">TODO INCLUIDO</div><h3>RIU Palace Punta Cana</h3><div class="price">RD$28,800 por pareja</div><p>9–11 octubre 2026 · 2 noches.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">PUERTO PLATA</div><h3>BlueBay Villas Doradas</h3><div class="price">RD$6,650 p/p/noche</div><p>6–8 noviembre 2026 · Solo adultos · Todo incluido.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">FERIADO</div><h3>Lopesan Costa Bávaro</h3><div class="price">Desde US$180 p/p/noche</div><p>7–9 noviembre 2026 · Punta Cana.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">FAMILIAR</div><h3>Lopesan Splash Cove</h3><div class="price">Doble US$178 · Niño US$89</div><p>4–6 diciembre · Todo incluido.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">PUNTA CANA · REMODELADO</div><h3>Grand Palladium Bávaro</h3><div class="price">DBL US$158</div><p>16–18 octubre o 23–25 octubre · Todo incluido · 1er niño gratis hasta 12 años.</p><a class="btn orange" href="ofertas.html">Ver oferta</a></div>
+<main><section class="hero"><div class="container"><div class="eyebrow">Suncar Travel</div><h1>Hoteles</h1><p>Mira ofertas publicadas por Suncar o dinos destino, fechas y viajeros. Nosotros verificamos opciones reales y te confirmamos disponibilidad y precio antes de reservar.</p><div class="actions"><a class="btn orange" href="#cotizar-hotel">Buscar y cotizar hotel</a><a class="btn outline" href="#ofertas-hoteles">Ver ofertas publicadas</a></div></div></section>
+<section class="soft" id="ofertas-hoteles"><div class="container"><h2>Ofertas de hoteles</h2><p class="lead">Estas son ofertas cargadas por Suncar. Cuando una fecha vence, se retira automáticamente. Disponibilidad y tarifa final se confirman al momento de reservar.</p><div class="grid" data-offers-container>
+<div class="card" data-expire="2026-10-09T00:00:00-04:00"><div class="tag">PUNTA CANA</div><h3>RIU Bambu</h3><div class="price">RD$22,925 por pareja</div><p>9–11 octubre 2026 · 2 noches.</p><a class="btn orange" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2026-10-09T00:00:00-04:00"><div class="tag">SOLO ADULTOS</div><h3>RIU Republica</h3><div class="price">RD$25,684 por pareja</div><p>9–11 octubre 2026 · Punta Cana.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2026-10-09T00:00:00-04:00"><div class="tag">TODO INCLUIDO</div><h3>RIU Palace Punta Cana</h3><div class="price">RD$28,800 por pareja</div><p>9–11 octubre 2026 · 2 noches.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2026-11-06T00:00:00-04:00"><div class="tag">PUERTO PLATA</div><h3>BlueBay Villas Doradas</h3><div class="price">RD$6,650 p/p/noche</div><p>6–8 noviembre 2026 · Solo adultos · Todo incluido.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2026-11-07T00:00:00-04:00"><div class="tag">FERIADO</div><h3>Lopesan Costa Bávaro</h3><div class="price">Desde US$180 p/p/noche</div><p>7–9 noviembre 2026 · Punta Cana.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2026-12-04T00:00:00-04:00"><div class="tag">FAMILIAR</div><h3>Lopesan Splash Cove</h3><div class="price">Doble US$178 · Niño US$89</div><p>4–6 diciembre · Todo incluido.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2026-10-23T00:00:00-04:00"><div class="tag">PUNTA CANA · REMODELADO</div><h3>Grand Palladium Bávaro</h3><div class="price">DBL US$158</div><p>16–18 octubre o 23–25 octubre · Todo incluido · 1er niño gratis hasta 12 años.</p><a class="btn orange" href="ofertas.html">Ver oferta</a></div>
 </div></div></section>
-<section><div class="container"><h2>¿Buscas otro hotel?</h2><p class="lead">Dinos zona, fechas y viajeros. El mensaje llega a Suncar con todo organizado.</p>
+<section id="cotizar-hotel"><div class="container"><h2>Busca tu hotel con Suncar</h2><p class="lead">Completa una sola búsqueda. No mostramos tarifas automáticas dudosas: Suncar revisa opciones disponibles y te confirma el precio real antes de reservar.</p>
 <form class="formbox" id="quoteForm"><div class="formgrid">
-<div class="field"><label>Destino o zona</label><input name="zona" required placeholder="Ej. Punta Cana"></div>
+<div class="field"><label>Destino o zona</label><input name="zona" required placeholder="Ej. Punta Cana, Miami, Madrid"></div>
 <div class="field"><label>Hotel (opcional)</label><input name="hotel" placeholder="Ej. Hyatt Ziva"></div>
-<div class="field"><label>Fecha de entrada</label><input type="date" name="entrada" required></div>
-<div class="field"><label>Fecha de salida</label><input type="date" name="salida" required></div>
-<div class="field"><label>Adultos</label><input type="number" min="1" name="adultos" required></div>
+<div class="field"><label>Fecha de entrada</label><input id="hotelEntrada" type="date" name="entrada" required></div>
+<div class="field"><label>Fecha de salida</label><input id="hotelSalida" type="date" name="salida" required></div>
+<div class="field"><label>Adultos</label><input type="number" min="1" max="12" value="2" name="adultos" required></div>
 <div class="field"><label>Niños / edades</label><input name="ninos" placeholder="Ej. 2 niños: 5 y 9 años"></div>
-<div class="field full"><label>Preferencias</label><textarea name="preferencias" placeholder="Todo incluido, solo adultos, presupuesto, tipo de habitación..."></textarea></div>
-</div><div class="actions"><button class="btn green" type="submit">Enviar solicitud por WhatsApp</button></div></form></div></section></main>
+<div class="field"><label>Habitaciones</label><input type="number" min="1" max="6" value="1" name="habitaciones" required></div>
+<div class="field"><label>Régimen preferido</label><select name="regimen"><option>Cualquiera / comparar</option><option>Solo alojamiento</option><option>Desayuno incluido</option><option>Media pensión</option><option>Pensión completa</option><option>Todo incluido</option></select></div>
+<div class="field full"><label>Preferencias / presupuesto</label><textarea name="preferencias" placeholder="Solo adultos, frente a la playa, presupuesto aproximado, tipo de habitación..."></textarea></div>
+</div>
+<div class="hotel-trust"><span>✓ Cotización personalizada</span><span>✓ Precio confirmado antes de reservar</span><span>✓ Atención por WhatsApp</span></div>
+<div class="hotel-quote-note">La solicitud no reserva ni genera cargos. Suncar confirma disponibilidad, impuestos, régimen, condiciones y precio final antes de cualquier pago.</div>
+<div class="actions"><button class="btn green" type="submit">Solicitar opciones por WhatsApp</button></div></form></div></section></main>
 <footer><div class="container">Suncar Tours & Travel · Santo Domingo · 809-316-1070</div></footer>
 <a class="wa" target="_blank" rel="noopener" href="https://wa.me/18093161070">WhatsApp</a>
 <script>
 document.getElementById('quoteForm')?.addEventListener('submit',e=>{
- e.preventDefault(); const f=new FormData(e.currentTarget); const lines=['Hola Suncar ','Quiero cotizar un hotel.',''];
+ e.preventDefault();
+ const entrada=document.getElementById('hotelEntrada')?.value||'';
+ const salida=document.getElementById('hotelSalida')?.value||'';
+ if(!entrada||!salida||salida<=entrada){alert('La fecha de salida debe ser posterior a la fecha de entrada.');return;}
+ const f=new FormData(e.currentTarget); const lines=['Hola Suncar ','Quiero cotizar un hotel.',''];
  lines.push('Zona / destino: '+(f.get('zona')||''));
  lines.push('Hotel: '+(f.get('hotel')||''));
  lines.push('Entrada: '+(f.get('entrada')||''));
  lines.push('Salida: '+(f.get('salida')||''));
  lines.push('Adultos: '+(f.get('adultos')||''));
  lines.push('Niños / edades: '+(f.get('ninos')||''));
- lines.push('Preferencias: '+(f.get('preferencias')||''));
+ lines.push('Habitaciones: '+(f.get('habitaciones')||''));
+ lines.push('Régimen preferido: '+(f.get('regimen')||''));
+ lines.push('Preferencias / presupuesto: '+(f.get('preferencias')||''));
  lines.push('','Quiero recibir opciones, disponibilidad y precio final con Suncar.');
  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
-});</script><script defer src="assets/msc-assistant-widget.js?v=20261007a"></script><script defer src="assets/site-shell.js?v=20261008a"></script>
+});
+(function(){
+ const localISO=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
+ const entrada=document.getElementById('hotelEntrada'),salida=document.getElementById('hotelSalida'),min=localISO();
+ if(entrada&&salida){
+   entrada.min=min;salida.min=min;
+   entrada.addEventListener('change',()=>{salida.min=entrada.value||min;if(salida.value&&salida.value<=entrada.value)salida.value='';});
+ }
+})();</script><script defer src="assets/offers-expiry.js?v=20261008a"></script><script defer src="assets/msc-assistant-widget.js?v=20261007a"></script><script defer src="assets/site-shell.js?v=20261008a"></script>
 </body></html>
