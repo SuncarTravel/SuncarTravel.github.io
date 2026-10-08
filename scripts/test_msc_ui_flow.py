@@ -29,7 +29,7 @@ REQUIRED_FLOW_MARKERS = [
     "const returnToMainMenu=",
     "const addFlowChoices=",
     "const addSearchExit=",
-    "data-action='main-menu'",
+    "b.dataset.action='main-menu'",
     "addMainMenu();",
     "addSearchExit();",
     "← Menú principal",
