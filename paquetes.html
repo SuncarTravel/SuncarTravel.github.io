@@ -59,6 +59,7 @@ document.getElementById('quoteForm')?.addEventListener('submit',e=>{
  lines.push('Servicios a incluir: '+(f.get('incluye')||''));
  lines.push('Presupuesto / comentarios: '+(f.get('comentarios')||''));
  lines.push('','Quiero recibir opciones, disponibilidad y precio final con Suncar.');
+ window.SuncarAnalytics?.track('whatsapp_click',{service:'paquetes',action:'solicitud'});
  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 });</script><script defer src="assets/offers-expiry.js?v=20261008a"></script><script defer src="assets/msc-assistant-widget.js?v=20261007a"></script><script defer src="assets/site-shell.js?v=20261008a"></script>
 </body></html>
