@@ -58,7 +58,11 @@
     const service=el.closest('[data-service]')?.getAttribute('data-service')||'';
     if(service)track('service_click',{service,link_text:label});
     if(el.matches('[data-track]')){
-      track(el.getAttribute('data-track')||'cta_click',{link_text:label});
+      track(el.getAttribute('data-track')||'cta_click',{link_text:label,element_id:el.id||''});
+      return;
+    }
+    if(el.tagName==='BUTTON'){
+      track('button_click',{link_text:label||'Botón',element_id:el.id||'',form_id:el.form?.id||''});
     }
   },true);
 
