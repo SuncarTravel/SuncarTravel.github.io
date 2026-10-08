@@ -478,7 +478,7 @@ export default {
       if(!rooms?.length)return json(request,{ok:false,error:"No hay detalle automático disponible para esta opción"},503);
 
       const payload={ok:true,cached:false,observedAt:new Date().toISOString(),rooms};
-      await cachePut(cacheKey,payload,3600);
+      await cachePut(cacheKey,payload,300);
       return json(request,payload);
     }
 
