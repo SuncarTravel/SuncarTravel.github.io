@@ -1,13 +1,47 @@
 name: Validar Asistente MSC
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "assets/msc-assistant-data.json"
+      - "assets/msc-assistant-widget.js"
+      - "index.html"
+      - "servicios.html"
+      - "hoteles.html"
+      - "vuelos.html"
+      - "cruceros.html"
+      - "seguros-viaje.html"
+      - "paquetes.html"
+      - "ofertas.html"
+      - "msc-opera.html"
+      - "politica-privacidad.html"
+      - "terminos-condiciones.html"
+      - "cambios-cancelaciones-reembolsos.html"
+      - "scripts/validate_msc_data.py"
+      - "scripts/test_msc_coverage.py"
+      - "scripts/test_msc_ui_flow.py"
+      - ".github/workflows/validate-msc.yml"
   push:
     branches: [main]
     paths:
       - "assets/msc-assistant-data.json"
+      - "assets/msc-assistant-widget.js"
       - "index.html"
+      - "servicios.html"
+      - "hoteles.html"
+      - "vuelos.html"
+      - "cruceros.html"
+      - "seguros-viaje.html"
+      - "paquetes.html"
+      - "ofertas.html"
+      - "msc-opera.html"
+      - "politica-privacidad.html"
+      - "terminos-condiciones.html"
+      - "cambios-cancelaciones-reembolsos.html"
       - "scripts/validate_msc_data.py"
       - "scripts/test_msc_coverage.py"
+      - "scripts/test_msc_ui_flow.py"
       - ".github/workflows/validate-msc.yml"
   workflow_dispatch:
 
@@ -28,3 +62,5 @@ jobs:
         run: python scripts/validate_msc_data.py
       - name: Probar cobertura del Asistente MSC
         run: python scripts/test_msc_coverage.py
+      - name: Probar flujo y sintaxis del Asistente MSC
+        run: python scripts/test_msc_ui_flow.py
