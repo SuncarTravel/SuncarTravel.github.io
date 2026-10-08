@@ -211,7 +211,7 @@ function quoteHotel(h,r){
     'Condicion: '+(r.cancel||'Por confirmar'),
     'Tarifa mostrada: '+(r.display||h.totalDisplay||h.nightDisplay||'Por confirmar'),
     'Tipo: '+(h.manual?'Tarifa cargada por Suncar':'Referencia automatica sujeta a confirmacion'),'',
-    'Quiero confirmar disponibilidad, impuestos, regimen, condiciones y precio final con Suncar.'
+    'Quiero confirmar disponibilidad real, impuestos, regimen, condiciones y precio final con Suncar antes de reservar.'
   ].filter(Boolean);
   window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 }
@@ -283,9 +283,8 @@ function hotelSortPrice(h){
     const vals=h.rates.map(r=>Number(r.total||0)).filter(x=>x>0);
     return vals.length?Math.min(...vals):1e12;
   }
-  if(h.priceConsistency!=='review'&&h.totalAmount>0)return h.totalAmount;
-  if(h.nightAmount>0)return h.nightAmount*nightsBetween(currentData.checkin,currentData.checkout);
-  return 1e12;
+  const safe=(h.rates||[]).filter(r=>r.priceVerified&&Number(r.total||0)>0).map(r=>Number(r.total));
+  return safe.length?Math.min(...safe):1e12;
 }
 function mergeHotels(manual,api){
   const byName=new Map();
@@ -305,7 +304,10 @@ function mergeHotels(manual,api){
   return [...byName.values()].sort((a,b)=>{
     if(a.manual&&!b.manual)return -1;
     if(!a.manual&&b.manual)return 1;
-    return hotelSortPrice(a)-hotelSortPrice(b);
+    const ap=hotelSortPrice(a),bp=hotelSortPrice(b);
+    if(ap!==1e12||bp!==1e12)return ap-bp;
+    if(Number(b.rating||0)!==Number(a.rating||0))return Number(b.rating||0)-Number(a.rating||0);
+    return Number(b.reviews||0)-Number(a.reviews||0);
   }).slice(0,20);
 }
 function rateLabelFromRoom(room){
@@ -314,52 +316,50 @@ function rateLabelFromRoom(room){
   return {plan:p,label:planLabel(p)};
 }
 function autoPriceInfo(h,nights){
+  if(!h.manual&&!h.detailsLoaded){
+    return {
+      label:'Precio',
+      primary:'Ver tarifas',
+      context:'Abrimos el detalle para comprobar habitación, régimen y total de la estadía.',
+      warning:'No mostramos el precio inicial del buscador porque puede ser una tarifa promocional o incompleta.'
+    };
+  }
   if(h.detailsLoaded && (h.rates||[]).length){
-    const vals=(h.rates||[]).map(r=>Number(r.total||0)).filter(x=>x>0);
-    if(vals.length){
-      const minTotal=Math.min(...vals);
-      const currency=(h.rates.find(r=>Number(r.total||0)===minTotal)?.display||'').match(/^[A-Z]{3}/)?.[0]||'USD';
+    const safeRates=(h.rates||[]).filter(r=>r.priceVerified&&Number(r.total||0)>0);
+    if(safeRates.length){
+      const best=safeRates.reduce((a,b)=>Number(a.total)<=Number(b.total)?a:b);
       return {
         label:'Desde · estadía',
-        primary:currency+' '+minTotal.toLocaleString('en-US'),
-        context:'Tarifa detallada cargada · '+nights+' noche'+(nights===1?'':'s')+' · 1 habitación',
-        warning:''
+        primary:best.display,
+        context:'Tarifa detallada encontrada · '+nights+' noche'+(nights===1?'':'s')+' · 1 habitación',
+        warning:'Sujeta a disponibilidad y confirmación final de Suncar.'
       };
     }
-  }
-  const consistency=h.priceConsistency||computedConsistency(h.nightAmount,h.totalAmount,nights);
-  if(consistency==='review'){
-    if(h.nightDisplay)return {
-      label:'Desde · por noche',
-      primary:h.nightDisplay,
-      context:'El total de la estadía requiere confirmación · 1 habitación',
-      warning:'Detectamos una diferencia entre el precio por noche y el total; no mostramos un total dudoso.'
+    return {
+      label:'Precio',
+      primary:'Por confirmar',
+      context:'No encontramos un total suficientemente claro para mostrarlo como tarifa.',
+      warning:'Suncar confirma el precio antes de enviarlo al cliente.'
     };
-    return {label:'Tarifa a consultar',primary:'Consultar',context:'Suncar confirma el precio final',warning:''};
   }
-  if(h.nightDisplay&&h.totalDisplay)return {
-    label:'Desde · por noche',
-    primary:h.nightDisplay,
-    context:'Total referencia: '+h.totalDisplay+' · '+nights+' noche'+(nights===1?'':'s')+' · 1 habitación',
-    warning:''
-  };
-  if(h.nightDisplay)return {
-    label:'Desde · por noche',primary:h.nightDisplay,context:nights+' noche'+(nights===1?'':'s')+' · 1 habitación · total por confirmar',warning:''
-  };
-  if(h.totalDisplay)return {
-    label:'Desde · estadía',primary:h.totalDisplay,context:nights+' noche'+(nights===1?'':'s')+' · 1 habitación',warning:''
-  };
-  return {label:'Tarifa a consultar',primary:'Consultar',context:'Suncar confirma disponibilidad y precio',warning:''};
+  return {label:'Precio',primary:'Por confirmar',context:'Suncar confirma disponibilidad y precio final',warning:''};
 }
 function roomPrice(room,nights){
   const consistency=room.priceConsistency||computedConsistency(room.night?.amount,room.total?.amount,nights);
-  if(consistency==='review')return {
-    display:room.night?.display||'Por confirmar',
-    scope:room.night?.display?'Precio por noche; total por confirmar':'Precio por confirmar'
+  const totalAmount=Number(room.total?.amount||0);
+  const totalDisplay=String(room.total?.display||'').trim();
+  if(consistency==='review'||!totalAmount||!totalDisplay){
+    return {
+      display:'Por confirmar',
+      scope:'No mostramos una cifra si el total de la estadía no está claramente identificado',
+      verified:false
+    };
+  }
+  return {
+    display:totalDisplay,
+    scope:'Total encontrado para la estadía indicada',
+    verified:true
   };
-  if(room.total?.display)return {display:room.total.display,scope:'Total de referencia para la estadía'};
-  if(room.night?.display)return {display:room.night.display,scope:'Precio de referencia por noche'};
-  return {display:'Por confirmar',scope:'Precio por confirmar'};
 }
 async function loadDetails(h,card,button){
   if(h.manual||h.detailsLoaded){
@@ -398,7 +398,8 @@ async function loadDetails(h,card,button){
     if(!r.ok||!d.ok)throw new Error(d.error||'No se pudo cargar el detalle');
 
     const nights=nightsBetween(currentData.checkin,currentData.checkout);
-    const detailed=(d.rooms||[]).map(room=>{
+    const requestedGuests=currentData.adults+currentData.children;
+    const detailed=(d.rooms||[]).filter(room=>!Number(room.guests||0)||Number(room.guests)>=requestedGuests).map(room=>{
       const p=rateLabelFromRoom(room);
       const price=roomPrice(room,nights);
       return {
@@ -408,14 +409,16 @@ async function loadDetails(h,card,button){
         cancel:room.freeCancellation?'Cancelación gratis disponible · confirmar condiciones':'Condiciones de cancelación por confirmar',
         display:price.display,
         scope:price.scope,
-        total:Number(room.total?.amount||0),
+        total:price.verified?Number(room.total?.amount||0):0,
+        priceVerified:!!price.verified,
+        guests:Number(room.guests||0),
         inclusions:room.inclusions||[],
         manual:false
       };
-    }).filter(x=>x.display);
+    });
     if(detailed.length){
       h.rates=detailed;
-      const detailTotals=detailed.map(x=>Number(x.total||0)).filter(x=>x>0);
+      const detailTotals=detailed.filter(x=>x.priceVerified).map(x=>Number(x.total||0)).filter(x=>x>0);
       if(detailTotals.length){
         const minDetail=Math.min(...detailTotals);
         const summaryTotal=Number(h.totalAmount||0);
@@ -555,7 +558,7 @@ function render(){
       row.className='rate';
       row.innerHTML=
         '<div class="rate-name"><strong>'+esc(r.room)+'</strong><small>'+esc(r.label)+'</small></div>'+
-        '<div class="rate-price"><strong>'+esc(r.display)+'</strong><small>'+esc(r.scope||'Tarifa de referencia')+'</small><button class="btn green" type="button">Solicitar</button></div>'+
+        '<div class="rate-price"><strong>'+esc(r.display)+'</strong><small>'+esc(r.scope||'Tarifa de referencia')+'</small><button class="btn green" type="button">Confirmar con Suncar</button></div>'+
         '<div class="rate-info"><strong>'+esc(r.cancel||'Condiciones por confirmar')+'</strong><small>'+esc(nights+' noche'+(nights===1?'':'s')+' · precio final sujeto a confirmación por Suncar')+'</small></div>';
       row.querySelector('.green').addEventListener('click',()=>quoteHotel(h,r));
       rates.appendChild(row);
@@ -574,7 +577,7 @@ function resetFilter(){
 async function searchHotels(){
   const d=currentData;
   resetFilter();
-  status('Buscando hoteles y tarifas de referencia...','loading');
+  status('Buscando hoteles. Los precios automáticos se mostrarán solo después de comprobar el detalle de la habitación.','loading');
   searchBtn.disabled=true;
 
   try{
@@ -623,7 +626,7 @@ async function searchHotels(){
         addManualFallback('Cotización para '+d.rooms+' habitaciones');
       }
     }else if(apiOk){
-      status('Referencias automáticas cargadas para 1 habitación y la ocupación indicada. El precio final, régimen, impuestos y condiciones se confirman con Suncar antes de reservar.','loading');
+      status('Hoteles cargados para la ocupación indicada. Por seguridad, no mostramos precios iniciales del buscador: pulsa “Ver tarifas” para comprobar habitaciones y totales antes de solicitar confirmación a Suncar.','loading');
     }else if(manualHotels.length){
       status('Mostrando tarifas propias de Suncar que coinciden con estas fechas y ocupación. Todas se confirman antes de reservar.','loading');
     }else{
