@@ -1,0 +1,19 @@
+/* Suncar Travel · mejoras comunes para páginas secundarias */
+.site-menu-toggle{display:none;border:1px solid #bfd0da;background:#fff;color:#07375c;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}
+.suncar-footer{background:#031f35;color:#dcebf3;padding:34px 0;margin-top:20px}
+.suncar-footer .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}
+.suncar-footer .footer-logo{height:78px;background:#fff;border-radius:12px;padding:5px}
+.suncar-footer h4{margin:0 0 8px;color:#fff}
+.suncar-footer p,.suncar-footer a{font-size:.84rem;line-height:1.65;color:#dcebf3}
+.suncar-footer .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:22px;padding-top:14px;font-size:.76rem;color:#a9c0cf}
+@media(max-width:940px){
+  nav{position:relative}
+  .site-menu-toggle{display:inline-flex;margin-left:auto}
+  nav>.links{display:none!important;position:absolute;left:0;right:0;top:calc(100% - 4px);background:#fff;border:1px solid #dce7ed;border-radius:16px;padding:14px;box-shadow:0 18px 55px rgba(7,55,92,.14);flex-direction:column;align-items:stretch;gap:8px!important;z-index:80;overflow:visible!important}
+  nav>.links.open{display:flex!important}
+  nav>.links>a,nav>.links>details{width:100%}
+  nav>.links .dropmenu{position:static!important;box-shadow:none!important;margin-top:7px!important;background:#f5f9fc!important}
+}
+@media(max-width:700px){
+  .suncar-footer .footer-grid{grid-template-columns:1fr}
+}
