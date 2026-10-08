@@ -299,7 +299,8 @@ form?.addEventListener('submit',e=>{
   if(comentarios) lines.push('','*COMENTARIOS*',comentarios);
   lines.push('','Gracias.');
 
-  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
+  window.SuncarAnalytics?.track('whatsapp_click',{service:'seguros',action:'solicitud'});
+ window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 });
 </script><script defer src="assets/msc-assistant-widget.js?v=20261007a"></script><script defer src="assets/site-shell.js?v=20261008a"></script>
 </body></html>
