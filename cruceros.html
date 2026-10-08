@@ -58,6 +58,7 @@ document.getElementById('quoteForm')?.addEventListener('submit',e=>{
  lines.push('Niños / edades: '+(f.get('ninos')||''));
  lines.push('Preferencias: '+(f.get('preferencias')||''));
  lines.push('','Quiero recibir opciones, disponibilidad y precio final con Suncar.');
+ window.SuncarAnalytics?.track('whatsapp_click',{service:'cruceros',action:'solicitud'});
  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 });</script><script defer src="assets/msc-assistant-widget.js?v=20261007a"></script><script defer src="assets/site-shell.js?v=20261008a"></script>
 </body></html>
