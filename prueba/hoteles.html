@@ -200,7 +200,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 </div>
 <div class="filter-note">Los filtros de precio y cancelación se aplican únicamente a tarifas detalladas ya comprobadas. Así evitamos presentar como cierta una condición preliminar.</div>
 <div class="verify-bar" id="verifyBar">
-  <div class="verify-text" id="verifyText">Las primeras tarifas se comprueban automáticamente.</div>
+  <div class="verify-text" id="verifyText">Las primeras tarifas se comprueban automáticamente y las demás se verifican por bloques para cuidar la capacidad gratuita del motor.</div>
   <button class="btn outline" type="button" id="verifyMoreBtn">Comprobar más tarifas</button>
 </div>
 <div id="hotelList" class="hotel-list">
@@ -233,9 +233,15 @@ let currentData=null,currentFilter='all',currentHotels=[];
 let currentSort='recommended',hotelNameQuery='',verifiedOnly=false;
 let starsFilter=0,ratingFilter=0,maxTotalFilter=0,freeCancelFilter=false;
 let visibleLimit=8;
-const AUTO_DETAIL_LIMIT=6;
+const AUTO_DETAIL_LIMIT=3;
 let detailRun=0;
-const savedHotels=new Set(JSON.parse(localStorage.getItem('suncarSavedHotels')||'[]'));
+function loadSavedHotelKeys(){
+  try{
+    const raw=JSON.parse(localStorage.getItem('suncarSavedHotels')||'[]');
+    return Array.isArray(raw)?raw:[];
+  }catch(e){return []}
+}
+const savedHotels=new Set(loadSavedHotelKeys());
 const compareHotels=new Set();
 
 function status(msg,type){
@@ -685,7 +691,7 @@ function updateVerifyBar(){
   const done=verifiedCount();
   const pending=currentHotels.filter(h=>!h.manual&&!h.detailsLoaded&&!h.detailLoading).length;
   const textEl=$('verifyText'),btn=$('verifyMoreBtn');
-  if(textEl)textEl.textContent=total?done+' de '+total+' hoteles con tarifa comprobada o propia de Suncar.':'Las primeras tarifas se comprueban automáticamente.';
+  if(textEl)textEl.textContent=total?done+' de '+total+' hoteles con tarifa comprobada o propia de Suncar. Las demás pueden comprobarse por bloques.':'Las primeras tarifas se comprueban automáticamente y las demás por bloques.';
   if(btn){
     btn.disabled=pending===0||!currentData;
     btn.textContent=pending>0?'Comprobar '+Math.min(AUTO_DETAIL_LIMIT,pending)+' tarifas más':'Tarifas disponibles comprobadas';
@@ -1162,8 +1168,15 @@ $('verifyMoreBtn').addEventListener('click',()=>{if(currentData)void verifyNextR
 $('modifySearchBtn').addEventListener('click',()=>document.querySelector('.search-wrap').scrollIntoView({behavior:'smooth',block:'start'}));
 $('loadMoreBtn').addEventListener('click',()=>{visibleLimit+=8;if(currentData)render();});
 $('clearCompareBtn').addEventListener('click',()=>{compareHotels.clear();updateCompareTray();if(currentData)render();});
-$('openCompareBtn').addEventListener('click',()=>{renderCompare();$('compareDialog').showModal();});
-$('closeCompareBtn').addEventListener('click',()=>$('compareDialog').close());
+$('openCompareBtn').addEventListener('click',()=>{
+  renderCompare();
+  const d=$('compareDialog');
+  if(typeof d.showModal==='function')d.showModal();else d.setAttribute('open','');
+});
+$('closeCompareBtn').addEventListener('click',()=>{
+  const d=$('compareDialog');
+  if(typeof d.close==='function')d.close();else d.removeAttribute('open');
+});
 $('compareDialog').addEventListener('click',e=>{if(e.target===$('compareDialog'))$('compareDialog').close();});
 $('children').addEventListener('input',()=>{
   const n=Number($('children').value||0);
