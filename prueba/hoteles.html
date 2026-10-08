@@ -76,7 +76,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 </div>
 <div class="note" style="margin-top:10px">Busca cualquier destino. Las tarifas propias de Suncar tienen prioridad. La búsqueda automática cotiza 1 habitación; solicitudes de 2 o más habitaciones se confirman directamente con Suncar para evitar precios incorrectos.</div>
 <div class="actions"><button class="btn orange" type="submit" id="searchBtn">Buscar hoteles</button><button class="btn outline" type="button" id="realSampleBtn">Ver ejemplo Suncar</button><button class="btn outline" type="button" id="clearBtn">Limpiar</button></div>
-<div class="note" id="dataNote">Las tarifas automáticas son referencias para las fechas y ocupación indicadas. Mostramos por separado precio por noche y total de estadía cuando ambos datos están disponibles. Suncar confirma disponibilidad, régimen, impuestos, condiciones y precio final antes de reservar.</div>
+<div class="note" id="dataNote">Por seguridad, no mostramos como tarifa el precio preliminar de la búsqueda. El precio aparece únicamente al consultar el detalle de una habitación y cuando el motor identifica un total claro para la estadía. Suncar confirma disponibilidad, régimen, impuestos, condiciones y precio final antes de reservar.</div>
 <div class="status" id="status"></div></form>
 </div></div>
 
@@ -209,8 +209,8 @@ function quoteHotel(h,r){
     'Habitacion / opcion: '+(r.room||r.name||'Por confirmar'),
     'Regimen: '+(r.label||'Por confirmar'),
     'Condicion: '+(r.cancel||'Por confirmar'),
-    'Tarifa mostrada: '+(r.display||h.totalDisplay||h.nightDisplay||'Por confirmar'),
-    'Tipo: '+(h.manual?'Tarifa cargada por Suncar':'Referencia automatica sujeta a confirmacion'),'',
+    (r.manual||r.priceVerified)?'Tarifa encontrada: '+(r.display||'Por confirmar'):'Tarifa: por confirmar',
+    'Tipo: '+(h.manual?'Tarifa cargada por Suncar':'Consulta automatica de detalle; requiere confirmacion de Suncar'),'',
     'Quiero confirmar disponibilidad real, impuestos, regimen, condiciones y precio final con Suncar antes de reservar.'
   ].filter(Boolean);
   window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
@@ -556,10 +556,11 @@ function render(){
     visibleRates.forEach(r=>{
       const row=document.createElement('div');
       row.className='rate';
+      const exactPrice=!!(r.manual||r.priceVerified);
       row.innerHTML=
         '<div class="rate-name"><strong>'+esc(r.room)+'</strong><small>'+esc(r.label)+'</small></div>'+
-        '<div class="rate-price"><strong>'+esc(r.display)+'</strong><small>'+esc(r.scope||'Tarifa de referencia')+'</small><button class="btn green" type="button">Confirmar con Suncar</button></div>'+
-        '<div class="rate-info"><strong>'+esc(r.cancel||'Condiciones por confirmar')+'</strong><small>'+esc(nights+' noche'+(nights===1?'':'s')+' · precio final sujeto a confirmación por Suncar')+'</small></div>';
+        '<div class="rate-price"><strong>'+esc(r.display)+'</strong><small>'+esc(r.scope||'Precio por confirmar')+'</small><button class="btn green" type="button">'+(exactPrice?'Confirmar con Suncar':'Cotizar con Suncar')+'</button></div>'+
+        '<div class="rate-info"><strong>'+esc(r.cancel||'Condiciones por confirmar')+'</strong><small>'+esc(nights+' noche'+(nights===1?'':'s')+' · disponibilidad y precio final sujetos a confirmación por Suncar')+'</small></div>';
       row.querySelector('.green').addEventListener('click',()=>quoteHotel(h,r));
       rates.appendChild(row);
     });
