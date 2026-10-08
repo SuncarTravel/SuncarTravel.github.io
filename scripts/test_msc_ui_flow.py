@@ -29,6 +29,9 @@ REQUIRED_FLOW_MARKERS = [
     "const returnToMainMenu=",
     "const addFlowChoices=",
     "const addSearchExit=",
+    "const disableActiveFlow=",
+    "const prepareTopLevelAction=",
+    "let interactionEpoch=0;",
     "b.dataset.action='main-menu'",
     "addMainMenu();",
     "addSearchExit();",
@@ -94,11 +97,17 @@ def main() -> int:
             raise AssertionError(f"{source}: las respuestas informativas deben volver a mostrar opciones")
         if "addFlowChoices(regions" not in text:
             raise AssertionError(f"{source}: el flujo por zonas debe permitir salir al menú")
+        if "querySelectorAll('.msc-replay-menu')" not in text:
+            raise AssertionError(f"{source}: debe eliminar cualquier menú repetido antes de continuar")
+        if "searchState.adults=2;searchState.children=0;" not in text:
+            raise AssertionError(f"{source}: una nueva búsqueda debe reiniciar pasajeros")
+        if "const epoch=prepareTopLevelAction();" not in text or "if(epoch!==interactionEpoch)return;" not in text:
+            raise AssertionError(f"{source}: debe ignorar respuestas asíncronas de interacciones antiguas")
 
     node_check(WIDGET)
     check_inline_scripts(index)
 
-    expected = "assets/msc-assistant-widget.js?v=20261008d"
+    expected = "assets/msc-assistant-widget.js?v=20261009a"
     for rel in SECONDARY_PAGES:
         page = (ROOT / rel).read_text(encoding="utf-8")
         if expected not in page:
