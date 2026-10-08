@@ -1,4 +1,4 @@
-const VERSION="2026-10-07.2";
+const VERSION="2026-10-08.3";
 const ALLOWED_ORIGINS=new Set([
   "https://suncartravel.github.io",
   "https://suncartravel.com",
@@ -230,6 +230,7 @@ async function detailsSerp(token,ctx,env){
   }
 
   const seen=new Set();
+  const requestedGuests=ctx.adults+ctx.children;
   const rooms=rawRooms.filter(room=>{
     const total=room?.total_rate?.extracted_lowest??room?.total_rate?.lowest;
     const night=room?.rate_per_night?.extracted_lowest??room?.rate_per_night?.lowest;
@@ -237,7 +238,9 @@ async function detailsSerp(token,ctx,env){
     if(seen.has(key))return false;
     seen.add(key);
     return true;
-  }).slice(0,12).map(x=>normalizeSerpRoom(x,ctx));
+  }).slice(0,18).map(x=>normalizeSerpRoom(x,ctx))
+    .filter(room=>!room.guests||room.guests>=requestedGuests)
+    .slice(0,12);
   return rooms.length?rooms:null;
 }
 
@@ -328,7 +331,10 @@ async function detailsHasData(token,ctx,env){
   const candidates=arr(d.rooms).length?d.rooms:
     arr(d.property?.rooms).length?d.property.rooms:
     arr(d.properties?.[0]?.rooms);
-  const rooms=arr(candidates).slice(0,12).map(x=>normalizeHasDataRoom(x,ctx));
+  const requestedGuests=ctx.adults+ctx.children;
+  const rooms=arr(candidates).slice(0,18).map(x=>normalizeHasDataRoom(x,ctx))
+    .filter(room=>!room.guests||room.guests>=requestedGuests)
+    .slice(0,12);
   return rooms.length?rooms:null;
 }
 
@@ -413,12 +419,8 @@ async function detailsWithRoute(rawToken,ctx,env){
   const [prefix,...rest]=rawToken.split(":");
   const token=rest.join(":");
   if(!token)return null;
-  if(prefix==="sp"){
-    return (await detailsSerp(token,ctx,env))||(await detailsHasData(token,ctx,env));
-  }
-  if(prefix==="hd"){
-    return (await detailsHasData(token,ctx,env))||(await detailsSerp(token,ctx,env));
-  }
+  if(prefix==="sp")return await detailsSerp(token,ctx,env);
+  if(prefix==="hd")return await detailsHasData(token,ctx,env);
   return null;
 }
 
