@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   const nav=document.querySelector('header nav');
-  const links=nav?.querySelector(':scope > .links');
+  const links=nav?.querySelector(':scope > .links, :scope > .navlinks');
   if(nav&&links&&!nav.querySelector('.site-menu-toggle')){
     const btn=document.createElement('button');
     btn.type='button';
