@@ -1,5 +1,7 @@
 /* Suncar Travel · mejoras comunes para páginas secundarias */
 .site-menu-toggle{display:none;border:1px solid #bfd0da;background:#fff;color:#07375c;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}
+nav a[aria-current="page"]{color:#07375c;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #f7b82b;outline-offset:3px}
 .suncar-footer{background:#031f35;color:#dcebf3;padding:34px 0;margin-top:20px}
 .suncar-footer .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}
 .suncar-footer .footer-logo{height:78px;background:#fff;border-radius:12px;padding:5px}
@@ -16,4 +18,8 @@
 }
 @media(max-width:700px){
   .suncar-footer .footer-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }

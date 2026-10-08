@@ -27,6 +27,19 @@ jobs:
     steps:
       - name: Descargar sitio
         uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar sitio antes de publicar
+        run: python scripts/validate_site.py
+      - name: Validar JavaScript compartido
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            node --check "$file"
+          done < <(find assets -maxdepth 1 -type f -name '*.js' -print0)
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
       - name: Preparar archivos
