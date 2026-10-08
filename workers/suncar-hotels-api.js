@@ -1,4 +1,4 @@
-const VERSION="2026-10-08.3";
+const VERSION="2026-10-08.4";
 const ALLOWED_ORIGINS=new Set([
   "https://suncartravel.github.io",
   "https://suncartravel.com",
@@ -163,29 +163,38 @@ function normalizeSerpProperty(p,ctx){
     checkOutTime:p.check_out_time||""
   };
 }
-function normalizeSerpRoom(room,ctx){
-  const rates=arr(room.rates);
-  const cheapest=rates.slice().sort((a,b)=>{
-    const at=numOrNull(a?.total_rate?.extracted_lowest)??numOrNull(a?.rate_per_night?.extracted_lowest)??1e12;
-    const bt=numOrNull(b?.total_rate?.extracted_lowest)??numOrNull(b?.rate_per_night?.extracted_lowest)??1e12;
-    return at-bt;
-  })[0]||{};
-  const total=normalizePrice(room.total_rate||cheapest.total_rate);
-  const night=normalizePrice(room.rate_per_night||cheapest.rate_per_night);
+function textItems(values){
+  return arr(values).map(x=>{
+    if(typeof x==="string")return clean(x);
+    if(!x||typeof x!=="object")return "";
+    return clean(x.name||x.title||x.text||x.description||x.label);
+  }).filter(Boolean);
+}
+function normalizeSerpRoomRate(room,rate,ctx){
+  rate=rate||{};
+  const total=normalizePrice(rate.total_rate||room.total_rate);
+  const night=normalizePrice(rate.rate_per_night||room.rate_per_night);
+  const meal=clean(rate.meal_plan||rate.board_type||rate.rate_name||room.meal_plan||room.board_type);
   const inclusions=uniq([
-    ...arr(room.inclusions),
-    ...arr(cheapest.inclusions),
-    ...(room.breakfast_included||cheapest.breakfast_included?["Desayuno incluido"]:[])
-  ]).slice(0,10);
+    ...textItems(room.inclusions),
+    ...textItems(room.benefits),
+    ...textItems(rate.inclusions),
+    ...textItems(rate.benefits),
+    meal,
+    ...(room.breakfast_included||rate.breakfast_included?["Desayuno incluido"]:[]),
+    ...(room.all_inclusive||rate.all_inclusive?["Todo incluido"] : [])
+  ]).slice(0,14);
+  const rateName=clean(rate.name||rate.rate_name||rate.room_name);
+  const baseName=clean(room.name||room.room_name)||"Tarifa disponible";
   return {
-    name:room.name||"Tarifa disponible",
-    guests:Number(room.num_guests||cheapest.num_guests)||0,
-    image:arr(room.images)[0]||"",
+    name:rateName&&rateName!==baseName?baseName+" · "+rateName:baseName,
+    guests:Number(rate.num_guests||room.num_guests)||0,
+    image:arr(room.images)[0]||arr(rate.images)[0]||"",
     night,
     total,
     priceConsistency:priceConsistency(night,total,daysBetween(ctx.checkIn,ctx.checkOut)),
     inclusions,
-    freeCancellation:!!(room.free_cancellation||cheapest.free_cancellation)
+    freeCancellation:!!(rate.free_cancellation||room.free_cancellation)
   };
 }
 async function searchSerp(ctx,env){
@@ -229,18 +238,46 @@ async function detailsSerp(token,ctx,env){
       }));
   }
 
-  const seen=new Set();
   const requestedGuests=ctx.adults+ctx.children;
-  const rooms=rawRooms.filter(room=>{
-    const total=room?.total_rate?.extracted_lowest??room?.total_rate?.lowest;
-    const night=room?.rate_per_night?.extracted_lowest??room?.rate_per_night?.lowest;
-    const key=[room?.name,total,night,room?.num_guests].join("|");
+  const variants=[];
+  rawRooms.slice(0,18).forEach(room=>{
+    const rates=arr(room?.rates);
+    if(rates.length){
+      rates.slice(0,8).forEach(rate=>variants.push(normalizeSerpRoomRate(room,rate,ctx)));
+    }else{
+      variants.push(normalizeSerpRoomRate(room,null,ctx));
+    }
+  });
+  groups.slice(0,18).forEach(group=>{
+    const rates=arr(group?.rates);
+    if(rates.length){
+      rates.slice(0,8).forEach(rate=>variants.push(normalizeSerpRoomRate({
+        name:group?.name||"Tarifa disponible",
+        num_guests:group?.num_guests,
+        images:group?.images,
+        inclusions:textItems(group?.benefits),
+        free_cancellation:group?.free_cancellation
+      },rate,ctx)));
+    }
+  });
+  const seen=new Set();
+  const rooms=variants.filter(room=>{
+    if(room.guests&&room.guests<requestedGuests)return false;
+    const key=[
+      clean(room.name),
+      room.total?.amount||room.total?.display,
+      room.night?.amount||room.night?.display,
+      room.guests,
+      room.inclusions.join("|")
+    ].join("::");
     if(seen.has(key))return false;
     seen.add(key);
     return true;
-  }).slice(0,18).map(x=>normalizeSerpRoom(x,ctx))
-    .filter(room=>!room.guests||room.guests>=requestedGuests)
-    .slice(0,12);
+  }).sort((a,b)=>{
+    const at=a.total?.amount??(a.night?.amount?Number(a.night.amount)*daysBetween(ctx.checkIn,ctx.checkOut):1e12);
+    const bt=b.total?.amount??(b.night?.amount?Number(b.night.amount)*daysBetween(ctx.checkIn,ctx.checkOut):1e12);
+    return at-bt;
+  }).slice(0,20);
   return rooms.length?rooms:null;
 }
 
