@@ -160,11 +160,29 @@ function planLabel(plan){
     unknown:'Régimen por confirmar'
   }[plan]||'Régimen por confirmar';
 }
-function propertyPlanAvailable(h,filter){
-  const t=norm((h.amenities||[]).join(' | '));
-  if(filter==='allinclusive')return t.includes('all inclusive available')||t.includes('all-inclusive available')||t.includes('todo incluido disponible');
-  if(filter==='breakfast')return t.includes('free breakfast')||t.includes('complimentary breakfast')||t.includes('desayuno gratis')||t.includes('desayuno incluido');
-  return false;
+function amenityLabel(v){
+  const raw=String(v||'').trim(),t=norm(raw);
+  const map=[
+    [['free breakfast','complimentary breakfast'],'Desayuno incluido'],
+    [['breakfast ($)','paid breakfast'],'Desayuno con costo'],
+    [['free wi-fi','free wifi'],'Wi‑Fi gratis'],
+    [['wi-fi','wifi'],'Wi‑Fi'],
+    [['free parking'],'Estacionamiento gratis'],
+    [['parking'],'Estacionamiento'],
+    [['hot tub','jacuzzi'],'Jacuzzi'],
+    [['outdoor pool'],'Piscina exterior'],
+    [['indoor pool'],'Piscina interior'],
+    [['pool'],'Piscina'],
+    [['fitness center','gym'],'Gimnasio'],
+    [['spa'],'Spa'],
+    [['beach access'],'Acceso a la playa'],
+    [['airport shuttle'],'Traslado al aeropuerto'],
+    [['restaurant'],'Restaurante'],
+    [['bar'],'Bar'],
+    [['all inclusive available','all-inclusive available'],'Todo incluido disponible']
+  ];
+  for(const [keys,label] of map)if(keys.some(k=>t===k||t.includes(k)))return label;
+  return raw;
 }
 function computedConsistency(night,total,nights){
   const n=Number(night||0),t=Number(total||0);
@@ -452,15 +470,13 @@ function render(){
   const nights=nightsBetween(currentData.checkin,currentData.checkout);
   const filtered=currentHotels.filter(h=>{
     if(currentFilter==='all')return true;
-    if((h.rates||[]).some(r=>r.plan===currentFilter))return true;
-    if(!h.manual&&!(h.rates||[]).length&&propertyPlanAvailable(h,currentFilter))return true;
-    return false;
+    return (h.rates||[]).some(r=>r.plan===currentFilter);
   });
 
   summary.textContent=currentData.destination+' · '+fmtDate(currentData.checkin)+' al '+fmtDate(currentData.checkout)+' · '+nights+' noche'+(nights===1?'':'s')+' · '+currentData.adults+' adulto'+(currentData.adults===1?'':'s')+(currentData.children?' · '+currentData.children+' niño'+(currentData.children===1?'':'s'):'')+' · '+currentData.rooms+' habitación'+(currentData.rooms===1?'':'es')+' · '+currentHotels.length+' hotel(es)';
 
   if(!filtered.length){
-    list.innerHTML='<div class="empty"><strong>No tenemos una tarifa identificada con ese régimen en los resultados cargados.</strong><br>No vamos a asumir un plan de comida que el buscador no haya confirmado. Puedes ver todos los hoteles o pedir a Suncar que confirme específicamente este régimen.</div>';
+    list.innerHTML='<div class="empty"><strong>No tenemos todavía una tarifa confirmada con ese régimen entre las opciones cargadas.</strong><br>Para evitar precios engañosos, un hotel no entra en este filtro solo porque ofrezca ese plan: necesitamos que la tarifa específica lo confirme. Abre “Ver tarifas” en los hoteles que te interesen para cargar sus habitaciones y regímenes, o solicita a Suncar la cotización exacta.</div>';
     addManualFallback(planLabel(currentFilter));
     return;
   }
@@ -468,7 +484,6 @@ function render(){
   list.innerHTML='';
   filtered.forEach(h=>{
     const ratesForView=currentFilter==='all'?(h.rates||[]):(h.rates||[]).filter(r=>r.plan===currentFilter);
-    const availabilityOnly=currentFilter!=='all'&&!ratesForView.length&&!h.manual&&propertyPlanAvailable(h,currentFilter);
     const card=document.createElement('article');
     card.className='hotel-card';
     card.dataset.hotelId=h.id||h.name;
@@ -489,13 +504,12 @@ function render(){
     const priceLabel=h.manual?'Tarifa Suncar':autoPrice.label;
     const pricePrimary=h.manual?(manualBest?.display||'Consultar'):autoPrice.primary;
     const priceContext=h.manual?(manualBest?.label||'Oferta Suncar'):autoPrice.context;
-    const filterWarning=availabilityOnly?'El hotel indica '+planLabel(currentFilter)+' disponible; el precio más bajo mostrado no confirma ese régimen.':'';
-    const priceWarning=!h.manual?(filterWarning||autoPrice.warning):'';
+    const priceWarning=!h.manual?autoPrice.warning:'';
 
     body.innerHTML=
       '<div class="hotel-top"><div class="hotel-title"><div class="stars">'+esc(stars(h.stars))+'</div><h3>'+esc(h.name)+'</h3><div class="hotel-meta">'+esc(h.location||currentData.destination)+(h.reviews?' · '+esc(Number(h.reviews).toLocaleString('en-US'))+' reseñas':'')+'</div></div>'+
       (h.rating?'<div class="rating">'+esc(h.rating)+' / 5</div>':'')+'</div>'+
-      '<div class="amenities">'+(h.amenities||[]).slice(0,3).map(a=>'<span class="amenity">'+esc(a)+'</span>').join('')+'</div>'+
+      '<div class="amenities">'+(h.amenities||[]).slice(0,3).map(a=>'<span class="amenity">'+esc(amenityLabel(a))+'</span>').join('')+'</div>'+
       '<div class="hotel-summary"><div class="from"><small>'+esc(priceLabel)+'</small><strong>'+esc(pricePrimary)+'</strong><div class="price-context">'+esc(priceContext)+'</div>'+(priceWarning?'<span class="price-warning">'+esc(priceWarning)+'</span>':'')+'</div><div class="compact-actions"><button class="btn outline toggle-rates" type="button">Ver tarifas</button></div></div>';
 
     const rates=document.createElement('div');
@@ -503,26 +517,15 @@ function render(){
 
     let visibleRates=ratesForView;
     if(!visibleRates.length){
-      if(availabilityOnly){
-        visibleRates=[{
-          room:'Régimen disponible en el hotel',
-          plan:currentFilter,
-          label:planLabel(currentFilter)+' · precio específico por confirmar',
-          cancel:'Condiciones por confirmar',
-          display:'Consultar',
-          scope:'No usamos el precio general como si fuera el de este régimen'
-        }];
-      }else{
-        const generic=autoPriceInfo(h,nights);
-        visibleRates=[{
-          room:h.detailsFailed?'Detalle de habitación no disponible automáticamente':'Opción de referencia',
-          plan:'unknown',
-          label:'Habitación y régimen por confirmar',
-          cancel:h.freeCancellation?'Cancelación gratis indicada · confirmar condiciones':'Condiciones por confirmar',
-          display:generic.primary,
-          scope:generic.label+(h.totalDisplay&&h.priceConsistency!=='review'?' · total ref. '+h.totalDisplay:'')
-        }];
-      }
+      const generic=autoPriceInfo(h,nights);
+      visibleRates=[{
+        room:h.detailsFailed?'Detalle de habitación no disponible automáticamente':'Opción de referencia',
+        plan:'unknown',
+        label:'Habitación y régimen por confirmar',
+        cancel:h.freeCancellation?'Cancelación gratis indicada · confirmar condiciones':'Condiciones por confirmar',
+        display:generic.primary,
+        scope:generic.label+(h.totalDisplay&&h.priceConsistency!=='review'?' · total ref. '+h.totalDisplay:'')
+      }];
     }
 
     visibleRates.forEach(r=>{
