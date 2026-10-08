@@ -9,10 +9,10 @@
 @media(max-width:940px){
   nav{position:relative}
   .site-menu-toggle{display:inline-flex;margin-left:auto}
-  nav>.links{display:none!important;position:absolute;left:0;right:0;top:calc(100% - 4px);background:#fff;border:1px solid #dce7ed;border-radius:16px;padding:14px;box-shadow:0 18px 55px rgba(7,55,92,.14);flex-direction:column;align-items:stretch;gap:8px!important;z-index:80;overflow:visible!important}
-  nav>.links.open{display:flex!important}
-  nav>.links>a,nav>.links>details{width:100%}
-  nav>.links .dropmenu{position:static!important;box-shadow:none!important;margin-top:7px!important;background:#f5f9fc!important}
+  nav>.links,nav>.navlinks{display:none!important;position:absolute;left:0;right:0;top:calc(100% - 4px);background:#fff;border:1px solid #dce7ed;border-radius:16px;padding:14px;box-shadow:0 18px 55px rgba(7,55,92,.14);flex-direction:column;align-items:stretch;gap:8px!important;z-index:80;overflow:visible!important}
+  nav>.links,nav>.navlinks.open{display:flex!important}
+  nav>.links,nav>.navlinks>a,nav>.links,nav>.navlinks>details{width:100%}
+  nav>.links,nav>.navlinks .dropmenu{position:static!important;box-shadow:none!important;margin-top:7px!important;background:#f5f9fc!important}
 }
 @media(max-width:700px){
   .suncar-footer .footer-grid{grid-template-columns:1fr}
