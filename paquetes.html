@@ -34,11 +34,11 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <a href="ofertas.html">Ofertas</a><a href="index.html#contacto">Contacto</a><a class="btn orange" href="servicios.html">Cotizar</a></div></nav></div></header>
 <main><section class="hero"><div class="container"><div class="eyebrow">Suncar Travel</div><h1>Paquetes y escapadas</h1><p>Explora las promociones publicadas o dinos el viaje que tienes en mente y Suncar arma las opciones contigo.</p></div></section>
 <section class="soft"><div class="container"><h2>Ofertas de viajes</h2><p class="lead">Estas son algunas de las escapadas y paquetes publicados por Suncar. La tarifa y disponibilidad final se confirman antes de reservar.</p>
-<div class="grid" style="margin-top:24px">
-<div class="card"><div class="tag">SEMANA SANTA 2027</div><h3>Costa Rica</h3><div class="price">US$1,350 p/p</div><p>23–27 marzo · vuelo desde SDQ · 4 noches + desayuno · traslados · seguro · experiencias. Se requiere visa.</p><a class="btn orange" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">SEMANA SANTA 2027</div><h3>Medellín</h3><div class="price">US$820 p/p</div><p>24–27 marzo · 4 días / 3 noches · vuelos, desayuno, traslados, seguro, City Tour + Comuna 13 y Guatapé.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">SEMANA SANTA 2027</div><h3>Bogotá</h3><div class="price">US$880 p/p</div><p>25–28 marzo · 4 días / 3 noches · vuelos, desayuno, traslados, seguro, City Tour, Monserrate, Museo del Oro y Catedral de Sal.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
-<div class="card"><div class="tag">NOVIEMBRE 2026</div><h3>Bogotá</h3><div class="price">US$720 p/p</div><p>6–9 noviembre · 4 días / 3 noches · aéreo desde SDQ, hotel Andes Plaza, seguro, tours, traslados y guía.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
+<div class="grid" style="margin-top:24px" data-offers-container>
+<div class="card" data-expire="2027-03-23T00:00:00-04:00"><div class="tag">SEMANA SANTA 2027</div><h3>Costa Rica</h3><div class="price">US$1,350 p/p</div><p>23–27 marzo · vuelo desde SDQ · 4 noches + desayuno · traslados · seguro · experiencias. Se requiere visa.</p><a class="btn orange" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2027-03-24T00:00:00-04:00"><div class="tag">SEMANA SANTA 2027</div><h3>Medellín</h3><div class="price">US$820 p/p</div><p>24–27 marzo · 4 días / 3 noches · vuelos, desayuno, traslados, seguro, City Tour + Comuna 13 y Guatapé.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2027-03-25T00:00:00-04:00"><div class="tag">SEMANA SANTA 2027</div><h3>Bogotá</h3><div class="price">US$880 p/p</div><p>25–28 marzo · 4 días / 3 noches · vuelos, desayuno, traslados, seguro, City Tour, Monserrate, Museo del Oro y Catedral de Sal.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
+<div class="card" data-expire="2026-11-06T00:00:00-04:00"><div class="tag">NOVIEMBRE 2026</div><h3>Bogotá</h3><div class="price">US$720 p/p</div><p>6–9 noviembre · 4 días / 3 noches · aéreo desde SDQ, hotel Andes Plaza, seguro, tours, traslados y guía.</p><a class="btn outline" href="ofertas.html">Ver oferta</a></div>
 </div>
 <div class="actions"><a class="btn orange" href="ofertas.html">Ver todas las ofertas</a></div></div></section>
 <section><div class="container"><h2>Armar un paquete</h2><form class="formbox" id="quoteForm"><div class="formgrid">
@@ -60,5 +60,5 @@ document.getElementById('quoteForm')?.addEventListener('submit',e=>{
  lines.push('Presupuesto / comentarios: '+(f.get('comentarios')||''));
  lines.push('','Quiero recibir opciones, disponibilidad y precio final con Suncar.');
  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
-});</script><script defer src="assets/msc-assistant-widget.js?v=20261007a"></script><script defer src="assets/site-shell.js?v=20261008a"></script>
+});</script><script defer src="assets/offers-expiry.js?v=20261008a"></script><script defer src="assets/msc-assistant-widget.js?v=20261007a"></script><script defer src="assets/site-shell.js?v=20261008a"></script>
 </body></html>
