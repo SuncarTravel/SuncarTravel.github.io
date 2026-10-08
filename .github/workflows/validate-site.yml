@@ -1,0 +1,31 @@
+name: Validar sitio oficial
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar HTML, enlaces, SEO y configuración
+        run: python scripts/validate_site.py
+      - name: Validar sintaxis de JavaScript compartido
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            node --check "$file"
+          done < <(find assets -maxdepth 1 -type f -name '*.js' -print0)
