@@ -314,6 +314,19 @@ function rateLabelFromRoom(room){
   return {plan:p,label:planLabel(p)};
 }
 function autoPriceInfo(h,nights){
+  if(h.detailsLoaded && (h.rates||[]).length){
+    const vals=(h.rates||[]).map(r=>Number(r.total||0)).filter(x=>x>0);
+    if(vals.length){
+      const minTotal=Math.min(...vals);
+      const currency=(h.rates.find(r=>Number(r.total||0)===minTotal)?.display||'').match(/^[A-Z]{3}/)?.[0]||'USD';
+      return {
+        label:'Desde · estadía',
+        primary:currency+' '+minTotal.toLocaleString('en-US'),
+        context:'Tarifa detallada cargada · '+nights+' noche'+(nights===1?'':'s')+' · 1 habitación',
+        warning:''
+      };
+    }
+  }
   const consistency=h.priceConsistency||computedConsistency(h.nightAmount,h.totalAmount,nights);
   if(consistency==='review'){
     if(h.nightDisplay)return {
@@ -400,7 +413,16 @@ async function loadDetails(h,card,button){
         manual:false
       };
     }).filter(x=>x.display);
-    if(detailed.length)h.rates=detailed;
+    if(detailed.length){
+      h.rates=detailed;
+      const detailTotals=detailed.map(x=>Number(x.total||0)).filter(x=>x>0);
+      if(detailTotals.length){
+        const minDetail=Math.min(...detailTotals);
+        const summaryTotal=Number(h.totalAmount||0);
+        h.detailMinTotal=minDetail;
+        h.summaryMismatch=summaryTotal>0&&(minDetail/summaryTotal>1.6||summaryTotal/minDetail>1.6);
+      }
+    }
     h.detailsLoaded=true;
     h.detailsFailed=!detailed.length;
   }catch(e){
@@ -504,7 +526,7 @@ function render(){
     const priceLabel=h.manual?'Tarifa Suncar':autoPrice.label;
     const pricePrimary=h.manual?(manualBest?.display||'Consultar'):autoPrice.primary;
     const priceContext=h.manual?(manualBest?.label||'Oferta Suncar'):autoPrice.context;
-    const priceWarning=!h.manual?autoPrice.warning:'';
+    const priceWarning=!h.manual?(h.summaryMismatch?'La tarifa detallada es distinta al precio inicial; mostramos como referencia la tarifa detallada cargada.':autoPrice.warning):'';
 
     body.innerHTML=
       '<div class="hotel-top"><div class="hotel-title"><div class="stars">'+esc(stars(h.stars))+'</div><h3>'+esc(h.name)+'</h3><div class="hotel-meta">'+esc(h.location||currentData.destination)+(h.reviews?' · '+esc(Number(h.reviews).toLocaleString('en-US'))+' reseñas':'')+'</div></div>'+
