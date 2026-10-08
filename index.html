@@ -550,13 +550,25 @@ function fmtDuration(min){
   const m=n%60;
   return h+'h'+(m?' '+m+'m':'');
 }
+function safeHttpUrl(value){
+  try{
+    const u=new URL(String(value||''),location.href);
+    return u.protocol==='https:'?u.href:'';
+  }catch(e){return ''}
+}
 
 async function searchAirports(term){
   const url='https://autocomplete.travelpayouts.com/places2?locale=es&types%5B%5D=airport&term='+encodeURIComponent(term);
-  const res=await fetch(url,{mode:'cors'});
-  if(!res.ok) throw new Error('airport lookup failed');
-  const data=await res.json();
-  return Array.isArray(data)?data:[];
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),8000);
+  try{
+    const res=await fetch(url,{mode:'cors',signal:controller.signal});
+    if(!res.ok) throw new Error('airport lookup failed');
+    const data=await res.json();
+    return Array.isArray(data)?data:[];
+  }finally{
+    clearTimeout(timer);
+  }
 }
 
 function setupAirportAutocomplete(inputId,boxId){
@@ -596,7 +608,11 @@ function setupAirportAutocomplete(inputId,boxId){
           const airportName=x.name||'Aeropuerto';
           const city=x.city_name||x.city_code||'';
           const country=x.country_name||x.country_code||'';
-          btn.innerHTML='<strong>'+x.code+' - '+airportName+'</strong><span>'+[city,country].filter(Boolean).join(' · ')+'</span>';
+          const strong=document.createElement('strong');
+          strong.textContent=String(x.code||'')+' - '+String(airportName||'Aeropuerto');
+          const meta=document.createElement('span');
+          meta.textContent=[city,country].filter(Boolean).map(String).join(' · ');
+          btn.append(strong,meta);
           btn.addEventListener('click',function(){
             input.value=x.code+' - '+airportName;
             close();
@@ -675,6 +691,10 @@ function validateSearch(d){
     showStatus('error','Máximo 9 pasajeros por búsqueda. Para grupos mayores solicita cotización manual.');
     return false;
   }
+  if(d.infants>d.adults){
+    showStatus('error','Para esta búsqueda no puede haber más infantes de 0–1 año que adultos. Suncar puede revisar casos especiales manualmente.');
+    return false;
+  }
   return true;
 }
 
@@ -686,6 +706,7 @@ function manualMessage(){
   return lines.join('\n');
 }
 function sendManual(){
+  window.SuncarAnalytics?.track('whatsapp_click',{service:'vuelos',action:'busqueda_manual'});
   window.open(SuncarWhatsApp.url('18093161070',manualMessage()),'_blank');
 }
 document.getElementById('manualBtn').addEventListener('click',sendManual);
@@ -733,18 +754,21 @@ function confirmFlight(r,d){
     'Gracias.'
   );
 
+  window.SuncarAnalytics?.track('whatsapp_click',{service:'vuelos',action:'confirmar_tarifa'});
   window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 }
 
 function renderResults(data,d){
   flightList.innerHTML='';
   results.classList.add('show');
-  const list=Array.isArray(data.results)?data.results:[];
+  const raw=Array.isArray(data.results)?data.results:[];
+  const list=raw.filter(r=>r&&typeof r==='object').slice(0,30);
   resultSummary.textContent=d.origin+' -> '+d.destination+' · '+fmtDate(d.outbound)+(d.trip==='roundtrip'?' al '+fmtDate(d.returnDate):' · solo ida')+' · '+list.length+' opción(es)';
 
-  if(data.price_insights&&data.price_insights.lowest_price){
+  const lowest=Number(data?.price_insights?.lowest_price||0);
+  if(Number.isFinite(lowest)&&lowest>0){
     priceInsight.hidden=false;
-    priceInsight.textContent='Referencia de precio: mínimo encontrado '+(data.currency||'USD')+' '+Number(data.price_insights.lowest_price).toLocaleString('en-US');
+    priceInsight.textContent='Referencia de precio: mínimo encontrado '+String(data.currency||'USD')+' '+lowest.toLocaleString('en-US');
   }else{
     priceInsight.hidden=true;
   }
@@ -752,38 +776,59 @@ function renderResults(data,d){
   list.forEach(function(r,i){
     const card=document.createElement('article');
     card.className='flight-card';
+    const top=document.createElement('div');
+    top.className='flight-top';
 
-    let badge='';
-    if(i===data.cheapest_index) badge='<span class="badge">MEJOR PRECIO</span>';
-    else if(i===data.best_direct_index) badge='<span class="badge blue">MEJOR DIRECTO</span>';
+    const airlineWrap=document.createElement('div');
+    airlineWrap.className='airline';
+    const logoUrl=safeHttpUrl(r.airline_logo);
+    if(logoUrl){
+      const img=document.createElement('img');
+      img.src=logoUrl; img.alt=''; img.loading='lazy'; img.referrerPolicy='no-referrer';
+      airlineWrap.appendChild(img);
+    }
+    const airlineText=document.createElement('div');
+    if(i===Number(data.cheapest_index)){
+      const badge=document.createElement('span'); badge.className='badge'; badge.textContent='MEJOR PRECIO'; airlineText.appendChild(badge);
+    }else if(i===Number(data.best_direct_index)){
+      const badge=document.createElement('span'); badge.className='badge blue'; badge.textContent='MEJOR DIRECTO'; airlineText.appendChild(badge);
+    }
+    const airlineName=document.createElement('b');
+    airlineName.textContent=Array.isArray(r.airlines)&&r.airlines.length?r.airlines.map(String).join(' + '):'Aerolínea por confirmar';
+    const flightNums=document.createElement('small');
+    flightNums.textContent=Array.isArray(r.flight_numbers)?r.flight_numbers.map(String).join(' · '):'';
+    airlineText.append(airlineName,flightNums); airlineWrap.appendChild(airlineText);
 
-    const logo=r.airline_logo?'<img src="'+r.airline_logo+'" alt="" loading="lazy">':'';
-    const airline=(r.airlines||[]).join(' + ')||'Aerolínea por confirmar';
-    const stops=r.stops===0?'Directo':r.stops+' escala'+(r.stops===1?'':'s');
+    const route=document.createElement('div'); route.className='route';
+    const routeStrong=document.createElement('strong');
+    routeStrong.textContent=String(r.origin||d.origin)+' -> '+String(r.destination||d.destination);
+    const times=document.createElement('small');
+    times.textContent=String(r.departure_time||'')+(r.departure_time||r.arrival_time?' -> ':'')+String(r.arrival_time||'');
+    const stopCount=Number(r.stops);
+    const stops=Number.isFinite(stopCount)?(stopCount===0?'Directo':stopCount+' escala'+(stopCount===1?'':'s')):'Escalas por confirmar';
+    const duration=document.createElement('small'); duration.textContent=[fmtDuration(r.total_duration),stops].filter(Boolean).join(' · ');
+    route.append(routeStrong,times,duration);
 
-    card.innerHTML=
-      '<div class="flight-top">'+
-        '<div class="airline">'+logo+'<div>'+badge+'<b>'+airline+'</b><small>'+(r.flight_numbers||[]).join(' · ')+'</small></div></div>'+
-        '<div class="route"><strong>'+(r.origin||d.origin)+' -> '+(r.destination||d.destination)+'</strong><small>'+(r.departure_time||'')+' -> '+(r.arrival_time||'')+'</small><small>'+fmtDuration(r.total_duration)+' · '+stops+'</small></div>'+
-        '<div class="fare"><strong>'+(r.currency||data.currency||'USD')+' '+Number(r.price||0).toLocaleString('en-US')+'</strong><small>precio estimado</small></div>'+
-      '</div>';
+    const fare=document.createElement('div'); fare.className='fare';
+    const fareStrong=document.createElement('strong');
+    const price=Number(r.price||0);
+    fareStrong.textContent=Number.isFinite(price)&&price>0?(String(r.currency||data.currency||'USD')+' '+price.toLocaleString('en-US')):'Consultar';
+    const fareSmall=document.createElement('small'); fareSmall.textContent='precio estimado';
+    fare.append(fareStrong,fareSmall);
 
-    const actions=document.createElement('div');
-    actions.className='flight-actions';
-    const btn=document.createElement('button');
-    btn.type='button';
-    btn.className='btn green';
-    btn.textContent='Confirmar esta tarifa con Suncar';
+    top.append(airlineWrap,route,fare); card.appendChild(top);
+    const actions=document.createElement('div'); actions.className='flight-actions';
+    const btn=document.createElement('button'); btn.type='button'; btn.className='btn green'; btn.textContent='Confirmar esta tarifa con Suncar';
     btn.addEventListener('click',function(){confirmFlight(r,d);});
-    actions.appendChild(btn);
-    card.appendChild(actions);
-    flightList.appendChild(card);
+    actions.appendChild(btn); card.appendChild(actions); flightList.appendChild(card);
   });
 
   if(!list.length){
-    flightList.innerHTML='<div class="status show setup">No encontramos vuelos automáticos para esta búsqueda. Puedes enviarla a Suncar para revisión manual.</div>';
+    const empty=document.createElement('div');
+    empty.className='status show setup';
+    empty.textContent='No encontramos vuelos automáticos para esta búsqueda. Puedes enviarla a Suncar para revisión manual.';
+    flightList.appendChild(empty);
   }
-
   results.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
@@ -815,7 +860,14 @@ form.addEventListener('submit',async function(e){
     if(d.trip==='roundtrip') q.set('return',d.returnDate);
 
     const url=API+'/search?'+q.toString();
-    const res=await fetch(url,{method:'GET',headers:{'Accept':'application/json'}});
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),22000);
+    let res;
+    try{
+      res=await fetch(url,{method:'GET',headers:{'Accept':'application/json'},signal:controller.signal});
+    }finally{
+      clearTimeout(timer);
+    }
     const data=await res.json().catch(function(){return {};});
 
     if(!res.ok){
@@ -826,16 +878,21 @@ form.addEventListener('submit',async function(e){
     renderResults(data,d);
   }catch(error){
     console.error('Suncar flight search error',error);
-    showStatus('error',(error&&error.message?error.message:'No pudimos consultar las tarifas ahora mismo.')+' Puedes enviar la búsqueda a Suncar por WhatsApp.');
+    const msg=error?.name==='AbortError'
+      ?'La consulta está tardando demasiado. Para no dejarte esperando, puedes enviarla a Suncar por WhatsApp.'
+      :(error&&error.message?error.message:'No pudimos consultar las tarifas ahora mismo.')+' Puedes enviar la búsqueda a Suncar por WhatsApp.';
+    showStatus('error',msg);
   }finally{
     searchBtn.disabled=false;
     searchBtn.textContent='Buscar precios estimados';
   }
 });
 
-const now=new Date();
-now.setHours(0,0,0,0);
-const iso=now.toISOString().slice(0,10);
+function localDateISO(){
+  const d=new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+const iso=localDateISO();
 document.getElementById('outbound').min=iso;
 returnDate.min=iso;
 document.getElementById('outbound').addEventListener('change',function(e){
