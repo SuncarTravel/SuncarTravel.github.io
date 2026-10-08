@@ -76,6 +76,7 @@ document.getElementById('quoteForm')?.addEventListener('submit',e=>{
  lines.push('Régimen preferido: '+(f.get('regimen')||''));
  lines.push('Preferencias / presupuesto: '+(f.get('preferencias')||''));
  lines.push('','Quiero recibir opciones, disponibilidad y precio final con Suncar.');
+ window.SuncarAnalytics?.track('whatsapp_click',{service:'hoteles',action:'solicitud'});
  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 });
 (function(){
