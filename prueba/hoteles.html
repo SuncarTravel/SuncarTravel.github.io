@@ -35,6 +35,21 @@ header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid 
 .price-badge.verified{background:#eaf9ef;color:#147a39;border:1px solid #bfe8cb}
 .price-badge.suncar{background:#fff3e8;color:#a45110;border:1px solid #f1d0b1}
 .price-badge.pending{background:#f6f8fa;color:#667783;border:1px solid #dce7ed}
+.hotel-badges{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 0}
+.hotel-badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 7px;font-size:.61rem;font-weight:950;border:1px solid var(--line);background:#fff;color:var(--navy)}
+.hotel-badge.bestprice{background:#ecf9f0;border-color:#bfe8cb;color:#147a39}
+.hotel-badge.toprated{background:#eef7fb;border-color:#cfe3ed;color:var(--navy)}
+.card-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.mini-action{border:1px solid #cbdbe5;background:#fff;color:var(--navy);border-radius:999px;padding:6px 9px;font-size:.64rem;font-weight:900;cursor:pointer}
+.mini-action.active{background:#fff3e8;border-color:#f1d0b1;color:#a45110}
+.load-more-wrap{display:flex;justify-content:center;margin-top:20px}
+.compare-tray{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:50;width:min(900px,calc(100% - 24px));display:none;align-items:center;justify-content:space-between;gap:12px;background:#052f50;color:#fff;border-radius:18px;padding:12px 14px;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+.compare-tray.show{display:flex}.compare-tray small{color:#dcebf3}.compare-tray .tray-actions{display:flex;gap:8px;flex-wrap:wrap}.compare-tray .btn{padding:8px 12px;font-size:.7rem}
+.compare-dialog{border:0;border-radius:22px;padding:0;width:min(980px,calc(100% - 24px));max-height:84vh;box-shadow:0 28px 80px rgba(0,0,0,.3)}
+.compare-dialog::backdrop{background:rgba(3,31,53,.58)}
+.compare-inner{padding:20px}.compare-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}.compare-head h3{margin:0;color:var(--navy);font-family:Georgia,serif;font-size:1.6rem}
+.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.compare-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}.compare-img{height:150px;background:#eaf2f6 center/cover no-repeat}.compare-body{padding:12px}.compare-body h4{margin:0 0 6px;color:var(--navy);font-family:Georgia,serif;font-size:1rem}.compare-line{font-size:.72rem;color:var(--muted);line-height:1.45;margin-top:4px}.compare-price{font-size:1.15rem;font-weight:950;color:var(--orange);margin:8px 0 3px}
 .hotel-list{display:grid;grid-template-columns:1fr;gap:16px}
 .hotel-card{display:grid;grid-template-columns:240px 1fr;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(7,55,92,.06)}
 .hotel-media{min-height:210px;background:linear-gradient(135deg,#dcebf3,#a8c8d9);display:flex;align-items:center;justify-content:center;font-size:2.4rem}
@@ -69,7 +84,7 @@ header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid 
 .status{display:none;margin:14px 0 0;padding:12px 14px;border-radius:14px;font-size:.8rem;line-height:1.5}.status.show{display:block}.status.loading{background:#eef7fb;border:1px solid #cfe3ed;color:var(--navy)}.status.warn{background:#fff8ec;border:1px solid #f3d8af;color:#76511e}.status.error{background:#fff1f0;border:1px solid #f0c2bd;color:#7c2c25}.empty{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;color:var(--muted);line-height:1.6}.hidden{display:none!important}
 footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media(max-width:980px){.formgrid{grid-template-columns:repeat(3,1fr)}.field.destination{grid-column:span 3}.results-tools{grid-template-columns:1fr 1fr}.tool-check{grid-column:1/-1}.advanced-filters{grid-template-columns:1fr 1fr}.hotel-card{grid-template-columns:190px 1fr}.hotel-mainline{grid-template-columns:minmax(0,1fr) 190px}}
-@media(max-width:700px){.top{display:none}.navlinks{font-size:.8rem;gap:10px}.brand img{height:62px}.formgrid{grid-template-columns:1fr 1fr}.field.destination{grid-column:1/-1}.field.ages{grid-column:1/-1}.results-tools{grid-template-columns:1fr}.tool-check{grid-column:auto}.advanced-filters{grid-template-columns:1fr}.hotel-card{grid-template-columns:1fr}.hotel-media{min-height:210px}.hotel-mainline{grid-template-columns:1fr}.hotel-pricebox{border-left:0;border-top:1px solid var(--line);padding:13px 0 0;align-items:flex-start;text-align:left}.hotel-pricebox .price-warning{max-width:none;text-align:left}.hotel-pricebox .price-note{max-width:none}.amenities{display:flex}.rate{grid-template-columns:1fr}.rate-price{text-align:left}}
+@media(max-width:700px){.top{display:none}.navlinks{font-size:.8rem;gap:10px}.brand img{height:62px}.formgrid{grid-template-columns:1fr 1fr}.field.destination{grid-column:1/-1}.field.ages{grid-column:1/-1}.results-tools{grid-template-columns:1fr}.tool-check{grid-column:auto}.advanced-filters{grid-template-columns:1fr}.hotel-card{grid-template-columns:1fr}.hotel-media{min-height:210px}.hotel-mainline{grid-template-columns:1fr}.hotel-pricebox{border-left:0;border-top:1px solid var(--line);padding:13px 0 0;align-items:flex-start;text-align:left}.hotel-pricebox .price-warning{max-width:none;text-align:left}.hotel-pricebox .price-note{max-width:none}.amenities{display:flex}.rate{grid-template-columns:1fr}.rate-price{text-align:left}.compare-grid{grid-template-columns:1fr}.compare-tray{align-items:flex-start;flex-direction:column}.compare-tray .tray-actions{width:100%}.compare-tray .tray-actions .btn{flex:1}}
 </style>
 <script src="../assets/whatsapp-safe.js?v=20261007c"></script>
 <script src="../assets/hotels-config.js?v=20261007a"></script>
@@ -131,7 +146,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 
 <section class="results-section"><div class="container">
 <div class="results-head">
-<div><h2>Opciones de hoteles</h2><div class="summary" id="summary">Haz una búsqueda para ver cómo funcionará el cotizador.</div></div>
+<div><h2>Opciones de hoteles</h2><div class="summary" id="summary">Haz una búsqueda para ver cómo funcionará el cotizador.</div><button class="secondary-action" type="button" id="modifySearchBtn">Modificar búsqueda</button></div>
 <div class="filters" id="filters">
 <button class="filter active" type="button" data-filter="all">Todos</button>
 <button class="filter" type="button" data-filter="room">Solo habitación</button>
@@ -139,6 +154,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 <button class="filter" type="button" data-filter="half">Media pensión</button>
 <button class="filter" type="button" data-filter="full">Pensión completa</button>
 <button class="filter" type="button" data-filter="allinclusive">Todo incluido</button>
+<button class="filter" type="button" data-filter="saved">Guardados</button>
 </div>
 </div>
 <div class="results-tools" id="resultsTools">
@@ -190,9 +206,24 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0}.footer-inner{display:fle
 <div id="hotelList" class="hotel-list">
 <div class="empty">Este es el espacio donde aparecerán los hoteles, sus habitaciones, regímenes y tarifas. Haz una búsqueda para ver la demostración.</div>
 </div>
+<div class="load-more-wrap"><button class="btn outline hidden" type="button" id="loadMoreBtn">Mostrar más hoteles</button></div>
 </div></section>
 
 <footer><div class="container footer-inner"><span>Suncar Tours & Travel</span><span>Prueba privada · No indexada</span></div></footer>
+
+<div class="compare-tray" id="compareTray">
+  <div><strong id="compareTrayTitle">0 hoteles seleccionados</strong><br><small>Compara hasta 3 opciones sin salir de Suncar.</small></div>
+  <div class="tray-actions">
+    <button class="btn outline" type="button" id="clearCompareBtn">Limpiar</button>
+    <button class="btn orange" type="button" id="openCompareBtn">Comparar</button>
+  </div>
+</div>
+<dialog class="compare-dialog" id="compareDialog">
+  <div class="compare-inner">
+    <div class="compare-head"><h3>Comparar hoteles</h3><button class="btn outline" type="button" id="closeCompareBtn">Cerrar</button></div>
+    <div class="compare-grid" id="compareGrid"></div>
+  </div>
+</dialog>
 
 <script>
 const $=id=>document.getElementById(id);
@@ -201,8 +232,11 @@ const API=window.SUNCAR_HOTELS_API||'';
 let currentData=null,currentFilter='all',currentHotels=[];
 let currentSort='recommended',hotelNameQuery='',verifiedOnly=false;
 let starsFilter=0,ratingFilter=0,maxTotalFilter=0,freeCancelFilter=false;
+let visibleLimit=8;
 const AUTO_DETAIL_LIMIT=6;
 let detailRun=0;
+const savedHotels=new Set(JSON.parse(localStorage.getItem('suncarSavedHotels')||'[]'));
+const compareHotels=new Set();
 
 function status(msg,type){
   statusBox.className='status'+(msg?' show '+(type||'loading'):'');
@@ -688,11 +722,73 @@ function sortHotels(items){
   });
   return arr.sort((a,b)=>recommendedScore(b)-recommendedScore(a));
 }
+function hotelKey(h){return String(h.id||h.name||'').trim();}
+function persistSaved(){
+  localStorage.setItem('suncarSavedHotels',JSON.stringify([...savedHotels]));
+}
+function toggleSaved(h){
+  const key=hotelKey(h);
+  if(savedHotels.has(key))savedHotels.delete(key);else savedHotels.add(key);
+  persistSaved();
+  render();
+}
+function toggleCompare(h){
+  const key=hotelKey(h);
+  if(compareHotels.has(key))compareHotels.delete(key);
+  else{
+    if(compareHotels.size>=3){alert('Puedes comparar hasta 3 hoteles a la vez.');return;}
+    compareHotels.add(key);
+  }
+  updateCompareTray();
+  render();
+}
+function selectedCompareHotels(){
+  return currentHotels.filter(h=>compareHotels.has(hotelKey(h))).slice(0,3);
+}
+function updateCompareTray(){
+  const tray=$('compareTray'),items=selectedCompareHotels();
+  tray.classList.toggle('show',items.length>0);
+  $('compareTrayTitle').textContent=items.length+' hotel'+(items.length===1?'':'es')+' seleccionado'+(items.length===1?'':'s');
+  $('openCompareBtn').disabled=items.length<2;
+}
+function renderCompare(){
+  const items=selectedCompareHotels(),grid=$('compareGrid');
+  grid.innerHTML='';
+  items.forEach(h=>{
+    const rate=h.manual?bestVerifiedRate(h):bestVerifiedRate(h);
+    const nights=currentData?nightsBetween(currentData.checkin,currentData.checkout):0;
+    const div=document.createElement('div');
+    div.className='compare-card';
+    const img=safeImage(h.image);
+    div.innerHTML=
+      '<div class="compare-img"'+(img?' style="background-image:url(&quot;'+esc(img)+'&quot;)"':'')+'></div>'+
+      '<div class="compare-body"><h4>'+esc(h.name)+'</h4>'+
+      '<div class="compare-line">'+esc(stars(h.stars))+(h.rating?' · '+esc(h.rating)+' / 5':'')+(h.reviews?' · '+esc(Number(h.reviews).toLocaleString('en-US'))+' reseñas':'')+'</div>'+
+      '<div class="compare-price">'+esc(rate?.display||'Por confirmar')+'</div>'+
+      '<div class="compare-line">'+esc(rate?.label||'Régimen por confirmar')+'</div>'+
+      (rate&&nights?'<div class="compare-line">'+esc(perNightText(rate,nights))+'</div>':'')+
+      '<button class="btn green compare-quote" type="button">'+(rate?'Confirmar con Suncar':'Cotizar con Suncar')+'</button></div>';
+    div.querySelector('.compare-quote').addEventListener('click',()=>quoteHotel(h,rate||{}));
+    grid.appendChild(div);
+  });
+}
+function resultHighlights(items){
+  const verified=items.map(h=>({h,total:verifiedTotal(h)})).filter(x=>x.total>0);
+  const cheapest=verified.length?verified.reduce((a,b)=>a.total<=b.total?a:b).h:null;
+  const rated=items.filter(h=>Number(h.rating||0)>0);
+  const top=rated.length?rated.reduce((a,b)=>{
+    const ar=Number(a.rating||0),br=Number(b.rating||0);
+    if(br!==ar)return br>ar?b:a;
+    return Number(b.reviews||0)>Number(a.reviews||0)?b:a;
+  }):null;
+  return {cheapest,top};
+}
 function render(){
   if(!currentData)return;
   const nights=nightsBetween(currentData.checkin,currentData.checkout);
   let filtered=currentHotels.filter(h=>{
-    if(currentFilter!=='all'&&!(h.rates||[]).some(r=>r.plan===currentFilter))return false;
+    if(currentFilter==='saved'&&!savedHotels.has(hotelKey(h)))return false;
+    if(currentFilter!=='all'&&currentFilter!=='saved'&&!(h.rates||[]).some(r=>r.plan===currentFilter))return false;
     if(hotelNameQuery&&!norm(h.name).includes(norm(hotelNameQuery)))return false;
     if(verifiedOnly&&!h.manual&&!verifiedTotal(h))return false;
     if(starsFilter&&Number(h.stars||0)<starsFilter)return false;
@@ -705,9 +801,14 @@ function render(){
     return true;
   });
   filtered=sortHotels(filtered);
+  const highlights=resultHighlights(filtered);
+  const totalFiltered=filtered.length;
+  const visibleHotels=filtered.slice(0,visibleLimit);
 
-  summary.textContent=currentData.destination+' · '+fmtDate(currentData.checkin)+' al '+fmtDate(currentData.checkout)+' · '+nights+' noche'+(nights===1?'':'s')+' · '+currentData.adults+' adulto'+(currentData.adults===1?'':'s')+(currentData.children?' · '+currentData.children+' niño'+(currentData.children===1?'':'s'):'')+' · '+currentData.rooms+' habitación'+(currentData.rooms===1?'':'es')+' · '+filtered.length+' de '+currentHotels.length+' hotel(es)';
+  summary.textContent=currentData.destination+' · '+fmtDate(currentData.checkin)+' al '+fmtDate(currentData.checkout)+' · '+nights+' noche'+(nights===1?'':'s')+' · '+currentData.adults+' adulto'+(currentData.adults===1?'':'s')+(currentData.children?' · '+currentData.children+' niño'+(currentData.children===1?'':'s'):'')+' · '+currentData.rooms+' habitación'+(currentData.rooms===1?'':'es')+' · '+totalFiltered+' de '+currentHotels.length+' hotel(es)';
   updateVerifyBar();
+  $('loadMoreBtn').classList.toggle('hidden',totalFiltered<=visibleLimit);
+  $('loadMoreBtn').textContent='Mostrar más hoteles ('+Math.max(0,totalFiltered-visibleLimit)+' restantes)';
 
   if(!filtered.length){
     list.innerHTML='<div class="empty"><strong>No tenemos todavía una tarifa confirmada con ese régimen entre las opciones cargadas.</strong><br>Para evitar precios engañosos, un hotel no entra en este filtro solo porque ofrezca ese plan: necesitamos que la tarifa específica lo confirme. Las primeras opciones se verifican automáticamente. Si buscas otro hotel, puedes consultar su tarifa o pedir a Suncar la cotización exacta.</div>';
@@ -716,7 +817,7 @@ function render(){
   }
 
   list.innerHTML='';
-  filtered.forEach(h=>{
+  visibleHotels.forEach(h=>{
     const ratesForView=currentFilter==='all'?(h.rates||[]):(h.rates||[]).filter(r=>r.plan===currentFilter);
     const card=document.createElement('article');
     card.className='hotel-card';
@@ -774,7 +875,13 @@ function render(){
       '<div class="hotel-top"><div class="hotel-title"><div class="stars">'+esc(stars(h.stars))+'</div><h3>'+esc(h.name)+'</h3><div class="hotel-meta">'+esc(h.location||currentData.destination)+(h.reviews?' · '+esc(Number(h.reviews).toLocaleString('en-US'))+' reseñas':'')+'</div></div>'+
       (h.rating?'<div class="rating">'+esc(h.rating)+' / 5</div>':'')+'</div>'+
       '<div class="amenities">'+(h.amenities||[]).slice(0,4).map(a=>'<span class="amenity">'+esc(amenityLabel(a))+'</span>').join('')+'</div>'+
+      '<div class="hotel-badges">'+
+        (h.manual?'<span class="hotel-badge">Oferta Suncar</span>':'')+
+        (highlights.cheapest===h?'<span class="hotel-badge bestprice">Más económico comprobado</span>':'')+
+        (highlights.top===h?'<span class="hotel-badge toprated">Mejor puntuación</span>':'')+
+      '</div>'+
       '<div class="hotel-meta">'+(h.manual?'Oferta propia de Suncar con prioridad.':'Precio mostrado solo después de comprobar el detalle de habitación.')+'</div>'+
+      '<div class="card-actions"><button class="mini-action save-hotel '+(savedHotels.has(hotelKey(h))?'active':'')+'" type="button">'+(savedHotels.has(hotelKey(h))?'♥ Guardado':'♡ Guardar')+'</button><button class="mini-action compare-hotel '+(compareHotels.has(hotelKey(h))?'active':'')+'" type="button">'+(compareHotels.has(hotelKey(h))?'✓ Comparando':'Comparar')+'</button></div>'+
       '</div><div class="hotel-pricebox">'+
       '<span class="price-label">'+esc(priceLabel)+'</span><div class="amount">'+esc(pricePrimary)+'</div>'+
       (nightPrice?'<div class="night-price">'+esc(nightPrice)+'</div>':'')+
@@ -812,6 +919,10 @@ function render(){
       rates.appendChild(row);
     });
 
+    const saveBtn=body.querySelector('.save-hotel');
+    if(saveBtn)saveBtn.addEventListener('click',()=>toggleSaved(h));
+    const compareBtn=body.querySelector('.compare-hotel');
+    if(compareBtn)compareBtn.addEventListener('click',()=>toggleCompare(h));
     const summaryCta=body.querySelector('.summary-cta');
     if(summaryCta&&!summaryCta.disabled){
       summaryCta.addEventListener('click',()=>{
@@ -832,6 +943,7 @@ function resetFilter(){
 async function searchHotels(){
   detailRun++;
   const d=currentData;
+  visibleLimit=8;
   currentSort='recommended';
   hotelNameQuery='';
   verifiedOnly=false;
@@ -994,20 +1106,25 @@ $('clearBtn').addEventListener('click',()=>{
   resetFilter();
   status('');
   summary.textContent='Haz una búsqueda para ver cómo funcionará el cotizador.';
+  compareHotels.clear();
+  updateCompareTray();
   list.innerHTML='<div class="empty">Haz una búsqueda para ver hoteles, habitaciones, regímenes y tarifas.</div>';
 });
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
   document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
   btn.classList.add('active');
   currentFilter=btn.dataset.filter;
+  visibleLimit=8;
   if(currentData)render();
 }));
 $('hotelSort').addEventListener('change',()=>{
   currentSort=$('hotelSort').value||'recommended';
+  visibleLimit=8;
   if(currentData)render();
 });
 $('hotelNameFilter').addEventListener('input',()=>{
   hotelNameQuery=$('hotelNameFilter').value.trim();
+  visibleLimit=8;
   if(currentData)render();
 });
 $('verifiedOnly').addEventListener('change',()=>{
@@ -1042,6 +1159,12 @@ $('clearResultFilters').addEventListener('click',()=>{
   if(currentData)render();
 });
 $('verifyMoreBtn').addEventListener('click',()=>{if(currentData)void verifyNextRates(false);});
+$('modifySearchBtn').addEventListener('click',()=>document.querySelector('.search-wrap').scrollIntoView({behavior:'smooth',block:'start'}));
+$('loadMoreBtn').addEventListener('click',()=>{visibleLimit+=8;if(currentData)render();});
+$('clearCompareBtn').addEventListener('click',()=>{compareHotels.clear();updateCompareTray();if(currentData)render();});
+$('openCompareBtn').addEventListener('click',()=>{renderCompare();$('compareDialog').showModal();});
+$('closeCompareBtn').addEventListener('click',()=>$('compareDialog').close());
+$('compareDialog').addEventListener('click',e=>{if(e.target===$('compareDialog'))$('compareDialog').close();});
 $('children').addEventListener('input',()=>{
   const n=Number($('children').value||0);
   $('childrenAgesField').classList.toggle('hidden',n===0);
