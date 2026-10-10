@@ -150,11 +150,11 @@ def main():
                 m_through = re.search(r'data-valid-through="([^"]+)"', tag, re.I)
                 if m_expire:
                     value = m_expire.group(1)
-                    if not re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2}:\\d{2}-\\d{2}:\\d{2})?', value):
+                    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}:\d{2}-\d{2}:\d{2})?', value):
                         fail(errors, f"{rel}: data-expire inválido: {value}")
                 if m_through:
                     value = m_through.group(1)
-                    if not re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}', value):
+                    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
                         fail(errors, f"{rel}: data-valid-through inválido: {value}")
 
 
