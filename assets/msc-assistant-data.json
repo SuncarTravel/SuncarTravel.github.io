@@ -1,6 +1,6 @@
 {
-  "version": "20",
-  "updatedAt": "2026-10-07",
+  "version": "2026.10.10a",
+  "updatedAt": "2026-10-10",
   "salesOwner": "Suncar Tours & Travel",
   "whatsapp": "18093161070",
   "policy": {
@@ -163,7 +163,20 @@
         "opera",
         "la romana"
       ],
-      "answer": "Suncar trabaja salidas seleccionadas de MSC Opera desde La Romana. Tenemos ofertas y fechas cargadas para 2026–2027, y cualquier precio o disponibilidad se confirma directamente con Suncar antes de reservar."
+      "answer": "Suncar trabaja salidas seleccionadas de MSC Opera desde La Romana. Tenemos ofertas y fechas cargadas para 2026–2027, y cualquier precio o disponibilidad se confirma directamente con Suncar antes de reservar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo."
+    },
+    {
+      "id": "la-romana-exit-tax",
+      "keywords": [
+        "la romana impuesto",
+        "impuesto salida la romana",
+        "impuesto de salida",
+        "30 dolares la romana",
+        "30 dólares la romana",
+        "salida desde la romana",
+        "salida república dominicana"
+      ],
+      "answer": "Para las salidas de crucero desde La Romana, República Dominicana: Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo."
     },
     {
       "id": "price",
@@ -514,7 +527,7 @@
         "msc opera semana santa",
         "aruba curazao bonaire granada"
       ],
-      "answer": "MSC Opera · Semana Santa 2027 · 22 al 29 de marzo, salida desde La Romana. Ruta: La Romana, Isla Catalina, Aruba, Curazao, Bonaire, Granada y regreso a La Romana. Alta demanda. Hay cabinas individuales con Bebidas Premium + Wi-Fi, opciones de bloqueo de grupo con bebidas + Wi-Fi y tarifas más bajas sin bebidas ni Wi-Fi. Adultos desde US$1,141 p/p en vista al mar triple; 3er pasajero niño US$29 p/p. Propinas US$105 p/p e impuesto de salida RD US$30 p/p, aparte. Las cabinas individuales indicadas están disponibles hasta el 11 de octubre o agotar existencia. Disponibilidad y tarifas pueden cambiar; Suncar confirma antes de reservar."
+      "answer": "MSC Opera · Semana Santa 2027 · 22 al 29 de marzo, salida desde La Romana. Ruta: La Romana, Isla Catalina, Aruba, Curazao, Bonaire, Granada y regreso a La Romana. Alta demanda. Hay cabinas individuales con Bebidas Premium + Wi-Fi, opciones de bloqueo de grupo con bebidas + Wi-Fi y tarifas más bajas sin bebidas ni Wi-Fi. Adultos desde US$1,141 p/p en vista al mar triple; 3er pasajero niño US$29 p/p. Propinas US$105 p/p, aparte. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo. Las cabinas individuales indicadas están disponibles hasta el 11 de octubre o agotar existencia. Disponibilidad y tarifas pueden cambiar; Suncar confirma antes de reservar."
     }
   ],
   "departures": [
@@ -530,7 +543,7 @@
       "nights": 7,
       "route": "La Romana → Isla Catalina → navegación → Bridgetown → Fort-de-France → Pointe-à-Pitre → Road Town (Tortola) → La Romana",
       "suncarPrice": "Desde US$1,962 por cabina para 2 adultos",
-      "inclusions": "Impuestos incluidos, Open Bar Premium Extra, Wi‑Fi Browse 1 dispositivo por persona (2 en total) y crédito a bordo. Propinas aparte.",
+      "inclusions": "Impuestos incluidos, Open Bar Premium Extra, Wi‑Fi Browse 1 dispositivo por persona (2 en total) y crédito a bordo. Propinas aparte. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html#opera-dic14"
     },
     {
@@ -545,7 +558,7 @@
       "nights": 7,
       "route": "La Romana → Isla Catalina → Aruba → Curazao → Bonaire → Granada → La Romana",
       "suncarPrice": "Semana Santa 2027: adultos desde US$1,141 p/p en vista al mar triple sin bebidas ni Wi-Fi; 3er pasajero niño US$29 p/p. También hay opciones con bebidas + Wi-Fi y cabinas individuales con tarifas dinámicas.",
-      "inclusions": "Oferta Suncar de alta demanda. Cabinas individuales indicadas hasta el 11 de octubre o agotar existencia. Opciones de bloqueo de grupo y tarifas más bajas sin bebidas/Wi-Fi. Propinas US$105 p/p e impuesto de salida RD US$30 p/p, aparte. Suncar confirma inventario y precio antes del pago.",
+      "inclusions": "Oferta Suncar de alta demanda. Cabinas individuales indicadas hasta el 11 de octubre o agotar existencia. Opciones de bloqueo de grupo y tarifas más bajas sin bebidas/Wi-Fi. Propinas US$105 p/p, aparte. Suncar confirma inventario y precio antes del pago. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html#semanaSantaOffer"
     },
     {
@@ -560,7 +573,7 @@
       "nights": 7,
       "route": "La Romana → Isla Catalina → Virgin Gorda → Philipsburg → Fort-de-France → St. John's → navegación → La Romana",
       "suncarPrice": "Desde US$2,322 por cabina para 2 adultos",
-      "inclusions": "Impuestos incluidos, Open Bar Premium Extra, Wi‑Fi Browse 1 dispositivo por persona (2 en total) y crédito a bordo. Propinas aparte.",
+      "inclusions": "Impuestos incluidos, Open Bar Premium Extra, Wi‑Fi Browse 1 dispositivo por persona (2 en total) y crédito a bordo. Propinas aparte. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html#opera-may31-2027"
     },
     {
@@ -574,7 +587,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -588,7 +601,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -602,7 +615,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -616,7 +629,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -630,7 +643,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -644,7 +657,7 @@
       "nights": 7,
       "route": "La Romana → Isla Catalina → Virgin Gorda → Fort-de-France → Pointe-à-Pitre → St. John's → La Romana",
       "suncarPrice": "Solo Crucero para 2 adultos: Interior US$1,622 total · Vista al Mar US$2,022 total · Balcón US$3,122 total",
-      "inclusions": "Impuestos portuarios incluidos. Incluye alojamiento, comidas principales, bebidas básicas de autoservicio y entretenimiento. No incluye Open Bar, Wi‑Fi ni crédito a bordo. Reserva US$199 p/p. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo. Tarifas sujetas a cambio y disponibilidad.",
+      "inclusions": "Impuestos portuarios incluidos. Incluye alojamiento, comidas principales, bebidas básicas de autoservicio y entretenimiento. No incluye Open Bar, Wi‑Fi ni crédito a bordo. Reserva US$199 p/p. Tarifas sujetas a cambio y disponibilidad. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html#opera-jun28-2027",
       "end": "2027-07-05"
     },
@@ -659,7 +672,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -673,7 +686,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -687,7 +700,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -701,7 +714,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -715,7 +728,7 @@
       "nights": 7,
       "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
       "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
+      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "internalUrl": "msc-opera.html"
     },
     {
@@ -1525,7 +1538,7 @@
       "nights": 3,
       "route": "La Romana → Isla Catalina → navegación → Bridgetown",
       "publicPriceNote": "Desde US$179 por persona como referencia pública observada para esta salida; Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Viaje de 3 noches con embarque en La Romana y desembarque en Bridgetown. Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "inclusions": "Viaje de 3 noches con embarque en La Romana y desembarque en Bridgetown. Cabina, beneficios y condiciones finales se confirman con Suncar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "verifiedAt": "2026-10-06"
     },
     {
@@ -1780,7 +1793,7 @@
       "nights": 7,
       "route": "La Romana → Isla Catalina → navegación → Bridgetown → Fort-de-France → Pointe-à-Pitre → Road Town (Tortola) → La Romana",
       "publicPriceNote": "Desde US$643 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "verifiedAt": "2026-10-06"
     },
     {
@@ -1795,7 +1808,7 @@
       "nights": 7,
       "route": "La Romana → Isla Catalina → navegación → Bridgetown → Fort-de-France → Pointe-à-Pitre → Road Town (Tortola) → La Romana",
       "publicPriceNote": "Desde US$665 por persona como referencia pública observada para esta fecha; incluye tasas e impuestos en la referencia consultada. Suncar confirma tarifa y disponibilidad.",
-      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar.",
+      "inclusions": "Cabina, beneficios y condiciones finales se confirman con Suncar. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo.",
       "verifiedAt": "2026-10-06"
     },
     {
