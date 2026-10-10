@@ -634,7 +634,7 @@
       "internalUrl": "msc-opera.html"
     },
     {
-      "id": "opera-date-6",
+      "id": "opera-2027-06-28",
       "sourceType": "Suncar",
       "sourceMarket": "Suncar",
       "region": "Caribe",
@@ -642,10 +642,11 @@
       "port": "La Romana",
       "start": "2027-06-28",
       "nights": 7,
-      "route": "Itinerario y tarifa a confirmar con Suncar para esta fecha.",
-      "suncarPrice": "Consultar con Suncar",
-      "inclusions": "Beneficios, cabina, precio y disponibilidad se confirman al cotizar.",
-      "internalUrl": "msc-opera.html"
+      "route": "La Romana → Isla Catalina → Virgin Gorda → Fort-de-France → Pointe-à-Pitre → St. John's → La Romana",
+      "suncarPrice": "Solo Crucero para 2 adultos: Interior US$1,622 total · Vista al Mar US$2,022 total · Balcón US$3,122 total",
+      "inclusions": "Impuestos portuarios incluidos. Incluye alojamiento, comidas principales, bebidas básicas de autoservicio y entretenimiento. No incluye Open Bar, Wi‑Fi ni crédito a bordo. Reserva US$199 p/p. Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo. Tarifas sujetas a cambio y disponibilidad.",
+      "internalUrl": "msc-opera.html#opera-jun28-2027",
+      "end": "2027-07-05"
     },
     {
       "id": "opera-date-7",
