@@ -32,6 +32,7 @@ REQUIRED_FLOW_MARKERS = [
     "const disableActiveFlow=",
     "const prepareTopLevelAction=",
     "let interactionEpoch=0;",
+    "const laRomanaExitTax=",
     "b.dataset.action='main-menu'",
     "addMainMenu();",
     "addSearchExit();",
@@ -103,11 +104,13 @@ def main() -> int:
             raise AssertionError(f"{source}: una nueva búsqueda debe reiniciar pasajeros")
         if "const epoch=prepareTopLevelAction();" not in text or "if(epoch!==interactionEpoch)return;" not in text:
             raise AssertionError(f"{source}: debe ignorar respuestas asíncronas de interacciones antiguas")
+        if "laRomanaExitTaxNote(d)" not in text or "departurePortNote(d)" not in text:
+            raise AssertionError(f"{source}: las salidas desde La Romana deben mostrar automáticamente el impuesto de salida RD")
 
     node_check(WIDGET)
     check_inline_scripts(index)
 
-    expected = "assets/msc-assistant-widget.js?v=20261009a"
+    expected = "assets/msc-assistant-widget.js?v=20261010a"
     for rel in SECONDARY_PAGES:
         page = (ROOT / rel).read_text(encoding="utf-8")
         if expected not in page:

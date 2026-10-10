@@ -75,6 +75,15 @@ if len(DATA.get("knowledge", [])) < 25:
 else:
     print(f"OK: knowledge {len(DATA.get('knowledge', []))} bloques")
 
+EXIT_TAX = "Impuesto de salida de República Dominicana US$30 p/p se agrega a la cuenta a bordo."
+la_romana_departures = [d for d in DATA.get("departures", []) if d.get("port") == "La Romana"]
+missing_exit_tax = [d.get("id", "?") for d in la_romana_departures if EXIT_TAX not in d.get("inclusions", "")]
+if missing_exit_tax:
+    print("FAIL: salidas desde La Romana sin impuesto de salida RD:", ", ".join(missing_exit_tax))
+    failed = True
+else:
+    print(f"OK: impuesto de salida RD presente en todas las salidas La Romana ({len(la_romana_departures)})")
+
 print(f"TOTAL salidas únicas cargadas/derivadas: {len(DEPS)}")
 print("Cobertura MSC crítica inicial: OK" if not failed else "Cobertura MSC crítica inicial: con fallos")
 
