@@ -64,9 +64,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          apex_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.com/)"
-          old_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.github.io/)"
-          echo "suncartravel.com -> $apex_final"
-          echo "suncartravel.github.io -> $old_final"
-          [[ "$apex_final" == https://www.suncartravel.com/* ]]
-          [[ "$old_final" == https://www.suncartravel.com/* ]]
+          ok=0
+          for intento in $(seq 1 60); do
+            apex_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.com/ || true)"
+            old_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.github.io/ || true)"
+            echo "Intento $intento/60"
+            echo "suncartravel.com -> $apex_final"
+            echo "suncartravel.github.io -> $old_final"
+            if [[ "$apex_final" == https://www.suncartravel.com/* ]] && [[ "$old_final" == https://www.suncartravel.com/* ]]; then
+              ok=1
+              break
+            fi
+            sleep 30
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo "Las redirecciones todavía no fuerzan HTTPS correctamente."
+            exit 1
+          fi
