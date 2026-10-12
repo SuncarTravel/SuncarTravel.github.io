@@ -1,6 +1,8 @@
-name = "suncar-flights"
+name = "suncar-flights-api"
 main = "flights-worker.js"
-compatibility_date = "2026-10-01"
+compatibility_date = "2026-10-12"
 
 # La clave SERPAPI_KEY se configura como SECRET en Cloudflare.
 # Nunca la escribas en este archivo ni la subas a GitHub.
+
+keep_vars = true
