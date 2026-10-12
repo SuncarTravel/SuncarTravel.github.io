@@ -1,3 +1,4 @@
+const VERSION = "2026-10-12.1";
 const ALLOWED_ORIGINS = new Set([
   "https://suncartravel.github.io",
   "https://suncartravel.com",
@@ -74,7 +75,12 @@ export default {
     if(request.method!=="GET") return json({message:"Método no permitido."},405,origin);
 
     const reqUrl=new URL(request.url);
-    if(reqUrl.pathname!=="/search" && reqUrl.pathname!=="/") {
+
+    if(reqUrl.pathname==="/" || reqUrl.pathname==="/health") {
+      return json({ok:true,service:"Suncar Flights API",version:VERSION},200,origin);
+    }
+
+    if(reqUrl.pathname!=="/search") {
       return json({message:"Ruta no encontrada."},404,origin);
     }
 
