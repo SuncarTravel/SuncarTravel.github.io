@@ -1,0 +1,72 @@
+name: Validar dominio público
+
+on:
+  workflow_run:
+    workflows: ["Publicar Suncar Travel"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-public-domain
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Esperar DNS, HTTPS y sitio publicado
+        shell: bash
+        run: |
+          set -euo pipefail
+          ok=0
+          for intento in $(seq 1 90); do
+            echo "Intento $intento/90"
+            if curl -fsSL --max-time 25 https://www.suncartravel.com/ -o /tmp/home.html; then
+              if grep -Fq '<link rel="canonical" href="https://www.suncartravel.com/">' /tmp/home.html; then
+                ok=1
+                break
+              fi
+            fi
+            sleep 30
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo "El dominio principal no quedó disponible por HTTPS con el contenido esperado."
+            exit 1
+          fi
+
+      - name: Validar redirecciones del dominio
+        shell: bash
+        run: |
+          set -euo pipefail
+          apex_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.com/)"
+          old_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.github.io/)"
+          echo "suncartravel.com -> $apex_final"
+          echo "suncartravel.github.io -> $old_final"
+          [[ "$apex_final" == https://www.suncartravel.com/* ]]
+          [[ "$old_final" == https://www.suncartravel.com/* ]]
+
+      - name: Validar CORS del buscador de vuelos
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sS --max-time 25 -D /tmp/flights-headers.txt -o /dev/null             -H 'Origin: https://www.suncartravel.com'             https://suncar-flights-api.suncartravel.workers.dev/
+          tr -d '\r' < /tmp/flights-headers.txt | grep -Fiq 'access-control-allow-origin: https://www.suncartravel.com'
+
+      - name: Validar CORS del buscador de hoteles
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sS --max-time 25 -D /tmp/hotels-headers.txt -o /dev/null             -H 'Origin: https://www.suncartravel.com'             https://suncar-hotels-api.suncartravel.workers.dev/health
+          tr -d '\r' < /tmp/hotels-headers.txt | grep -Fiq 'access-control-allow-origin: https://www.suncartravel.com'
+
+      - name: Confirmar archivos SEO públicos
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL --max-time 25 https://www.suncartravel.com/robots.txt | grep -Fq 'Sitemap: https://www.suncartravel.com/sitemap.xml'
+          curl -fsSL --max-time 25 https://www.suncartravel.com/sitemap.xml | grep -Fq '<loc>https://www.suncartravel.com/</loc>'
