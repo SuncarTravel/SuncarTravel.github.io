@@ -95,11 +95,11 @@ def main():
         text = page.read_text(encoding="utf-8")
         if "\ufffd" in text:
             fail(errors, f"{rel}: contiene el carácter de reemplazo U+FFFD")
-        if re.search(r">\\\\n<", text):
+        if ">\\n<" in text:
             fail(errors, f"{rel}: contiene un salto escapado visible entre etiquetas (\\\\n)")
         if "suncartravel.github.io" in text:
             fail(errors, f"{rel}: conserva una referencia obsoleta al dominio temporal de GitHub")
-        canonical_match = re.search(r'<link\\s+[^>]*rel=["\\']canonical["\\'][^>]*href=["\\']([^"\\']+)["\\']', text, re.I)
+        canonical_match = re.search(r"""<link\s+[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']""", text, re.I)
         expected_canonical = "https://www.suncartravel.com/" if rel == "index.html" else f"https://www.suncartravel.com/{rel}"
         if not canonical_match:
             fail(errors, f"{rel}: falta canonical")
