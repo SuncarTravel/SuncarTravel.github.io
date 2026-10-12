@@ -39,23 +39,6 @@ jobs:
             exit 1
           fi
 
-      - name: Diagnosticar endpoints de búsqueda
-        shell: bash
-        run: |
-          set -u
-          for endpoint in \
-            https://suncar-flights-api.suncartravel.workers.dev/ \
-            https://suncar-flights.suncartravel.workers.dev/ \
-            https://suncar-hotels-api.suncartravel.workers.dev/health
-          do
-            echo "=== $endpoint"
-            curl -sS --max-time 25 -D - -o /tmp/backend-body.txt \
-              -H 'Origin: https://www.suncartravel.com' "$endpoint" \
-              | tr -d '\r' \
-              | grep -Ei '^(HTTP/|access-control-allow-origin:|server:|cf-ray:)' || true
-            echo
-          done
-
       - name: Validar CORS del buscador de vuelos
         shell: bash
         run: |
