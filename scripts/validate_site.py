@@ -182,8 +182,8 @@ def main():
             urls = [x.text.strip() for x in root.findall("s:url/s:loc", ns) if x.text]
             if any("/prueba/" in u for u in urls):
                 fail(errors, "sitemap.xml: contiene una URL de prueba")
-            expected = {"https://suncartravel.github.io/"}
-            expected |= {f"https://suncartravel.github.io/{p}" for p in OFFICIAL if p != "index.html"}
+            expected = {"https://www.suncartravel.com/"}
+            expected |= {f"https://www.suncartravel.com/{p}" for p in OFFICIAL if p != "index.html"}
             missing = expected - set(urls)
             if missing:
                 fail(errors, "sitemap.xml: faltan URLs oficiales: " + ", ".join(sorted(missing)))
@@ -191,7 +191,7 @@ def main():
             fail(errors, f"sitemap.xml: XML inválido: {exc}")
 
     robots = (ROOT / "robots.txt").read_text(encoding="utf-8") if (ROOT / "robots.txt").exists() else ""
-    if "https://suncartravel.github.io/sitemap.xml" not in robots:
+    if "https://www.suncartravel.com/sitemap.xml" not in robots:
         fail(errors, "robots.txt: falta la referencia al sitemap")
 
     if errors:

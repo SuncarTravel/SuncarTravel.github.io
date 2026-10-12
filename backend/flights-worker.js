@@ -1,9 +1,11 @@
 const ALLOWED_ORIGINS = new Set([
-  "https://suncartravel.github.io"
+  "https://suncartravel.github.io",
+  "https://suncartravel.com",
+  "https://www.suncartravel.com"
 ]);
 
 const cors = origin => ({
-  "Access-Control-Allow-Origin": ALLOWED_ORIGINS.has(origin) ? origin : "https://suncartravel.github.io",
+  "Access-Control-Allow-Origin": ALLOWED_ORIGINS.has(origin) ? origin : "https://www.suncartravel.com",
   "Access-Control-Allow-Methods": "GET,OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type,Accept",
   "Vary": "Origin",
