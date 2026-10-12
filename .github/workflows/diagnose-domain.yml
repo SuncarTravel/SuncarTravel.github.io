@@ -19,14 +19,17 @@ jobs:
             echo "=== RESOLVER $r / www ==="
             dig +short @$r www.suncartravel.com A || true
             dig +short @$r www.suncartravel.com CNAME || true
+            dig +short @$r www.suncartravel.com AAAA || true
             echo "=== RESOLVER $r / apex ==="
             dig +short @$r suncartravel.com A || true
+            dig +short @$r suncartravel.com AAAA || true
           done
       - name: HTTPS y redirecciones
         shell: bash
         run: |
           set -x
-          curl -I -L --max-time 30 https://www.suncartravel.com/ || true
+          curl -I -L -4 --max-time 30 https://www.suncartravel.com/ || true
+          curl -I -L -6 --max-time 30 https://www.suncartravel.com/ || true
           curl -I -L --max-time 30 https://suncartravel.com/ || true
           curl -I -L --max-time 30 https://suncartravel.github.io/ || true
       - name: Certificado TLS
