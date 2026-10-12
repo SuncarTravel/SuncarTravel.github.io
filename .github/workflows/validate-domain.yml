@@ -39,17 +39,6 @@ jobs:
             exit 1
           fi
 
-      - name: Validar redirecciones del dominio
-        shell: bash
-        run: |
-          set -euo pipefail
-          apex_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.com/)"
-          old_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.github.io/)"
-          echo "suncartravel.com -> $apex_final"
-          echo "suncartravel.github.io -> $old_final"
-          [[ "$apex_final" == https://www.suncartravel.com/* ]]
-          [[ "$old_final" == https://www.suncartravel.com/* ]]
-
       - name: Validar CORS del buscador de vuelos
         shell: bash
         run: |
@@ -70,3 +59,14 @@ jobs:
           set -euo pipefail
           curl -fsSL --max-time 25 https://www.suncartravel.com/robots.txt | grep -Fq 'Sitemap: https://www.suncartravel.com/sitemap.xml'
           curl -fsSL --max-time 25 https://www.suncartravel.com/sitemap.xml | grep -Fq '<loc>https://www.suncartravel.com/</loc>'
+
+      - name: Validar redirecciones del dominio
+        shell: bash
+        run: |
+          set -euo pipefail
+          apex_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.com/)"
+          old_final="$(curl -fsSL --max-time 25 -o /dev/null -w '%{url_effective}' https://suncartravel.github.io/)"
+          echo "suncartravel.com -> $apex_final"
+          echo "suncartravel.github.io -> $old_final"
+          [[ "$apex_final" == https://www.suncartravel.com/* ]]
+          [[ "$old_final" == https://www.suncartravel.com/* ]]
