@@ -1,7 +1,7 @@
 # Buscador de vuelos Suncar — configuración gratuita
 
 ## Arquitectura
-- Página: `/prueba/vuelos.html`
+- Página pública: `/vuelos.html`
 - Backend seguro: Cloudflare Worker `backend/flights-worker.js`
 - Fuente inicial: SerpApi Google Flights
 - Configuración pública del endpoint: `assets/flights-config.js`
@@ -15,13 +15,12 @@
 ## Activación
 1. Crear cuenta gratuita de SerpApi y copiar la API key.
 2. Crear cuenta gratuita de Cloudflare.
-3. Crear un Worker llamado `suncar-flights`.
+3. Crear o actualizar el Worker `suncar-flights-api`.
 4. Pegar el contenido de `backend/flights-worker.js`.
 5. En Settings > Variables and Secrets del Worker, crear un secreto llamado `SERPAPI_KEY`.
 6. Desplegar.
-7. Copiar la URL del Worker, por ejemplo `https://suncar-flights.<cuenta>.workers.dev`.
-8. Colocar esa URL en `assets/flights-config.js`:
-   `window.SUNCAR_FLIGHTS_API = "https://...workers.dev";`
+7. Endpoint activo: `https://suncar-flights-api.suncartravel.workers.dev`.
+8. Confirmar esa URL en `assets/flights-config.js`.
 
 ## Comportamiento
 - El cliente busca dentro de Suncar.
@@ -32,3 +31,8 @@
 
 ## Segundo motor
 La estructura del backend permite añadir otro proveedor más adelante. Se deja desactivado de inicio para mantener costo $0.
+
+## Dominios permitidos
+- `https://www.suncartravel.com` — dominio principal.
+- `https://suncartravel.com` — dominio raíz.
+- `https://suncartravel.github.io` — compatibilidad durante la transición.
