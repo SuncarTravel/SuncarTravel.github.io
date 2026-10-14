@@ -184,8 +184,10 @@ def main():
             text = (ROOT / rel).read_text(encoding="utf-8")
             if f"googletagmanager.com/gtag/js?id={ga_id}" not in text:
                 fail(errors, f"{rel}: falta la etiqueta estándar de Google Analytics")
-            if f"gtag('config', '{ga_id}')" not in text:
+            if f"gtag('config', '{ga_id}'" not in text:
                 fail(errors, f"{rel}: falta la configuración estándar de GA4")
+            if "debug_mode: new URLSearchParams(window.location.search).has('gtm_debug')" not in text:
+                fail(errors, f"{rel}: falta debug_mode condicionado a Tag Assistant")
             head_pos = text.find("<head>")
             tag_pos = text.find(f"googletagmanager.com/gtag/js?id={ga_id}")
             if head_pos == -1 or tag_pos == -1 or tag_pos - head_pos > 900:
