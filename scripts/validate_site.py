@@ -178,12 +178,14 @@ def main():
         if "google analytics" not in privacy:
             fail(errors, "politica-privacidad.html: GA4 está activo pero no se menciona Google Analytics")
         analytics_js = (ROOT / "assets/analytics.js").read_text(encoding="utf-8")
-        if "googletagmanager.com/gtag/js?id=" not in analytics_js:
-            fail(errors, "assets/analytics.js: falta el cargador dinámico de Google Analytics")
+        if "googletagmanager.com/gtag/js?id=" in analytics_js:
+            fail(errors, "assets/analytics.js: no debe cargar gtag.js; la etiqueta estándar vive en cada HTML")
         for rel in OFFICIAL:
             text = (ROOT / rel).read_text(encoding="utf-8")
-            if f"googletagmanager.com/gtag/js?id={ga_id}" in text:
-                fail(errors, f"{rel}: carga GA4 de forma estática además del cargador compartido; puede perder o duplicar eventos")
+            if f"googletagmanager.com/gtag/js?id={ga_id}" not in text:
+                fail(errors, f"{rel}: falta la etiqueta estándar de Google Analytics")
+            if f"window.gtag('config','{ga_id}'" not in text:
+                fail(errors, f"{rel}: falta la configuración estándar de GA4")
 
     sitemap = ROOT / "sitemap.xml"
     if not sitemap.exists():
