@@ -20,20 +20,6 @@
   window.dataLayer=window.dataLayer||[];
   window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
 
-  if(enabled){
-    const existing=[...document.scripts].some(s=>/googletagmanager\.com\/gtag\/js/i.test(s.src||''));
-    if(!existing){
-      const s=document.createElement('script');
-      s.async=true;
-      s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(id);
-      document.head.appendChild(s);
-    }
-    window.gtag('js',new Date());
-    window.gtag('config',id,{
-      send_page_view:true,
-      allow_google_signals:false
-    });
-  }
 
   function cleanText(v){
     return String(v||'').replace(/\s+/g,' ').trim().slice(0,120);
