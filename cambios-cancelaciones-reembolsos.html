@@ -8,7 +8,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-DXBMG87XZW');
+  gtag('config', 'G-DXBMG87XZW', {
+    debug_mode: new URLSearchParams(window.location.search).has('gtm_debug')
+  });
 </script>
 
 <meta charset="utf-8">
