@@ -184,8 +184,12 @@ def main():
             text = (ROOT / rel).read_text(encoding="utf-8")
             if f"googletagmanager.com/gtag/js?id={ga_id}" not in text:
                 fail(errors, f"{rel}: falta la etiqueta estándar de Google Analytics")
-            if f"window.gtag('config','{ga_id}'" not in text:
+            if f"gtag('config', '{ga_id}')" not in text:
                 fail(errors, f"{rel}: falta la configuración estándar de GA4")
+            head_pos = text.find("<head>")
+            tag_pos = text.find(f"googletagmanager.com/gtag/js?id={ga_id}")
+            if head_pos == -1 or tag_pos == -1 or tag_pos - head_pos > 900:
+                fail(errors, f"{rel}: la etiqueta GA4 no está inmediatamente después de <head>")
 
     sitemap = ROOT / "sitemap.xml"
     if not sitemap.exists():
