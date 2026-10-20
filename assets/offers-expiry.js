@@ -69,4 +69,11 @@
 
   window.SuncarOffers={TIME_ZONE,today,deadline,isExpired,prune};
   prune();
+
+  // Mantener las ofertas actualizadas si el visitante deja la página abierta.
+  // La próxima comprobación también se hace al volver a la pestaña.
+  const refreshIfVisible=()=>{if(!document.hidden)prune();};
+  document.addEventListener('visibilitychange',refreshIfVisible);
+  window.addEventListener('pageshow',refreshIfVisible);
+  window.setInterval(refreshIfVisible,60*1000);
 })();
