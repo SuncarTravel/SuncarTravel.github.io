@@ -1,0 +1,41 @@
+name: Retirar ofertas vencidas (Suncar Travel)
+
+on:
+  schedule:
+    # 06:15 en Santo Domingo (UTC-4), todos los días
+    - cron: "15 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: suncar-offers-expiry
+  cancel-in-progress: false
+
+jobs:
+  prune-expired-offers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener sitio publicado
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Eliminar promociones vencidas del HTML
+        run: python scripts/prune_expired_offers.py
+      - name: Publicar cambios si hay ofertas vencidas
+        shell: bash
+        run: |
+          if git diff --quiet -- index.html ofertas.html; then
+            echo "No hay ofertas vencidas pendientes."
+            exit 0
+          fi
+          git config user.name "suncar-ofertas-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html ofertas.html
+          git commit -m "Retirar ofertas vencidas automáticamente"
+          git push
