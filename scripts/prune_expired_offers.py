@@ -14,8 +14,8 @@ TZ = ZoneInfo("America/Santo_Domingo")
 PAGES = ("index.html", "ofertas.html", "msc-opera.html")
 CARD = re.compile(r'<article\b[^>]*\bclass=["\'][^"\']*\blimited-offer\b[^"\']*["\'][^>]*>[\s\S]*?</article>\s*', re.I)
 ATTRIBUTE = re.compile(r'\b(data-expire|data-valid-through|data-status)=["\']([^"\']+)["\']', re.I)
-DIV_OPEN = re.compile(r'<div\\b[^>]*\\bclass=["\\\'][^"\\\']*\\blimited-offer\\b[^"\\\']*["\\\'][^>]*>', re.I)
-DIV_TAG = re.compile(r'</?div\\b[^>]*>', re.I)
+DIV_OPEN = re.compile(r"<div\b[^>]*\bclass=[\"'][^\"']*\blimited-offer\b[^\"']*[\"'][^>]*>", re.I)
+DIV_TAG = re.compile(r"</?div\b[^>]*>", re.I)
 
 
 
