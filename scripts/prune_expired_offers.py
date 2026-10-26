@@ -11,9 +11,12 @@ from zoneinfo import ZoneInfo
 import re
 
 TZ = ZoneInfo("America/Santo_Domingo")
-PAGES = ("index.html", "ofertas.html")
+PAGES = ("index.html", "ofertas.html", "msc-opera.html")
 CARD = re.compile(r'<article\b[^>]*\bclass=["\'][^"\']*\blimited-offer\b[^"\']*["\'][^>]*>[\s\S]*?</article>\s*', re.I)
 ATTRIBUTE = re.compile(r'\b(data-expire|data-valid-through|data-status)=["\']([^"\']+)["\']', re.I)
+DIV_OPEN = re.compile(r'<div\\b[^>]*\\bclass=["\\\'][^"\\\']*\\blimited-offer\\b[^"\\\']*["\\\'][^>]*>', re.I)
+DIV_TAG = re.compile(r'</?div\\b[^>]*>', re.I)
+
 
 
 def expired(card: str, now: datetime) -> bool:
@@ -46,6 +49,31 @@ def expired(card: str, now: datetime) -> bool:
         return False
 
 
+
+def prune_expired_divs(source: str, now: datetime) -> tuple[str, list[str]]:
+    """Quita bloques div.limited-offer con sus subelementos anidados."""
+    chunks = []
+    names = []
+    cursor = 0
+    for opening in DIV_OPEN.finditer(source):
+        if opening.start() < cursor or not expired(opening.group(0), now):
+            continue
+        depth = 1
+        closing_end = None
+        for tag in DIV_TAG.finditer(source, opening.end()):
+            depth += -1 if tag.group(0).startswith("</") else 1
+            if depth == 0:
+                closing_end = tag.end()
+                break
+        if closing_end is None:
+            raise ValueError("Bloque div.limited-offer sin cierre, no se elimina nada")
+        chunks.append(source[cursor:opening.start()])
+        cursor = closing_end
+        names.append("Bloque promocional caducado")
+    chunks.append(source[cursor:])
+    return "".join(chunks), names
+
+
 def run() -> None:
     now = datetime.now(TZ)
     removed_total = 0
@@ -62,6 +90,8 @@ def run() -> None:
             return ""
 
         modified = CARD.sub(prune, original)
+        modified, div_removed = prune_expired_divs(modified, now)
+        removed.extend(div_removed)
         if modified != original:
             path.write_text(modified, encoding="utf-8")
         removed_total += len(removed)
