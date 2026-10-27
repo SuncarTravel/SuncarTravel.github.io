@@ -201,10 +201,21 @@ const tripDays=(a,b)=>{
   if(end<start)return 0;
   return Math.round((end-start)/86400000)+1;
 };
-const maxAge=txt=>{
-  const nums=String(txt||'').match(/\d+/g)||[];
-  return nums.length?Math.max(...nums.map(Number)):null;
+const parseAges=txt=>{
+  const values=String(txt||'').trim().split(/[,;\s]+/);
+  return values.length&&values.every(v=>/^\d+$/.test(v))?values.map(Number):[];
 };
+const maxAge=txt=>{
+  const ages=parseAges(txt);
+  return ages.length?Math.max(...ages):null;
+};
+function validateAges(){
+  const field=form.elements.edades;
+  const ages=parseAges(field.value);
+  const valid=ages.length===Number(form.elements.pasajeros.value);
+  field.setCustomValidity(valid?'':'Indica una edad entera no negativa por cada pasajero, separada por comas.');
+  return valid;
+}
 
 function updateEstimate(){
   const f=new FormData(form);
@@ -218,6 +229,7 @@ function updateEstimate(){
 
   estimateGrid.innerHTML='';
   estimateBox.classList.remove('show');
+  if(!validateAges())return;
   if(!destino||!salida||!regreso||!pasajeros)return;
 
   estimateBox.classList.add('show');
@@ -252,17 +264,20 @@ function updateEstimate(){
 }
 
 document.getElementById('calcEstimate')?.addEventListener('click',()=>{
+  validateAges();
   if(!form.reportValidity()) return;
   updateEstimate();
   estimateBox.scrollIntoView({behavior:'smooth',block:'center'});
 });
 
 ['change','input'].forEach(ev=>form.addEventListener(ev,()=>{
+  validateAges();
   if(estimateBox.classList.contains('show')) updateEstimate();
 }));
 
 form?.addEventListener('submit',e=>{
   e.preventDefault();
+  validateAges();
   if(!e.currentTarget.reportValidity()) return;
   updateEstimate();
   const f=new FormData(e.currentTarget);
@@ -314,5 +329,5 @@ form?.addEventListener('submit',e=>{
   window.SuncarAnalytics?.track('whatsapp_click',{service:'seguros',action:'solicitud'});
  window.open(SuncarWhatsApp.url('18093161070',lines.join('\n')),'_blank');
 });
-</script><script defer src="assets/msc-assistant-widget.js?v=20261010a"></script><script defer src="assets/site-shell.js?v=20261008c"></script>
+</script><script defer src="assets/msc-assistant-widget.js?v=20261027b"></script><script defer src="assets/site-shell.js?v=20261008c"></script>
 </body></html>
