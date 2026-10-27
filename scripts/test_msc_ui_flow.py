@@ -110,7 +110,7 @@ def main() -> int:
     node_check(WIDGET)
     check_inline_scripts(index)
 
-    expected = "assets/msc-assistant-widget.js?v=20261010a"
+    expected = "assets/msc-assistant-widget.js?v=20261027b"
     for rel in SECONDARY_PAGES:
         page = (ROOT / rel).read_text(encoding="utf-8")
         if expected not in page:
