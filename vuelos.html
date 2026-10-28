@@ -61,7 +61,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 </div>
 <input type="hidden" name="trip" id="tripType" value="roundtrip">
 <div class="formgrid">
-<div class="field wide"><label>Origen</label><div class="airport-wrap"><input name="origin" id="origin" autocomplete="off" maxlength="100" placeholder="Escribe ciudad o aeropuerto: Santo Domingo, Miami, Madrid..." required><div class="airport-suggestions" id="originSuggestions"></div></div><span class="helper">Busca por ciudad, aeropuerto o código IATA. El listado consulta aeropuertos de todo el mundo.</span></div>
+<div class="field wide"><label>Origen</label><div class="airport-wrap"><input name="origin" id="origin" autocomplete="off" maxlength="100" placeholder="Escribe ciudad o aeropuerto: Santo Domingo, Miami, Madrid..." required><div class="airport-suggestions" id="originSuggestions"></div></div><span class="helper">Busca por ciudad, aeropuerto o código IATA. Catálogo mundial de aeropuertos con código IATA.</span></div>
 <div class="field wide"><label>Destino</label><div class="airport-wrap"><input name="destination" id="destination" autocomplete="off" maxlength="100" placeholder="Escribe ciudad o aeropuerto: Nueva York, París, Bogotá..." required><div class="airport-suggestions" id="destinationSuggestions"></div></div><span class="helper">Puedes elegir cualquier aeropuerto internacional disponible.</span></div>
 <div class="field"><label>Fecha de ida</label><input type="date" name="outbound" id="outbound" required></div>
 <div class="field" id="returnWrap"><label>Fecha de regreso</label><input type="date" name="return" id="returnDate" required></div>
@@ -95,6 +95,7 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 <footer><div class="container">Suncar Tours & Travel · Santo Domingo · 809-316-1070</div></footer>
 <a class="wa" target="_blank" rel="noopener" href="https://wa.me/18093161070">WhatsApp</a>
 
+<script src="assets/airports.js?v=20261028a"></script>
 <script>
 
 const API='https://suncar-flights-api.suncartravel.workers.dev';
@@ -117,11 +118,7 @@ function hideStatus(){
   statusBox.className='status';
   statusBox.textContent='';
 }
-function cleanIata(value){
-  const s=String(value||'').trim().toUpperCase();
-  const m=s.match(/^([A-Z]{3})/);
-  return m ? m[1] : '';
-}
+function cleanIata(value){ return SuncarAirports.cleanIata(value); }
 function fmtDate(value){
   return value ? new Date(value+'T12:00:00').toLocaleDateString('es-DO',{day:'numeric',month:'long',year:'numeric'}) : '';
 }
@@ -139,85 +136,8 @@ function safeHttpUrl(value){
   }catch(e){return ''}
 }
 
-async function searchAirports(term){
-  const url='https://autocomplete.travelpayouts.com/places2?locale=es&types%5B%5D=airport&term='+encodeURIComponent(term);
-  const controller=new AbortController();
-  const timer=setTimeout(()=>controller.abort(),8000);
-  try{
-    const res=await fetch(url,{mode:'cors',signal:controller.signal});
-    if(!res.ok) throw new Error('airport lookup failed');
-    const data=await res.json();
-    return Array.isArray(data)?data:[];
-  }finally{
-    clearTimeout(timer);
-  }
-}
-
-function setupAirportAutocomplete(inputId,boxId){
-  const input=document.getElementById(inputId);
-  const box=document.getElementById(boxId);
-  let timer=null;
-  let requestId=0;
-
-  function close(){
-    box.classList.remove('show');
-    box.innerHTML='';
-  }
-
-  input.addEventListener('input',function(){
-    clearTimeout(timer);
-    const term=input.value.trim();
-    if(term.length<2){
-      close();
-      return;
-    }
-    const current=++requestId;
-    timer=setTimeout(async function(){
-      box.innerHTML='<div class="airport-empty">Buscando aeropuertos…</div>';
-      box.classList.add('show');
-      try{
-        const items=(await searchAirports(term)).filter(function(x){return x&&x.code;}).slice(0,12);
-        if(current!==requestId) return;
-        box.innerHTML='';
-        if(!items.length){
-          box.innerHTML='<div class="airport-empty">No encontré sugerencias. Puedes escribir directamente el código IATA, por ejemplo SDQ, JFK, MAD, NRT o DXB.</div>';
-          return;
-        }
-        items.forEach(function(x){
-          const btn=document.createElement('button');
-          btn.type='button';
-          btn.className='airport-option';
-          const airportName=x.name||'Aeropuerto';
-          const city=x.city_name||x.city_code||'';
-          const country=x.country_name||x.country_code||'';
-          const strong=document.createElement('strong');
-          strong.textContent=String(x.code||'')+' - '+String(airportName||'Aeropuerto');
-          const meta=document.createElement('span');
-          meta.textContent=[city,country].filter(Boolean).map(String).join(' · ');
-          btn.append(strong,meta);
-          btn.addEventListener('click',function(){
-            input.value=x.code+' - '+airportName;
-            close();
-          });
-          box.appendChild(btn);
-        });
-      }catch(error){
-        if(current!==requestId) return;
-        box.innerHTML='<div class="airport-empty">No pude cargar sugerencias ahora. Puedes escribir cualquier código IATA de 3 letras directamente.</div>';
-      }
-    },300);
-  });
-
-  input.addEventListener('focus',function(){
-    if(box.innerHTML) box.classList.add('show');
-  });
-  document.addEventListener('click',function(e){
-    if(!input.parentElement.contains(e.target)) close();
-  });
-}
-
-setupAirportAutocomplete('origin','originSuggestions');
-setupAirportAutocomplete('destination','destinationSuggestions');
+SuncarAirports.setup('origin','originSuggestions');
+SuncarAirports.setup('destination','destinationSuggestions');
 
 document.querySelectorAll('.trip-tab').forEach(function(btn){
   btn.addEventListener('click',function(){

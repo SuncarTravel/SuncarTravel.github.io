@@ -504,6 +504,7 @@ body?.addEventListener('click',async e=>{const b=e.target.closest('button[data-q
 const mb=document.getElementById('menuButton'),nav=document.getElementById('navlinks');mb?.addEventListener('click',()=>{const open=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(open));});document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{const item=b.parentElement,open=!item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-q')?.setAttribute('aria-expanded','false');});item.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open));b.querySelector('span').textContent=open?'−':'＋';}));
 </script>
+<script src="assets/airports.js?v=20261028a"></script>
 <script>
 
 
@@ -527,11 +528,7 @@ function hideStatus(){
   statusBox.className='status';
   statusBox.textContent='';
 }
-function cleanIata(value){
-  const s=String(value||'').trim().toUpperCase();
-  const m=s.match(/^([A-Z]{3})/);
-  return m ? m[1] : '';
-}
+function cleanIata(value){ return SuncarAirports.cleanIata(value); }
 function fmtDate(value){
   return value ? new Date(value+'T12:00:00').toLocaleDateString('es-DO',{day:'numeric',month:'long',year:'numeric'}) : '';
 }
@@ -549,85 +546,8 @@ function safeHttpUrl(value){
   }catch(e){return ''}
 }
 
-async function searchAirports(term){
-  const url='https://autocomplete.travelpayouts.com/places2?locale=es&types%5B%5D=airport&term='+encodeURIComponent(term);
-  const controller=new AbortController();
-  const timer=setTimeout(()=>controller.abort(),8000);
-  try{
-    const res=await fetch(url,{mode:'cors',signal:controller.signal});
-    if(!res.ok) throw new Error('airport lookup failed');
-    const data=await res.json();
-    return Array.isArray(data)?data:[];
-  }finally{
-    clearTimeout(timer);
-  }
-}
-
-function setupAirportAutocomplete(inputId,boxId){
-  const input=document.getElementById(inputId);
-  const box=document.getElementById(boxId);
-  let timer=null;
-  let requestId=0;
-
-  function close(){
-    box.classList.remove('show');
-    box.innerHTML='';
-  }
-
-  input.addEventListener('input',function(){
-    clearTimeout(timer);
-    const term=input.value.trim();
-    if(term.length<2){
-      close();
-      return;
-    }
-    const current=++requestId;
-    timer=setTimeout(async function(){
-      box.innerHTML='<div class="airport-empty">Buscando aeropuertos…</div>';
-      box.classList.add('show');
-      try{
-        const items=(await searchAirports(term)).filter(function(x){return x&&x.code;}).slice(0,12);
-        if(current!==requestId) return;
-        box.innerHTML='';
-        if(!items.length){
-          box.innerHTML='<div class="airport-empty">No encontré sugerencias. Puedes escribir directamente el código IATA, por ejemplo SDQ, JFK, MAD, NRT o DXB.</div>';
-          return;
-        }
-        items.forEach(function(x){
-          const btn=document.createElement('button');
-          btn.type='button';
-          btn.className='airport-option';
-          const airportName=x.name||'Aeropuerto';
-          const city=x.city_name||x.city_code||'';
-          const country=x.country_name||x.country_code||'';
-          const strong=document.createElement('strong');
-          strong.textContent=String(x.code||'')+' - '+String(airportName||'Aeropuerto');
-          const meta=document.createElement('span');
-          meta.textContent=[city,country].filter(Boolean).map(String).join(' · ');
-          btn.append(strong,meta);
-          btn.addEventListener('click',function(){
-            input.value=x.code+' - '+airportName;
-            close();
-          });
-          box.appendChild(btn);
-        });
-      }catch(error){
-        if(current!==requestId) return;
-        box.innerHTML='<div class="airport-empty">No pude cargar sugerencias ahora. Puedes escribir cualquier código IATA de 3 letras directamente.</div>';
-      }
-    },300);
-  });
-
-  input.addEventListener('focus',function(){
-    if(box.innerHTML) box.classList.add('show');
-  });
-  document.addEventListener('click',function(e){
-    if(!input.parentElement.contains(e.target)) close();
-  });
-}
-
-setupAirportAutocomplete('origin','originSuggestions');
-setupAirportAutocomplete('destination','destinationSuggestions');
+SuncarAirports.setup('origin','originSuggestions');
+SuncarAirports.setup('destination','destinationSuggestions');
 
 document.querySelectorAll('.trip-tab').forEach(function(btn){
   btn.addEventListener('click',function(){
