@@ -4,5 +4,8 @@ compatibility_date = "2026-10-07"
 workers_dev = true
 keep_vars = true
 
+# Isolated branch previews; production secrets are not inherited.
+previews = { }
+
 [observability]
 enabled = true
