@@ -11,10 +11,10 @@ from zoneinfo import ZoneInfo
 import re
 
 TZ = ZoneInfo("America/Santo_Domingo")
-PAGES = ("index.html", "ofertas.html", "msc-opera.html")
+PAGES = ("index.html", "ofertas.html", "msc-opera.html", "hoteles.html", "paquetes.html")
 CARD = re.compile(r'<article\b[^>]*\bclass=["\'][^"\']*\blimited-offer\b[^"\']*["\'][^>]*>[\s\S]*?</article>\s*', re.I)
 ATTRIBUTE = re.compile(r'\b(data-expire|data-valid-through|data-status)=["\']([^"\']+)["\']', re.I)
-DIV_OPEN = re.compile(r"<div\b[^>]*\bclass=[\"'][^\"']*\blimited-offer\b[^\"']*[\"'][^>]*>", re.I)
+DIV_OPEN = re.compile(r'<div\b(?=[^>]*\b(?:data-expire|data-valid-through)=)[^>]*>', re.I)
 DIV_TAG = re.compile(r"</?div\b[^>]*>", re.I)
 
 
@@ -51,7 +51,7 @@ def expired(card: str, now: datetime) -> bool:
 
 
 def prune_expired_divs(source: str, now: datetime) -> tuple[str, list[str]]:
-    """Quita bloques div.limited-offer con sus subelementos anidados."""
+    """Quita tarjetas y bloques promocionales div con caducidad, incluyendo anidados."""
     chunks = []
     names = []
     cursor = 0
