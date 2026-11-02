@@ -74,9 +74,21 @@ def prune_expired_divs(source: str, now: datetime) -> tuple[str, list[str]]:
     return "".join(chunks), names
 
 
+def refresh_sitemap_xml(xml: str, changed: list[str], updated: str) -> str:
+    """Actualiza lastmod solo para las páginas cuyo HTML realmente cambió."""
+    for filename in changed:
+        url = "https://www.suncartravel.com/" if filename == "index.html" else "https://www.suncartravel.com/" + filename
+        pattern = re.compile(r"(<loc>" + re.escape(url) + r"</loc>\\s*<lastmod>)([^<]+)(</lastmod>)")
+        xml, count = pattern.subn(lambda m: m.group(1) + updated + m.group(3), xml)
+        if count != 1:
+            raise ValueError(f"Falta entrada única en sitemap.xml para {filename}")
+    return xml
+
+
 def run() -> None:
     now = datetime.now(TZ)
     removed_total = 0
+    changed = []
     for filename in PAGES:
         path = Path(__file__).resolve().parents[1] / filename
         original = path.read_text(encoding="utf-8")
@@ -94,8 +106,15 @@ def run() -> None:
         removed.extend(div_removed)
         if modified != original:
             path.write_text(modified, encoding="utf-8")
+            changed.append(filename)
         removed_total += len(removed)
         print(f"{filename}: {len(removed)} ofertas retiradas", *[f"  - {n}" for n in removed], sep="\n")
+    if changed:
+        sitemap = Path(__file__).resolve().parents[1] / "sitemap.xml"
+        original_xml = sitemap.read_text(encoding="utf-8")
+        new_xml = refresh_sitemap_xml(original_xml, changed, now.date().isoformat())
+        if new_xml != original_xml:
+            sitemap.write_text(new_xml, encoding="utf-8")
     print(f"TOTAL: {removed_total} retiradas a las {now.isoformat()}")
 
 
