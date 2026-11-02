@@ -39,6 +39,16 @@ class OfferExpiryTests(unittest.TestCase):
         self.assertIn("BLOQUEO DE GRUPO", changed)
         self.assertTrue(changed.startswith("<section>"))
 
+    def test_expired_hotel_card_removed(self):
+        html = ('<div class="card" data-expire="2026-10-23T00:00:00-04:00">'
+                '<div class="tag">Hotel</div><h3>Grand Palladium</h3></div>'
+                '<div class="card" data-expire="2026-11-06T00:00:00-04:00">'
+                '<h3>BlueBay</h3></div>')
+        changed, removed = prune_expired_divs(html, NOW)
+        self.assertEqual(len(removed), 1)
+        self.assertNotIn("Grand Palladium", changed)
+        self.assertIn("BlueBay", changed)
+
     def test_article_selector_matches_cards(self):
         html = '<article class="offer-card limited-offer" data-expire="2026-10-23"><div>x</div></article>'
         self.assertEqual(len(CARD.findall(html)), 1)
