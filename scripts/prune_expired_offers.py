@@ -78,7 +78,7 @@ def refresh_sitemap_xml(xml: str, changed: list[str], updated: str) -> str:
     """Actualiza lastmod solo para las páginas cuyo HTML realmente cambió."""
     for filename in changed:
         url = "https://www.suncartravel.com/" if filename == "index.html" else "https://www.suncartravel.com/" + filename
-        pattern = re.compile(r"(<loc>" + re.escape(url) + r"</loc>\\s*<lastmod>)([^<]+)(</lastmod>)")
+        pattern = re.compile(r"(<loc>" + re.escape(url) + r"</loc>\s*<lastmod>)([^<]+)(</lastmod>)")
         xml, count = pattern.subn(lambda m: m.group(1) + updated + m.group(3), xml)
         if count != 1:
             raise ValueError(f"Falta entrada única en sitemap.xml para {filename}")
