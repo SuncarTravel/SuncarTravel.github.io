@@ -1,7 +1,7 @@
 import unittest
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from prune_expired_offers import expired, prune_expired_divs, CARD
+from prune_expired_offers import expired, prune_expired_divs, refresh_sitemap_xml, CARD
 
 TZ = ZoneInfo("America/Santo_Domingo")
 NOW = datetime(2026, 10, 26, 12, 0, tzinfo=TZ)
@@ -48,6 +48,15 @@ class OfferExpiryTests(unittest.TestCase):
         self.assertEqual(len(removed), 1)
         self.assertNotIn("Grand Palladium", changed)
         self.assertIn("BlueBay", changed)
+
+    def test_sitemap_lastmod_updates_only_changed_page(self):
+        xml = ('<url><loc>https://www.suncartravel.com/hoteles.html</loc>'
+               '<lastmod>2026-10-08</lastmod></url>'
+               '<url><loc>https://www.suncartravel.com/ofertas.html</loc>'
+               '<lastmod>2026-10-08</lastmod></url>')
+        changed = refresh_sitemap_xml(xml, ["hoteles.html"], "2026-11-02")
+        self.assertIn("hoteles.html</loc><lastmod>2026-11-02", changed)
+        self.assertIn("ofertas.html</loc><lastmod>2026-10-08", changed)
 
     def test_article_selector_matches_cards(self):
         html = '<article class="offer-card limited-offer" data-expire="2026-10-23"><div>x</div></article>'
