@@ -32,12 +32,12 @@ jobs:
       - name: Publicar cambios si hay ofertas vencidas
         shell: bash
         run: |
-          if git diff --quiet -- index.html ofertas.html msc-opera.html; then
+          if git diff --quiet -- index.html ofertas.html msc-opera.html hoteles.html paquetes.html; then
             echo "No hay ofertas vencidas pendientes."
             exit 0
           fi
           git config user.name "suncar-ofertas-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html ofertas.html msc-opera.html
+          git add index.html ofertas.html msc-opera.html hoteles.html paquetes.html
           git commit -m "Retirar ofertas vencidas automáticamente"
           git push
