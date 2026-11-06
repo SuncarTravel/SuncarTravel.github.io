@@ -53,15 +53,15 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 </div></div></section>
 <section id="cotizar-hotel"><div class="container"><h2>Busca tu hotel con Suncar</h2><p class="lead">Completa una sola búsqueda. No mostramos tarifas automáticas dudosas: Suncar revisa opciones disponibles y te confirma el precio real antes de reservar.</p>
 <form class="formbox" id="quoteForm"><div class="formgrid">
-<div class="field"><label>Destino o zona</label><input name="zona" required placeholder="Ej. Punta Cana, Miami, Madrid"></div>
-<div class="field"><label>Hotel (opcional)</label><input name="hotel" placeholder="Ej. Hyatt Ziva"></div>
-<div class="field"><label>Fecha de entrada</label><input id="hotelEntrada" type="date" name="entrada" required></div>
-<div class="field"><label>Fecha de salida</label><input id="hotelSalida" type="date" name="salida" required></div>
-<div class="field"><label>Adultos</label><input type="number" min="1" max="12" value="2" name="adultos" required></div>
-<div class="field"><label>Niños / edades</label><input name="ninos" placeholder="Ej. 2 niños: 5 y 9 años"></div>
-<div class="field"><label>Habitaciones</label><input type="number" min="1" max="6" value="1" name="habitaciones" required></div>
-<div class="field"><label>Régimen preferido</label><select name="regimen"><option>Cualquiera / comparar</option><option>Solo alojamiento</option><option>Desayuno incluido</option><option>Media pensión</option><option>Pensión completa</option><option>Todo incluido</option></select></div>
-<div class="field full"><label>Preferencias / presupuesto</label><textarea name="preferencias" placeholder="Solo adultos, frente a la playa, presupuesto aproximado, tipo de habitación..."></textarea></div>
+<div class="field"><label for="hoteles-zona">Destino o zona</label><input id="hoteles-zona" name="zona" required placeholder="Ej. Punta Cana, Miami, Madrid"></div>
+<div class="field"><label for="hoteles-hotel">Hotel (opcional)</label><input id="hoteles-hotel" name="hotel" placeholder="Ej. Hyatt Ziva"></div>
+<div class="field"><label for="hotelEntrada">Fecha de entrada</label><input id="hotelEntrada" type="date" name="entrada" required></div>
+<div class="field"><label for="hotelSalida">Fecha de salida</label><input id="hotelSalida" type="date" name="salida" required></div>
+<div class="field"><label for="hoteles-adultos">Adultos</label><input id="hoteles-adultos" type="number" min="1" max="12" value="2" name="adultos" required></div>
+<div class="field"><label for="hoteles-ninos">Niños / edades</label><input id="hoteles-ninos" name="ninos" placeholder="Ej. 2 niños: 5 y 9 años"></div>
+<div class="field"><label for="hoteles-habitaciones">Habitaciones</label><input id="hoteles-habitaciones" type="number" min="1" max="6" value="1" name="habitaciones" required></div>
+<div class="field"><label for="hoteles-regimen">Régimen preferido</label><select id="hoteles-regimen" name="regimen"><option>Cualquiera / comparar</option><option>Solo alojamiento</option><option>Desayuno incluido</option><option>Media pensión</option><option>Pensión completa</option><option>Todo incluido</option></select></div>
+<div class="field full"><label for="hoteles-preferencias">Preferencias / presupuesto</label><textarea id="hoteles-preferencias" name="preferencias" placeholder="Solo adultos, frente a la playa, presupuesto aproximado, tipo de habitación..."></textarea></div>
 </div>
 <div class="hotel-trust"><span>✓ Cotización personalizada</span><span>✓ Precio confirmado antes de reservar</span><span>✓ Atención por WhatsApp</span></div>
 <div class="hotel-quote-note">La solicitud no reserva ni genera cargos. Suncar confirma disponibilidad, impuestos, régimen, condiciones y precio final antes de cualquier pago.</div>

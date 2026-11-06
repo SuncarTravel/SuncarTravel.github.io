@@ -151,11 +151,11 @@ footer{background:#031f35;color:#dcebf3;padding:28px 0;margin-top:20px}.wa{posit
 </div><p class="note" style="margin-top:16px">Las coberturas, límites, elegibilidad y precio dependen de la cotización vigente y de los términos y condiciones del proveedor.</p></div></section>
 <section><div class="container"><h2>Cotizar seguro</h2><p class="lead">Completa los mismos datos básicos que necesita el sistema: destino, fechas, cantidad de pasajeros y edades.</p>
 <form class="formbox" id="quoteForm"><div class="formgrid">
-<div class="field"><label>Origen</label><input name="origen" value="República Dominicana" required></div>
-<div class="field"><label>Destino</label><select name="destino" required><option value="">Selecciona</option><option>Mundial</option><option>Europa</option><option>Local</option></select></div>
-<div class="field"><label>Fecha de salida</label><input type="date" name="salida" required></div><div class="field"><label>Fecha de regreso</label><input type="date" name="regreso" required></div>
-<div class="field"><label>Cantidad de pasajeros</label><input type="number" min="1" max="9" name="pasajeros" required></div><div class="field"><label>Edades de los pasajeros</label><input name="edades" required placeholder="Ej. 45, 42, 12"></div>
-<div class="field full"><label>Comentarios</label><textarea name="comentarios" placeholder="Ej. Viaje en crucero, deseo comparar todos los planes..."></textarea></div>
+<div class="field"><label for="seguros-viaje-origen">Origen</label><input id="seguros-viaje-origen" name="origen" value="República Dominicana" required></div>
+<div class="field"><label for="seguros-viaje-destino">Destino</label><select id="seguros-viaje-destino" name="destino" required><option value="">Selecciona</option><option>Mundial</option><option>Europa</option><option>Local</option></select></div>
+<div class="field"><label for="seguros-viaje-salida">Fecha de salida</label><input id="seguros-viaje-salida" type="date" name="salida" required></div><div class="field"><label for="seguros-viaje-regreso">Fecha de regreso</label><input id="seguros-viaje-regreso" type="date" name="regreso" required></div>
+<div class="field"><label for="seguros-viaje-pasajeros">Cantidad de pasajeros</label><input id="seguros-viaje-pasajeros" type="number" min="1" max="9" name="pasajeros" required></div><div class="field"><label for="seguros-viaje-edades">Edades de los pasajeros</label><input id="seguros-viaje-edades" name="edades" required placeholder="Ej. 45, 42, 12"></div>
+<div class="field full"><label for="seguros-viaje-comentarios">Comentarios</label><textarea id="seguros-viaje-comentarios" name="comentarios" placeholder="Ej. Viaje en crucero, deseo comparar todos los planes..."></textarea></div>
 </div>
 <div class="actions"><button class="btn orange" type="button" id="calcEstimate">Ver precio estimado</button></div>
 <div class="estimate-box" id="estimateBox">
