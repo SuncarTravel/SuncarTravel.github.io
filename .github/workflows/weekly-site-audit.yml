@@ -1,0 +1,43 @@
+name: Auditoria publica semanal Suncar Travel
+
+on:
+  schedule:
+    # Lunes 09:30 en Santo Domingo (UTC-4)
+    - cron: "30 13 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/weekly-site-audit.yml"
+      - "scripts/site_healthcheck.py"
+
+permissions:
+  contents: read
+
+jobs:
+  check-public-site:
+    name: HTTPS DNS y contenido publico
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probar sistema de vencimiento de ofertas
+        run: python -m unittest discover -s scripts -p "test_*.py"
+      - name: Verificar DNS HTTPS redirecciones ofertas y recursos
+        shell: bash
+        run: |
+          python scripts/site_healthcheck.py | tee site-healthcheck-result.txt
+      - name: Guardar informe en el resumen del workflow
+        if: always()
+        shell: bash
+        run: |
+          if [ -f site-healthcheck-result.txt ]; then
+            cat site-healthcheck-result.txt >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "La auditoria no produjo resultados: revisar el registro de errores." >> "$GITHUB_STEP_SUMMARY"
+          fi
