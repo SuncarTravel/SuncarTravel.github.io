@@ -12,6 +12,7 @@ import sys
 import time
 from datetime import date, datetime, timezone
 from pathlib import Path
+from urllib.parse import unquote
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
@@ -137,6 +138,47 @@ def site_asset(path):
     return f"HTTP {status}, {len(body)} bytes leídos"
 
 
+
+def check_local_links():
+    """Revisa que los href/src relativos existentes apunten a archivos presentes."""
+    root = Path(__file__).resolve().parents[1]
+    bad = []
+    checked = set()
+    for file in PAGES:
+        source = root / (file or "index.html")
+        html = source.read_text(encoding="utf-8")
+        for match in re.finditer(r"\b(?:href|src)=[\"']([^\"']+)[\"']", html, flags=re.I):
+            raw = match.group(1).strip()
+            if not raw or raw.startswith(("#", "//")):
+                continue
+            parsed = urlsplit(raw)
+            if parsed.scheme or parsed.netloc:
+                continue
+            relative = unquote(parsed.path).lstrip("/")
+            if not relative:
+                relative = "index.html"
+            if (file, relative) in checked:
+                continue
+            checked.add((file, relative))
+            target = (root / relative).resolve()
+            if not target.is_relative_to(root) or not target.is_file():
+                bad.append(f"{file or 'index.html'} → {relative}")
+    if bad:
+        raise AssertionError("Enlaces internos que faltan: " + ", ".join(bad[:12]))
+    return f"{len(checked)} referencias locales verificadas"
+
+
+def check_flight_api_health():
+    url = "https://suncar-flights-api.suncartravel.workers.dev/health"
+    status, _, raw = request(url, accept="application/json", limit=4000)
+    if status != 200:
+        raise AssertionError(f"API vuelos: HTTP {status}")
+    payload = json.loads(raw)
+    if payload.get("ok") is not True or payload.get("service") != "Suncar Flights API":
+        raise AssertionError(f"API vuelos: respuesta inesperada: {payload}")
+    return f"HTTP {status}, servicio responde; no verifica búsquedas tarifarias"
+
+
 def run():
     config = Path(__file__).resolve().parents[1] / "assets/analytics-config.js"
     text = config.read_text(encoding="utf-8")
@@ -145,6 +187,9 @@ def run():
         print("ERROR: falta ID GA4 en configuración local")
         return 1
     ga_id = m.group(1)
+
+    record("Enlaces internos en el repositorio", check_local_links)
+    record("Salud del API de vuelos", check_flight_api_health)
 
     for host in ("www.suncartravel.com", "suncartravel.com"):
         for provider, endpoint in (
