@@ -5,7 +5,8 @@ on:
     branches: ["main"]
   workflow_dispatch:
   workflow_run:
-    workflows: ["Actualizar índice MSC público"]
+    workflows: ["Actualizar índice MSC público", "Retirar ofertas vencidas (Suncar Travel)"]
+    branches: ["main"]
     types: [completed]
 
 permissions:
