@@ -8,7 +8,8 @@ on:
       - "scripts/update_msc_public_index.py"
       - ".github/workflows/update-msc-index.yml"
   schedule:
-    - cron: "15 12 * * *"
+    # Lunes a las 8:15 a. m. en Santo Domingo (UTC-4).
+    - cron: "15 12 * * 1"
 
 permissions:
   contents: write
