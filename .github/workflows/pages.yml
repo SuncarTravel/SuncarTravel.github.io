@@ -11,19 +11,16 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      artifact-id: ${{ steps.artifact.outputs.artifact_id }}
     runs-on: ubuntu-latest
     steps:
       - name: Descargar sitio
@@ -44,9 +41,38 @@ jobs:
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
       - name: Preparar archivos
-        uses: actions/upload-pages-artifact@v3
+        id: artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: '.'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Esperar a que GitHub registre el paquete
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ needs.build.outputs.artifact-id }}
+        run: |
+          set -euo pipefail
+          for intento in {1..15}; do
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=github-pages" \
+              --jq '.artifacts[] | select(.expired == false) | .id' | grep -Fx -- "$ARTIFACT_ID"; then
+              exit 0
+            fi
+            sleep 4
+          done
+          echo "::error::GitHub todavía no devuelve el paquete del sitio para esta ejecución."
+          exit 1
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
